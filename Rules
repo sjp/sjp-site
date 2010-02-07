@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+#compile '/samples/three/' do
+#  layout '/shiny/'
+#end
+
+compile '*' do
+  filter :erb
+  layout 'default'
+end
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :erb
