@@ -4,11 +4,16 @@
         <title><%= @item[:title] %> | <%= @layout[:domain] %></title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+        <link rel="icon" type="image/png" href="images/favicon.png" />
     </head>
     <body>
         <div id="main">
             <h1><%= @item[:alt_title] ? @item[:alt_title] : @item[:title] %></h1>
-            <%= yield %>        </div>
+            <%= yield %>            <div id="footer">
+                <p>Last updated on <%= @item.mtime.strftime("%B %d, %Y") %></p>
+                <p>&copy;2010, Simon Potter</p>
+            </div>
+        </div>
         <div id="sidebar">
             <h2>Navigation</h2><% home_page = @items.find { |i| i.reps[0].path == '/' } %>
             <ul>
@@ -20,10 +25,7 @@
                 <li id="mail"><img src="/images/mail_filler.png" alt="email address" width="118" height="16" /></li>
             </ul>
         </div>
-        <div id="footer">
-            <p>This page was last updated on <%= @item.mtime.strftime("%B %d, %Y at %H:%M:%S %Z") %></p>
-            <p>&copy;2010, Simon Potter</p>
-        </div>
         <script type="text/javascript" src="/scripts/mail.js"></script>
+        <script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("UA-12917558-1");pageTracker._trackPageview();}catch(err){}</script>
     </body>
 </html>
