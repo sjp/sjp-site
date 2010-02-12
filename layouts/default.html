@@ -17,7 +17,7 @@
         <div id="sidebar">
             <h2>Navigation</h2>
             <ul><% home_page = @items.find { |i| i.reps[0].path == '/' } %>
-                <li><%= link_to(home_page[:title], home_page.reps[0]) %></li><% home_page.children.sort{ |x,y| x[:title] <=> y[:title] }.each do |page| %> 
+                <li><%= link_to(home_page[:title], home_page.reps[0]) %></li><% home_page.children.delete_if { |x| x[:layout] == "none" }.sort { |x,y| x[:title] <=> y[:title] }.each do |page| %> 
                 <li><%= link_to(page[:title], page.reps[0]) %></li><% end %> 
             </ul>
             <h2>Contact</h2>

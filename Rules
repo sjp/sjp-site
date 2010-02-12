@@ -11,7 +11,15 @@ end
 
 compile '*' do
   filter :erb
-  layout 'default'
+  layout 'default' unless item[:layout] == "none"
+end
+
+route '/sitemap/' do
+    '/sitemap.xml'
+end
+
+route '/robots/' do
+  '/robots.txt'
 end
 
 route '*' do
