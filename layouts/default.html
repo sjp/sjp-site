@@ -11,7 +11,7 @@
             <h1><%= @item[:alt_title] ? @item[:alt_title] : @item[:title] %></h1>
             <%= yield %>            <div id="footer">
                 <p>Last updated on <%= @item.mtime.strftime("%B %d, %Y") %></p>
-                <p>&copy;2010, Simon Potter | <a href="http://validator.w3.org/check?uri=referer">Valid HTML 4.01 Strict</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer">Valid CSS3</a></p>
+                <p>&copy;2010, Simon Potter | <a href="http://validator.w3.org/check?uri=referer">Valid HTML 4.01 Strict</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">Valid CSS3</a></p>
             </div>
         </div>
         <div id="sidebar">
