@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #005fa1;
+}
+
+a:link:after,
+a:visited:after {
+  content: " (" attr(href) ") ";
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#main {
+  width: 500px;
+}
+
+#main h1 {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+#main p {
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+#main ul {
+  margin: 20px;
+}
+
+#main li {
+  list-style-type: square;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#sidebar {
+  display: none;
+}
+
+.post-date {
+  float: right;
+}
+
+#footer a:after {
+  display: none;
+}
+
+code {
+  font-family: InconsolataMedium, Consolas, monospace;
+}
+
+@font-face {
+  font-family: 'InconsolataMedium';
+  src: url('Inconsolata.eot');
+  src: local('Inconsolata Medium'), local('Inconsolata'), url('Inconsolata.ttf') format('truetype');
+}

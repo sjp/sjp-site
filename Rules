@@ -22,6 +22,22 @@ route '/robots/' do
   '/robots.txt'
 end
 
+route 'fonts/*' do
+  item.identifier.chop
+end
+
+route '/images/*' do
+  item.identifier.chop + item[:extension]
+end
+
+route '/scripts/*' do
+  item.identifier.chop + '.js'
+end
+
+route '/styles/*' do
+  item.identifier.chop + '.css'
+end
+
 route '*' do
   item.identifier + 'index.html'
 end

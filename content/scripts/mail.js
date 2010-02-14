@@ -1,0 +1,1 @@
+var magicvalue="120$110$114$116$115$69$120$111$117$51$104$116$51$115$127";var mailspan=document.getElementById("mail");var mailadd=magicvalue.split("$");var email_address=new String();for(var i=0;i<mailadd.length;i++){email_address=email_address.concat(String.fromCharCode(parseInt(mailadd[i],10)-5))}mailspan.innerHTML='<a href="mailto:'+email_address+'">'+email_address+"</a>";

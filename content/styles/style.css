@@ -85,6 +85,10 @@ a:hover {
   margin-top: 40px;
 }
 
+.post-date {
+  float: right;
+}
+
 code {
   font-family: InconsolataMedium, Consolas, monospace;
 }

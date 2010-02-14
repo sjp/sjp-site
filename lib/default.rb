@@ -2,6 +2,8 @@
 # before nanoc starts compiling.
 
 include Nanoc3::Helpers::LinkTo
+require 'time'
+require 'date'
 
 def xml_sitemap
   require 'builder'
