@@ -2,7 +2,7 @@
 
 This is the current state of the content hosted at [my personal website](http://sjp.co.nz/).
 
-The current structure (of importance) the site is as follows:
+The current structure (of importance) of the site is as follows:
 
 * `content`: This folder holds all files that end up appearing on the site. This includes
   binary files and files that are given `published: false` that will not be processed.
