@@ -2,8 +2,6 @@
 # before nanoc starts compiling.
 
 include Nanoc3::Helpers::LinkTo
-require 'time'
-require 'date'
 
 def xml_sitemap
   require 'builder'
@@ -20,7 +18,7 @@ def xml_sitemap
   # Build sitemap
   xml.instruct!
   
-  xml.urlset(:xmlns => 'http://www.google.com/schemas/sitemap/0.9') do
+  xml.urlset(:xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
     # Add item
     @items.reject { |i| i[:is_hidden] }.each do |item|
       item.reps.each do |rep|

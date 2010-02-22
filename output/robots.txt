@@ -1,8 +1,0 @@
-User-agent: *
-Crawl-delay: 10
-Disallow: /fonts
-Disallow: /scripts
-Disallow: /images
-Disallow: /styles
-
-Sitemap: http://sjp.co.nz/sitemap.xml
