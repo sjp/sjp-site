@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'InconsolataMedium';
+  src: url('/fonts/Inconsolata.eot');
+  src: local('Inconsolata Medium'), local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +30,10 @@ a:visited:after {
 
 a:hover {
   text-decoration: underline;
+}
+
+a img {
+  border: none;
 }
 
 #main {
@@ -54,6 +64,10 @@ a:hover {
   line-height: 20px;
 }
 
+#main img {
+  max-width: 100%;
+}
+
 #sidebar {
   display: none;
 }
@@ -66,12 +80,11 @@ a:hover {
   display: none;
 }
 
-code {
+pre, code, .line, .line span {
   font-family: InconsolataMedium, Consolas, monospace;
 }
 
-@font-face {
-  font-family: 'InconsolataMedium';
-  src: url('Inconsolata.eot');
-  src: local('Inconsolata Medium'), local('Inconsolata'), url('Inconsolata.ttf') format('truetype');
+code {
+  background-color: #F8F8FF;
+  border: 1px solid #DEDEDE;
 }
