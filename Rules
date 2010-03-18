@@ -22,6 +22,10 @@ route '/robots/' do
   '/robots.txt'
 end
 
+route 'files/*' do
+  item.identifier.chop
+end
+
 route 'fonts/*' do
   item.identifier.chop
 end
