@@ -1,6 +1,6 @@
-# sjp.co.nz
+sjp.co.nz
 
-This is the current state of the content hosted at [my personal website](http://sjp.co.nz/).
+This is the current state of the content hosted at my personal website, http://sjp.co.nz/.
 
 The current structure (of importance) of the site is as follows:
 
@@ -10,7 +10,7 @@ The current structure (of importance) of the site is as follows:
 * `output`: The output folder is where all of the publishable content is placed upon
   compilation of the site.
 
-Few modifications have been made to the CSS of the default [nanoc](http://nanoc.stoneship.org/) output.
+Few modifications have been made to the CSS of the default nanoc (http://nanoc.stoneship.org/) output.
 The only one of significance was the creation of a snippet of javascript in order to ensure my email address
 is not easily discovered by spammers. It's simply obfuscating the email address in a .js file, then replacing an
 image which shows my email address with a mailto linking to my email address. The obfuscator can be made available upon
