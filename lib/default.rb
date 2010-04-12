@@ -20,7 +20,7 @@ def xml_sitemap
   
   xml.urlset(:xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
     # Add item
-    @items.reject { |i| i[:is_hidden] }.each do |item|
+    @items.reject { |i| i[:is_hidden] or i.binary? or i[:extension] == 'xml' }.each do |item|
       item.reps.each do |rep|
         xml.url do
           xml.loc         @site.config[:base_url] + rep.path

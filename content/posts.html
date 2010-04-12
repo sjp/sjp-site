@@ -1,6 +1,6 @@
 <p>
-                <strong>2010</strong>
-                <ul><% post_pages = @items.find { |i| i.reps[0].path == '/posts/' } %><% post_pages.children.sort{ |x,y| x[:created_at] <=> y[:created_at] }.reverse.each do |page| %>
+                <h2>2010</h2>
+                <ul><% post_pages = @items.find { |i| i.reps[0].path == '/posts/' } %><% post_pages.children.sort_by { |x| x[:created_at] }.reverse.each do |page| %>
                     <li><%= link_to(page[:title], page.reps[0]) %><span class="post-date"><%= page[:nice_creation] %></span></li><% end %>
                 </ul>
             </p>

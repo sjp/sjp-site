@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'InconsolataMedium';
-  src: url('/fonts/Inconsolata.eot');
-  src: local('Inconsolata Medium'), local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('truetype');
+  src: url('/fonts/Inconsolata_e.eot');
+  src: local('Inconsolata Medium'), local('Inconsolata'), url('/fonts/Inconsolata_t.ttf') format('truetype');
 }
 
 * {

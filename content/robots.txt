@@ -4,5 +4,6 @@ Disallow: /fonts
 Disallow: /scripts
 Disallow: /images
 Disallow: /styles
+Disallow: /files
 
 Sitemap: http://sjp.co.nz/sitemap.xml
