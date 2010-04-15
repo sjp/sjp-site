@@ -37,7 +37,7 @@ a img {
 }
 
 #main {
-  width: 500px;
+  width: 550px;
 }
 
 #main h1 {
@@ -86,11 +86,24 @@ a img {
   display: none;
 }
 
-pre, code, .line, .line span {
-  font-family: InconsolataMedium, Consolas, monospace;
-}
-
 code {
   background-color: #F8F8FF;
+  border: 1px solid
+  font-family: InconsolataMedium, Consolas, monospace; #DEDEDE;
+}
+
+div.highlight {
+  overflow: auto;
+}
+
+div.highlight pre {
+  font-family: InconsolataMedium, Consolas, monospace;
+  background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
+  font-weight: normal;
+}
+
+div.highlight span {
+  font-family: InconsolataMedium, Consolas, monospace;
+  font-weight: normal !important; /* needed to override attribute setting to bold */
 }

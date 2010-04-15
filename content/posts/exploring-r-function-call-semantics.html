@@ -1,17 +1,48 @@
 <p>After spending my summer working with <a href="http://www.r-project.org/">R</a> I have become very familiar with its lesser-known features. An area which is rarely explored is how flexible function calls can be. This post will explore the various behaviours of function calls in R.</p>
             <p>To start off we shall observe how R function calls can behave much the same as they do with most statically typed languages, where the arguments to the function must be passed in the correct position.</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex1.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f &lt;- <span style="color: #008800; font-weight: bold">function</span>(x, y, z) { print(c(x, y, z)) }
+<span style="color: #555555">&gt; </span>f(<span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">9</span>)
+<span style="color: #888888">[1] 2 3 9</span></pre>
+            </div>
             <p>Alternatively, instead of providing the arguments in the position that they are defined in the function definition we can provide them by name.</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex2.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f(z = <span style="color: #0000DD; font-weight: bold">9</span>, x = <span style="color: #0000DD; font-weight: bold">2</span>, y = <span style="color: #0000DD; font-weight: bold">3</span>)
+<span style="color: #888888">[1] 2 3 9</span></pre>
+            </div>
             <p>You can mix these two behaviours, by supplying parameters by position and by name. However, care must be made to ensure that the position of an unnamed parameter is correct.</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex3.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f(z = <span style="color: #0000DD; font-weight: bold">9</span>, <span style="color: #0000DD; font-weight: bold">3</span>, x = <span style="color: #0000DD; font-weight: bold">2</span>)
+<span style="color: #888888">[1] 2 3 9</span></pre>
+            </div>
             <p>Function calls can also incorporate default values, this means that we can omit an argument to a function if we wish to have assign a default value to that argument. This is applied by simply performing an assignment on an argument in the function definition.</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex4.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f &lt;- <span style="color: #008800; font-weight: bold">function</span>(x, y, z = <span style="color: #0000DD; font-weight: bold">9</span>) { print(c(x, y, z)) }
+<span style="color: #555555">&gt; </span>f(x = <span style="color: #0000DD; font-weight: bold">2</span>, y = <span style="color: #0000DD; font-weight: bold">3</span>)
+<span style="color: #888888">[1] 2 3 9</span></pre>
+            </div>
             <p>While all of these previous examples are useful, this behaviour is fairly common (especially with dynamically typed languages), to the point that it is almost expected in any recently developed language. The following function calling features are rarely found in other languages, and if they are apparent in other languages, it&rsquo;s unlikely to be quite as elegant as in R.</p>
             <p>During the development of <a href="/projects/ghyp/">GeneralizedHyperbolic</a> I made use of lazily evaluated arguments in order to ensure distribution parameters were always applied. I did this by creating a vector (analogous to an array or a list) of distribution parameters. This vector was composed of other function arguments, all of which had default values. This means that a distribution parameter vector could be passed into the function or if any arguments differed from the default, they could be passed in too. Applying this to the previous example would be the following:</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex5.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f &lt;- <span style="color: #008800; font-weight: bold">function</span>(x = <span style="color: #0000DD; font-weight: bold">2</span>, y = <span style="color: #0000DD; font-weight: bold">3</span>, z = <span style="color: #0000DD; font-weight: bold">9</span>, all = c(x, y, z)) {
+<span style="color: #555555">+ </span>  print(all)
+<span style="color: #555555">+ </span>}
+<span style="color: #555555">&gt; </span>f(z = <span style="color: #0000DD; font-weight: bold">5</span>)
+<span style="color: #888888">[1] 2 3 5</span>
+<span style="color: #555555">&gt; </span>f()
+<span style="color: #888888">[1] 2 3 9</span>
+<span style="color: #555555">&gt; </span>f(z = <span style="color: #0000DD; font-weight: bold">4</span>, x = <span style="color: #0000DD; font-weight: bold">6</span>)
+<span style="color: #888888">[1] 6 3 4</span></pre>
+            </div>
             <p>Variadic functions are also supported in R, these are where a function can have any number of arguments. While many other languages support this, I find R to be among the most intuitive to use. This is accomplished by adding an ellipsis (&hellip;) to the function definition, which essentially holds a set of (named or unnamed) values that are not previously defined in the function definition.</p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex6.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f &lt;- <span style="color: #008800; font-weight: bold">function</span>(x, <span style="color: #0000DD; font-weight: bold">...</span>) { print(list(<span style="color: #0000DD; font-weight: bold">...</span>)) }
+<span style="color: #555555">&gt; </span>f(<span style="color: #0000DD; font-weight: bold">2</span>, y = <span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">9</span>)
+<span style="color: #888888">$y</span>
+<span style="color: #888888">[1] 3</span>
+
+<span style="color: #888888">[[2]]</span>
+<span style="color: #888888">[1] 9</span></pre>
+            </div>
             <p>The last feature of R&rsquo;s function call semantics to be examined is that of partial matching. This is where any argument can be assigned a value (by name) using an argument name that is not explicitly defined in the function definition. This works so long as the amount of characters that are being assigned to a argument are sufficient to ensure the intended argument is uniquely matched.<p>
-            <p><script src="http://gist.github.com/339979.js?file=R-function-ex7.R" type="text/javascript"></script></p>
+            <div class="highlight"><pre><span style="color: #555555">&gt; </span>f &lt;- <span style="color: #008800; font-weight: bold">function</span>(alongString, alsoAString, anotherString) {
+<span style="color: #555555">+ </span>  print(c(alongString, alsoAString, anotherString))
+<span style="color: #555555">+ </span>}
+<span style="color: #555555">&gt; </span>f(alo = <span style="color: #0000DD; font-weight: bold">2</span>, als = <span style="color: #0000DD; font-weight: bold">3</span>, an = <span style="color: #0000DD; font-weight: bold">9</span>)
+<span style="color: #888888">[1] 2 3 9</span></pre>
+            </div>
             <p>After all this examples, it&rsquo;s amazing that these features would be apparent in a language designed to be used for statistical computing. R truly has some gems that are not readily apparent to most users.</p>
