@@ -88,8 +88,8 @@ a img {
 
 code {
   background-color: #F8F8FF;
-  border: 1px solid
-  font-family: InconsolataMedium, Consolas, monospace; #DEDEDE;
+  border: 1px solid #DEDEDE;
+  font-family: InconsolataMedium, Consolas, monospace;
 }
 
 div.highlight {
