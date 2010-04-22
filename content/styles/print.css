@@ -1,7 +1,7 @@
 @font-face {
-	font-family: 'InconsolataMedium';
-	src: url('Inconsolata_e.eot');
-	src: local('Inconsolata'), local('Inconsolata'), url('Inconsolata_w.woff') format('woff'), url('Inconsolata_t.ttf') format('truetype'), url('Inconsolata_s.svg#Inconsolata') format('svg');
+  font-family: 'InconsolataMedium';
+  src: url('Inconsolata_e.eot');
+  src: local('Inconsolata'), local('Inconsolata'), url('Inconsolata_w.woff') format('woff'), url('Inconsolata_t.ttf') format('truetype'), url('Inconsolata_s.svg#Inconsolata') format('svg');
 }
 
 * {
@@ -37,7 +37,7 @@ a img {
 }
 
 #main {
-  width: 650px;
+  width: 600px;
 }
 
 #main h1 {
@@ -55,7 +55,7 @@ a img {
 
 #main p {
   margin: 20px 0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   text-align: justify;
 }
@@ -66,7 +66,7 @@ a img {
 
 #main li {
   list-style-type: square;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
 }
 
