@@ -1,0 +1,64 @@
+<p>I was recently asked by <a href="http://steelsky.co.nz/">a friend</a> to add a module to the <a href="http://www.nginx.org/">nginx</a> web server that is serving both of our websites. Due to the fact that nginx statically links all of its modules into one binary, we cannot accomplish this in the typical Debian manner, i.e. something like <code>apt-get install nginx-modulename</code>. Because Debian doesn't provide builds that have the module he wanted, I had to apply the following solution, which required compiling my own nginx binary with the module he wanted.</p>
+            <p>The following instructions are going to be assuming that Debian Squeeze is being used (though it should work with any Debian-based distro), and that we going to be building nginx with the <a href="http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Nginx-Version2">H264 Streaming Module for Nginx (version 2)</a>.</p>
+            <p>To build your own version of nginx, we will first create a temporary directory and navigate to it.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> mkdir custom-nginx
+<span style="color: #555555">$</span> cd custom-nginx</pre>
+            </div>
+            <p>Now we need to grab the source code for nginx, in Debian systems this is easy enough to do.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> apt-get source nginx</pre>
+            </div>
+            <p>This will place 3 files and a folder in your current directory, you should see something like the following:</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> ls
+<span style="color: #888888">nginx-0.7.67                  nginx_0.7.67-1.dsc</span>
+<span style="color: #888888">nginx_0.7.67-1.debian.tar.gz  nginx_0.7.67.orig.tar.gz</span></pre>
+            </div>
+            <p>As <code>nginx-0.7.67</code> is the folder containing our source code, navigate to it.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> cd nginx-0.7.67</pre>
+            </div>
+            <p>If you wish to add a custom module not provided by nginx, download the source to the <code>modules</code> folder. A good list of third party modules is listed <a href="http://wiki.nginx.org/Nginx3rdPartyModules">on the nginx wiki</a>. I'll be providing instructions for the H264 Streaming Module.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> cd modules
+<span style="color: #555555">$</span> wget http://h264.code-shop.com/download/nginx_mod_h264_streaming-2.2.7.tar.gz
+<span style="color: #555555">$</span> tar -zxvf nginx_mod_h264_streaming-2.2.7.tar.gz
+<span style="color: #555555">$</span> rm nginx_mod_h264_streaming-2.2.7.tar.gz</pre>
+            </div>
+            <p>This should be sufficient for most modules, however this particular module doesn't compile without a small change to its source code.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> cd nginx_mod_h264_streaming-2.2.7/src
+<span style="color: #555555">$</span> vim ngx_http_streaming_module.c</pre>
+            </div>
+            <p>You'll need to comment out the following code, it's found around line 157.</p>
+            <div class="highlight"><pre><span style="color: #888888">/* TODO: Win32 */</span>
+<span style="color: #008800; font-weight: bold">if</span> (r-&gt;zero_in_uri)
+{
+    <span style="color: #008800; font-weight: bold">return</span> NGX_DECLINED;
+}</pre>
+            </div>
+            <p>You should end up with something that looks something like this:</p>
+            <div class="highlight"><pre><span style="color: #888888">/* TODO: Win32</span>
+<span style="color: #888888">if (r-&gt;zero_in_uri)</span>
+<span style="color: #888888">{</span>
+<span style="color: #888888">    return NGX_DECLINED;</span>
+<span style="color: #888888">}</span>
+<span style="color: #888888">*/</span></pre>
+            </div>
+            <p>Save the file and quit <code>vim</code>. Now we need to modify the parameters that are passed to the <code>configure</code> script. To do this, you will need to navigate to the <code>debian</code> directory found in your <code>nginx-0.7.67</code> directory. We'll need to modify the <code>rules</code> file to pass in the configuration options we want when building nginx.</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> vim rules</pre>
+            </div>
+            <p>Scroll down the <code>rules</code> file until you reach roughly line 24. Here you'll see all of the configuration options that are going to be used when compiling nginx. If you wish to enable or disable modules that are distributed with nginx have a look through <a href="http://wiki.nginx.org/NginxModules">a reference on the nginx wiki</a>. These are reasonably easy to use, just add a line to the <code>rules</code> file as given by a couple of examples below.</p>
+            <div class="highlight"><pre>--without-http_empty_gif_module <span style="color: #0044dd; background-color: #fff0f0">\</span>
+--with-google_perftools_module <span style="color: #0044dd; background-color: #fff0f0">\</span></pre>
+            </div>
+            <p>Here we are ensuring that nginx compiles with the Google Perftools module, while the Empty GIF module is going to be excluded. Of note is the <code>\</code> at the end of the line, make sure that this is included.</p>
+            <p>The previous examples only covered modules that are provided by nginx, we want to include the H264 Streaming Module, this can be done by adding the following snippet:</p>
+            <div class="highlight"><pre>--add-module=<span style="color: #008800; font-weight: bold">$(</span>CURDIR<span style="color: #008800; font-weight: bold">)</span>/modules/nginx_mod_h264_streaming-2.2.7 <span style="color: #0044dd; background-color: #fff0f0">\</span></pre>
+            </div>
+            <p>Once you have provided all of the configuration options you think you'll need for nginx, save the <code>rules</code> file. Nginx has now been prepared, ready to be compiled. We now need to get all of the software and libraries needed for nginx to be built. Fortunately this is quite simple on a Debian system (Note: you will need to be root for this step):</p>
+            <div class="highlight"><pre><span style="color: #555555">#</span> apt-get build-dep nginx</pre>
+            </div>
+            <p>Now the package can be built, all we need to do now is to navigate to the <code>nginx-0.7.67</code> directory and then run the following command:</p>
+            <div class="highlight"><pre><span style="color: #555555">$</span> dpkg-buildpackage</pre>
+            </div>
+            <p>Your custom nginx Debian package (hopefully) will have been built, it will be located in the directory above your nginx source directory, in my case it's located in the directory named <code>custom-nginx</code>. Installing the package is simple enough, though it does require superuser privileges. To install your new nginx package and run nginx, you only have two more steps:</p>
+            <div class="highlight"><pre><span style="color: #555555">#</span> dpkg -i nginx_0.7.67-1_amd64.deb
+<span style="color: #555555">#</span> /etc/init.d/nginx start</pre>
+            </div>
+            <p>Hopefully these instructions have been helpful to somebody. For those who are interested, I'm making my binary available for download, <a href="/files/nginx_0.7.67-1_amd64.deb">nginx_0.7.67-1_amd64.deb</a>. The only extra module that this has over the default Debian Squeeze binary is the H264 Streaming Module.</p>

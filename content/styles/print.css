@@ -90,6 +90,7 @@ code {
   background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
   font-family: InconsolataMedium, Consolas, monospace;
+  font-size: 16px;
 }
 
 div.highlight {
@@ -101,9 +102,11 @@ div.highlight pre {
   background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
   font-weight: normal;
+  font-size: 16px;
 }
 
 div.highlight span {
   font-family: InconsolataMedium, Consolas, monospace;
   font-weight: normal !important; /* needed to override attribute setting to bold */
+  font-size: 16px;
 }
