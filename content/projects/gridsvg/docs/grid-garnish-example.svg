@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="567px"
+     height="566.222222222222px"
+     version="1.0"><g transform="translate(0, 566.222222222222)  scale(1, -1)">
+  <g id="GRID.gTree.2"  style="fill:none; stroke:rgb(0,0,0); stroke-opacity: 1; stroke-dasharray:none; stroke-width:1.12513842746401px; font-size:11.3934283286056px; font-weight:normal; font-style: normal; font-family:Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif; opacity:1; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:10">
+    <g id="GRID.rect.1" onclick="alert('Example of interactivity with gridSVG.');" >
+    <rect id="GRID.rect.1.1" x="212.625" y="212.333333333333" width="141.75" height="141.555555555556"  style="fill:rgb(0,0,0); fill-opacity: 1; stroke:rgb(0,0,0); stroke-opacity: 1; stroke-dasharray:none; stroke-width:1.12513842746401px; font-size:11.3934283286056px; font-weight:normal; font-style: normal; font-family:Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif; opacity:1; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:10" />
+    </g>
+  </g>
+</g>
+</svg>

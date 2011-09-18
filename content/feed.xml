@@ -1,0 +1,1 @@
+<%= atom_feed( :author_name => 'Simon Potter', :author_uri => 'http://sjp.co.nz/', :title => 'sjp.co.nz Syndication' ) %>

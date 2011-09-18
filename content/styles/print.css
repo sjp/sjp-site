@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'InconsolataMedium';
-  src: url('/fonts/Inconsolata_e.eot');
-  src: local('Inconsolata'), local('Inconsolata'), url('/fonts/Inconsolata_w.woff') format('woff'), url('/fonts/Inconsolata_t.ttf') format('truetype'), url('/fonts/Inconsolata_s.svg#Inconsolata') format('svg');
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -71,26 +65,59 @@ a img {
 }
 
 #main img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
   max-width: 100%;
+}
+
+#main p.warning {
+  background-color: #FFFBE2;
+  border: 1px solid #FFE222;
+  padding: 5px;
+}
+
+#breadcrumb {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 #sidebar {
   display: none;
 }
 
-.post-date {
+div span.post-date {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+li span.post-date {
   float: right;
+}
+
+#main label {
+  display: block;
 }
 
 #footer a:after {
   display: none;
 }
 
-code {
+code, code a {
   background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
-  font-family: InconsolataMedium, Consolas, monospace;
+  font-family: Inconsolata, Consolas, monospace;
   font-size: 16px;
+}
+
+code a {
+  color: #005fa1;
 }
 
 div.highlight {
@@ -98,7 +125,7 @@ div.highlight {
 }
 
 div.highlight pre {
-  font-family: InconsolataMedium, Consolas, monospace;
+  font-family: Inconsolata, Consolas, monospace;
   background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
   font-weight: normal;
@@ -106,7 +133,7 @@ div.highlight pre {
 }
 
 div.highlight span {
-  font-family: InconsolataMedium, Consolas, monospace;
+  font-family: Inconsolata, Consolas, monospace;
   font-weight: normal !important; /* needed to override attribute setting to bold */
   font-size: 16px;
 }

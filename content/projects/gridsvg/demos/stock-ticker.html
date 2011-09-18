@@ -1,0 +1,71 @@
+<p>A demo I have produced is that of a stock ticker. It draws lines representing the stock prices of a few companies over one year. I sourced the pricing data for well-known tech companies from <a href="http://www.google.com/finance">Google Finance</a>. The idea behind this demonstration is to show how animation can be applied to time series data, in particular with line graphs.</p>
+            <p><object data="/projects/gridsvg/demos/stock-ticker/stock-prices.svg" type="image/svg+xml" width="810px" height="567px"></object></p>
+            <p>We can see how the lines appear to &ldquo;draw&rdquo; themselves over time. Although this is a basic demonstration, it might appear more engaging to a casual observer than a static plot.</p>
+            <ul>
+                <li><a href="/projects/gridsvg/demos/stock-ticker/stock-ticker.zip">Download the code</a></li>
+                <li><a id="toggle" href="#">Show me the code and how it works</a></li>
+            </ul>
+            <div id="gridsvg-code" style="display: none;">
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">library(gridSVG)
+library(ggplot2)
+
+aapl &lt;- read.csv(<span style="color: #dd2200; background-color: #fff0f0">&quot;aapl.csv&quot;</span>)
+aapl$X.Date &lt;- as.Date(aapl$X.Date, format=<span style="color: #dd2200; background-color: #fff0f0">&quot;%d-%b-%y&quot;</span>)
+names(aapl)[<span style="color: #0000DD; font-weight: bold">1</span>] &lt;- <span style="color: #dd2200; background-color: #fff0f0">&quot;Date&quot;</span>
+
+goog &lt;- read.csv(<span style="color: #dd2200; background-color: #fff0f0">&quot;goog.csv&quot;</span>)
+goog$X.Date &lt;- as.Date(goog$X.Date, format=<span style="color: #dd2200; background-color: #fff0f0">&quot;%d-%b-%y&quot;</span>)
+names(goog)[<span style="color: #0000DD; font-weight: bold">1</span>] &lt;- <span style="color: #dd2200; background-color: #fff0f0">&quot;Date&quot;</span>
+
+amzn &lt;- read.csv(<span style="color: #dd2200; background-color: #fff0f0">&quot;amzn.csv&quot;</span>)
+amzn$X.Date &lt;- as.Date(amzn$X.Date, format=<span style="color: #dd2200; background-color: #fff0f0">&quot;%d-%b-%y&quot;</span>)
+names(amzn)[<span style="color: #0000DD; font-weight: bold">1</span>] &lt;- <span style="color: #dd2200; background-color: #fff0f0">&quot;Date&quot;</span>
+
+msft &lt;- read.csv(<span style="color: #dd2200; background-color: #fff0f0">&quot;msft.csv&quot;</span>)
+msft$X.Date &lt;- as.Date(msft$X.Date, format=<span style="color: #dd2200; background-color: #fff0f0">&quot;%d-%b-%y&quot;</span>)
+names(msft)[<span style="color: #0000DD; font-weight: bold">1</span>] &lt;- <span style="color: #dd2200; background-color: #fff0f0">&quot;Date&quot;</span>
+
+stockprices.df &lt;- rbind(aapl, amzn, goog, msft)</pre>
+                </div>
+                <p>All that we're really doing so far is just loading required libraries and data for later use. The data that we're going to be using to construct this plot is stored in <code>stockprices.df</code>.</p>
+                <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">qplot(Date, Close, data=stockprices.df, group=Code, geom=<span style="color: #dd2200; background-color: #fff0f0">&quot;line&quot;</span>, colour=Code, log=<span style="color: #dd2200; background-color: #fff0f0">&quot;y&quot;</span>)</pre></div>
+                <p>Here we're just drawing a basic line graph using ggplot2's <code>qplot</code> function. The stock's closing price is plotted against its date, and to draw multiple lines we group by the stock's code (i.e. GOOG for Google). In order to get lines that are reasonably close together we apply a log transform to the closing stock prices using <code>log="y"</code>. Upon executing this <code>qplot</code> function, we should have a nice static plot visible in a plotting window.</p>
+                <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #888888"># Find out what the name of the polyline is</span>
+grid.ls()
+
+<span style="color: #888888"># Get the polyline</span>
+g &lt;- grid.get(<span style="color: #dd2200; background-color: #fff0f0">&quot;GRID.polyline.1&quot;</span>)
+gx &lt;- split(g$x, g$id)
+gy &lt;- split(g$y, g$id)
+m &lt;- matrix(<span style="color: #dd2200; background-color: #fff0f0">&quot;&quot;</span>, nrow=length(gx[[<span style="color: #0000DD; font-weight: bold">1</span>]]), ncol=length(unique(g$id)))</pre>
+                </div>
+                <p>Now that a plot has been drawn, we want to modify it to that the lines are drawn over time. We are required to inspect the display list to work out what the grid names of those lines are. In this example, the lines are defined in a single grid polyline named <code>GRID.polyline.1</code>.</p>
+                <p>Knowing that <code>GRID.polyline.1</code> defines 4 lines, we need to manipulate its <code>x</code> and <code>y</code> coordinates so that we can define them for each visible line. To do this we use a matrix to store coordinate information, where the number of columns is determined by how many unique lines we have, and the rows by how many point coordinates we have in the line (though we assume this number is fixed for all lines).</p>
+                <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">for</span> (i in <span style="color: #0000DD; font-weight: bold">1</span>:length(unique(g$id))) {
+  xs &lt;- as.numeric(gx[[i]])
+  ys &lt;- as.numeric(gy[[i]])
+
+  <span style="color: #008800; font-weight: bold">for</span> (j in <span style="color: #0000DD; font-weight: bold">1</span>:length(xs)) {
+    m[j, i] &lt;- paste(c(xs[<span style="color: #0000DD; font-weight: bold">1</span>:j], rep(xs[j], length(xs) - j)), <span style="color: #dd2200; background-color: #fff0f0">&quot;,&quot;</span>,
+                     c(ys[<span style="color: #0000DD; font-weight: bold">1</span>:j], rep(ys[j], length(ys) - j)), <span style="color: #dd2200; background-color: #fff0f0">&quot; &quot;</span>, sep=<span style="color: #dd2200; background-color: #fff0f0">&quot;&quot;</span>, collapse=<span style="color: #dd2200; background-color: #fff0f0">&quot;&quot;</span>)
+  }
+}</pre>
+                </div>
+                <p>We now iterate through our matrix, and for each line that our polyline defines we build that line up over time. The general approach we take is...</p>
+                <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">grid.animate(<span style="color: #dd2200; background-color: #fff0f0">&quot;GRID.polyline.1&quot;</span>, points=m, duration=<span style="color: #0000DD; font-weight: bold">30</span>, rep=<span style="color: #008800; font-weight: bold">TRUE</span>)
+gridToSVG(<span style="color: #dd2200; background-color: #fff0f0">&quot;stock-ticker.svg&quot;</span>)</pre>
+                </div>
+                <p>We now annotate the polyline graphics object with the point animation data. The animation is intended to last 30 seconds and repeat once the animation completes. Upon annotating the graphics object we finish by getting gridSVG to draw the graphics object, saving it to <code>stock-ticker.svg</code>.</p>
+            </div>
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+            <script type="text/javascript" src="/scripts/gridsvg-slider.js"></script>
+            <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
+            <script type="text/javascript">
+                if (!(Modernizr.smil && Modernizr.svg && Modernizr.svgclippaths)) {
+                    var firstpar = document.getElementsByTagName('p')[0];
+                    var newnode = document.createElement('p');
+                    newnode.className = 'warning';
+                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display this demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
+                    firstpar.parentNode.insertBefore(newnode, firstpar);
+                }
+            </script>

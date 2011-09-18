@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #005fa1;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+}
+
+article {
+  position: absolute;
+  top: 40px;
+  left: 280px;
+  width: 600px;
+}
+
+article h1 {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+article h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+article p {
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+article ul {
+  margin: 20px;
+}
+
+article li {
+  list-style-type: square;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+article img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+article p.warning {
+  background-color: #FFFBE2;
+  border: 1px solid #FFE222;
+  padding: 5px;
+}
+
+nav#breadcrumb {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+nav {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 200px;
+  padding: 20px 20px 0 0;
+  border-right: 1px solid #ccc;
+  text-align: right;
+}
+
+nav h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #333;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 5px 0 25px 0;
+}
+
+nav li {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+img.nav-icon {
+  display: inline-block;
+  padding-left: 5px;
+  /* The following positioning looks good for
+     a 16x16 icon */
+  position: relative;
+  top: 3px;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+header > span.post-date {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+li span.post-date {
+  float: right;
+}
+
+article label {
+  display: block;
+}
+
+code, code a {
+  background-color: #F8F8FF;
+  border: 1px solid #DEDEDE;
+  font-family: Inconsolata, Consolas, monospace;
+  font-size: 16px;
+}
+
+code a {
+  color: #005fa1;
+}
+
+div.highlight {
+  overflow: auto;
+}
+
+div.highlight pre {
+  font-family: Inconsolata, Consolas, monospace;
+  background-color: #F8F8FF;
+  border: 1px solid #DEDEDE;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+div.highlight span {
+  font-family: Inconsolata, Consolas, monospace;
+  font-weight: normal !important; /* needed to override attribute setting to bold */
+  font-size: 16px;
+}

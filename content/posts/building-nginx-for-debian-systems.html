@@ -9,8 +9,8 @@
             </div>
             <p>This will place 3 files and a folder in your current directory, you should see something like the following:</p>
             <div class="highlight"><pre><span style="color: #555555">$</span> ls
-<span style="color: #888888">nginx-0.7.67                  nginx_0.7.67-1.dsc</span>
-<span style="color: #888888">nginx_0.7.67-1.debian.tar.gz  nginx_0.7.67.orig.tar.gz</span></pre>
+<span style="color: #888888">nginx-0.7.67                  nginx_0.7.67-3.dsc</span>
+<span style="color: #888888">nginx_0.7.67-3.debian.tar.gz  nginx_0.7.67.orig.tar.gz</span></pre>
             </div>
             <p>As <code>nginx-0.7.67</code> is the folder containing our source code, navigate to it.</p>
             <div class="highlight"><pre><span style="color: #555555">$</span> cd nginx-0.7.67</pre>
@@ -58,7 +58,7 @@
             <div class="highlight"><pre><span style="color: #555555">$</span> dpkg-buildpackage</pre>
             </div>
             <p>Your custom nginx Debian package (hopefully) will have been built, it will be located in the directory above your nginx source directory, in my case it's located in the directory named <code>custom-nginx</code>. Installing the package is simple enough, though it does require superuser privileges. To install your new nginx package and run nginx, you only have two more steps:</p>
-            <div class="highlight"><pre><span style="color: #555555">#</span> dpkg -i nginx_0.7.67-1_amd64.deb
+            <div class="highlight"><pre><span style="color: #555555">#</span> dpkg -i nginx_0.7.67-3_amd64.deb
 <span style="color: #555555">#</span> /etc/init.d/nginx start</pre>
             </div>
-            <p>Hopefully these instructions have been helpful to somebody. For those who are interested, I'm making my binary available for download, <a href="/files/nginx_0.7.67-1_amd64.deb">nginx_0.7.67-1_amd64.deb</a>. The only extra module that this has over the default Debian Squeeze binary is the H264 Streaming Module.</p>
+            <p>Hopefully these instructions have been helpful to somebody. For those who are interested, I'm making my binary available for download, <a href="/files/nginx_0.7.67-3_amd64.deb">nginx_0.7.67-3_amd64.deb</a>. The only extra module that this has over the default Debian Squeeze binary is the H264 Streaming Module.</p>

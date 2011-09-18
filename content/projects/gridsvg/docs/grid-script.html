@@ -1,0 +1,16 @@
+<p>The function <code>grid.script</code> allows the inclusion of JavaScript text or files within an SVG image. When used in conjunction with <a href="/projects/gridsvg/docs/grid-garnish/"><code>grid.garnish</code></a>, <code>grid.script</code> can define the behaviour of the SVG document with regards to interactivity.</p>
+            <p>The usage of the function is defined as follows:</p>
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #888888">grid.script(script = NULL, filename = NULL)</span></pre></div>
+            <p>Typical usage would be to include a JavaScript file (via the <code>filename</code> parameter), or perhaps include a character vector containing JavaScript code (using the <code>script</code> parameter). This is demonstrated below:</p>
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #555555">&gt; </span><span style="color: #888888"># Loading gridSVG</span>
+<span style="color: #555555">&gt; </span>library(gridSVG)
+<span style="color: #888888">Loading required package: grid</span>
+<span style="color: #555555">&gt; </span>
+<span style="color: #555555">&gt; </span><span style="color: #888888"># Including JavaScript using a character vector</span>
+<span style="color: #555555">&gt; </span>grid.script(<span style="color: #dd2200; background-color: #fff0f0">&#39;alert(&quot;Demonstrating interactivity in gridSVG.&quot;);&#39;</span>)
+<span style="color: #555555">&gt; </span>
+<span style="color: #555555">&gt; </span><span style="color: #888888"># Including JavaScript from a file called tooltips.js</span>
+<span style="color: #555555">&gt; </span>grid.script(filename = <span style="color: #dd2200; background-color: #fff0f0">&quot;tooltips.js&quot;</span>)</pre>
+            </div>
+            <p>While knowledge of JavaScript is required to perform interactivity, it is not an uncommon language and fortunately there is plenty of documentation available to learn it. A good resource for interacting with SVG via JavaScript is available at <a href="http://www.carto.net/papers/svg/samples/#iact">carto:net</a>.</p>
+            <p>Applications of <code>grid.script</code> are shown in the <a href="/projects/gridsvg/demos/aqm/">arrayQualityMetrics</a> and <a href="/projects/gridsvg/demos/tooltips/">Tooltips</a> examples.</p>

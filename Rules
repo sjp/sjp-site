@@ -5,6 +5,14 @@ preprocess do
   items.delete_if { |item| item[:publish] == false }
 end
 
+compile 'favicon' do
+  #
+end
+
+compile 'feed' do
+  filter :erb
+end
+
 compile '/files/*' do
   #
 end
@@ -17,11 +25,7 @@ compile '/images/*' do
   #
 end
 
-compile 'scripts/*' do
-  #
-end
-
-compile 'styles/*' do
+compile 'opensearch' do
   #
 end
 
@@ -29,21 +33,51 @@ compile 'robots' do
   #
 end
 
+compile 'scripts/*' do
+  #
+end
+
 compile 'sitemap' do
   filter :erb
 end
 
-compile '*' do
-  filter :erb
-  layout 'default'
+compile 'styles/*' do
+  #
 end
 
-route '/sitemap/' do
-  '/sitemap.xml'
+compile '*' do
+  if not item.binary?
+    filter :erb
+    layout 'default'
+  end
+end
+
+route '/404/' do
+  '/404.html'
+end
+
+route '/favicon/' do
+  '/favicon.ico'
+end
+
+route '/feed/' do
+  '/feed.xml'
+end
+
+route '/offline/' do
+  '/offline.html'
+end
+
+route '/opensearch/' do
+  '/opensearch.xml'
 end
 
 route '/robots/' do
   '/robots.txt'
+end
+
+route '/sitemap/' do
+  '/sitemap.xml'
 end
 
 route '*' do

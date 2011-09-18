@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Search sjp.co.nz</ShortName>
+    <Description>Use Google to search sjp.co.nz</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <Language>en-us</Language>
+    <Attribution>Search data copyright Google Inc.</Attribution>
+    <Image height="16" width="16" type="image/png">http://sjp.co.nz/images/favicon.png</Image>
+    <Image height="16" width="16" type="image/vnd.microsoft.icon">http://sjp.co.nz/favicon.ico</Image>
+    <Url method="get" type="text/html" template="http://www.google.com/search?q={searchTerms}+site%3Asjp.co.nz&amp;hl=en"/>
+</OpenSearchDescription>
