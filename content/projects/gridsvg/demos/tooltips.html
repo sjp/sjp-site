@@ -1,6 +1,6 @@
 <p>We can demonstrate basic interactivity in gridSVG by drawing a plot that produces tooltips. These tooltips appear whenever the mouse hovers over a graphical element in the plot and the text within the tooltip features the name of the grid graphics object that produced the element.</p>
             <p>This tooltip demonstration was largely borrowed from <a href="http://www.stat.auckland.ac.nz/~paul/">Paul Murrell's</a> <a href="https://r-forge.r-project.org/projects/griddebug/">gridDebug</a> package, specifically with regards to the <code>addTooltips</code> function. A few modifications were made to the implementation of <code>addTooltips</code>, mostly with regards to the JavaScript code and using the <code>onmousemove</code> event attribute instead of <code>onmouseover</code>.</p>
-            <p><object data="/projects/gridsvg/demos/tooltips/tooltips.svg" type="image/svg+xml" width="568px" height="567px"></object></p>
+            <p><object data="/projects/gridsvg/demos/tooltips/tooltips.svg" type="image/svg+xml" width="568" height="567"></object></p>
             <p>One of the demos from the lattice package has been drawn, upon drawing we apply the <code>addTooltips</code> function to add tooltips to the plot. The effect of this is that when hovering the mouse over a graphical element in the plot, we can see the name of the grid graphics object that produced it.</p>
             <ul>
                 <li><a href="/projects/gridsvg/demos/tooltips/tooltips-code.zip">Download the code</a></li>
@@ -54,12 +54,4 @@ addTooltips(<span style="color: #dd2200; background-color: #fff0f0">&quot;toolti
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-slider.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-            <script type="text/javascript">
-                if (!(Modernizr.svg && Modernizr.svgclippaths)) {
-                    var firstpar = document.getElementsByTagName('p')[0];
-                    var newnode = document.createElement('p');
-                    newnode.className = 'warning';
-                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display this demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
-                    firstpar.parentNode.insertBefore(newnode, firstpar);
-                }
-            </script>
+            <script type="text/javascript" src="/scripts/svg-basic-detect.js"></script>

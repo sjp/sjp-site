@@ -20,16 +20,8 @@
 <span style="color: #555555">&gt; </span>gridToSVG(<span style="color: #dd2200; background-color: #fff0f0">&quot;example.svg&quot;</span>)</pre>
             </div>
             <p>When gridSVG processes <code>GRID.rect.1</code>, it will now attach an additional attribute to it, <code>onclick</code>, holding the value of <code>alert(...);</code>. The resulting SVG image can then be loaded into a browser. Although it appears identical to what is shown in R's plotting window, upon clicking the rectangle we are shown a dialog box with some text. By using <code>grid.garnish</code> and <code>grid.script</code>, there is the possibility for complex interactive graphics being produced by gridSVG. The resulting image produced from the above example is shown below (try clicking on the rectangle):</p>
-            <p><object data="/projects/gridsvg/docs/grid-garnish-example.svg" type="image/svg+xml" width="568px" height="567px"></object></p>
+            <p><object data="/projects/gridsvg/docs/grid-garnish-example.svg" type="image/svg+xml" width="568" height="567"></object></p>
             <p>While knowledge of JavaScript is required to perform interactivity, it is not an uncommon language and fortunately there is plenty of documentation available to learn it. A good resource for interacting with SVG via JavaScript is available at <a href="http://www.carto.net/papers/svg/samples/#iact">carto::net</a>.</p>
             <p>Also note that due to gridSVG's behaviour regarding the grouping of graphics objects (as described in Section 4.1.1 of my <a href="/files/sjp-hons-report.pdf">honours report</a>), garnishing is applied to a group of graphics objects. As a result of this, garnishing cannot currently occur on a single graphical element. This is an area in which <code>grid.garnish</code> may be improved in future, perhaps by behaving similarly to <a href="/projects/gridsvg/docs/grid-animate/"><code>grid.animate</code></a>. However, a child element of the group will trigger appropriate events that a group is handling. An example where this is demonstrated is the <a href="/projects/gridsvg/demos/tooltips/">Tooltips</a> example where the SVG elements produced from the same graphics object cause the same text in a tooltip to appear.</p>
             <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-            <script type="text/javascript">
-                if (!(Modernizr.svg && Modernizr.svgclippaths)) {
-                    var firstpar = document.getElementsByTagName('p')[0];
-                    var newnode = document.createElement('p');
-                    newnode.className = 'warning';
-                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display the featured demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
-                    firstpar.parentNode.insertBefore(newnode, firstpar);
-                }
-            </script>
+            <script type="text/javascript" src="/scripts/svg-basic-detect.js"></script>

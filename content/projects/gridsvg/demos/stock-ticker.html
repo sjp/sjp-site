@@ -1,5 +1,5 @@
 <p>A demo I have produced is that of a stock ticker. It draws lines representing the stock prices of a few companies over one year. I sourced the pricing data for well-known tech companies from <a href="http://www.google.com/finance">Google Finance</a>. The idea behind this demonstration is to show how animation can be applied to time series data, in particular with line graphs.</p>
-            <p><object data="/projects/gridsvg/demos/stock-ticker/stock-prices.svg" type="image/svg+xml" width="810px" height="567px"></object></p>
+            <p><object data="/projects/gridsvg/demos/stock-ticker/stock-prices.svg" type="image/svg+xml" width="810" height="567"></object></p>
             <p>We can see how the lines appear to &ldquo;draw&rdquo; themselves over time. Although this is a basic demonstration, it might appear more engaging to a casual observer than a static plot.</p>
             <ul>
                 <li><a href="/projects/gridsvg/demos/stock-ticker/stock-ticker.zip">Download the code</a></li>
@@ -60,12 +60,4 @@ gridToSVG(<span style="color: #dd2200; background-color: #fff0f0">&quot;stock-ti
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-slider.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-            <script type="text/javascript">
-                if (!(Modernizr.smil && Modernizr.svg && Modernizr.svgclippaths)) {
-                    var firstpar = document.getElementsByTagName('p')[0];
-                    var newnode = document.createElement('p');
-                    newnode.className = 'warning';
-                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display this demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
-                    firstpar.parentNode.insertBefore(newnode, firstpar);
-                }
-            </script>
+            <script type="text/javascript" src="/scripts/svg-smil-detect.js"></script>

@@ -1,16 +1,8 @@
 <p>A type of animated, interactive graphics was presented to the world by <a href="http://en.wikipedia.org/wiki/Hans_Rosling">Hans Rosling</a> of the <a href="http://www.gapminder.org/">Gapminder Foundation</a> in a <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html">TED talk</a>. The bubble plots that were presented clearly showed changes for several variables over time. <a href="http://www.stat.auckland.ac.nz/~paul/">Paul Murrell</a> has produced an animated ggplot2 plot based on the Gapminder bubble plots.</p>
-            <p><object data="/projects/gridsvg/demos/gapminder-single/gapminderOnePanel.svg" type="image/svg+xml" width="568px" height="567px"></object></p>
-            <p>We can see that over time, for all continents, the general trend is that as the number of children per woman decreases, life expectancy increases. It is interesting to see how it is possible to observe significant events such as wars occurring.</p>
+            <p><object data="/projects/gridsvg/demos/gapminder-single/gapminderOnePanel.svg" type="image/svg+xml" width="568" height="567"></object></p>
+            <p>We can see that over time, for all continents, the general trend is that as the number of children per woman decreases, it is associated with an increase in life expectancy. It is interesting to see how it is possible to observe significant events such as wars occurring.</p>
             <ul>
                 <li><a href="/projects/gridsvg/demos/gapminder-single/gapminder-single.zip">Download the code</a></li>
             </ul>
             <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-            <script type="text/javascript">
-                if (!(Modernizr.smil && Modernizr.svg && Modernizr.svgclippaths)) {
-                    var firstpar = document.getElementsByTagName('p')[0];
-                    var newnode = document.createElement('p');
-                    newnode.className = 'warning';
-                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display this demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
-                    firstpar.parentNode.insertBefore(newnode, firstpar);
-                }
-            </script>
+            <script type="text/javascript" src="/scripts/svg-smil-detect.js"></script>

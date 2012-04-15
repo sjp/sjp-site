@@ -1,0 +1,34 @@
+<p>The purpose of getSVGFonts and setSVGFonts is to provide a means of controlling the appearance of text within a web browser.</p>
+            <p>The usage of the functions are defined as follows:</p>
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">
+<span style="color: #888888">getSVGFonts()</span>
+<span style="color: #888888">setSVGFonts(fontStacks)</span></pre>
+            </div>
+            <p>Normally in R a user can apply a specifc font using something like <code>grid.text("hello, world!", gp = gpar(fontfamily = "Helvetica")))</code> to draw text using the Helvetica font. Often this approach is fine as we can draw the text with the given font if it is available to R. However, a problem when viewing text on the web (like with SVG) is that the presence of a particular font cannot be assumed. <code>getSVGFonts</code> and <code>setSVGFonts</code> deal with this issue by allowing a user to define fallbacks for preferred fonts.</p>
+            <p>The way in which this is accomplished in SVG is through the use of CSS font stacks. A font stack defines a preference ordering for fonts. An example is shown below:</p>
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">
+<span style="color: #336699">font-family=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;Helvetica, Arial, ..., sans-serif&quot;</span></pre>
+            </div> 
+            <p>This font stack tells the browser to first try using the Helvetica font and if that is not available, try Arial. If Arial cannot be applied, use the next most preferred font. This process could continue until <code>sans-serif</code> is reached. <code>sans-serif</code> is a special value that lets the browser use a default sans serif font that it knows about. This means we will always have a font applied, we just can't guarantee which font that might be.</p>
+            <p>A typical workflow for using <code>getSVGFonts</code> and <code>setSVGFonts</code> is shown below. The intent of this code is to use the <a href="http://www.levien.com/type/myfonts/inconsolata.html">Inconsolata</a> font for monospaced text if possible.</p>
+            <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #555555">&gt; </span>fonts &lt;- getSVGFonts()
+<span style="color: #555555">&gt; </span>names(fonts)
+<span style="color: #888888">[1] &quot;sans&quot; &quot;serif&quot; &quot;mono&quot;</span>
+<span style="color: #555555">&gt; </span>fonts$mono &lt;- <span style="color: #dd2200; background-color: #fff0f0">&quot;Inconsolata&quot;</span>
+<span style="color: #555555">&gt; </span>setSVGFonts(fonts)
+<span style="color: #555555">&gt; </span>grid.text(<span style="color: #dd2200; background-color: #fff0f0">&quot;hello, world!&quot;</span> , gp = gpar(fontfamily = <span style="color: #dd2200; background-color: #fff0f0">&quot;mono&quot;</span>))
+<span style="color: #555555">&gt; </span>gridToSVG(<span style="color: #dd2200; background-color: #fff0f0">&quot;newFont.svg&quot;</span>)</pre>
+            </div>
+            <p>The general process going on here is the following:</p>
+            <ul>
+                <li>Storing the currently set font stacks in a variable called <code>fonts</code>.</li>
+                <li>Demonstrating that there are three font stacks, one for each of the different types of fonts that R handles.</li>
+                <li>We then replace the value of the monospaced font stack with <code>Inconsolata</code> to use the Inconsolata font.</li>
+                <li>Upon calling <code>setSVGFonts</code> we now store the font stacks used to draw text.</li>
+                <li>We now draw text using a monospaced font, this will trigger the use of the <code>mono</code> font stack.</li>
+                <li>The <code>newFont.svg</code> file is then produced, which should show text with the Inconsolata font if it is available.</li>
+            </ul>
+            <p>By using <code>getSVGFonts</code> and <code>setSVGFonts</code> we are able to provide a means of using a wide variety of fonts if they are available to the browser. The result of the example shown earlier is the SVG image that appears below:</p>
+            <p><object data="/projects/gridsvg/docs/get-set-svgfonts-example.svg" type="image/svg+xml" width="220" height="198"></object></p>
+            <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
+            <script type="text/javascript" src="/scripts/svg-basic-detect.js"></script>

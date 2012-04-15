@@ -1,6 +1,6 @@
 <p>The <a href="http://bioconductor.org/packages/release/bioc/html/arrayQualityMetrics.html">arrayQualityMetrics</a> package, authored by Audrey Kauffmann and Wolfgang Huber, can produce a report on microarray quality metrics. Within these reports is a scatterplot of principal components. The plot features interactivity by way of increasing the size of a point once it is hovered over. arrayQualityMetrics produces this plot through the use of the <a href="http://www.omegahat.org/SVGAnnotation/">SVGAnnotation</a> package.</p>
             <p>An attempt has been made by <a href="http://www.stat.auckland.ac.nz/~paul/">Paul Murrell</a> to replicate this type of plot (including interactivity) using gridSVG.</p>
-            <p><object data="/projects/gridsvg/demos/aqm/aqm.svg" type="image/svg+xml" width="568px" height="567px"></object></p>
+            <p><object data="/projects/gridsvg/demos/aqm/aqm.svg" type="image/svg+xml" width="568" height="567"></object></p>
             <p>By hovering over each of the points, we are able to highlight the point by enlarging it. Not only is the point enlarged, but the name of the point is shown on the bottom-left of the plot.</p>
             <ul>
                 <li><a href="/projects/gridsvg/demos/aqm/aqm-code.zip">Download the code</a></li>
@@ -67,12 +67,4 @@ gridToSVG(<span style="color: #dd2200; background-color: #fff0f0">&quot;aqm.svg&
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-slider.js"></script>
             <script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-            <script type="text/javascript">
-                if (!(Modernizr.svg && Modernizr.svgclippaths)) {
-                    var firstpar = document.getElementsByTagName('p')[0];
-                    var newnode = document.createElement('p');
-                    newnode.className = 'warning';
-                    newnode.innerHTML = '<strong>Warning:<\/strong> Your browser does not appear to support all of the features necessary to display this demo. As a result, the demonstration may not work as intended. The latest versions of <a href="http://www.google.com/chrome">Google Chrome<\/a>, <a href="http://www.mozilla.org/firefox/">Mozilla Firefox<\/a> or <a href="http://www.opera.com/browser/">Opera<\/a> should support all of the features required to view these demonstrations.';
-                    firstpar.parentNode.insertBefore(newnode, firstpar);
-                }
-            </script>
+            <script type="text/javascript" src="/scripts/svg-basic-detect.js"></script>

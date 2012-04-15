@@ -48,7 +48,7 @@ end
 compile '*' do
   if not item.binary?
     filter :erb
-    layout 'default'
+    layout 'default_html5'
   end
 end
 
