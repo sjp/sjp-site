@@ -162,10 +162,11 @@ code, code a {
   border: 1px solid #DEDEDE;
   font-family: Inconsolata, Consolas, monospace;
   font-size: 16px;
+  display: inline-block;
 }
 
 code a {
-  color: #005fa1;
+  color: #005FA1;
 }
 
 div.highlight {

@@ -21,6 +21,10 @@ compile '/fonts/*' do
   #
 end
 
+compile '/google85a75e3669b62ea1' do
+  #
+end
+
 compile '/images/*' do
   #
 end
@@ -66,6 +70,10 @@ end
 
 route '/offline/' do
   '/offline.html'
+end
+
+route '/google85a75e3669b62ea1/' do
+  '/google85a75e3669b62ea1.html'
 end
 
 route '/opensearch/' do
