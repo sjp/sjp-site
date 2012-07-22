@@ -1,11 +1,8 @@
-* {
+body {
+  background: #fff;
   margin: 0;
   padding: 0;
   font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
-}
-
-body {
-  background: #fff;
 }
 
 a {
@@ -157,7 +154,7 @@ article label {
   display: block;
 }
 
-code, code a {
+code {
   background-color: #F8F8FF;
   border: 1px solid #DEDEDE;
   font-family: Inconsolata, Consolas, monospace;
@@ -166,7 +163,12 @@ code, code a {
 }
 
 code a {
+  background-color: #F8F8FF;
   color: #005FA1;
+  border: 1px solid #DEDEDE;
+  font-family: Inconsolata, Consolas, monospace;
+  font-size: 16px;
+  display: inline-block;
 }
 
 div.highlight {
