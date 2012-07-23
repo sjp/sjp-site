@@ -49,6 +49,11 @@ compile 'styles/*' do
   #
 end
 
+compile 'projects/rainbow' do
+    filter :erb
+    layout 'rainbow_html5'
+end
+
 compile '*' do
   if not item.binary?
     filter :erb
