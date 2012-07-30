@@ -2,15 +2,3 @@
             <ul><% post_pages = @items.find { |i| i.reps[0].path == '/projects/' } %><% post_pages.children.sort_by { |x| x[:title].downcase }.each do |page| %>
                 <li><%= link_to(page[:title], page.reps[0]) %><% end %></li>
             </ul>
-            <p>Some other projects I have worked on that have been put on <a href="https://github.com/sjp">GitHub/sjp<img src="/images/github-favicon.png" class="nav-icon" alt="" height="16" width="16"></a> are:
-            <ul>
-                <li><a href="https://github.com/sjp/Visual-Inference-Tools">Visual Inference Tools<img src="/images/github-favicon.png" class="nav-icon" alt="" height="16" width="16"></a>
-                    <p>Along with <a href="">Garrett Grolemund</a> and <a href="">Ben Stevenson</a>, I developed <a href="http://www.stat.auckland.ac.nz/~wild/VIT/">Visual Inference Tools</a>. It is a GUI for R, used for teaching high school and undergraduate students statistical concepts by way of animation. These concepts include bootstrapping, randomisation testing and confidence intervals.</p>
-                    <p>I am the current maintainer of this R package.</p>
-                </li>
-                <li><a href="https://github.com/sjp/iNZight">iNZight<img src="/images/github-favicon.png" class="nav-icon" alt="" height="16" width="16"></a>
-                    <p>This software, <a href="http://www.stat.auckland.ac.nz/~wild/iNZight/">iNZight</a>, is a GUI for R used for exploratory data analysis. It is intended to be used by undergraduate statistics students.</p>
-                    <p>Much of iNZight was written by Dineika Chandrananda. I have since been maintaining the package and developing extra components with some assistance from David Banks.</p>
-                    <p>Presently I am the maintainer of this R package.</p>
-                </li>
-            </ul>
