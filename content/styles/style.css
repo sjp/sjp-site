@@ -62,7 +62,7 @@ article li {
 article img {
   display: block;
   height: auto;
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 100%;
 }
 
@@ -131,6 +131,7 @@ img.nav-icon {
      a 16x16 icon */
   position: relative;
   top: 3px;
+  margin: 0;
 }
 
 footer {
