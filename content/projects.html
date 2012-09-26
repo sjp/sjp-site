@@ -1,4 +1,0 @@
-<p>Below are a list of projects that I have created or worked on at some point:</p>
-            <ul><% post_pages = @items.find { |i| i.reps[0].path == '/projects/' } %><% post_pages.children.sort_by { |x| x[:title].downcase }.each do |page| %>
-                <li><%= link_to(page[:title], page.reps[0]) %><% end %></li>
-            </ul>
