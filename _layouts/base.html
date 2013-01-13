@@ -7,7 +7,7 @@
         <article>
             {{ content }}
             <footer>
-                <p>&copy;{{ 'now' | date: "%Y" }} {{ site.author }} | <a href="http://validator.w3.org/check?uri=referer">Valid HTML5</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">Valid CSS3</a></p>
+                <p>&copy;{{ site.time | date: "%Y" }} {{ site.author }} | <a href="http://validator.w3.org/check?uri=referer">Valid HTML5</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">Valid CSS3</a></p>
             </footer>
         </article>
         {% include nav.html %}
