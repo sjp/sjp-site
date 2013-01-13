@@ -1,0 +1,146 @@
+{
+    "project": {
+        "name": "TimingManager",
+        "description": "Animation Sequences in JavaScript",
+        "version": "0.1",
+        "url": "http://github.com/sjp/TimingManager",
+        "logo": ""
+    },
+    "files": {
+        "timing.js": {
+            "name": "timing.js",
+            "modules": {},
+            "classes": {
+                "TimingManager": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "TimingManager": {
+            "name": "TimingManager",
+            "shortname": "TimingManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "timing.js",
+            "line": 1,
+            "description": "Consumes timing information and runs handlers bound to animation\nlabels.",
+            "author": "Simon Potter",
+            "licence": "GPL-2",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "timingInfo",
+                    "description": "Timing information, as\nexported by the [animaker package](https://github.com/pmur002/animaker) in [R](http://www.r-project.org/). For more information, refer to `?export` in R once animaker has loaded.",
+                    "type": "Array|Object"
+                },
+                {
+                    "name": "timeUnit",
+                    "description": "Determine what time units the\ntiming information exported from animaker refers to. Must be one of\n`\"ms\"` (milliseconds), `\"s\"` (seconds), or `\"m\"` (minutes).",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"ms\""
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "timing.js",
+            "line": 41,
+            "description": "Registers an action to an animation",
+            "params": [
+                {
+                    "name": "fns",
+                    "description": "An object where the keys are the labels for an animation, and the values are a function to register as an action to that animation",
+                    "type": "Object"
+                },
+                {
+                    "name": "overwrite",
+                    "description": "Allows us to overwrite existing actions for animations.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "class": "TimingManager"
+        },
+        {
+            "file": "timing.js",
+            "line": 59,
+            "description": "Plays all animations associated with actions",
+            "itemtype": "method",
+            "name": "play",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "An optional delay (in `timeUnit`s) to add to the entire animation.",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                }
+            ],
+            "class": "TimingManager"
+        },
+        {
+            "file": "timing.js",
+            "line": 79,
+            "description": "Returns all of the timing information about the frames that are to be played at a given time.",
+            "itemtype": "method",
+            "name": "frameTiming",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "The time in *milliseconds* to select an animation from",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                }
+            ],
+            "return": {
+                "description": "A list of matching animations to play at the current time",
+                "type": "Array"
+            },
+            "class": "TimingManager"
+        },
+        {
+            "file": "timing.js",
+            "line": 94,
+            "description": "Plays all animations associated with actions at a given rate per second.",
+            "itemtype": "method",
+            "name": "frameApply",
+            "params": [
+                {
+                    "name": "fps",
+                    "description": "How many frames per second are going to be drawn. By default this is 10.",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "10"
+                },
+                {
+                    "name": "t",
+                    "description": "An optional delay (in `timeUnit`s) to add to the entire animation",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                }
+            ],
+            "class": "TimingManager"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: licence",
+            "line": " timing.js:1"
+        },
+        {
+            "message": "Missing item type\nRegisters an action to an animation",
+            "line": " timing.js:41"
+        }
+    ]
+}
