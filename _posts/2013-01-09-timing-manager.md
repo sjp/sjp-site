@@ -12,7 +12,7 @@ Primarily TimingManager is focused on assigning
 actions to existing animations, then playing animation sequences using
 either a declarative or frame-based approach. In other words, use
 animaker to *describe* animations, then use TimingManager to assign
-actions and them.
+actions and play them.
 
 TimingManager depends on the [Underscore](http://underscorejs.org/)
 JavaScript library for utility functions and ensuring adequate support
