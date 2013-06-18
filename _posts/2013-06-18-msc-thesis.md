@@ -45,8 +45,9 @@ which should later be pushed to CRAN (and thus available via
 
 This version of `gridSVG` should be more readily available, but it
 depends upon the fixes made to `XML`. Consequently, the latest version
-of the package is available here instead of on CRAN. This will
-hopefully be corrected at a later date.
+of the package is available here (or on
+[R-Forge](http://r-forge.r-project.org/R/?group_id=1025)) instead of
+on CRAN. This will hopefully be corrected at a later date.
 
 * Windows Binary: [gridSVG_1.2-0.zip](/projects/msc-thesis/gridSVG_1.2-0.zip)
 
@@ -54,9 +55,9 @@ hopefully be corrected at a later date.
 
 ### animaker
 
-`animaker` is developed on GitHub and is not (yet) available on
-CRAN. The following links are simply builds from the latest revision
-of the GitHub repository.
+`animaker` is developed on {% ghr pmur002 animaker GitHub %} and is
+not (yet) available on CRAN. The following links are simply builds
+from the latest revision of the GitHub repository.
 
 * Windows Binary: [animaker_0.1.zip](/projects/msc-thesis/animaker_0.1.zip)
 
@@ -64,9 +65,8 @@ of the GitHub repository.
 
 ### sjpMScThesis
 
-The `sjpMScThesis` package is developed on GitHub. The following
-links, like `animaker` are builds from the latest revision of the
-GitHub repository.
+The `sjpMScThesis` package is developed on {% ghr sjp sjpMScThesis GitHub %}. The following links, like `animaker` are builds from the
+latest revision of the GitHub repository.
 
 * Windows Binary: [sjpMScThesis_1.0-0.zip](/projects/msc-thesis/sjpMScThesis_1.0-0.zip)
 
