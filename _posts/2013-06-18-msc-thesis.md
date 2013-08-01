@@ -21,7 +21,7 @@ install.packages(c("ggplot2", "selectr", "hexbin", "shiny", "Rook"))
 {% endhighlight %}
 
 There are further packages that require installation that are not
-(yet) available on CRAN. These packages are the latest version (1.2-0)
+(yet) available on CRAN. These packages are the latest version (1.3-0)
 of `gridSVG`, a custom build of the `XML` package, along with
 `animaker` and the companion package to my thesis
 `sjpMScThesis`. These are available below:
@@ -41,7 +41,7 @@ which should later be pushed to CRAN (and thus available via
 
 * Package Source: [XML_3.97-0.tar.gz](/projects/msc-thesis/XML_3.97-0.tar.gz)
 
-### gridSVG (1.2-0)
+### gridSVG
 
 This version of `gridSVG` should be more readily available, but it
 depends upon the fixes made to `XML`. Consequently, the latest version
