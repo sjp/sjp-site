@@ -4,11 +4,51 @@ title: Masters Thesis
 category: projects
 ---
 
-Much of the content demonstrated in my Masters Thesis (to be made
-available at a later date) displays animated and interactive content
-that are not adequately captured in printed form. Furthermore, many of
-the examples also demonstrate the use of R as a web server, which is
-central to the core idea of my thesis.
+During my Masters year I worked on a thesis entitled "Dynamic,
+Interactive and Reactive Statistical Graphics for the Web". The
+product of my thesis is a cohesive link between the powerful
+interactive and graphical capabilities of a web browser, and the
+statistical graphics and computing engine provided by
+[R](http://www.r-project.org/). My thesis is available by clicking the
+thumbnail below:
+
+[![Masters Thesis](/projects/msc-thesis/msc-thesis.png =230x313)](/projects/msc-thesis/msc-thesis.pdf)
+
+The basic idea is that while R is great for statistics, its graphics
+engine does not support dynamic and interactive graphics such as those
+created using [D3](http://d3js.org/). Additionally, while D3 is great
+for dynamic and interactive graphics, we have to get statistical
+information from elsewhere to visualise anything more than the most
+basic of statistical models. To get the best of both approaches, I
+further developed the `gridSVG` package to be a bridge between the
+graphics provided by R and the interactivity and animation provided by
+a web browser.
+
+## Seminar
+
+On the 27th of June 2013 I gave a seminar presentation at the
+University of Auckland in the Department of Statistics. The slides can
+be viewed by clicking the thumbnail below:
+
+[![Seminar](/projects/msc-thesis/seminar.png =430x341)](/projects/msc-thesis/slides/seminar.html)
+
+Some of the examples in the seminar were R web applications that were
+running from my laptop. To view these examples, you will need to use
+the `sjpMScThesis` package, which is available later in this page. The
+examples I used were the following:
+
+1. `loessStatic` on slide 11.
+2. `loess` (or `loessShiny`, the effect is the same) on slide 34.
+3. `arima` on slide 44.
+4. `sampvarClean` on slide 54.
+
+## Examples
+
+Much of the content demonstrated in my Masters Thesis displays
+animated and interactive content that are not adequately captured in
+printed form. Furthermore, many of the examples also demonstrate the
+use of R as a web server, which is central to the core idea of my
+thesis.
 
 I have made the examples shown in my thesis (and others) available as
 an R package. This package is called `sjpMScThesis`, and the examples
