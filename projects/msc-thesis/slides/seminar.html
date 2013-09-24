@@ -643,7 +643,7 @@ css_to_xpath("body p")
       <p>Let's use this on a &ldquo;real&rdquo; document? Let's use the Department's Technical Report Blog.</p>
       <pre class="prettyprint" data-lang="r">
 library(XML)
-page <- htmlParse("http://stattech.wordpress.fos.auckland.ac.nz/")
+page &lt;- htmlParse("http://stattech.wordpress.fos.auckland.ac.nz/")
 # What is the page title?
 <b>querySelector</b>(page, "title")
 </pre>
@@ -815,7 +815,7 @@ atomic(start = 3, durn = 1, label = "example")
 a &lt;- atomic(start = 0, durn = 3, label = "a")
 b &lt;- atomic(start = 1, durn = 2, label = "b")
 c &lt;- atomic(start = 0, durn = 1, label = "c")
-exampleSeq <- vec(a, b, c, label = "sequence")
+exampleSeq &lt;- vec(a, b, c, label = "sequence")
 plot(exampleSeq)
 </pre>
     </article>
@@ -838,7 +838,7 @@ plot(exampleSeq)
       <p>A track</p>
       <pre class="prettyprint" data-lang="r">
 d &lt;- atomic(start = 0, durn = 10, label = "d")
-exampleTrack <- trac(exampleSeq, d, label = "track")
+exampleTrack &lt;- trac(exampleSeq, d, label = "track")
 plot(exampleTrack)
 </pre>
     </article>
