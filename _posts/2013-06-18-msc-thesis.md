@@ -57,41 +57,16 @@ installation. The following R command will install some of these
 packages:
 
 {% highlight r %}
-install.packages(c("ggplot2", "selectr", "hexbin", "shiny", "Rook"))
+install.packages(c("gridSVG", "ggplot2", "selectr",
+                   "hexbin", "shiny", "Rook"))
 {% endhighlight %}
 
 There are further packages that require installation that are not
-(yet) available on CRAN. These packages are the latest version (1.3-0)
-of `gridSVG`, a custom build of the `XML` package, along with
-`animaker` and the companion package to my thesis
-`sjpMScThesis`. These are available below:
+(yet) available on CRAN. These packages are `animaker` and the
+companion package to my thesis `sjpMScThesis`. These are available
+below:
 
 ## Download
-
-### XML
-
-A custom version of the `XML` package is required because of a couple
-of issues that can cause segfaults. An attempt to fix this issue has
-been made and is available below. However, it must be noted that this
-is a temporary workaround until `XML` incorporates these changes,
-which should later be pushed to CRAN (and thus available via
-`install.packages()`).
-
-* Windows Binary: *not yet available*
-
-* Package Source: [XML_3.97-0.tar.gz](/projects/msc-thesis/XML_3.97-0.tar.gz)
-
-### gridSVG
-
-This version of `gridSVG` should be more readily available, but it
-depends upon the fixes made to `XML`. Consequently, the latest version
-of the package is available here (or on
-[R-Forge](http://r-forge.r-project.org/R/?group_id=1025)) instead of
-on CRAN. This will hopefully be corrected at a later date.
-
-* Windows Binary: [gridSVG_1.2-0.zip](/projects/msc-thesis/gridSVG_1.2-0.zip)
-
-* Package Source: [gridSVG_1.2-0.tar.gz](/projects/msc-thesis/gridSVG_1.2-0.tar.gz)
 
 ### animaker
 
@@ -108,9 +83,9 @@ from the latest revision of the GitHub repository.
 The `sjpMScThesis` package is developed on {% ghr sjp sjpMScThesis GitHub %}. The following links, like `animaker` are builds from the
 latest revision of the GitHub repository.
 
-* Windows Binary: [sjpMScThesis_1.0-0.zip](/projects/msc-thesis/sjpMScThesis_1.0-0.zip)
+* Windows Binary: [sjpMScThesis_1.1-0.zip](/projects/msc-thesis/sjpMScThesis_1.1-0.zip)
 
-* Package Source: [sjpMScThesis_1.0-0.tar.gz](/projects/msc-thesis/sjpMScThesis_1.0-0.tar.gz)
+* Package Source: [sjpMScThesis_1.1-0.tar.gz](/projects/msc-thesis/sjpMScThesis_1.1-0.tar.gz)
 
 ## Usage
 
