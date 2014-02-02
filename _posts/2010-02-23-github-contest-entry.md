@@ -36,7 +36,7 @@ The first line of thought that went into the analysis of the data was
 to get it into a form where I could easily grab the information I
 wanted without having to parse through the txt files. My solution to
 this was to load the data into R, parse it, then run a large amount of
-`INSERT` queries into a [SQLite](http://sqlite.org/) database. This
+`INSERT` queries into a [SQLite](https://sqlite.org/) database. This
 turned out to be reasonably quick to import all of the data, however
 the problem came when trying to query the database. The queries that I
 wanted to use on my SQLite database were **slow**, despite a few

@@ -4,7 +4,7 @@ title: grid.animate
 permalink: /projects/gridsvg/docs/grid-animate/
 ---
 
-<p class="warning"><em>Note</em>: To animate complex units, use the <code>animUnit</code> function available in newer versions of gridSVG. Documentation on <code>animUnit</code> is available in a <a href="http://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf">draft article</a>.</p>
+<p class="warning"><em>Note</em>: To animate complex units, use the <code>animUnit</code> function available in newer versions of gridSVG. Documentation on <code>animUnit</code> is available in a <a href="https://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf">draft article</a>.</p>
 
 The function `grid.animate` provides a user the ability to perform animation on graphics objects. This is accomplished using SMIL animation and SVG's `<animate />` element. As of version 0.7-0, support for animation on graphics objects is somewhat incomplete as not all graphics objects can be animated. Moreover, not all properties of graphics objects can be animated. If support is available on a given graphics object and a particular property of that graphics object, we can smoothly animate an object's property over time.
 

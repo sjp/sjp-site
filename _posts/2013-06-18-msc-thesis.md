@@ -9,8 +9,9 @@ Interactive and Reactive Statistical Graphics for the Web". The
 product of my thesis is a cohesive link between the powerful
 interactive and graphical capabilities of a web browser, and the
 statistical graphics and computing engine provided by
-[R](http://www.r-project.org/). My thesis is available by clicking the
-thumbnail below:
+[R](http://www.r-project.org/). My thesis is available on
+[ResearchSpace](http://hdl.handle.net/2292/20660) or on this website
+by clicking the thumbnail below:
 
 [![Masters Thesis](/projects/msc-thesis/msc-thesis.png =230x313)](/projects/msc-thesis/msc-thesis.pdf)
 

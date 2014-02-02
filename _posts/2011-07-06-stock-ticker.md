@@ -4,7 +4,7 @@ title: Stock Ticker
 permalink: /projects/gridsvg/demos/stock-ticker/
 ---
 
-A demo I have produced is that of a stock ticker. It draws lines representing the stock prices of a few companies over one year. I sourced the pricing data for well-known tech companies from [Google Finance](http://www.google.com/finance). The idea behind this demonstration is to show how animation can be applied to time series data, in particular with line graphs.
+A demo I have produced is that of a stock ticker. It draws lines representing the stock prices of a few companies over one year. I sourced the pricing data for well-known tech companies from [Google Finance](https://www.google.com/finance). The idea behind this demonstration is to show how animation can be applied to time series data, in particular with line graphs.
 
 <object data="/projects/gridsvg/demos/stock-ticker/stock-prices.svg" type="image/svg+xml" width="810" height="567"></object>
 

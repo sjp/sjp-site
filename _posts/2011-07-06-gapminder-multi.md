@@ -4,7 +4,7 @@ title: Gapminder - Multi Panel
 permalink: /projects/gridsvg/demos/gapminder-multi/
 ---
 
-A type of animated, interactive graphics was famously presented to the world by [Hans Rosling](http://en.wikipedia.org/wiki/Hans_Rosling) of the [Gapminder Foundation](http://www.gapminder.org/) in a [TED talk](http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html). The bubble plots that were presented clearly showed changes for several variables over time. [Paul Murrell](http://www.stat.auckland.ac.nz/~paul/) produced an animated `ggplot2` plot based on the Gapminder bubble plots. This demonstration is perhaps more informative as it separates countries into different continents and draws a separate panel for each continent. In doing so we can more easily see the variation within continents.
+A type of animated, interactive graphics was famously presented to the world by [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling) of the [Gapminder Foundation](http://www.gapminder.org/) in a [TED talk](https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html). The bubble plots that were presented clearly showed changes for several variables over time. [Paul Murrell](https://www.stat.auckland.ac.nz/~paul/) produced an animated `ggplot2` plot based on the Gapminder bubble plots. This demonstration is perhaps more informative as it separates countries into different continents and draws a separate panel for each continent. In doing so we can more easily see the variation within continents.
 
 <object data="/projects/gridsvg/demos/gapminder-multi/gapminderMultiPanel.svg" type="image/svg+xml" width="810" height="567"></object>
 

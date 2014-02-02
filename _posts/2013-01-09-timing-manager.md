@@ -35,7 +35,7 @@ demonstrates the steps necessary to use TimingManager correctly.
 
 In addition, the use of animaker is required for using TimingManager
 correctly. For more information about animaker, a [technical
-report](http://www.stat.auckland.ac.nz/~paul/Reports/animaker/animaker.html)
+report](https://www.stat.auckland.ac.nz/~paul/Reports/animaker/animaker.html)
 is available.
 
 ## Example
