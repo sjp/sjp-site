@@ -10,7 +10,7 @@ source: .
 destination: ./_site
 plugins: ./_plugins
 
-exclude: ["config.rb"]
+exclude: ["config.rb", "_config.yml", "Makefile", "rsync-remote.sh"]
 
 future: false
 lsi: false
