@@ -4,7 +4,7 @@ title: knitr Support in Emacs (via ESS)
 category: posts
 ---
 
-<p class="warning">Note: The latest version of ESS now includes support for <code>knitr</code>. This script is no longer necessary.</p>
+<p class="notice">The latest version of ESS now includes support for <code>knitr</code>. This script is no longer necessary.</p>
 
 During my recent switch from vim to Emacs I discovered what a wonderful tool [ESS](http://ess.r-project.org/) is. It was fantastic for writing `Rnw` documents using `Sweave`, but seeing as I'm currently attempting another switch, from `Sweave` to [`knitr`](http://yihui.name/knitr/), I wanted support for that.
 

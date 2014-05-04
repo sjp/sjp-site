@@ -4,13 +4,14 @@
         {% include header.html %}
     </head>
     <body>
+        <input type="checkbox" id="navbar-checkbox">
+        {% include nav.html %}
         <article>
             {{ content }}
             <footer>
                 <p>&copy;{{ site.time | date: "%Y" }} {{ site.author }} | {% validation_links %}</p>
             </footer>
         </article>
-        {% include nav.html %}
         {% include scripts.html %}
     </body>
 </html>

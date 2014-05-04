@@ -25,6 +25,17 @@ further developed the `gridSVG` package to be a bridge between the
 graphics provided by R and the interactivity and animation provided by
 a web browser.
 
+To cite this thesis, use the following BibTeX entry:
+
+{% highlight bibtex %}
+@MastersThesis{SJP2013,
+    author = {Simon Potter},
+    title  = {Dynamic, Interactive and Reactive Statistical Graphics for the Web},
+    school = {The University of Auckland},
+    year   = 2013
+}
+{% endhighlight %}
+
 ## Seminar
 
 On the 27th of June 2013 I gave a seminar presentation at the

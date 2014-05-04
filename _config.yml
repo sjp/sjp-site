@@ -1,7 +1,4 @@
 safe: false
-auto: false
-server: false
-server_port: 4000
 baseurl: /
 url: https://sjp.co.nz
 author: Simon Potter
@@ -10,7 +7,7 @@ source: .
 destination: ./_site
 plugins: ./_plugins
 
-exclude: ["config.rb", "_config.yml", "Makefile", "rsync-remote.sh"]
+exclude: ["_config.yml", "Makefile", "rsync-remote.sh"]
 
 future: false
 lsi: false

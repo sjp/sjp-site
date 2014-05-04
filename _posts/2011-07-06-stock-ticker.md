@@ -11,7 +11,7 @@ A demo I have produced is that of a stock ticker. It draws lines representing th
 We can see how the lines appear to "draw" themselves over time. Although this is a basic demonstration, it might appear more engaging to a casual observer than a static plot.
 
 * [Download the code](/projects/gridsvg/demos/stock-ticker/stock-ticker.zip)
-* <a id="toggle" href="#">Show me the code and how it works</a>
+* <a id="gridsvg-code-toggle" href="#">Show me the code and how it works</a>
 
 {% capture hiddencontent %}
 {% highlight r %}
@@ -83,11 +83,8 @@ We now annotate the polyline graphics object with the point animation data. The 
 
 {% endcapture %}
 
-<div id="gridsvg-code" style="display: none;">
+<div id="hidden-gridsvg-code">
 {{ hiddencontent | markdownify }}
 </div>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script type="text/javascript" src="/scripts/gridsvg-slider.js"></script>
-<script type="text/javascript" src="/scripts/gridsvg-modernizr.js"></script>
-<script type="text/javascript" src="/scripts/svg-smil-detect.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
