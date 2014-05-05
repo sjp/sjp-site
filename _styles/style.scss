@@ -17,11 +17,11 @@ article {
     margin-top: em(40);
   }
 
-  @include media(min-width em(320) max-width em(640), 8) {
+  @include media(max-width em(640), 8) {
     @include span-columns(8);
-    @include transition(all .25s linear);
   }
 
+  @include transition(all .25s linear);
   @include omega();
   @include pad(0 default);
 
@@ -79,7 +79,7 @@ nav {
     }
   }
 
-  @include media(min-width em(320) max-width em(640)) {
+  @include media(max-width em(640)) {
     @include position(fixed, 0px auto 0px 0px);
     @include size(em(220) 100%);
     @include transform(translateX(-$small-navbar-width));
@@ -131,7 +131,7 @@ nav {
   }
 }
 
-@include media(min-width em(320) max-width em(640)) {
+@include media(max-width em(640)) {
   .navbar-button {
     @include user-select(none);
     float: left;
@@ -155,7 +155,7 @@ nav {
 }
 
 code {
-  font-family: Inconsolata,Consolas,monospace;
+  font-family: $mono-fonts;
   background-color:#F8F8F8;
   border:1px solid #DEDEDE;
   padding: em(4) em(2);
@@ -167,16 +167,16 @@ code a {
 
 .highlight code, .highlight span {
   display: inline-block;
-  font-family: Inconsolata,Consolas,monospace;
+  font-family: $mono-fonts;
   line-height: $base-font-size * 1.2;
-  border:0;
+  border: 0;
   margin: 0;
 }
 
 div.highlight pre {
-  margin:0;
-  background-color:#F8F8F8;
-  border:1px solid #DEDEDE;
+  margin: 0;
+  background-color: #F8F8F8;
+  border: 1px solid #DEDEDE;
 }
 
 div.highlight {
@@ -187,7 +187,7 @@ li .post-date {
   @include media(em(641)) {
     float: right;
   }
-  @include media(min-width em(320) max-width em(640)) {
+  @include media(max-width em(640)) {
     &::before {
         content: " — "
     }
@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #rainbow-input {
-  font-family: Inconsolata,Consolas,monospace;
+  font-family: $mono-fonts;
 }
 
 #hidden-gridsvg-code {

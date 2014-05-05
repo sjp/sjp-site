@@ -58,24 +58,24 @@ nav, .navbar-button {
 }
 
 code {
-  font-family: Inconsolata,Consolas,monospace;
-  background-color:#F8F8F8;
-  border:1px solid #DEDEDE;
+  font-family: $mono-fonts;
+  background-color: #F8F8F8;
+  border: 1px solid #DEDEDE;
   padding: em(4) em(2);
 }
 
 .highlight code, .highlight span {
   display: inline-block;
-  font-family: Inconsolata,Consolas,monospace;
+  font-family: $mono-fonts;
   line-height: $base-font-size * 1.2;
-  border:0;
+  border: 0;
   margin: 0;
 }
 
 div.highlight pre {
-  margin:0;
-  background-color:#F8F8F8;
-  border:1px solid #DEDEDE;
+  margin: 0;
+  background-color: #F8F8F8;
+  border: 1px solid #DEDEDE;
 }
 
 div.highlight {
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #rainbow-input {
-  font-family: Inconsolata,Consolas,monospace;
+  font-family: $mono-fonts;
 }
 
 /**
