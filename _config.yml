@@ -11,7 +11,7 @@ exclude: ["_config.yml", ".travis.yml", "Makefile", "rsync-remote.sh"]
 
 future: false
 lsi: false
-pygments: true
+highlighter: pygments
 markdown: rdiscount
 permalink: /:categories/:title/
 
