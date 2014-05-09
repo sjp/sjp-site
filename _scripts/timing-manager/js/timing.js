@@ -1,9 +1,12 @@
+/*
+ * This code is licensed under the GPL-2 licence.
+ */
+
 /**
  * Consumes timing information and runs handlers bound to animation
  * labels.
  *
  * @author Simon Potter
- * @licence GPL-2
  * @class TimingManager
  * @constructor
  * @param {Array|Object} timingInfo Timing information, as
@@ -40,6 +43,8 @@ var TimingManager = function(timingInfo, timeUnit) {
 
     /**
      * Registers an action to an animation
+     *
+     * @method register
      * @param {Object} fns An object where the keys are the labels for an animation, and the values are a function to register as an action to that animation
      * @param {Boolean} [overwrite=false] Allows us to overwrite existing actions for animations.
      */
