@@ -7,7 +7,7 @@ source: .
 destination: ./_site
 plugins: ./_plugins
 
-exclude: ["_config.yml", "Makefile", "rsync-remote.sh"]
+exclude: ["_config.yml", ".travis.yml", "Makefile", "rsync-remote.sh"]
 
 future: false
 lsi: false

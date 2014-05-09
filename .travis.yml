@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+- 2.0.0
+install:
+- sudo apt-get update
+- sudo apt-get install discount
+- sudo easy_install pygments
+- gem install jekyll sass
+- npm install -g clean-css yuidocjs jshint uglify-js
+script: make all
