@@ -60,4 +60,5 @@ Streams can be scheduled to play at a specific time. This is accomplished via th
 
 Here is an example of GOMstreamer in action:
 
-[![Example of GOMstreamer with a GSL stream.](/images/ss-gomstreamer.png =683x920)](/images/ss-gomstreamer.png)
+[![Example of GOMstreamer with a GSL stream.](/images/ss-gomstreamer-1.png =665x463)](/images/ss-gomstreamer-1.png)
+[![Example of GOMstreamer with a GSL stream.](/images/ss-gomstreamer-2.png =520x426)](/images/ss-gomstreamer-2.png)

@@ -92,7 +92,7 @@ from the latest revision of the GitHub repository.
 
 ### sjpMScThesis
 
-The `sjpMScThesis` package is developed on {% ghr sjp sjpMScThesis GitHub %}. The following links, like `animaker` are builds from the
+The `sjpMScThesis` package is developed on {% ghr sjp sjpMScThesis GitHub %}. The following links, like `animaker`, are builds from the
 latest revision of the GitHub repository.
 
 * Windows Binary: [sjpMScThesis_1.1-0.zip](/projects/msc-thesis/sjpMScThesis_1.1-0.zip)

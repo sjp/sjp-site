@@ -4,9 +4,9 @@ title: grid.script
 permalink: /projects/gridsvg/docs/grid-script/
 ---
 
-<p class="warning"><em>Note</em>: this documentation lags behind the latest version, use the documentation provided with the package for up to date information.</p>
+<p class="notice">This documentation lags behind the latest version, use the documentation provided with the package for up to date information.</p>
 
-The function `grid.script` allows the inclusion of JavaScript text or files within an SVG image. When used in conjunction with [`grid.garnish`](/projects/gridsvg/docs/grid-garnish/), `grid.script` can define the behaviour of the SVG document with regards to interactivity.
+The function `grid.script()` allows the inclusion of JavaScript text or files within an SVG image. When used in conjunction with [`grid.garnish()`](/projects/gridsvg/docs/grid-garnish/), `grid.script()` can define the behaviour of the SVG document with regards to interactivity.
 
 The usage of the function is defined as follows:
 
@@ -19,7 +19,6 @@ Typical usage would be to include a JavaScript file (via the `filename` paramete
 {% highlight rconsole %}
 > # Loading gridSVG
 > library(gridSVG)
-Loading required package: grid
 > 
 > # Including JavaScript using a character vector
 > grid.script('alert("Demonstrating interactivity in gridSVG.");')
@@ -30,4 +29,4 @@ Loading required package: grid
 
 While knowledge of JavaScript is required to perform interactivity, it is not an uncommon language and fortunately there is plenty of documentation available to learn it. A good resource for interacting with SVG via JavaScript is available at [carto:net](http://www.carto.net/papers/svg/samples/#iact).
 
-Applications of `grid.script` are shown in the [arrayQualityMetrics](/projects/gridsvg/demos/aqm/) and [Tooltips](/projects/gridsvg/demos/tooltips/) examples.
+Applications of `grid.script()` are shown in the [arrayQualityMetrics](/projects/gridsvg/demos/aqm/) and [Tooltips](/projects/gridsvg/demos/tooltips/) examples.

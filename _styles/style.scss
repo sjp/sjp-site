@@ -18,10 +18,10 @@ article {
   }
 
   @include media(max-width em(640), 8) {
+    @include transition(all .25s linear);
     @include span-columns(8);
   }
 
-  @include transition(all .25s linear);
   @include omega();
   @include pad(0 default);
 
@@ -37,7 +37,8 @@ article {
     @extend %default-ol;
   }
 
-  img {
+  img, svg, canvas, object[type="image/svg+xml"] {
+    box-shadow: em(5) em(5) em(10) 0 #888;
     margin: em(20) auto;
   }
 }
@@ -217,10 +218,9 @@ img, svg, canvas, object[type="image/svg+xml"] {
 }
 
 a > img {
-  border: solid 4px #FFF;
-  @include transition(all 200ms ease-out);
+  @include transition(all 250ms ease-out);
   &:hover, &:focus {
-    box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
+    box-shadow: 0 0 em(10) em(2) rgba(0, 140, 186, 0.5);
   }
 }
 
