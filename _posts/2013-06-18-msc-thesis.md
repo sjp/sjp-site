@@ -13,7 +13,9 @@ statistical graphics and computing engine provided by
 [ResearchSpace](http://hdl.handle.net/2292/20660) or on this website
 by clicking the thumbnail below:
 
-[![Masters Thesis](/projects/msc-thesis/msc-thesis.png =230x313)](/projects/msc-thesis/msc-thesis.pdf)
+<a href="/projects/msc-thesis/msc-thesis.pdf">
+  <img src="/projects/msc-thesis/msc-thesis.svg" alt="Masters Thesis" width="50%">
+</a>
 
 The basic idea is that while R is great for statistics, its graphics
 engine does not support dynamic and interactive graphics such as those
