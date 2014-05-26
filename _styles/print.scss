@@ -40,7 +40,7 @@ article {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: em(1) solid #ccc;
   padding-top: em(20);
   margin-top: em(20);
   
@@ -60,7 +60,7 @@ nav, .navbar-button, #navbar-checkbox {
 code {
   font-family: $mono-fonts;
   background-color: #F8F8F8;
-  border: 1px solid #DEDEDE;
+  border: em(1) solid #DEDEDE;
   padding: em(4) em(2);
 }
 
@@ -75,7 +75,7 @@ code {
 div.highlight pre {
   margin: 0;
   background-color: #F8F8F8;
-  border: 1px solid #DEDEDE;
+  border: em(1) solid #DEDEDE;
 }
 
 div.highlight {
@@ -113,7 +113,7 @@ img, svg, canvas, object[type="image/svg+xml"] {
 .notice {
   @extend %flash-notice;
   font-weight: normal;
-  border: 1px solid darken($notice-color, 40%);
+  border: em(1) solid darken($notice-color, 40%);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -44,7 +44,7 @@ article {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: em(1) solid #ccc;
   padding-top: em(20);
   margin-top: em(20);
 }
@@ -55,7 +55,7 @@ nav {
     @include omega();
     text-align: right;
     margin-top: em(40);
-    border-right: 1px solid #ccc;
+    border-right: em(1) solid #ccc;
     @include pad(0 default);
 
     > h2 {
@@ -105,7 +105,7 @@ nav {
       display: block;
       color: #FFF;
       background-color: #303030;
-      border-top: 1px solid #444;
+      border-top: em(1) solid #444;
       padding: 0 1em;
       width: 100%;
 
@@ -116,7 +116,7 @@ nav {
     }
 
     ul {
-      border-bottom: 1px solid #444;
+      border-bottom: em(1) solid #444;
       margin: 0.75em 0;
     }
 
@@ -138,7 +138,7 @@ nav {
     float: left;
     padding: 0.5rem 0.65rem;
     color: #505050;
-    border: 1px solid #505050;
+    border: em(1) solid #505050;
     border-radius: em(4);
     cursor: pointer;
     width: 2.25em;
@@ -157,8 +157,8 @@ nav {
 
 code {
   font-family: $mono-fonts;
-  background-color:#F8F8F8;
-  border:1px solid #DEDEDE;
+  background-color: #F8F8F8;
+  border: em(1) solid #DEDEDE;
   padding: em(4) em(2);
 }
 
@@ -177,7 +177,7 @@ code a {
 div.highlight pre {
   margin: 0;
   background-color: #F8F8F8;
-  border: 1px solid #DEDEDE;
+  border: em(1) solid #DEDEDE;
 }
 
 div.highlight {
@@ -208,6 +208,8 @@ header .post-date {
   border: none;
   transition: none !important;
   box-shadow: none !important;
+  height: 1em;
+  width: auto;
 }
 
 img, svg, canvas, object[type="image/svg+xml"] {
@@ -227,7 +229,7 @@ a > img {
 .notice {
   @extend %flash-notice;
   font-weight: normal;
-  border: 1px solid darken($notice-color, 40%);
+  border: em(1) solid darken($notice-color, 40%);
 }
 
 h1, h2, h3, h4, h5, h6 {
