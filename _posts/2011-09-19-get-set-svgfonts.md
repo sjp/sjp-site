@@ -46,6 +46,6 @@ The general process going on here is the following:
 
 By using `getSVGFonts()` and `setSVGFonts()` we are able to provide a means of using a wide variety of fonts if they are available to the browser. The result of the example shown earlier is the SVG image that appears below:
 
-<object data="/projects/gridsvg/docs/get-set-svgfonts-example.svg" type="image/svg+xml" width="90%"></object>
+<object data="/projects/gridsvg/docs/get-set-svgfonts-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
 <script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>

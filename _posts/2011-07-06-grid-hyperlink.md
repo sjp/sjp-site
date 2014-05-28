@@ -34,6 +34,6 @@ Note that due to grouping of graphics objects (as described in Section 4.1.1 of 
 
 The image produced by the example code is shown below:
 
-<object data="/projects/gridsvg/docs/grid-hyperlink-example.svg" type="image/svg+xml" width="90%"></object>
+<object data="/projects/gridsvg/docs/grid-hyperlink-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
 <script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>

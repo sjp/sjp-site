@@ -236,6 +236,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.2em 0;
 }
 
+/* Utility classes */
+.span-90pc { width: 90%; }
+.span-50pc { width: 50%; }
+
 /* For toggling sidebar on small screens */
 #navbar-checkbox {
   display: none;

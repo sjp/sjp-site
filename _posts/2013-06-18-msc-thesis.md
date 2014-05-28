@@ -14,7 +14,7 @@ statistical graphics and computing engine provided by
 by clicking the thumbnail below:
 
 <a href="/projects/msc-thesis/msc-thesis.pdf">
-  <img src="/projects/msc-thesis/msc-thesis.svg" alt="Masters Thesis" width="50%">
+  <img src="/projects/msc-thesis/msc-thesis.svg" alt="Masters Thesis" class="span-50pc">
 </a>
 
 The basic idea is that while R is great for statistics, its graphics

@@ -55,6 +55,6 @@ The way in which we approach this is by creating a matrix of values to animate t
 
 After creating the `ymat` matrix, we apply it to our rectangle object `GRID.rect.1` using `grid.animate()`. The `y` attribute is being animated upon using the values held in `ymat`. In order to more easily demonstrate the animation, we ensure it is repeated by setting `rep` to `TRUE` in `grid.animate()`. Now that this information has been added to `GRID.rect.1`, gridSVG can write to SVG using the animation information associated with `GRID.rect.1`. The resulting image is shown below.
 
-<object data="/projects/gridsvg/docs/grid-animate-example.svg" type="image/svg+xml" width="90%"></object>
+<object data="/projects/gridsvg/docs/grid-animate-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
 <script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>

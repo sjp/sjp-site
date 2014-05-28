@@ -39,7 +39,7 @@ GRID.rect.1
 
 When gridSVG processes `GRID.rect.1`, it will now attach an additional attribute to it, `onclick`, holding the value of `alert(...);`. The resulting SVG image can then be loaded into a browser. Although it appears identical to what is shown in R's plotting window, upon clicking the rectangle we are shown a dialog box with some text. By using `grid.garnish()` and `grid.script()`, it is possible to produce complex interactive graphics with gridSVG. The resulting image produced from the above example is shown below (try clicking on the square):
 
-<object data="/projects/gridsvg/docs/grid-garnish-example.svg" type="image/svg+xml" width="90%"></object>
+<object data="/projects/gridsvg/docs/grid-garnish-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
 While knowledge of JavaScript is required to perform interactivity, it is not an uncommon language and fortunately there is plenty of documentation available to learn it. A good resource for interacting with SVG via JavaScript is available at [carto:net](http://www.carto.net/papers/svg/samples/#iact).
 
