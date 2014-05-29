@@ -15,6 +15,19 @@ grid.hyperlink(path, href)
 
 The parameters to `grid.hyperlink()` are simply the grid path of the graphics object (usually just the name of the object is sufficient) and the URL that the object is going to link to. An example of how this function is used is shown below:
 
+{% capture democode %}
+# Loading grid and gridSVG
+library(grid)
+library(gridSVG)
+
+grid.text("SJP", name = "labeltext",
+          gp = gpar(fontsize = 144, col = "lightblue"))
+grid.hyperlink("labeltext", "https://sjp.co.nz/", show = "new")
+
+# Drawing to SVG
+grid.export("example.svg")
+{% endcapture %}
+
 {% highlight rconsole %}
 > # Loading grid and gridSVG
 > library(grid)

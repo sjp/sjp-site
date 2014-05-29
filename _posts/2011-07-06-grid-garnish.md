@@ -16,6 +16,26 @@ grid.garnish(grobname, attribute = VALUE, group = TRUE)
 
 The application of this function is going to be demonstrated with the use of the `onclick` event attribute on a graphics object.
 
+{% capture democode %}
+# Loading grid and gridSVG
+library(grid)
+library(gridSVG)
+
+# Drawing a solid black rectangle
+grid.rect(width = 0.25, height = 0.25,
+          gp = gpar(fill = "black"))
+
+# Determining the name of the rectangle
+grid.ls()
+
+# Adding interactivity for the event where a mouse click occurs on GRID.rect.1
+grid.garnish("GRID.rect.1",
+             onclick = "alert('Example of interactivity with gridSVG.')")
+
+# Drawing to SVG
+grid.export("example.svg")
+{% endcapture %}
+
 {% highlight rconsole %}
 > # Loading grid and gridSVG
 > library(grid)

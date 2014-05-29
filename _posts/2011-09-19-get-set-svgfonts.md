@@ -25,6 +25,16 @@ This font stack tells the browser to first try using the Helvetica font and if t
 
 A typical workflow for using `getSVGFonts()` and `setSVGFonts()` is shown below. The intent of this code is to use the [Inconsolata](http://www.levien.com/type/myfonts/inconsolata.html) font for monospaced text if possible.
 
+{% capture democode %}
+fonts <- getSVGFonts()
+names(fonts)
+
+fonts$mono <- "Inconsolata"
+setSVGFonts(fonts)
+grid.text("hello, world!" , gp = gpar(fontfamily = "mono"))
+grid.export("newFont.svg")
+{% endcapture %}
+
 {% highlight rconsole %}
 > fonts <- getSVGFonts()
 > names(fonts)

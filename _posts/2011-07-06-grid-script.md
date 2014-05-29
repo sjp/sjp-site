@@ -16,6 +16,17 @@ grid.script(script = NULL, filename = NULL)
 
 Typical usage would be to include a JavaScript file (via the `filename` parameter), or perhaps include a character vector containing JavaScript code (using the `script` parameter). This is demonstrated below:
 
+{% capture democode %}
+# Loading gridSVG
+library(gridSVG)
+
+# Including JavaScript using a character vector
+grid.script('alert("Demonstrating interactivity in gridSVG.");')
+
+# Including JavaScript from a file called tooltips.js
+grid.script(filename = "tooltips.js")
+{% endcapture %}
+
 {% highlight rconsole %}
 > # Loading gridSVG
 > library(gridSVG)

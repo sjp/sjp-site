@@ -20,6 +20,34 @@ The key named arguments to this function are `path`, `duration`, `rep` and `reve
 
 Note that `...` is any property that is to be animated and the values that are going to be animated through. The animation values are taken in the form of a matrix (as a single graphics object may require multiple SVG elements to represent it). A simple example to use in place of `...` might be something like `x = matrix(1:9 / 10)`. This will smoothly animate a given graphics object along the x axis through the values of 0.1, 0.2, ..., 0.9. A more complete example is shown below:
 
+{% capture democode %}
+# Loading grid and gridSVG
+library(grid)
+library(gridSVG)
+
+# Creating two rectangles using one graphics object
+grid.rect(x = c(0.3, 0.7), y = 0.4,
+          width = 0.2, height = 0.2,
+          gp = gpar(fill = "black"))
+
+# Finding out the name of the object, in this case
+# it is GRID.rect.1
+grid.ls()
+
+# Creating an animUnit which described y-position of our
+# rects at each point in time
+yunits <- animUnit(unit(c(rep(0.4, 3),
+                          0.4, 0.7, 0.4), "npc"),
+                   id = rep(1:2, each = 3))
+
+# Animating our rectange object GRID.rect.1 along the
+# y axis using our animUnit yunits
+grid.animate("GRID.rect.1", y = yunits, rep = TRUE)
+
+# Drawing to SVG
+grid.export("example.svg")
+{% endcapture %}
+
 {% highlight rconsole %}
 > # Loading grid and gridSVG
 > library(grid)
