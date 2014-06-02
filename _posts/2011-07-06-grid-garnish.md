@@ -4,17 +4,31 @@ title: grid.garnish
 permalink: /projects/gridsvg/docs/grid-garnish/
 ---
 
-<p class="notice">This documentation lags behind the latest version, use the documentation provided with the package for up to date information.</p>
+<p class="notice">This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.</p>
 
-The function `grid.garnish()` allows a user to add arbitrary attributes to grid graphics objects. These attributes are then applied to the SVG element that the graphics object translates to. This is most useful for adding JavaScript event attributes to grid graphics objects. Examples of such attributes are `onmouseover`, `onmousemove`, `onclick` and `onmouseout`. The values of these attributes are often JavaScript functions that are called when the appropriate event is triggered. These functions can be defined and included with the use of [`grid.script()`](/projects/gridsvg/docs/grid-script/).
+The function `grid.garnish()` allows a user to add arbitrary attributes to grid
+graphics objects. These attributes are then applied to the SVG element that the
+graphics object translates to. This is most useful for adding JavaScript event
+attributes to grid graphics objects. Examples of such attributes are
+`onmouseover`, `onmousemove`, `onclick` and `onmouseout`. The values of these
+attributes are often JavaScript functions that are called when the appropriate
+event is triggered. These functions can be defined and included with the use of
+[`grid.script()`]({% post_url 2011-07-06-grid-script %}).
 
-The usage of the function is defined as follows (further parameters are available to be viewed via `?grid.garnish`):
+The usage of the function is defined as follows (further parameters are
+available to be viewed via `?grid.garnish`):
 
 {% highlight r %}
-grid.garnish(grobname, attribute = VALUE, group = TRUE)
+grid.garnish(path, ..., group=TRUE)
 {% endhighlight %}
 
-The application of this function is going to be demonstrated with the use of the `onclick` event attribute on a graphics object.
+The key argument here is in fact `...`, which allows us to provide any named
+argument and have it applied to the `path`. By providing an argument with any
+name or value we like, we are essentially adding attributes to the SVG that
+will be generated.
+
+The application of this function is going to be demonstrated with the use of
+the `onclick` event attribute on a graphics object.
 
 {% capture democode %}
 # Loading grid and gridSVG
@@ -57,12 +71,25 @@ GRID.rect.1
 > grid.export("example.svg")
 {% endhighlight %}
 
-When gridSVG processes `GRID.rect.1`, it will now attach an additional attribute to it, `onclick`, holding the value of `alert(...);`. The resulting SVG image can then be loaded into a browser. Although it appears identical to what is shown in R's plotting window, upon clicking the rectangle we are shown a dialog box with some text. By using `grid.garnish()` and `grid.script()`, it is possible to produce complex interactive graphics with gridSVG. The resulting image produced from the above example is shown below (try clicking on the square):
+When gridSVG processes `GRID.rect.1`, it will now attach an additional
+attribute to it, `onclick`, holding the value of `alert(...);`. The resulting
+SVG image can then be loaded into a browser. Although it appears identical to
+what is shown in R's plotting window, upon clicking the rectangle we are shown
+a dialog box with some text. By using `grid.garnish()` and `grid.script()`, it
+is possible to produce complex interactive graphics with gridSVG. The resulting
+image produced from the above example is shown below (try clicking on the
+square):
 
 <object data="/projects/gridsvg/docs/grid-garnish-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
-While knowledge of JavaScript is required to perform interactivity, it is not an uncommon language and fortunately there is plenty of documentation available to learn it. A good resource for interacting with SVG via JavaScript is available at [carto:net](http://www.carto.net/papers/svg/samples/#iact).
+While knowledge of JavaScript is required to perform interactivity, it is not
+an uncommon language and fortunately there is plenty of documentation available
+to learn it. A good resource for interacting with SVG via JavaScript is
+available at [carto:net](http://www.carto.net/papers/svg/samples/#iact).
 
-Also note that due to gridSVG's behaviour regarding the grouping of graphics objects (as described in Section 4.1.1 of my [honours report](/files/sjp-hons-report.pdf)), garnishing is applied to a group of graphics objects. As a result of this, garnishing cannot currently occur on a single graphical element. This is an area in which `grid.garnish()` may be improved in future, perhaps by behaving similarly to [`grid.animate()`](/projects/gridsvg/docs/grid-animate/). However, a child element of the group will trigger appropriate events that a group is handling. An example where this is demonstrated is the [Tooltips](/projects/gridsvg/demos/tooltips/) example where the SVG elements produced from the same graphics object cause the same text in a tooltip to appear.
+An example where `grid.garnish()` is demonstrated is in the
+[Tooltips]({% post_url 2011-07-06-tooltips %}) example where the SVG elements
+produced from a graphics object cause the name of the graphics object to appear
+as text in a tooltip.
 
 <script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
