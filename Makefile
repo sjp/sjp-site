@@ -28,7 +28,11 @@ _site/scripts/gridsvg-scripts.min.js: _site/scripts/gridsvg-modernizr.min.js _si
 	@cat _site/scripts/gridsvg-modernizr.min.js _site/scripts/gridsvg-slider.min.js _site/scripts/svg-full-detect.min.js > "$@"
 	@rm _site/scripts/gridsvg-modernizr.min.js _site/scripts/gridsvg-slider.min.js _site/scripts/svg-full-detect.min.js
 
-scripts: _site/scripts/site.min.js _site/scripts/gridsvg-scripts.min.js
+_site/scripts/video-detect.min.js: _site/scripts/video-modernizr.min.js _site/scripts/video-message.min.js
+	@cat _site/scripts/video-modernizr.min.js _site/scripts/video-message.min.js > "$@"
+	@rm _site/scripts/video-modernizr.min.js _site/scripts/video-message.min.js
+
+scripts: _site/scripts/site.min.js _site/scripts/gridsvg-scripts.min.js _site/scripts/video-detect.min.js
 
 compiled-content: styles scripts rainbow timing-manager
 
