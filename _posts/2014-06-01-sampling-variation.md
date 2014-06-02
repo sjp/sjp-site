@@ -28,8 +28,8 @@ To run this example yourself, open R and run the following
 command: `library(sjpMScThesis) ; thesisExample("sampvar")`
 
 <video controls class="span-90pc">
-  <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation.mp4" type="video/mp4">
   <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation.webm" type="video/webm">
+  <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation.mp4" type="video/mp4">
 </video>
 
 This video is best viewed in full-screen.
