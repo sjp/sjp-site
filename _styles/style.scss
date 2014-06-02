@@ -22,7 +22,6 @@ article {
     @include span-columns(8);
   }
 
-  @include omega();
   @include pad(0 default);
 
   p {
@@ -52,11 +51,11 @@ footer {
 nav {
   @include media(min-width em(641)) {
     @include span-columns(4);
+    @include pad(0 default);
     @include omega();
     text-align: right;
     margin-top: em(40);
     border-right: em(1) solid #ccc;
-    @include pad(0 default);
 
     > h2 {
       text-transform: uppercase;
@@ -237,8 +236,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Utility classes */
-.span-90pc { width: 90%; }
-.span-50pc { width: 50%; }
+.span-minwidth {
+  min-width: em(300);
+  max-width: 100%;
+}
+
+.span-90pc {
+  @extend .span-minwidth;
+  width: 90%;
+}
+.span-50pc {
+  @extend .span-minwidth;
+  width: 50%;
+}
 
 /* For toggling sidebar on small screens */
 #navbar-checkbox {
