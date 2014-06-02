@@ -37,7 +37,7 @@ article {
     @extend %default-ol;
   }
 
-  img, svg, canvas, object[type="image/svg+xml"] {
+  img, svg, canvas, video, object[type="image/svg+xml"] {
     box-shadow: em(5) em(5) em(10) 0 #888;
     margin: em(20) auto;
   }
@@ -212,7 +212,7 @@ header .post-date {
   width: auto;
 }
 
-img, svg, canvas, object[type="image/svg+xml"] {
+img, svg, canvas, video, object[type="image/svg+xml"] {
   margin: 0 auto;
   display: block;
   max-width: 100%;

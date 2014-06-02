@@ -8,8 +8,6 @@ permalink: /projects/gridsvg/docs/grid-animate/
 
 The function `grid.animate()` provides a user the ability to perform animation on graphics objects. This is accomplished using SMIL animation and SVG's `<animate />` element. While it is the case that all properties of graphics objects can be animated, if support is available on a property of a graphics object, we can smoothly animate that object's property over time.
 
-One thing to note when animating the position or dimensions of a graphics object is that a numeric matrix must be used to store these values. The numeric values are relative to the grid units used in the associated graphics object attribute. For example, if the `x` position of text is measured in inches, then animation of the `x` attribute must be done in inches. Currently there is no way in which complex grid units (i.e. units composed of two measurements such as inches and centimetres) can be animated. More information on this is available in Section 4.3 of my [honours report](/files/sjp-hons-report.pdf).
-
 The usage of the `grid.animate()` function is defined as follows (see `?grid.animate` for more complete documentation):
 
 {% highlight r %}
