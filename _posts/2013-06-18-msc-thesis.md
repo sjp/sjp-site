@@ -77,8 +77,16 @@ install.packages(c("gridSVG", "ggplot2", "selectr",
 
 There are further packages that require installation that are not
 (yet) available on CRAN. These packages are `animaker` and the
-companion package to my thesis `sjpMScThesis`. These are available
-below:
+companion package to my thesis `sjpMScThesis`. These are available in the
+Downloads section below.
+
+To view videos of examples created as part of my thesis, click one of the links below:
+
+* [Hexagonal binning]({% post_url 2014-06-01-hexbin %}) --- A comparison of encoding the density of data in a plot by area or colour.
+* [ARIMA Diagnostics]({% post_url 2014-06-01-arima %}) --- Interactive ARIMA model diagnostics. ACF and PACF plots dynamically update in response to changes in any of the p, d or q parameters in an ARIMA model.
+* [LOESS Smoothing]({% post_url 2014-06-01-loess %}) --- A simple example which easily enables a user to determine a suitable value for controlling the degree of smoothing applied.
+* [Multidimensional Scaling]({% post_url 2014-06-01-mds %}) --- An interactive example showing the effect of multidimensional scaling on the true pairwise distances between european cities.
+* [Sampling Variation Teaching Example]({% post_url 2014-06-01-sampling-variation %}) --- A reimplementation of the sampling variation animation that is created by the [Visual Inference Tools]({% post_url 2012-07-21-visual-inference-tools %}) package. Key improvements are that animation timing is accurate and the animations themselves are smooth.
 
 ## Download
 
