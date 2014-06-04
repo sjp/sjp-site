@@ -57,6 +57,10 @@ nav, .navbar-button, #navbar-checkbox {
   display: none;
 }
 
+textarea {
+  line-height: $base-font-size * 1.2;
+}
+
 code {
   font-family: $mono-fonts;
   background-color: #F8F8F8;
@@ -76,6 +80,7 @@ div.highlight pre {
   margin: 0;
   background-color: #F8F8F8;
   border: em(1) solid #DEDEDE;
+  padding: em(1);
 }
 
 div.highlight {
