@@ -80,9 +80,8 @@ nav {
   }
 
   @include media(max-width em(640)) {
-    @include position(fixed, 0px auto 0px 0px);
+    @include position(fixed, 0px auto 0px -220px); // -$small-navbar-width
     @include size(em(220) 100%);
-    @include transform(translateX(-$small-navbar-width));
     @include transition(all .25s linear);
     z-index: 999999; // really want this to be on top
     overflow-y: auto;
@@ -261,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar-checkbox:checked ~ nav {
-  @include transform(translateX(0));
+  @include transform(translateX($small-navbar-width));
 }
 
 #navbar-checkbox:checked ~ article {
