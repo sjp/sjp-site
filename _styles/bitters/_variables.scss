@@ -4,6 +4,8 @@ $serif: $georgia;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
+@import "../sjp/variables";
+
 // Sizes
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.5;
@@ -25,7 +27,7 @@ $base-background-color: white;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $blue;
+$base-accent-color: $sjp-blue;
 
 // Link Colors
 $base-link-color: $base-accent-color;

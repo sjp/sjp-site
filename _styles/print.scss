@@ -1,7 +1,7 @@
 @import "normalize/normalize";
 @import "bourbon/bourbon";
 @import "neat/neat";
-@import "bitters/bitters";
+@import "bitters/base";
 
 body {
   @include outer-container;
