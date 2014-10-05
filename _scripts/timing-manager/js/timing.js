@@ -29,6 +29,8 @@ var TimingManager = function(timingInfo, timeUnit) {
 
     // Where all our animation actions will be stored
     var callbacks = {};
+    // When playing back, store promises to display here
+    var promises = [];
 
     // Converts a unit of time to milliseconds
     var toMs = function(t) {
@@ -72,13 +74,28 @@ var TimingManager = function(timingInfo, timeUnit) {
         t = t || 0; // Default to 0 ms
         _.each(timingInfo, function(anim) {
             if (callbacks[anim.label]) {
-                _.delay(callbacks[anim.label],
-                        t + toMs(anim.start),
-                        anim);
+                promises.push(Promise.delay(t + toMs(anim.start))
+                    .cancellable()
+                    .then(function() {
+                        callbacks[anim.label](anim);
+                    }));
             } else {
                 console.warn("Ignoring playback of animation: " + anim.label);
             }
         });
+        Promise.all(promises);
+    };
+
+    /**
+     * Cancels all pending animations that are queued by the timing manager.
+     *
+     * @method cancel
+     */
+    this.cancel = function() {
+        _.each(promises, function(p) {
+            p.cancel("User initiated animation cancellation");
+        });
+        promises = [];
     };
 
     /**
@@ -124,7 +141,11 @@ var TimingManager = function(timingInfo, timeUnit) {
         // Do the playback after a delay in ms
         var playFrame = function(anim, t) {
             if (callbacks[anim.label]) {
-                _.delay(callbacks[anim.label], t, anim);
+                promises.push(Promise.delay(t)
+                    .cancellable()
+                    .then(function() {
+                        callbacks[anim.label](anim);
+                    }));
             } else {
                 console.warn("Ignoring playback of animation: " + anim.label);
             }
@@ -144,5 +165,7 @@ var TimingManager = function(timingInfo, timeUnit) {
                 _.each(currentTiming, singleTiming(i));
             }
         }
+
+        Promise.all(promises);
     };
 };

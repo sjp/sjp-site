@@ -16,14 +16,15 @@ actions and play them.
 
 TimingManager depends on the [Underscore](http://underscorejs.org/)
 JavaScript library for utility functions and ensuring adequate support
-in multiple browsers.
+in multiple browsers. It also depends on the
+{% ghr petkaantonov bluebird Bluebird %} library for cancellation.
 
 Development occurs on GitHub in the {% ghr sjp TimingManager TimingManager %} repository.
 
 ## Download
 
-* [Development version](https://raw.github.com/sjp/TimingManager/master/timing.js) (*4.99kB*, uncompressed and commented)
-* [Production version](/projects/timing-manager/timing.min.js) (*674B*, minified and gzipped)
+* [Development version](https://raw.github.com/sjp/TimingManager/master/timing.js) (*5.9kB*, uncompressed and commented)
+* [Production version](/projects/timing-manager/timing.min.js) (*750B*, minified and gzipped)
 
 ## Documentation
 
