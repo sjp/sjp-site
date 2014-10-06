@@ -23,7 +23,7 @@ Development occurs on GitHub in the {% ghr sjp TimingManager TimingManager %} re
 
 ## Download
 
-* [Development version](https://raw.github.com/sjp/TimingManager/master/timing.js) (*5.9kB*, uncompressed and commented)
+* [Development version](https://raw.github.com/sjp/TimingManager/master/timing.js) (*6.1kB*, uncompressed and commented)
 * [Production version](/projects/timing-manager/timing.min.js) (*750B*, minified and gzipped)
 
 ## Documentation
