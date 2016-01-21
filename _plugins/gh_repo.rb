@@ -12,7 +12,7 @@ module Jekyll
         if ghtext.length == 0
             ghtext = ghrepo
         end
-        "<a href=\"https://github.com/#{ghuser}/#{ghrepo}\">#{ghtext}<img src=\"/images/github-favicon.svg\" class=\"nav-icon\" alt=\"\" height=\"16\" width=\"16\"></a>"
+        "<a href=\"https://github.com/#{ghuser}/#{ghrepo}\">#{ghtext}<img src=\"/images/github-icon.svg\" class=\"nav-icon\" alt=\"\" height=\"16\" width=\"16\"></a>"
       else
         ""
       end
