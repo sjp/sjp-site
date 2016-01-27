@@ -215,6 +215,17 @@ header .post-date {
   width: auto;
 }
 
+.github-link::after {
+  display: inline-block;
+  content: url(/images/github-icon.svg);
+  width: $base-font-size * 1.2;
+  height: $base-font-size * 1.2;
+
+  position: relative;
+  top: 0.2em;
+  margin: 0 0 0 em(5);// !important;
+}
+
 img, svg, canvas, video, object[type="image/svg+xml"] {
   margin: 0 auto;
   display: block;
