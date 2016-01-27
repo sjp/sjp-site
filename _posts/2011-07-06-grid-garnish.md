@@ -92,4 +92,4 @@ An example where `grid.garnish()` is demonstrated is in the
 produced from a graphics object cause the name of the graphics object to appear
 as text in a tooltip.
 
-<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>

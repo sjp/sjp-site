@@ -59,4 +59,4 @@ The image produced by the example code is shown below:
 
 <object data="/projects/gridsvg/docs/grid-hyperlink-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
-<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>

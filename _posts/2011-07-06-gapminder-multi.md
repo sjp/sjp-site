@@ -12,4 +12,4 @@ We can see that over time, for all continents, the general trend is that as the 
 
 * [Download the code](/projects/gridsvg/demos/gapminder-multi/gapminder-multi.zip)
 
-<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>

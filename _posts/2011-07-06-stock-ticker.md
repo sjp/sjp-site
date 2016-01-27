@@ -175,4 +175,4 @@ draw the graphics object, saving it to `stock-ticker.svg`.
 {{ hiddencontent | markdownify }}
 </div>
 
-<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>

@@ -121,4 +121,4 @@ gridSVG can write to SVG, applying the animation information associated with
 
 <object data="/projects/gridsvg/docs/grid-animate-example.svg" type="image/svg+xml" class="span-90pc"></object>
 
-<script type="text/javascript" src="/scripts/gridsvg-scripts.min.js"></script>
+<script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>
