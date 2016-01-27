@@ -7,7 +7,10 @@ source: .
 destination: ./_site
 plugins: ./_plugins
 
-exclude: ["_config.yml", ".travis.yml", "Makefile", "rsync-remote.sh"]
+exclude: [
+    "_config.yml", ".travis.yml", "Makefile", "rsync-remote.sh",
+    "node_modules", "gulpfile.js", "package.json"
+]
 
 future: false
 lsi: false
