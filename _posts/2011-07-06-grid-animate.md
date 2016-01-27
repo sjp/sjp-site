@@ -119,6 +119,6 @@ Now that this animation information has been added to `GRID.rect.1`,
 gridSVG can write to SVG, applying the animation information associated with
 `GRID.rect.1`. The resulting image is shown below.
 
-<object data="/projects/gridsvg/docs/grid-animate-example.svg" type="image/svg+xml" class="span-90pc"></object>
+<img src="/projects/gridsvg/docs/grid-animate-example.svg" alt="grid.animate() Example Figure" class="span-90pc">
 
 <script type="text/javascript" src="/scripts/gridsvg-scripts.js"></script>
