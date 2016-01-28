@@ -8,7 +8,8 @@ before_install:
     - sudo pip install Pygments bibtex-pygments-lexer
     - gem install jekyll sass rdiscount pygments.rb
 install:
-    - npm install
-before_script:
     - npm install -g gulp yuidocjs
-script: gulp
+    - npm install
+script:
+    - jekyll build 
+    - gulp
