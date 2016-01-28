@@ -1,13 +1,14 @@
-language: ruby
-rvm:
-- 2.2.0
+language: node_js
+node_js:
+    - "4.1"
+before_install:
+    - rvm install 2.2.2
+    - sudo apt-get update
+    - sudo apt-get install -y rubygems discount
+    - sudo pip install Pygments bibtex-pygments-lexer
+    - gem install jekyll sass rdiscount
 install:
-- sudo apt-get update
-- sudo apt-get install curl
-- curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-- sudo apt-get install -y nodejs rubygems discount
-- sudo pip install Pygments bibtex-pygments-lexer
-- gem install jekyll sass rdiscount
-- sudo npm install -g gulp yuidocjs
-- npm install
+    - npm install
+before_script:
+    - npm install -g gulp yuidocjs
 script: gulp
