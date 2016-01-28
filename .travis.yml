@@ -6,7 +6,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install -y rubygems discount
     - sudo pip install Pygments bibtex-pygments-lexer
-    - gem install jekyll sass rdiscount
+    - gem install jekyll sass rdiscount pygments.rb
 install:
     - npm install
 before_script:
