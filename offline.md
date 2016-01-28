@@ -1,7 +1,6 @@
 ---
 layout: default 
 title: Page Not Available Offline
-permalink: /offline.html
 ---
 
 Sorry, but the page you were trying to view is not available offline.

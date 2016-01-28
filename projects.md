@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Projects
-permalink: /projects/
 ---
 Below are a list of projects that I have created or worked on at some point:
 
