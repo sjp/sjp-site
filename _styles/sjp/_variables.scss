@@ -1,9 +1,22 @@
 $body-fonts: 'PT Sans', Times, 'Times New Roman', sans-serif;
 $mono-fonts: Inconsolata, Consolas, monospace;
 
-$sjp-blue: #005FA1;
+$sjp-blue: #005fa1;
 
 $base-font-family: $body-fonts;
-$header-font-family: $base-font-family;
+$heading-font-family: $base-font-family;
 
 $base-accent-color: $sjp-blue;
+
+$action-color: $sjp-blue;
+
+// Colours
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+
+// Flash colours
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;

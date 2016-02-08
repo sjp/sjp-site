@@ -1,7 +1,8 @@
 @import "normalize/normalize";
 @import "bourbon/bourbon";
 @import "neat/neat";
-@import "bitters/base";
+@import "base/base";
+@import "sjp/flashes";
 
 $small-navbar-width: 220px;
 
@@ -159,16 +160,18 @@ textarea {
 
 code {
   font-family: $mono-fonts;
-  background-color: #F8F8F8;
-  border: em(1) solid #DEDEDE;
+  background-color: #f8f8f8;
+  border: em(1) solid #dedede;
   padding: em(4) em(2);
 }
 
 code a {
-  color: #005fa1;
+  color: $sjp-blue;
 }
 
-.highlight code, .highlight span {
+.highlight code,
+.highlight span,
+.highlight p {
   display: inline-block;
   font-family: $mono-fonts;
   line-height: $base-font-size * 1.2;
@@ -176,14 +179,14 @@ code a {
   margin: 0;
 }
 
-div.highlight pre {
+figure.highlight pre {
   margin: 0;
-  background-color: #F8F8F8;
-  border: em(1) solid #DEDEDE;
+  background-color: #f8f8f8;
+  border: em(1) solid #dedede;
   padding: em(1);
 }
 
-div.highlight {
+figure.highlight {
   margin: em(20) 0;
 }
 
@@ -203,27 +206,21 @@ header .post-date {
   margin-bottom: em(20);
 }
 
-.nav-icon {
-  position: relative;
-  display: inline-block;
-  top: 0.125em;
-  margin: 0 0 0 em(5) !important;
-  border: none;
-  transition: none !important;
-  box-shadow: none !important;
-  height: 1em;
-  width: auto;
-}
-
 .github-link::after {
-  display: inline-block;
+  @include media(em(641)) {
+    display: inline-block;
+  }
+  @include media(max-width em(640)) {
+    display: none;
+  }
+
   content: url(/images/github-icon.svg);
   width: $base-font-size * 1.2;
   height: $base-font-size * 1.2;
 
   position: relative;
   top: 0.2em;
-  margin: 0 0 0 em(5);// !important;
+  margin: 0 0 0 em(5);
 }
 
 img, svg, canvas, video, object[type="image/svg+xml"] {

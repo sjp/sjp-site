@@ -1,7 +1,8 @@
 @import "normalize/normalize";
 @import "bourbon/bourbon";
 @import "neat/neat";
-@import "bitters/base";
+@import "base/base";
+@import "sjp/flashes";
 
 body {
   @include outer-container;
@@ -29,10 +30,11 @@ article {
     font-weight: bolder;
     text-decoration: none;
   }
+}
 
-  a[href^=http]:after, a[href^=https]:after {
-    content: " (" attr(href) ") ";
-  }
+//a[href^=http]:after, a[href^=https]:after {
+a::after {
+  content: " (" attr(href) ") ";
 }
 
 .MathJax_Display {
@@ -48,7 +50,7 @@ footer {
     font-weight: normal;
   }
 
-  a:after {
+  a::after {
     content: "" !important;
   }
 }
@@ -68,7 +70,9 @@ code {
   padding: em(4) em(2);
 }
 
-.highlight code, .highlight span {
+.highlight code,
+.highlight span,
+.highlight p {
   display: inline-block;
   font-family: $mono-fonts;
   line-height: $base-font-size * 1.2;
@@ -76,14 +80,14 @@ code {
   margin: 0;
 }
 
-div.highlight pre {
+figure.highlight pre {
   margin: 0;
   background-color: #F8F8F8;
   border: em(1) solid #DEDEDE;
   padding: em(1);
 }
 
-div.highlight {
+figure.highlight {
   margin: em(20) 0;
 }
 
@@ -96,15 +100,6 @@ li .post-date {
 header .post-date {
   display: inline-block;
   margin-bottom: em(20);
-}
-
-.nav-icon {
-  position: relative;
-  display: inline-block;
-  top: 0.125em;
-  margin-left: em(5);
-  border: none;
-  box-shadow: none !important;
 }
 
 img, svg, canvas, video, object[type="image/svg+xml"] {
