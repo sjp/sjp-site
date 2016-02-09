@@ -4,11 +4,10 @@
 @import "base/base";
 @import "sjp/flashes";
 
-$small-navbar-width: 220px;
+$navbar-width: 220px;
 
 body {
   @include outer-container;
-  margin-left: 0;
   min-width: em(320);
 }
 
@@ -16,6 +15,7 @@ article {
   @include media(min-width em(641)) {
     @include span-columns(8);
     margin-top: em(40);
+    max-width: calc(100% - 240px);
   }
 
   @include media(max-width em(640), 8) {
@@ -57,6 +57,7 @@ nav {
     text-align: right;
     margin-top: em(40);
     border-right: em(1) solid #ccc;
+    width: $navbar-width;
 
     > h2 {
       text-transform: uppercase;
@@ -81,7 +82,7 @@ nav {
   }
 
   @include media(max-width em(640)) {
-    @include position(fixed, 0px auto 0px -220px); // -$small-navbar-width
+    @include position(fixed, 0px auto 0px -220px); // -$navbar-width
     @include size(em(220) 100%);
     @include transition(all .25s linear);
     z-index: 999999; // really want this to be on top
@@ -268,11 +269,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar-checkbox:checked ~ nav {
-  @include transform(translateX($small-navbar-width));
+  @include transform(translateX($navbar-width));
 }
 
 #navbar-checkbox:checked ~ article {
-  @include transform(translateX($small-navbar-width));
+  @include transform(translateX($navbar-width));
 }
 
 #navbar-checkbox:checked ~ article .navbar-button {
