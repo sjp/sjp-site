@@ -2,7 +2,7 @@ build-site:
 	@jekyll build
 	@gulp
 
-build:: jekyll setperms
+build:: build-site setperms
 	@echo
 	@echo "*** SITE BUILD SUCCESSFUL ***"
 	@echo
