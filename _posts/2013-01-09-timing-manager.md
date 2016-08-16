@@ -7,7 +7,7 @@ category: projects
 The TimingManager library is a tool written in JavaScript used to
 apply animations in a web browser. It is not concerned with creation
 or modification of animations, it delegates those tasks to
-[R](http://www.r-project.org/) via the {% ghr pmur002 animaker animaker %} package.
+[R](https://www.r-project.org/) via the {% ghr pmur002 animaker animaker %} package.
 Primarily TimingManager is focused on assigning
 actions to existing animations, then playing animation sequences using
 either a declarative or frame-based approach. In other words, use

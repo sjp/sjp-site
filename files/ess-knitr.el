@@ -1,6 +1,6 @@
 ;; Copyright (C) 2012 Simon Potter
 ;; Created: 22 May 2012
-;; http://sjp.co.nz/posts/emacs-ess-knitr/
+;; https://sjp.co.nz/posts/emacs-ess-knitr/
 
 ;; Define key-bindings for calling 'knit' and 'purl;
 ;; 'M-n r' - knit the current buffer

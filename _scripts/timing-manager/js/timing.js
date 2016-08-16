@@ -10,7 +10,7 @@
  * @class TimingManager
  * @constructor
  * @param {Array|Object} timingInfo Timing information, as
- * exported by the [animaker package](https://github.com/pmur002/animaker) in [R](http://www.r-project.org/). For more information, refer to `?export` in R once animaker has loaded.
+ * exported by the [animaker package](https://github.com/pmur002/animaker) in [R](https://www.r-project.org/). For more information, refer to `?export` in R once animaker has loaded.
  * @param {String} [timeUnit="ms"] Determine what time units the
  * timing information exported from animaker refers to. Must be one of
  * `"ms"` (milliseconds), `"s"` (seconds), or `"m"` (minutes).

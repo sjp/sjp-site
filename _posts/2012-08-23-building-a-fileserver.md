@@ -18,7 +18,7 @@ When I came across a post on [building a fileserver](https://mocko.org.uk/b/2012
 ### Pool to mirrored pool
 ### Share NFS
 
-http://docs.oracle.com/cd/E19082-01/817-2271/gcfhe/index.html
+https://docs.oracle.com/cd/E19082-01/817-2271/gcfhe/index.html
 
 ## Setting up AutoFS
 ### put up configs, but most importantly auto.fileserver

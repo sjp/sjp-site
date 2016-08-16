@@ -4,7 +4,7 @@ title: Exploring R's function call semantics
 category: posts
 ---
 
-After spending my summer working with [R](http://www.r-project.org/) I have
+After spending my summer working with [R](https://www.r-project.org/) I have
 become very familiar with its lesser-known features. An area which is rarely
 explored is how flexible function calls can be. This post will explore the
 various behaviours of function calls in R.

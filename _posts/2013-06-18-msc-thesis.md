@@ -9,8 +9,8 @@ Interactive and Reactive Statistical Graphics for the Web". The
 product of my thesis is a cohesive link between the powerful
 interactive and graphical capabilities of a web browser, and the
 statistical graphics and computing engine provided by
-[R](http://www.r-project.org/). My thesis is available on
-[ResearchSpace](http://hdl.handle.net/2292/20660) or on this website
+[R](https://www.r-project.org/). My thesis is available on
+[ResearchSpace](https://hdl.handle.net/2292/20660) or on this website
 by clicking the thumbnail below:
 
 <a href="/projects/msc-thesis/msc-thesis.pdf">
@@ -19,7 +19,7 @@ by clicking the thumbnail below:
 
 The basic idea is that while R is great for statistics, its graphics
 engine does not support dynamic and interactive graphics such as those
-created using [D3](http://d3js.org/). Additionally, while D3 is great
+created using [D3](https://d3js.org/). Additionally, while D3 is great
 for dynamic and interactive graphics, we have to get statistical
 information from elsewhere to visualise anything more than the most
 basic of statistical models. To get the best of both approaches, I

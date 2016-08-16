@@ -27,7 +27,7 @@ repository that it was forked from. Finally, for each repository ID in
 (in lines) were given.
 
 My entry for this contest was written in
-[R](http://www.r-project.org/) as I needed to learn it for a paper,
+[R](https://www.r-project.org/) as I needed to learn it for a paper,
 and there's no better way to learn a language than by
 practice. Fortunately, because the datasets were small, I would not
 run into any issues regarding the exhaustion of memory.
@@ -122,7 +122,7 @@ The technique I used to reduce recommendation times from 3 hours down
 to 30 seconds is something I'll never forget. It seems blatantly
 obvious now, not so much at the time.
 
-Although I had to use [Git](http://git-scm.com/) to submit my results,
+Although I had to use [Git](https://git-scm.com/) to submit my results,
 for some reason I felt like I could get away without having to use
 source control. This (obviously) turned out to be a pretty big
 mistake, as I ended up replicating copies of code at several states

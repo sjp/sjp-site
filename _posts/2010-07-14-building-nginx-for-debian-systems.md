@@ -4,7 +4,7 @@ title: Building nginx for Debian systems
 category: posts
 ---
 
-I was recently asked by [a friend](http://steelsky.co.nz/) to add a module to the [nginx](http://www.nginx.org/) web server that is serving both of our websites. Due to the fact that nginx statically links all of its modules into one binary, we cannot accomplish this in the typical Debian manner, i.e. something like `apt-get install nginx-modulename`. Because Debian doesn't provide builds that have the module he wanted, I had to apply the following solution, which required compiling my own nginx binary with the module he wanted.
+I was recently asked by [a friend](http://steelsky.co.nz/) to add a module to the [nginx](https://www.nginx.org/) web server that is serving both of our websites. Due to the fact that nginx statically links all of its modules into one binary, we cannot accomplish this in the typical Debian manner, i.e. something like `apt-get install nginx-modulename`. Because Debian doesn't provide builds that have the module he wanted, I had to apply the following solution, which required compiling my own nginx binary with the module he wanted.
 
 The following instructions are going to be assuming that Debian Squeeze is being used (though it should work with any Debian-based distro), and that we going to be building nginx with the [H264 Streaming Module for Nginx (version 2)](http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Nginx-Version2).
 
@@ -35,7 +35,7 @@ As `nginx-0.7.67` is the folder containing our source code, navigate to it.
 $ cd nginx-0.7.67
 {% endhighlight %}
 
-If you wish to add a custom module not provided by nginx, download the source to the `modules` folder. A good list of third party modules is listed on the [nginx wiki](http://wiki.nginx.org/Nginx3rdPartyModules). I'll be providing instructions for the H264 Streaming Module.
+If you wish to add a custom module not provided by nginx, download the source to the `modules` folder. A good list of third party modules is listed on the [nginx wiki](https://www.nginx.com/resources/wiki/modules/index.html). I'll be providing instructions for the H264 Streaming Module.
 
 {% highlight console %}
 $ cd modules
@@ -78,7 +78,7 @@ Save the file and quit `vim`. Now we need to modify the parameters that are pass
 $ vim rules
 {% endhighlight %}
 
-Scroll down the `rules` file until you reach roughly line 24. Here you'll see all of the configuration options that are going to be used when compiling nginx. If you wish to enable or disable modules that are distributed with nginx have a look through [a reference on the nginx wiki](http://wiki.nginx.org/NginxModules). These are reasonably easy to use, just add a line to the `rules` file as given by a couple of examples below.
+Scroll down the `rules` file until you reach roughly line 24. Here you'll see all of the configuration options that are going to be used when compiling nginx. If you wish to enable or disable modules that are distributed with nginx have a look through [a reference on the nginx wiki](https://www.nginx.com/resources/wiki/extending/compiling/). These are reasonably easy to use, just add a line to the `rules` file as given by a couple of examples below.
 
 {% highlight bash %}
 --without-http_empty_gif_module \
