@@ -54,7 +54,6 @@ Following that, we can begin to check out the grConvert package.
 
 {% highlight console %}
 # apt-get install subversion
-$ svn checkout svn://r-forge.r-project.org/svnroot/grimport/pkg/grConvert
 {% endhighlight %}
 
 {% highlight console %}
