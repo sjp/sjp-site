@@ -1,0 +1,305 @@
+@import "normalize/normalize";
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+@import "sjp/flashes";
+
+$navbar-width: 220px;
+
+body {
+  @include outer-container;
+  min-width: em(320);
+}
+
+article {
+  @include media(min-width em(641)) {
+    @include span-columns(8);
+    margin-top: em(40);
+    max-width: calc(100% - 240px);
+  }
+
+  @include media(max-width em(640), 8) {
+    @include transition(all .25s linear);
+    @include span-columns(8);
+  }
+
+  @include pad(0 default);
+
+  p {
+    text-align: justify;
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+
+  ol {
+    @extend %default-ol;
+  }
+
+  img, svg, canvas, video, object[type="image/svg+xml"] {
+    box-shadow: em(5) em(5) em(10) 0 #888;
+    margin: em(20) auto;
+  }
+}
+
+footer {
+  border-top: em(1) solid #ccc;
+  padding-top: em(20);
+  margin-top: em(20);
+}
+
+nav {
+  @include media(min-width em(641)) {
+    @include span-columns(4);
+    @include pad(0 default);
+    @include omega();
+    text-align: right;
+    margin-top: em(40);
+    border-right: em(1) solid #ccc;
+    width: $navbar-width;
+
+    > h2 {
+      text-transform: uppercase;
+      font-size: em(16);
+
+      &:first-child {
+        margin-top: em(20);
+      }
+    }
+
+    > ul {
+      margin-bottom: em(30);
+
+      &:last-child {
+        margin-bottom: em(20);
+      }
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  @include media(max-width em(640)) {
+    @include position(fixed, 0px auto 0px -220px); // -$navbar-width
+    @include size(em(220) 100%);
+    @include transition(all .25s linear);
+    z-index: 999999; // really want this to be on top
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    background-color: #202020;
+    color: #a4a4a4;
+
+    line-height: $base-font-size * 2.5;
+
+    > h2 {
+      text-transform: uppercase;
+      font-size: em(16);
+      margin-top: 2em;
+      padding: 0 1em;
+    }
+
+    a {
+      display: block;
+      color: #FFF;
+      background-color: #303030;
+      border-top: em(1) solid #444;
+      padding: 0 1em;
+      width: 100%;
+
+      &:hover {
+        background-color: lighten(#303030, 20%);
+        color: #FFF;
+      }
+    }
+
+    ul {
+      border-bottom: em(1) solid #444;
+      margin: 0.75em 0;
+    }
+
+    .nav-icon {
+      display: none;
+    }
+  }
+}
+
+@include media(min-width em(641)) {
+  .navbar-button {
+    display: none;
+  }
+}
+
+@include media(max-width em(640)) {
+  .navbar-button {
+    @include user-select(none);
+    float: left;
+    padding: 0.5rem 0.65rem;
+    color: #505050;
+    border: em(1) solid #505050;
+    border-radius: em(4);
+    cursor: pointer;
+    width: 2.25em;
+    margin: 0.7em 0.7em 0 0.3em;
+  }
+  
+  .navbar-button:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-bottom: .125rem;
+    border-top: .375rem double;
+    border-bottom: .125rem solid;
+  }
+}
+
+textarea {
+  line-height: $base-font-size * 1.2;
+}
+
+code {
+  font-family: $mono-fonts;
+  background-color: #f8f8f8;
+  border: em(1) solid #dedede;
+  padding: em(4) em(2);
+}
+
+code a {
+  color: $sjp-blue;
+}
+
+.highlight code,
+.highlight span,
+.highlight pre,
+.highlight p {
+  display: inline-block;
+  font-family: $mono-fonts;
+  line-height: $base-font-size * 1.2;
+  border: 0;
+  margin: 0;
+}
+
+div.highlight pre {
+  display: block;
+  background-color: #f8f8f8;
+  border: em(1) solid #dedede;
+  padding: em(1);
+}
+
+div.highlight {
+  margin: em(20) 0;
+}
+
+li .post-date {
+  @include media(em(641)) {
+    float: right;
+  }
+  @include media(max-width em(640)) {
+    &::before {
+        content: " — "
+    }
+  }
+}
+
+header .post-date {
+  display: inline-block;
+  margin-bottom: em(20);
+}
+
+.github-link::after {
+  @include media(em(641)) {
+    display: inline-block;
+  }
+  @include media(max-width em(640)) {
+    display: none;
+  }
+
+  content: url(/images/github-icon.svg);
+  width: $base-font-size * 1.2;
+  height: $base-font-size * 1.2;
+
+  position: relative;
+  top: 0.2em;
+  margin: 0 0 0 em(5);
+}
+
+img, svg, canvas, video, object[type="image/svg+xml"] {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a > img {
+  @include transition(all 250ms ease-out);
+  &:hover, &:focus {
+    box-shadow: 0 0 em(10) em(2) rgba(0, 140, 186, 0.5);
+  }
+}
+
+.notice {
+  @extend %flash-notice;
+  font-weight: normal;
+  border: em(1) solid darken($notice-color, 40%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.2em 0;
+}
+
+/* Utility classes */
+.span-minwidth {
+  min-width: em(300);
+  max-width: 100%;
+}
+
+.span-90pc {
+  @extend .span-minwidth;
+  width: 90%;
+}
+.span-50pc {
+  @extend .span-minwidth;
+  width: 50%;
+}
+
+/* For toggling sidebar on small screens */
+#navbar-checkbox {
+  display: none;
+}
+
+#navbar-checkbox:checked ~ nav {
+  @include transform(translateX($navbar-width));
+}
+
+#navbar-checkbox:checked ~ article {
+  @include transform(translateX($navbar-width));
+}
+
+#navbar-checkbox:checked ~ article .navbar-button {
+  color: #fff;
+  background-color: #505050; 
+}
+
+/* A few page-specific styles */
+#rainbow-output {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font: inherit !important;
+  font-size: 100% !important;
+  background-color: inherit !important;
+  vertical-align: baseline !important;
+}
+
+#rainbow-input {
+  font-family: $mono-fonts;
+}
+
+#hidden-gridsvg-code {
+  display: none;
+  &.is-visible {
+    display: block;
+  }
+}

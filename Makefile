@@ -1,6 +1,6 @@
 build-site:
-	@jekyll build
 	@gulp
+	@hugo
 
 build:: build-site setperms
 	@echo
@@ -12,7 +12,10 @@ setperms:
 	@find _site -type d -print0 | xargs -0 chmod 777
 
 clean:
-	-rm -rf _site/*
+	-rm -rf public/*
+	-rm -rf static/projects/rainbow
+	-rm -rf static/scripts
+	-rm -rf themes/SJP/static/styles
 
 all: build
 

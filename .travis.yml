@@ -1,15 +1,15 @@
-language: node_js
-node_js:
-    - "4.1"
+language: go
+go:
+    - 1.7.1
 before_install:
-    - rvm install 2.2.2
     - sudo apt-get update
-    - sudo apt-get install -y rubygems discount
-    - sudo pip install Pygments bibtex-pygments-lexer
-    - gem install jekyll sass rdiscount pygments.rb
+    - sudo apt-get install python-pygments nodejs
+    - sudo ln -s nodejs /usr/bin/node
 install:
-    - npm install -g gulp yuidocjs
+    - npm install -g gulp
     - npm install
+before_script:
+    - go get -u -v github.com/spf13/hugo
 script:
-    - jekyll build 
     - gulp
+    - hugo

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" viewBox="0 0 504 504" version="1.1">
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" version="1.3-0" time="2013-09-05 23:55:30"/>
+    <gridsvg:argument name="name" value="grImport2-gridSVG/Mississippi.svg"/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="72"/>
+    <gridsvg:argument name="prefix" value=""/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="vpPaths"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g transform="translate(0, 504) scale(1, -1)">
+    <g id="gridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" font-size="12" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
+      <defs>
+        <clipPath id="import.1.clip1.1">
+          <path id="import.1.clip1::GRID.gTree.4.1::GRID.picComplexPath.1.1::GRID.pathgrob.5.1.1" d="M 0 420 L 220.36 420 L 220.36 199.64 L 0 199.64 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+          <polyline id="import.1.clip1::GRID.gTree.4.1::GRID.picComplexPath.1.1::GRID.polyline.6.1.1" points="0,420 220.36,420 220.36,199.64 0,199.64 0,420" fill="none" fill-opacity="0"/>
+        </clipPath>
+        <clipPath id="import.1.clip2.1">
+          <path id="import.1.clip2::GRID.gTree.10.1::GRID.picComplexPath.7.1::GRID.pathgrob.11.1.1" d="M 0 420 L 220.36 420 L 220.36 199.64 L 0 199.64 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+          <polyline id="import.1.clip2::GRID.gTree.10.1::GRID.picComplexPath.7.1::GRID.polyline.12.1.1" points="0,420 220.36,420 220.36,199.64 0,199.64 0,420" fill="none" fill-opacity="0"/>
+        </clipPath>
+      </defs>
+      <g id="picture.shape::picture.scale.1">
+        <defs>
+          <clipPath id="picture.shape::picture.scale.2.clipPath">
+            <rect x="0" y="84" width="504" height="336" fill="none" stroke="none"/>
+          </clipPath>
+        </defs>
+        <g id="picture.shape::picture.scale.2" clip-path="url(#picture.shape::picture.scale.2.clipPath)">
+          <g id="import.1.GRID.gTree.74.1">
+            <g id="GRID.gTree.73.1">
+              <g id="GRID.rect.114.1">
+                <rect id="GRID.rect.114.1.1" x="0" y="84" width="504" height="336" fill="rgb(191,10,48)" stroke="none" stroke-opacity="0" fill-opacity="1"/>
+              </g>
+              <g id="GRID.picComplexPath.14.1" stroke="none" fill="rgb(0,0,0)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.115.1">
+                  <path id="GRID.pathgrob.115.1.1" d="M 0 420 L 218.54 201.46 Z M 0 201.46 L 218.54 420 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.116.1">
+                  <polyline id="GRID.polyline.116.1.1" points="0,420 218.54,201.46" fill="none" fill-opacity="0"/>
+                  <polyline id="GRID.polyline.116.1.2" points="0,201.46 218.54,420" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.gTree.20.1" clip-path="url(#import.1.clip1.1)">
+                <g id="GRID.picComplexPath.17.1" fill="none" stroke-width="43.71" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(255,255,255)" stroke-miterlimit="4" stroke-opacity="1" fill-opacity="0">
+                  <g id="GRID.pathgrob.117.1">
+                    <path id="GRID.pathgrob.117.1.1" d="M 0 420 L 218.54 201.46 Z M 0 201.46 L 218.54 420 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                  </g>
+                  <g id="GRID.polyline.118.1">
+                    <polyline id="GRID.polyline.118.1.1" points="0,420 218.54,201.46" fill="none" fill-opacity="0"/>
+                    <polyline id="GRID.polyline.118.1.2" points="0,201.46 218.54,420" fill="none" fill-opacity="0"/>
+                  </g>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.21.1" stroke="none" fill="rgb(0,0,0)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.119.1">
+                  <path id="GRID.pathgrob.119.1.1" d="M 0 420 L 218.54 201.46 Z M 0 201.46 L 218.54 420 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.120.1">
+                  <polyline id="GRID.polyline.120.1.1" points="0,420 218.54,201.46" fill="none" fill-opacity="0"/>
+                  <polyline id="GRID.polyline.120.1.2" points="0,201.46 218.54,420" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.gTree.27.1" clip-path="url(#import.1.clip2.1)">
+                <g id="GRID.picComplexPath.24.1" fill="none" stroke-width="32.78" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0,40,104)" stroke-miterlimit="4" stroke-opacity="1" fill-opacity="0">
+                  <g id="GRID.pathgrob.121.1">
+                    <path id="GRID.pathgrob.121.1.1" d="M 0 420 L 218.54 201.46 Z M 0 201.46 L 218.54 420 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                  </g>
+                  <g id="GRID.polyline.122.1">
+                    <polyline id="GRID.polyline.122.1.1" points="0,420 218.54,201.46" fill="none" fill-opacity="0"/>
+                    <polyline id="GRID.polyline.122.1.2" points="0,201.46 218.54,420" fill="none" fill-opacity="0"/>
+                  </g>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.28.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.123.1">
+                  <path id="GRID.pathgrob.123.1.1" d="M 21.85 409.07 L 28.28 389.31 L 11.46 401.52 L 32.25 401.52 L 15.43 389.31 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.124.1">
+                  <polyline id="GRID.polyline.124.1.1" points="21.85,409.07 28.28,389.31 11.46,401.52 32.25,401.52 15.43,389.31 21.85,409.07" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.31.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.125.1">
+                  <path id="GRID.pathgrob.125.1.1" d="M 50.99 379.94 L 57.42 360.17 L 40.6 372.38 L 61.38 372.38 L 44.57 360.17 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.126.1">
+                  <polyline id="GRID.polyline.126.1.1" points="50.99,379.94 57.42,360.17 40.6,372.38 61.38,372.38 44.57,360.17 50.99,379.94" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.34.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.127.1">
+                  <path id="GRID.pathgrob.127.1.1" d="M 80.13 350.8 L 86.55 331.03 L 69.74 343.25 L 90.52 343.25 L 73.71 331.03 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.128.1">
+                  <polyline id="GRID.polyline.128.1.1" points="80.13,350.8 86.55,331.03 69.74,343.25 90.52,343.25 73.71,331.03 80.13,350.8" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.37.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.129.1">
+                  <path id="GRID.pathgrob.129.1.1" d="M 138.41 292.52 L 144.83 272.75 L 128.01 284.97 L 148.8 284.97 L 131.98 272.75 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.130.1">
+                  <polyline id="GRID.polyline.130.1.1" points="138.41,292.52 144.83,272.75 128.01,284.97 148.8,284.97 131.98,272.75 138.41,292.52" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.40.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.131.1">
+                  <path id="GRID.pathgrob.131.1.1" d="M 167.55 263.38 L 173.97 243.62 L 157.15 255.83 L 177.94 255.83 L 161.12 243.62 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.132.1">
+                  <polyline id="GRID.polyline.132.1.1" points="167.55,263.38 173.97,243.62 157.15,255.83 177.94,255.83 161.12,243.62 167.55,263.38" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.43.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.133.1">
+                  <path id="GRID.pathgrob.133.1.1" d="M 196.68 234.24 L 203.11 214.48 L 186.29 226.69 L 207.08 226.69 L 190.26 214.48 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.134.1">
+                  <polyline id="GRID.polyline.134.1.1" points="196.68,234.24 203.11,214.48 186.29,226.69 207.08,226.69 190.26,214.48 196.68,234.24" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.46.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.135.1">
+                  <path id="GRID.pathgrob.135.1.1" d="M 196.68 409.07 L 190.26 389.31 L 207.08 401.52 L 186.29 401.52 L 203.11 389.31 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.136.1">
+                  <polyline id="GRID.polyline.136.1.1" points="196.68,409.07 190.26,389.31 207.08,401.52 186.29,401.52 203.11,389.31 196.68,409.07" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.49.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.137.1">
+                  <path id="GRID.pathgrob.137.1.1" d="M 167.55 379.94 L 161.12 360.17 L 177.94 372.38 L 157.15 372.38 L 173.97 360.17 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.138.1">
+                  <polyline id="GRID.polyline.138.1.1" points="167.55,379.94 161.12,360.17 177.94,372.38 157.15,372.38 173.97,360.17 167.55,379.94" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.52.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.139.1">
+                  <path id="GRID.pathgrob.139.1.1" d="M 138.41 350.8 L 131.98 331.03 L 148.8 343.25 L 128.01 343.25 L 144.83 331.03 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.140.1">
+                  <polyline id="GRID.polyline.140.1.1" points="138.41,350.8 131.98,331.03 148.8,343.25 128.01,343.25 144.83,331.03 138.41,350.8" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.55.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.141.1">
+                  <path id="GRID.pathgrob.141.1.1" d="M 80.13 292.52 L 73.71 272.75 L 90.52 284.97 L 69.74 284.97 L 86.55 272.75 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.142.1">
+                  <polyline id="GRID.polyline.142.1.1" points="80.13,292.52 73.71,272.75 90.52,284.97 69.74,284.97 86.55,272.75 80.13,292.52" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.58.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.143.1">
+                  <path id="GRID.pathgrob.143.1.1" d="M 50.99 263.38 L 44.57 243.62 L 61.38 255.83 L 40.6 255.83 L 57.42 243.62 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.144.1">
+                  <polyline id="GRID.polyline.144.1.1" points="50.99,263.38 44.57,243.62 61.38,255.83 40.6,255.83 57.42,243.62 50.99,263.38" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.61.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.145.1">
+                  <path id="GRID.pathgrob.145.1.1" d="M 21.85 234.24 L 15.43 214.48 L 32.25 226.69 L 11.46 226.69 L 28.28 214.48 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.146.1">
+                  <polyline id="GRID.polyline.146.1.1" points="21.85,234.24 15.43,214.48 32.25,226.69 11.46,226.69 28.28,214.48 21.85,234.24" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.64.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.147.1">
+                  <path id="GRID.pathgrob.147.1.1" d="M 109.27 321.66 L 115.69 301.89 L 98.88 314.11 L 119.66 314.11 L 102.85 301.89 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.148.1">
+                  <polyline id="GRID.polyline.148.1.1" points="109.27,321.66 115.69,301.89 98.88,314.11 119.66,314.11 102.85,301.89 109.27,321.66" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.67.1" stroke="none" fill="rgb(255,255,255)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.149.1">
+                  <path id="GRID.pathgrob.149.1.1" d="M 218.54 420 L 504 420 L 504 196 L 0 196 L 0 201.46 L 218.54 201.46 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.150.1">
+                  <polyline id="GRID.polyline.150.1.1" points="218.54,420 504,420 504,196 0,196 0,201.46 218.54,201.46 218.54,420" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+              <g id="GRID.picComplexPath.70.1" stroke="none" fill="rgb(0,40,104)" stroke-opacity="0" fill-opacity="1">
+                <g id="GRID.pathgrob.151.1">
+                  <path id="GRID.pathgrob.151.1.1" d="M 224 420 L 504 420 L 504 308 L 224 308 Z" fill-rule="nonzero" stroke="none" stroke-opacity="0"/>
+                </g>
+                <g id="GRID.polyline.152.1">
+                  <polyline id="GRID.polyline.152.1.1" points="224,420 504,420 504,308 224,308 224,420" fill="none" fill-opacity="0"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

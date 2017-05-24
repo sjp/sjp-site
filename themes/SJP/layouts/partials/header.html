@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta name="author" content="{{ .Site.Author.name }}">
+<title>{{ if .IsHome }}{{ .Site.Author.name }}{{ else }}{{ .Title }} | {{ .Site.Author.name }}{{ end }}</title>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic%7CInconsolata" media="screen,print">
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}styles/style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}styles/print.css" media="print">
+<link rel="icon" sizes="16x16 32x32" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+<link rel="icon" sizes="192x192" type="image/png" href="{{ .Site.BaseURL }}favicon-256.png">
+<link rel="icon" sizes="any" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
+<link rel="apple-touch-icon" type="image/png" href="{{ .Site.BaseURL }}favicon-256.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ .Site.BaseURL }}index.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="Search sjp.co.nz" href="{{ .Site.BaseURL }}opensearch.xml">

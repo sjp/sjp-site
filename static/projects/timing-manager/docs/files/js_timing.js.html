@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js/timing.js - TimingManager</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="TimingManager" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/TimingManager.html">TimingManager</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: js/timing.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * This code is licensed under the GPL-2 licence.
+ */
+
+/**
+ * Consumes timing information and runs handlers bound to animation
+ * labels.
+ *
+ * @author Simon Potter
+ * @class TimingManager
+ * @constructor
+ * @param {Array|Object} timingInfo Timing information, as
+ * exported by the [animaker package](https://github.com/pmur002/animaker) in [R](http://www.r-project.org/). For more information, refer to &#x60;?export&#x60; in R once animaker has loaded.
+ * @param {String} [timeUnit=&quot;ms&quot;] Determine what time units the
+ * timing information exported from animaker refers to. Must be one of
+ * &#x60;&quot;ms&quot;&#x60; (milliseconds), &#x60;&quot;s&quot;&#x60; (seconds), or &#x60;&quot;m&quot;&#x60; (minutes).
+ */
+var TimingManager = function(timingInfo, timeUnit) {
+    // If we&#x27;ve just exported a single animation, force it
+    // to be an array to generalise the rest of the code to arrays.
+    if (! _.isArray(timingInfo))
+        timingInfo = [timingInfo];
+
+    // Assume milliseconds by default, as that&#x27;s natural in JS
+    timeUnit = timeUnit || &quot;ms&quot;;
+    if (! (_.isString(timeUnit) &amp;&amp;
+           _.contains([&quot;ms&quot;, &quot;s&quot;, &quot;m&quot;], timeUnit)))
+        throw new Error(&quot;Invalid &#x27;timeUnit&#x27;: Must be one of &#x27;ms&#x27;, &#x27;s&#x27;, &#x27;m&#x27;&quot;);
+
+    // Where all our animation actions will be stored
+    var callbacks = {};
+    // When playing back, store promises to display here
+    var promises = [];
+
+    // Converts a unit of time to milliseconds
+    var toMs = function(t) {
+        if (timeUnit === &quot;ms&quot;)
+            return t;
+        if (timeUnit === &quot;s&quot;)
+            return t * 1000;
+        if (timeUnit === &quot;m&quot;)
+            return t * 60 * 1000;
+        throw new Error(&quot;Invalid &#x27;timeUnit&#x27;: &quot; + timeUnit);
+    };
+
+    /**
+     * Registers an action to an animation
+     *
+     * @method register
+     * @param {Object} fns An object where the keys are the labels for an animation, and the values are a function to register as an action to that animation
+     * @param {Boolean} [overwrite=false] Allows us to overwrite existing actions for animations.
+     */
+    this.register = function(fns, overwrite) {
+        for (var f in fns) {
+            if (! callbacks[f] || overwrite)
+                callbacks[f] = fns[f];
+        }
+    };
+
+    // Checks whether we have any actions associated with animations
+    var ensureNonEmpty = function() {
+        if (_.isEmpty(callbacks))
+            throw new Error(&quot;No actions assigned to animations, see &#x27;register()&#x27;&quot;);
+    };
+
+    /**
+     * Plays all animations associated with actions
+     *
+     * @method play
+     * @param {Number} [t=0] An optional delay (in &#x60;timeUnit&#x60;s) to add to the entire animation.
+     */
+    this.play = function(t) {
+        ensureNonEmpty();
+        t = t || 0; // Default to 0 ms
+        _.each(timingInfo, function(anim) {
+            if (callbacks[anim.label]) {
+                promises.push(Promise.delay(t + toMs(anim.start))
+                    .cancellable()
+                    .then(function() {
+                        callbacks[anim.label](anim);
+                    })
+                    .catch(Promise.CancellationError, function(e) {
+                        e = null;
+                    }));
+            } else {
+                console.warn(&quot;Ignoring playback of animation: &quot; + anim.label);
+            }
+        });
+        Promise.all(promises);
+    };
+
+    /**
+     * Cancels all pending animations that are queued by the timing manager.
+     *
+     * @method cancel
+     */
+    this.cancel = function() {
+        _.each(promises, function(p) {
+            p.cancel();
+        });
+        promises = [];
+    };
+
+    /**
+     * Returns all of the timing information about the frames that are to be played at a given time.
+     *
+     * @method frameTiming
+     * @param {Number} [t=0] The time in *milliseconds* to select an animation from
+     * @return {Array} A list of matching animations to play at the current time
+     */
+    this.frameTiming = function(t) {
+        t = t || 0; // Default to 0
+        return _.filter(timingInfo, function(info) {
+            return (t &gt;= toMs(info.start)) &amp;&amp;
+                    (t &lt; toMs(info.start + info.durn));
+        });
+    };
+
+    /**
+     * Plays all animations associated with actions at a given rate per second.
+     *
+     * @method frameApply
+     * @param {Number} [fps=10] How many frames per second are going to be drawn. By default this is 10.
+     * @param {Number} [t=0] An optional delay (in &#x60;timeUnit&#x60;s) to add to the entire animation
+     */
+    this.frameApply = function(fps, t) {
+        ensureNonEmpty();
+        t = t || 0;
+        t = toMs(t);
+        fps = fps || 10;
+        if (fps &lt;= 0)
+            throw new Error(&quot;Frames per second must be &gt; 0&quot;);
+        var increment = 1000 / fps;
+        var durn = 0;
+        _.each(timingInfo, function(info) {
+            durn = Math.max(durn, toMs(info.start + info.durn));
+        });
+        var times = [];
+        var i;
+        for (i = 0; (i * increment) &lt; durn; i++) {
+            times.push(t + (i * increment));
+        }
+
+        // Do the playback after a delay in ms
+        var playFrame = function(anim, t) {
+            if (callbacks[anim.label]) {
+                promises.push(Promise.delay(t)
+                    .cancellable()
+                    .then(function() {
+                        callbacks[anim.label](anim);
+                    })
+                    .catch(Promise.CancellationError, function(e) {
+                        e = null;
+                    }));
+            } else {
+                console.warn(&quot;Ignoring playback of animation: &quot; + anim.label);
+            }
+        };
+
+        // A convenience generator function for playing back timing information
+        var singleTiming = function(t) {
+            return function(info) {
+                playFrame(info, t);
+            };
+        };
+
+        // Play each frame
+        for (i = t; i &lt; _.last(times); i += increment) {
+            var currentTiming = this.frameTiming(i);
+            if (currentTiming) {
+                _.each(currentTiming, singleTiming(i));
+            }
+        }
+
+        Promise.all(promises);
+    };
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

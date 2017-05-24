@@ -1,0 +1,7 @@
+baseURL = "https://sjp.co.nz/"
+title = "Simon Potter"
+theme = "SJP"
+pygmentsstyle = "default"
+
+[Author]
+  name = "Simon Potter"

@@ -1,0 +1,1 @@
+<a href="https://github.com/{{ with .Get "user" }}{{.}}{{ end }}/{{ with .Get "repo" }}{{.}}{{ end }}" class="github-link">{{ if .Get "text" }}{{ with .Get "text" }}{{.}}{{ end }}{{ else }}{{ with .Get "repo" }}{{.}}{{ end }}{{ end }}</a>
