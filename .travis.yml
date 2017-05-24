@@ -1,10 +1,13 @@
+dist: trusty
+sudo: required
 language: go
 go:
-    - 1.7.1
+    - 1.7.3
 before_install:
-    - sudo apt-get update
-    - sudo apt-get install python-pygments nodejs
-    - sudo ln -s nodejs /usr/bin/node
+    - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    - sudo apt-get update -qq
+    - sudo apt-get install -y nodejs
+    - sudo pip install pygments
 install:
     - npm install -g gulp
     - npm install
