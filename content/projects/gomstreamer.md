@@ -3,7 +3,7 @@ date = "2011-01-05"
 title = "GOMstreamer"
 +++
 
-<p class="notice">This project is now [inactive]({{< ref "posts/retiring-gomstreamer.md" >}}). Visit <a href="http://www.gomtv.net/">GOMtv</a> to watch GSL streams from now on.</p>
+<p class="notice">This project is now <a href="https://sjp.co.nz/posts/retiring-gomstreamer/">inactive</a>. Visit <a href="http://www.gomtv.net/">GOMtv</a> to watch GSL streams from now on.</p>
 
 The GOMstreamer tool is used to allow Windows, OSX and Linux users to watch the [GOMtv GSL](http://www.gomtv.net/) via [VLC](https://www.videolan.org/vlc/). GOMstreamer was originally based on the prior work of [Tomas Herman](https://github.com/tomasherman) but has been updated to work on newer seasons' streams, along with the addition of new features. *Note: This requires a [GOMtv](http://www.gomtv.net/) account to work and the account must solely authenticate with GOMtv and not via a third party (e.g. Twitter, Facebook).*
 
