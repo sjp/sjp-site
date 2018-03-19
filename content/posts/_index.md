@@ -1,5 +1,6 @@
 +++
 title = "Posts"
+layout = "single"
 +++
 ## 2013
 

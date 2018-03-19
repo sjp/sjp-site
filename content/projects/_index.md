@@ -1,5 +1,6 @@
 +++
 title = "Projects"
+layout = "single"
 +++
 Below are a list of projects that I have created or worked on at some point:
 

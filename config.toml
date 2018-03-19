@@ -1,7 +1,8 @@
 baseURL = "https://sjp.co.nz/"
 title = "Simon Potter"
 theme = "SJP"
-pygmentsstyle = "default"
+disableHugoGeneratorInject = true
+pygmentsStyle = "pastie"
 
 [Author]
   name = "Simon Potter"

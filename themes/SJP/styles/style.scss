@@ -181,14 +181,14 @@ code a {
   margin: 0;
 }
 
-div.highlight pre {
+.highlight pre {
   display: block;
-  background-color: #f8f8f8;
+  background-color: #f8f8f8 !important;
   border: em(1) solid #dedede;
   padding: em(1);
 }
 
-div.highlight {
+.highlight {
   margin: em(20) 0;
 }
 
