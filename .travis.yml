@@ -12,7 +12,7 @@ install:
     - npm install -g gulp
     - npm install
 before_script:
-    - go get -u -v github.com/spf13/hugo
+    - go get -u -v github.com/gohugoio/hugo
 script:
     - gulp
     - hugo
