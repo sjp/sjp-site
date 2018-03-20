@@ -3,6 +3,7 @@ title = "Simon Potter"
 theme = "SJP"
 disableHugoGeneratorInject = true
 pygmentsStyle = "pastie"
+pygmentsUseClassic = true
 
 [Author]
   name = "Simon Potter"
