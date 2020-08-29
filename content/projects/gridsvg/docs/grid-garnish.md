@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "grid.garnish"
 +++
 
-<p class="notice">This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.</p>
+{{< important >}}This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.{{</ important >}}
 
 The function `grid.garnish()` allows a user to add arbitrary attributes to grid
 graphics objects. These attributes are then applied to the SVG element that the
@@ -29,7 +29,7 @@ will be generated.
 The application of this function is going to be demonstrated with the use of
 the `onclick` event attribute on a graphics object.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -59,7 +59,9 @@ is possible to produce complex interactive graphics with gridSVG. The resulting
 image produced from the above example is shown below (try clicking on the
 square):
 
-<object data="grid-garnish-example.svg" type="image/svg+xml" class="span-90pc"></object>
+{{< html >}}
+<object data="../grid-garnish-example.svg" type="image/svg+xml"></object>
+{{</ html >}}
 
 While knowledge of JavaScript is required to perform interactivity, it is not
 an uncommon language and fortunately there is plenty of documentation available
@@ -70,5 +72,3 @@ An example where `grid.garnish()` is demonstrated is in the
 [Tooltips]({{< ref "projects/gridsvg/demos/tooltips.md" >}}) example where the SVG elements
 produced from a graphics object cause the name of the graphics object to appear
 as text in a tooltip.
-
-<script async src="/scripts/gridsvg-scripts.js"></script>

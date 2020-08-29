@@ -12,9 +12,7 @@ statistical graphics and computing engine provided by
 [ResearchSpace](https://hdl.handle.net/2292/20660) or on this website
 by clicking the thumbnail below:
 
-<a href="msc-thesis.pdf">
-  <img src="msc-thesis.svg" alt="Masters Thesis" class="span-50pc">
-</a>
+[![Masters Thesis](msc-thesis.svg)](msc-thesis.pdf)
 
 The basic idea is that while R is great for statistics, its graphics
 engine does not support dynamic and interactive graphics such as those
@@ -43,9 +41,7 @@ On the 27th of June 2013 I gave a seminar presentation at the
 University of Auckland in the Department of Statistics. The slides can
 be viewed by clicking the thumbnail below:
 
-<a href="slides/seminar.html" title="Seminar">
-  <img src="seminar.png" width="430" height="341" alt="Seminar">
-</a>
+[![Seminar](seminar.png)](slides/seminar.html)
 
 Some of the examples in the seminar were R web applications that were
 running from my laptop. To view these examples, you will need to use
@@ -93,7 +89,7 @@ To view videos of examples created as part of my thesis, click one of the links 
 
 ### animaker
 
-`animaker` is developed on {{< ghr user="pmur002" repo="animaker" text="GitHub" >}} and is
+`animaker` is developed on [GitHub](https://github.com/pmur002/animaker) and is
 not (yet) available on CRAN. The following links are simply builds
 from the latest revision of the GitHub repository.
 
@@ -103,7 +99,7 @@ from the latest revision of the GitHub repository.
 
 ### sjpMScThesis
 
-The `sjpMScThesis` package is developed on {{< ghr user="sjp" repo="sjpMScThesis" text="GitHub" >}}. The following links, like `animaker`, are builds from the
+The `sjpMScThesis` package is developed on [GitHub](https://github.com/sjp/sjpMScThesis). The following links, like `animaker`, are builds from the
 latest revision of the GitHub repository.
 
 * Windows Binary: [sjpMScThesis_1.1-0.zip](/projects/msc-thesis/sjpMScThesis_1.1-0.zip)
@@ -122,7 +118,7 @@ and `Rook` port selection).
 To run the "LOESS Smoother Example", all that is required is the
 following code:
 
-{{< highlight R >}}
+{{< highlight r >}}
 library(sjpMScThesis)
 thesisExample("loess")
 {{< /highlight >}}
@@ -131,7 +127,7 @@ To stop an example, simply call `stopThesisExample()`.
 
 For a list of the available examples, see `listThesisExamples()`.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > listThesisExamples()
  arima: Interactive ARIMA Model Diagnostics
  hexbin: Hexagonal Binning Comparisons

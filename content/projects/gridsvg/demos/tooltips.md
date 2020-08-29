@@ -16,7 +16,9 @@ were made to the implementation of `addTooltips()`, mostly with regards to the
 JavaScript code and using the `onmousemove` event attribute instead of
 `onmouseover`.
 
-<object data="tooltips.svg" type="image/svg+xml" class="span-90pc"></object>
+{{< html >}}
+<object data="tooltips.svg" type="image/svg+xml"></object>
+{{</ html >}}
 
 One of the demos from the lattice package has been drawn, upon drawing we apply
 the `addTooltips()` function to add tooltips to the plot. The effect of this is
@@ -24,9 +26,8 @@ that when hovering the mouse over a graphical element in the plot, we can see
 the name of the grid graphics object that produced it.
 
 * [Download the code](tooltips-code.zip)
-* <a id="gridsvg-code-toggle" href="#">Show me the code and how it works</a>
 
-<div id="hidden-gridsvg-code">
+## How It Works
 
 {{< highlight r >}}
 library(gridSVG)
@@ -87,7 +88,3 @@ Here we're simply going to use the `lattice` package and use one of its demo
 plots to illustrate tooltip usage. In particular we're going to draw the third
 lattice demo. Once the demo has been drawn, we can add tooltips to the
 plot by saving the plot as `tooltips.svg` with `addTooltips()`.
-
-</div>
-
-<script async src="/scripts/gridsvg-scripts.js"></script>

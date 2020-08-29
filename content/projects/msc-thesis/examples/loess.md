@@ -22,13 +22,13 @@ The following video demonstrates the `loess` example found in the
 To run this example yourself, open R and run the following
 command: `library(sjpMScThesis) ; thesisExample("loess")`
 
-<video controls class="span-90pc">
+{{< html >}}
+<video controls>
   <source src="loess.mp4" type="video/mp4; codecs=avc1.64001E">
   <source src="loess.webm" type="video/mp4; codecs=vp8">
   <source src="loess-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
-
-This video is best viewed in full-screen.
+{{</ html >}}
 
 ## Download
 
@@ -36,5 +36,3 @@ This video example is available in both MP4 (x264) and WebM formats:
 
 * [MP4](loess.mp4)
 * [WebM](loess.webm)
-
-<script async src="/scripts/video-detect.js"></script>

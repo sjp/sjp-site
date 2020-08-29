@@ -1,9 +1,0 @@
-name = "SJP"
-description = "SJP is the theme for Simon Potter's website"
-license = "MIT"
-min_version = 0.20
-
-[author]
-    name = "Simon Potter"
-    homepage = "https://sjp.co.nz/"
-

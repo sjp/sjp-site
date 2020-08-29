@@ -1,5 +1,4 @@
 +++
-type = "single"
 title = "Simon Potter"
 +++
 

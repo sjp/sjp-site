@@ -1,9 +1,53 @@
 baseURL = "https://sjp.co.nz/"
-title = "Simon Potter"
-theme = "SJP"
-disableHugoGeneratorInject = true
-pygmentsStyle = "pastie"
-pygmentsUseClassic = true
 
-[Author]
-  name = "Simon Potter"
+languageCode = "en-nz"
+title = "Simon Potter"
+theme = "hyde-hyde"
+
+[params]
+    author = "Simon Potter"
+    title = "Title"
+    dateformat = "Jan 2, 2006"
+
+    # sidebar, copyright & license
+    copyright = "Simon Potter"
+    since = 2020
+    license = "CC BY-SA 4.0"
+    licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+
+    postNavigation = false
+
+[params.social]
+    github = "sjp"
+    email = "simon@sjp.co.nz"
+
+## Main Menu
+[[menu.main]]
+    name = "Home"
+    weight = 100
+    identifier = "home"
+    url = "/"
+[[menu.main]]
+    name = "Posts"
+    weight = 200
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "Projects"
+    identifier = "projects"
+    weight = 300
+    url = "/projects/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 400
+    url = "/about/"
+
+
+[markup]
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        tabWidth = 4
+        style = "pastie"
+        noClasses = false

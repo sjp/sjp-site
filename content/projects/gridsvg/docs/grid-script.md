@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "grid.script"
 +++
 
-<p class="notice">This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.</p>
+{{< important >}}This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.{{</ important >}}
 
 The function `grid.script()` allows the inclusion of JavaScript text or files
 within an SVG image. When used in conjunction with
@@ -25,7 +25,7 @@ enable JavaScript to be embedded within an SVG image, rather than linked to an
 external resource (this is implied when using the `script` argument).  A
 demonstration of `grid.script()` is shown below:
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > # Loading gridSVG
 > library(gridSVG)
 > 

@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "grid.animate"
 +++
 
-<p class="notice">To animate complex units, use the <code>animUnit()</code> function in gridSVG. Documentation on <code>animUnit()</code> is available in a <a href="https://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf">draft article</a>.</p>
+{{< important >}}To animate complex units, use the `animUnit()` function in gridSVG. Documentation on `animUnit()` is available in a [draft article](https://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf.{{</ important >}}
 
 The function `grid.animate()` provides a user the ability to perform animation
 on graphics objects. This is accomplished using SMIL animation and SVG's
@@ -41,7 +41,7 @@ A simple example to use in place of `...` might be something like `x = animUnit(
 This will smoothly animate a given graphics object along the `x` axis through `npc`
 units of 0.1, 0.2, ..., 0.5. A more complete example is shown below:
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -90,6 +90,4 @@ Now that this animation information has been added to `GRID.rect.1`,
 gridSVG can write to SVG, applying the animation information associated with
 `GRID.rect.1`. The resulting image is shown below.
 
-<img src="grid-animate-example.svg" alt="grid.animate() Example Figure" class="span-90pc">
-
-<script async src="/scripts/gridsvg-scripts.js"></script>
+![grid.animate Example Figure](../grid-animate-example.svg)

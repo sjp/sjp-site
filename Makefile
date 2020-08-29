@@ -1,5 +1,4 @@
 build-site:
-	@gulp
 	@hugo
 
 build:: build-site setperms
@@ -13,9 +12,6 @@ setperms:
 
 clean:
 	-rm -rf public/*
-	-rm -rf static/projects/rainbow
-	-rm -rf static/scripts
-	-rm -rf themes/SJP/static/styles
 
 deploy:
 	-rsync -avh public/ sjp.co.nz:/var/www/sjp.co.nz/ --delete

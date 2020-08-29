@@ -16,18 +16,17 @@ An attempt has been made by [Paul
 Murrell](https://www.stat.auckland.ac.nz/~paul/) to replicate this type of plot
 (including interactivity) using gridSVG.
 
-<object data="aqm.svg" type="image/svg+xml" class="span-90pc"></object>
+{{< html >}}
+<object data="aqm.svg" type="image/svg+xml"></object>
+{{</ html >}}
 
 By hovering over each of the points, we are able to highlight the point by
 enlarging it. Not only is the point enlarged, but the name of the point is
 shown on the bottom-left of the plot.
 
 * [Download the code](aqm-code.zip)
-* <a id="gridsvg-code-toggle" href="#">Show me the code and how it works</a>
 
-{{< html >}}
-<div id="hidden-gridsvg-code">
-{{< /html >}} 
+## How It Works
 
 {{< highlight r >}}
 library(grid)
@@ -138,9 +137,3 @@ the JavaScript code is embedded within the SVG image, making it easier to
 distribute. The JavaScript file `aqm.js` defines the `highlight()` and `dim()`
 functions that we are using to perform interactivity. Once this is included, we
 can save the plot as SVG with `grid.export()`.
-
-{{< html >}}
-</div>
-{{< /html >}}
-
-<script async src="/scripts/gridsvg-scripts.js"></script>

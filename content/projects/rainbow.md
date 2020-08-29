@@ -5,7 +5,7 @@ title = "Rainbow"
 
 [Rainbow](https://craig.is/making/rainbows/) is a lightweight syntax highlighter implemented in JavaScript.
 
-I have added support for the R language and ported the pastie theme (with a few minor differences) from [Pygments](http://pygments.org/) to Rainbow. These changes have been incorporated by [Craig Campbell](https://craig.is/) in the {{< ghr user="ccampbell" repo="rainbow" text="canonical Rainbow repository" >}}.
+I have added support for the R language and ported the pastie theme (with a few minor differences) from [Pygments](http://pygments.org/) to Rainbow. These changes have been incorporated by [Craig Campbell](https://craig.is/) in the [Rainbow GitHub repository](https://github.com/ccampbell/rainbow).
 
 Due to the limitations of JavaScript's implementation of regular expressions, highlighting R output (like you would see in an R session, with prompts) is more challenging and thus was not attempted.
 
@@ -25,7 +25,7 @@ rand &lt;- rnorm(100, mean = 20, sd = 2)
 mu &lt;- mean(rand)
 v &lt;- variance(rand)
 mu.diff &lt;- abs(20 - mu)
-sd.diff &lt;- abs(2 - sqrt(v))" >}}</textarea>
+sd.diff &lt;- abs(2 - sqrt(v))</textarea>
 <form style="margin-bottom: 2em">
 <label for="rainbow-theme">Select theme</label>
 <select name="themeselect" id="rainbow-theme">
@@ -45,6 +45,7 @@ sd.diff &lt;- abs(2 - sqrt(v))" >}}</textarea>
 </form>
 <pre style="max-width: 100%"><code id="rainbow-output" data-language="r" style="width: 100%"></code></pre>
 </div>
-{{< /html >}}
 
 <script async src="js/rainbow-demo.js"></script>
+{{< /html >}}
+

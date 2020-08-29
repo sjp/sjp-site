@@ -9,16 +9,15 @@ for well-known tech companies from [Google Finance](https://www.google.com/finan
 The idea behind this demonstration is to show how animation can be applied to
 time series data, in particular with line graphs.
 
-<img src="stock-prices.svg" alt="Stock Prices Example Figure" class="span-90pc">
+![Stock Prices Example Figure](stock-prices.svg)
 
 We can see how the lines appear to "draw" themselves over time. Although this
 is a basic demonstration, it might appear more engaging to a casual observer
 than a static plot.
 
 * [Download the code](stock-ticker.zip)
-* <a id="gridsvg-code-toggle" href="#">Show me the code and how it works</a>
 
-<div id="hidden-gridsvg-code">
+## How It Works
 
 {{< highlight r >}}
 library(gridSVG)
@@ -121,7 +120,7 @@ rest of the vector. For time period 2, this means that we have the first two
 values defined, then the rest are just repeating the second value (and so on). To
 illustrate, see the matrix below. 
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
    x1 x2 x3 x4 x5
 t1  1  1  1  1  1
 t2  1  2  2  2  2
@@ -168,7 +167,3 @@ We now annotate the polyline graphics object with the `animUnit`s using
 animation is intended to last 30 seconds and repeat once the animation
 completes. Upon annotating the graphics object we finish by getting gridSVG to
 draw the graphics object, saving it to `stock-ticker.svg`.
-
-</div>
-
-<script async src="/scripts/gridsvg-scripts.js"></script>

@@ -1,7 +1,8 @@
 +++
 title = "Projects"
-layout = "single"
+type = "projects"
 +++
+
 Below are a list of projects that I have created or worked on at some point:
 
 * [GeneralizedHyperbolic]({{< ref "projects/ghyp.md" >}}) -- An R package for working with the generalised hyperbolic and related distributions.

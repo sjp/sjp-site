@@ -24,7 +24,7 @@ This font stack tells the browser to first try using the Helvetica font and if t
 
 A typical workflow for using `getSVGFonts()` and `setSVGFonts()` is shown below. The intent of this code is to use the [Inconsolata](http://www.levien.com/type/myfonts/inconsolata.html) font for monospaced text if possible.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > fonts <- getSVGFonts()
 > names(fonts)
 [1] "sans" "serif" "mono"
@@ -45,6 +45,4 @@ The general process going on here is the following:
 
 By using `getSVGFonts()` and `setSVGFonts()` we are able to provide a means of using a wide variety of fonts if they are available to the browser. The result of the example shown earlier is the SVG image that appears below:
 
-<img src="get-set-svgfonts-example.svg" alt="Custom Fonts Example Figure" class="span-90pc">
-
-<script async src="/scripts/gridsvg-scripts.js"></script>
+![Custom Fonts Example Figure](../get-set-svgfonts-example.svg)

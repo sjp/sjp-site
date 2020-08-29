@@ -25,13 +25,13 @@ The following video demonstrates the `mds` example found in the
 To run this example yourself, open R and run the following
 command: `library(sjpMScThesis) ; thesisExample("mds")`
 
-<video controls class="span-90pc">
+{{< html >}}
+<video controls>
   <source src="multidimensional-scaling.mp4" type="video/mp4; codecs=avc1.64001E">
   <source src="multidimensional-scaling.webm" type="video/webm; codecs=vp8">
   <source src="multidimensional-scaling-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
-
-This video is best viewed in full-screen.
+{{</ html >}}
 
 ## Download
 
@@ -39,5 +39,3 @@ This video example is available in both MP4 (x264) and WebM formats:
 
 * [MP4](multidimensional-scaling.mp4)
 * [WebM](multidimensional-scaling.webm)
-
-<script async src="/scripts/video-detect.js"></script>

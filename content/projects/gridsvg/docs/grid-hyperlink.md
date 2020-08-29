@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "grid.hyperlink"
 +++
 
-<p class="notice">This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.</p>
+{{< important >}}This documentation may lag behind the latest version, use the documentation provided with the package for up to date information.{{</ important >}}
 
 The function `grid.hyperlink()` enables the use of hyperlinks within an SVG
 image. By clicking an SVG element that contains a hyperlink, one can visit
@@ -26,7 +26,7 @@ or optionally a different hyperlink when `FALSE`.
 
 An example of how this function is used is shown below:
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -44,6 +44,6 @@ load the address `https://sjp.co.nz/`.
 
 The image produced by the example code is shown below:
 
-<object data="grid-hyperlink-example.svg" type="image/svg+xml" class="span-90pc"></object>
-
-<script async src="/scripts/gridsvg-scripts.js"></script>
+{{< html >}}
+<object data="../grid-hyperlink-example.svg" type="image/svg+xml"></object>
+{{</ html >}}

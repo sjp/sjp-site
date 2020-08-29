@@ -7,10 +7,10 @@ A series of [bootstrapping animations](https://www.stat.auckland.ac.nz/~wild/Boo
 
 Although frame-by-frame animations were available, an attempt has been made by [Paul Murrell](https://www.stat.auckland.ac.nz/~paul/) to replicate the "One-sample, continuous variable" example using gridSVG.
 
-<img src="wildanim.svg" type="Teaching Example Figure" class="span-90pc">
+{{< html >}}
+<object data="wildanim.svg" type="image/svg+xml"></object>
+{{</ html >}}
 
 We can see that much of the animation has been replicated, however, because we are using native SVG animation the gridSVG example appears a lot smoother than the original.
 
 * [Download the code](teaching-example.R)
-
-<script async src="/scripts/gridsvg-scripts.js"></script>

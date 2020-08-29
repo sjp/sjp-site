@@ -7,7 +7,7 @@ The selectr package for [R](https://www.r-project.org/) parses [CSS3
 Selectors](https://www.w3.org/TR/css3-selectors/) and translates them
 to [XPath 1.0](https://www.w3.org/TR/xpath/) expressions. It is an R
 port of the [cssselect](https://pythonhosted.org/cssselect/) package
-for Python. Development occurs on GitHub in the {{< ghr user="sjp" repo="selectr" >}}
+for Python. Development occurs on GitHub in the [selectr](https://github.com/sjp/selectr)
 repository.
 
 The main purpose of this package is to make working with (X)HTML and
@@ -33,7 +33,7 @@ The most basic and flexible function provided by selectr is
 `css_to_xpath()`. It simply translates a vector of CSS Selectors to
 their equivalent XPath expressions.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > library(selectr)
 > css_to_xpath("div > a")
 [1] "descendant-or-self::div/a"
@@ -48,7 +48,7 @@ DOM methods present in JavaScript
 and
 [`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll)).
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > fileName <- system.file("exampleData", "test.xml", package="XML")
 > mydoc <- xmlParse(fileName)
 > querySelector(mydoc, "a")

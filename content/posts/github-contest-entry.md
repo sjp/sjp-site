@@ -3,9 +3,9 @@ date = "2010-02-23"
 title = "GitHub Contest Entry"
 +++
 
-<p class="notice">A repository has been put up on
- {{< ghr user="sjp" repo="contest-entry" text="GitHub" >}} with my solution. The
- repository is unlikely to be in a usable state.</p>
+{{< note >}}A repository has been put up on
+ [GitHub](https://github.com/sjp/contest-entry) with my solution. The
+ repository is unlikely to be in a usable state.{{< /note >}}
 
 During the middle of 2009, the web-based Git hosting service GitHub
 held [a content recommendation
@@ -147,4 +147,4 @@ fact that he produced a wonderful `README` that went into great depth
 as to how he went about solving the problem. After having a quick look
 at his site, it comes as no surprise that he's quite an expert in this
 field. If you would like to know more about this, have a read through
-{{< ghr user="jeremybarnes" repo="github_contest" text="Jeremy's contest entry repository" >}}.
+[Jeremy's entry](https://github.com/jeremybarnes/github_contest).

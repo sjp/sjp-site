@@ -7,8 +7,8 @@ This software, [iNZight](https://www.stat.auckland.ac.nz/~wild/iNZight/), is a G
 
 Much of iNZight was written by Dineika Chandrananda. I maintained iNZight and developed extra components with some assistance from David Banks. The project is led by [Dr. Chris Wild](https://www.stat.auckland.ac.nz/showperson?firstname=Chris&surname=Wild).
 
-Current development occurs on GitHub in the {{< ghr user="iNZightVIT" repo="iNZight" >}} repository.
+Current development occurs on GitHub in the [iNZightVIT](https://github.com/iNZightVIT/iNZight) repository.
 
 A basic screenshot showing a small subset of its features is shown below:
 
-<img src="images/inzight.png" width="500" height="364" alt="iNZight Main Window">
+![iNZight Main Window](images/inzight.png)

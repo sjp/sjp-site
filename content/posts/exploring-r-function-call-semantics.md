@@ -12,7 +12,7 @@ To start off we shall observe how R function calls can behave much the same as
 they do with most statically typed languages, where the arguments to the
 function must be passed in the correct position.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f <- function(x, y, z) { print(c(x, y, z)) }
 > f(2, 3, 9)
 [1] 2 3 9
@@ -21,7 +21,7 @@ function must be passed in the correct position.
 Alternatively, instead of providing the arguments in the position that they are
 defined in the function definition we can provide them by name.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f(z = 9, x = 2, y = 3)
 [1] 2 3 9
 {{< /highlight >}}
@@ -30,7 +30,7 @@ You can mix these two behaviours, by supplying parameters by position and by
 name. However, care must be made to ensure that the position of an unnamed
 parameter is correct.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f(z = 9, 3, x = 2)
 [1] 2 3 9
 {{< /highlight >}}
@@ -40,7 +40,7 @@ an argument to a function if we wish to have assign a default value to that
 argument. This is applied by simply performing an assignment on an argument in
 the function definition.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f <- function(x, y, z = 9) { print(c(x, y, z)) }
 > f(x = 2, y = 3)
 [1] 2 3 9
@@ -61,7 +61,7 @@ distribution parameter vector could be passed into the function or if any
 arguments differed from the default, they could be passed in too. Applying this
 to the previous example would be the following:
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f <- function(x = 2, y = 3, z = 9, all = c(x, y, z)) {
 +   print(all)
 + }
@@ -79,7 +79,7 @@ be among the most intuitive to use. This is accomplished by adding an ellipsis
 (...) to the function definition, which essentially holds a set of (named or
 unnamed) values that are not previously defined in the function definition.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f <- function(x, ...) { print(list(...)) }
 > f(2, y = 3, 9)
 $y
@@ -96,7 +96,7 @@ definition. This works so long as the amount of characters that are being
 assigned to a argument are sufficient to ensure the intended argument is
 uniquely matched.
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > f <- function(alongString, alsoAString, anotherString) {
 +   print(c(alongString, alsoAString, anotherString))
 + }

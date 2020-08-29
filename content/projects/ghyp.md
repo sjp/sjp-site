@@ -7,11 +7,11 @@ Over the summer of 2009--2010 I undertook a summer studentship at the University
 
 What the GeneralizedHyperbolic package does is it provides functions for use with the [generalised hyperbolic distribution](https://en.wikipedia.org/wiki/Generalised_hyperbolic_distribution) and related distributions. These functions include probability, density, quantile, fitting, checking and random observation generating functions.
 
-The result of my work has been posted up on {{< ghr user="sjp" repo="GeneralizedHyperbolic" text="GitHub" >}}. Since undertaking this work GeneralizedHyperbolic has become available on [CRAN](https://cran.r-project.org/package=GeneralizedHyperbolic). To install the package run the following command within R: `install.packages("GeneralizedHyperbolic")`.
+The result of my work has been posted up on [GeneralizedHyperbolic](https://github.com/sjp/GeneralizedHyperbolic). Since undertaking this work GeneralizedHyperbolic has become available on [CRAN](https://cran.r-project.org/package=GeneralizedHyperbolic). To install the package run the following command within R: `install.packages("GeneralizedHyperbolic")`.
 
 Once the package has been installed, using it is as simple as running R, then loading the package using `library(GeneralizedHyperbolic)`. Example usage is as follows:
 
-{{< highlight rconsole >}}
+{{< highlight r >}}
 > library(GeneralizedHyperbolic)
 > dghyp(2)
 [1] 0.08878272
@@ -40,6 +40,4 @@ I have created some extra code to go with this package that allows visualisation
 
 Here is an example of the visualisation:
 
-<a href="images/ss-ghyp-slider.png" title="Click for a bigger image.">
-  <img src="images/ss-ghyp-slider.png" width="821" height="629" alt="Generalised hyperbolic distribution visualisation">
-</a>
+![Generalised hyperbolic distribution visualisation](images/ss-ghyp-slider.png)

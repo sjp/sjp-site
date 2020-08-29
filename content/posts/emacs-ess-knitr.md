@@ -3,7 +3,7 @@ date = "2012-05-22"
 title = "knitr Support in Emacs (via ESS)"
 +++
 
-<p class="notice">The latest version of ESS now includes support for <code>knitr</code>. This script is no longer necessary.</p>
+{{< important >}}The latest version of ESS now includes support for `knitr`. This script is no longer necessary.{{< /important >}}
 
 During my recent switch from vim to Emacs I discovered what a wonderful tool [ESS](http://ess.r-project.org/) is. It was fantastic for writing `Rnw` documents using `Sweave`, but seeing as I'm currently attempting another switch, from `Sweave` to [`knitr`](http://yihui.name/knitr/), I wanted support for that.
 
@@ -11,19 +11,17 @@ After a quick look at the ESS source code, I was able to write a quick script th
 
 ## Installation
 
-<ul>
-<li>Download the Emacs lisp script below.</li>
-<li>Store it in a useful location, I stored it in the following path: <code>~/.emacs.d/ess-knitr/ess-knitr.el</code>.</li>
-<li>Import the script in your <code>.emacs</code> file. My configuration is the following:
+* Download the Emacs lisp script below.
+* Store it in a useful location, I stored it in the following path: `~/.emacs.d/ess-knitr/ess-knitr.el`
+* Import the script in your `.emacs` file. My configuration is the following:
+
 {{< highlight cl >}}
 ;; Add support for knit and purl
 (add-to-list 'load-path "~/.emacs.d/ess-knitr/")
 (require 'ess-knitr)
 {{< /highlight >}}
-<strong>Note:</strong> This snippet should be included <em>after</em> the code that loads ESS.
-</li>
-</ul>
 
+**Note:** This snippet should be included *after* the code that loads ESS.
 
 ## Usage
 
