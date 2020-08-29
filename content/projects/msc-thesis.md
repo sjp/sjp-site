@@ -37,9 +37,9 @@ To cite this thesis, use the following BibTeX entry:
 
 ## Seminar
 
-On the 27th of June 2013 I gave a seminar presentation at the
-University of Auckland in the Department of Statistics. The slides can
-be viewed by clicking the thumbnail below:
+On the {{< html >}}<time datetime="2013-06-13">27th of June 2013</time>{{< /html >}}
+I gave a seminar presentation at the University of Auckland in the Department
+of Statistics. The slides can be viewed by clicking the thumbnail below:
 
 [![Seminar](seminar.png)](slides/seminar.html)
 
