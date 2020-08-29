@@ -1,18 +1,9 @@
-dist: trusty
-sudo: required
+dist: focal
 language: go
 go:
-    - 1.7.3
+    - 1.11
 before_install:
-    - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-    - sudo apt-get update -qq
-    - sudo apt-get install -y nodejs
-    - sudo pip install pygments
-install:
-    - npm install -g gulp
-    - npm install
-before_script:
-    - go get -u -v github.com/gohugoio/hugo
+    - sudo apt update -qq
+    - sudo apt install -y hugo
 script:
-    - gulp
     - hugo
