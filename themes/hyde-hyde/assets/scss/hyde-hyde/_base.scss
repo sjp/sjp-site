@@ -1,0 +1,146 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%; // for iOS
+	box-direction: normal;
+	font-family: $root-font-family;
+	font-size: $small-device-font-size;
+	line-height: $root-line-height;
+	font-weight: $root-font-weight;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#page {
+	background-color: var(--body-bg);
+	min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: $heading-font-weight;
+}
+
+h1 {
+	font-size: $h1-font-size;
+	line-height: $h1-line-height;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: $h2-font-size;
+	margin-bottom: .5rem;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+}
+
+figure {
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+%quotebox {
+	padding: .8889rem;
+	margin-top: 1rem;
+	margin-left: 0px;
+	margin-right: 0px;
+	border-left: 6px solid;
+	border-right: 6px solid transparent;
+	border-right-width: 6px;
+	border-right-style: solid;
+	color: var(--quotebox-color);
+}
+
+blockquote {
+	background-color: var(--blockquote-bg-color);
+	border-left-color: var(--blockquote-border-lr-color);
+	border-right-color: var(--blockquote-border-lr-color);
+	@extend %quotebox;
+}
+
+.important {
+	background-color: var(--important-bg-color);
+	border-left-color: var(--important-border-lr-color);
+	border-right-color: var(--important-border-lr-color);
+	@extend %quotebox;
+}
+
+.warning {
+	background-color: var(--warning-bg-color);
+	border-left-color: var(--warning-border-lr-color);
+	border-right-color: var(--warning-border-lr-color);
+	@extend %quotebox;
+}
+
+kbd {
+	font-family: $root-font-family;
+	padding: 2px 7px;
+	border: 1px solid var(--kbd-border-color);
+	font-size: 0.8em;
+	line-height: 1.4;
+	background-color: var(--kbd-background-color);
+	color: var(--kbd-color);
+	box-shadow: var(--kbd-border-shadow);
+	border-radius: 3px;
+	display: inline-block;
+	text-shadow: var(--kbd-text-shadow);
+	white-space: nowrap;
+}
+
+a {
+	//border-bottom: 1px dotted;
+	color: var(--link-color);
+	text-decoration: none;
+	word-wrap: break-word;
+	&.sidebar-nav-item {
+		&:hover {
+			@include link-no-decoration();
+		}
+		&:focus {
+			@include link-no-decoration();
+		}
+	}
+	&:focus {
+		@include link-hover();
+		&.tag {
+			@include link-no-decoration();
+		}
+	}
+	&:hover {
+		@include link-hover();
+		&.tag {
+			@include link-no-decoration();
+		}
+	}
+	&.tag {
+		@include link-no-decoration();
+	}
+	&.read-more-symbol {
+		text-decoration: none;
+		@include link-no-decoration();
+	}
+}
+
+.content {
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+}

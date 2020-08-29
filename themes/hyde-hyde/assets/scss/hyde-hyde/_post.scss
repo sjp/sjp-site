@@ -1,0 +1,18 @@
+.post__meta {
+  font-size: $meta-font-size;
+  color: var(--meta-color);
+  font-weight: $meta-font-weight;
+}
+
+.post__subtitle {
+  display: block;
+  font-size: $post__subtitle-font-size;
+  font-style: italic;
+  padding: 0 0 1rem 0;
+}
+
+#references {
+  li {
+    font-size: 0.9rem;
+  }
+}

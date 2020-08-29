@@ -1,0 +1,42 @@
+
+.divider {
+  margin-bottom: 3.5rem;
+}
+.row-space {
+  margin-bottom: 1rem;
+}
+
+// only needs some pieces from Bootstrap
+%col_extend {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-xs-12 {
+  width: 100%;
+  @extend %col_extend;
+}
+.col-sm-4 {
+  @extend %col_extend;
+}
+.col-md-4 {
+  @extend %col_extend;
+}
+.col-sm-8 {
+  @extend %col_extend;
+}
+.col-md-8 {
+  @extend %col_extend;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

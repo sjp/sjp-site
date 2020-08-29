@@ -1,0 +1,36 @@
+// some misc styles
+.element--center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu {
+	background-color: var(--menu-bg-color);
+	color: var(--menu-color);
+	border-radius: 2px;
+	padding: 1px 5px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.pull-right {
+	float: right;
+}
+
+.draft {
+    color: var(--draft-color) !important;
+}
+
+@mixin media-box-shadow {
+	box-shadow: 0 0 10px 2px var(--media-box-shadow-color);
+}
+
+img, video, object {
+	max-width: 80%;
+	@include media-box-shadow;
+	display: block;
+	margin: 0 auto;
+}
