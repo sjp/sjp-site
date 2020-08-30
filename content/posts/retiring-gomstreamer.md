@@ -7,7 +7,7 @@ For the past couple of years I have been maintaining [GOMstreamer]({{< ref "proj
 
 This was particularly useful for those on Linux or OSX who could not install the GOM Player (which only somewhat reliably worked on Windows).
 
-After a short while I realised that Windows users would also find value in avoiding the installation of yet another media player. To this end I developed [GOMstreamer.NET](https://github.com/sjp/GOMstreamer.NET") in C#.
+After a short while I realised that Windows users would also find value in avoiding the installation of yet another media player. To this end I developed [GOMstreamer.NET](https://github.com/sjp/GOMstreamer.NET) in C#.
 
 A lot of people have emailed me to thank me for developing GOMstreamer, I appreciate your support. I would also like to thank the code contributions and suggestions that others have given me.
 
