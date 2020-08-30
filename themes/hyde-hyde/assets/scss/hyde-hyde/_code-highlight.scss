@@ -146,25 +146,25 @@
 // default to light theme
 :root {
     @include light-theme-code-variables;
-}
-
-#theme-toggle:checked ~ #page {
-    @include dark-theme-code-variables;
-}
-
-@media (prefers-color-scheme: dark) {
-    @include dark-theme-code-variables;
-
-    #theme-toggle:checked ~ #page {
-        @include light-theme-code-variables;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    @include light-theme-code-variables;
 
     #theme-toggle:checked ~ #page {
         @include dark-theme-code-variables;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        @include dark-theme-code-variables;
+
+        #theme-toggle:checked ~ #page {
+            @include light-theme-code-variables;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include light-theme-code-variables;
+
+        #theme-toggle:checked ~ #page {
+            @include dark-theme-code-variables;
+        }
     }
 }
 
