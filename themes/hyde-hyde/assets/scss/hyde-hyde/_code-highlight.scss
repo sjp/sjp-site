@@ -15,7 +15,7 @@
 /* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 
 @mixin light-theme-code-variables {
-/* Background */ .chroma { background-color: #fafafa; border: 1px solid #dedede; }
+/* Background */ .chroma { background-color: #fafafa; border: 1px solid #dedede; color: var(--body-color); }
 /* Other */ .chroma .x {  }
 /* Error */ .chroma .err { color: #a61717; }
 /* Keyword */ .chroma .k { color: #008800; }
@@ -135,12 +135,7 @@
     .chroma .nv { color: #CC6666; }
     .chroma .ow { color: #8ABEB7; }
     .chroma .o { color: #8ABEB7; }
-    .chroma .n { color: #C5C8C6; }
-    .chroma .nl { color: #C5C8C6; }
-    .chroma .nn { color: #C5C8C6; }
-    .chroma .nx { color: #C5C8C6; }
     .chroma .bp { color: #CC6666; }
-    .chroma .p { color: #C5C8C6; }
 }
 
 // default to light theme
