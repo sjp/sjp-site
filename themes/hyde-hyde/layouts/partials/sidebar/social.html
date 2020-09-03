@@ -6,7 +6,7 @@
 	<a href="https://facebook.com/{{.}}" rel="me"><i class="fab fa-facebook-f"></i></a>
 	{{ end }}
 	{{ with .Site.Params.social.github }}
-	<a href="https://github.com/{{.}}" rel="me"><i class="icon icon-github-circled" aria-hidden="true"></i></a>
+	<a href="https://github.com/{{.}}" rel="me" title="GitHub"><i class="icon icon-github-circled" aria-hidden="true"></i></a>
 	{{ end }}
 	{{ with .Site.Params.social.bitbucket }}
 	<a href="https://bitbucket.org/{{.}}" rel="me"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
@@ -46,7 +46,7 @@
 	<a href="https://orcid.org/{{.}}" rel="me"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i></a>
 	{{end}}
 	{{ with .Site.Params.social.email }}
-	<a href="mailto:{{.}}" rel="me"><i class="icon icon-at" aria-hidden="true"></i></a>
+	<a href="mailto:{{.}}" rel="me" title="Email"><i class="icon icon-at" aria-hidden="true"></i></a>
 	{{ end }}
 	<label for="theme-toggle" title="Toggle Dark Mode"><i class="icon icon-lightbulb" aria-hidden="true"></i></label>
 </section>
