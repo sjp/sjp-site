@@ -1,6 +1,6 @@
 # sjp.co.nz
 
-[![Build Status](https://travis-ci.org/sjp/sjp-site.svg)](https://travis-ci.org/sjp/sjp-site)
+[![Build Status](https://travis-ci.org/sjp/sjp-site.svg)](https://travis-ci.org/sjp/sjp-site) ![CI](https://github.com/sjp/sjp-site/workflows/CI/badge.svg?branch=master)
 
 This is the source code and content for the website powering [sjp.co.nz](https://sjp.co.nz/).
 
