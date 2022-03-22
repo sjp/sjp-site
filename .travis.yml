@@ -1,9 +1,0 @@
-dist: focal
-language: go
-go:
-    - 1.11
-before_install:
-    - sudo apt update -qq
-    - sudo apt install -y hugo
-script:
-    - hugo
