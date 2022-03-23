@@ -13,9 +13,6 @@ setperms:
 clean:
 	-rm -rf public/*
 
-deploy:
-	-rsync -avh public/ sjp.co.nz:/var/www/sjp.co.nz/ --delete
-
 all: build
 
 .PHONY: build clean build-site setperms
