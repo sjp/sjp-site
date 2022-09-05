@@ -5,9 +5,14 @@ var LOCAL_STORAGE_THEME_KEY = 'themePreference';
 var themeToggle = document.getElementById('theme-toggle');
 
 var getThemePreference = function() {
-    if (typeof(Storage) !== undefined) {
-        return localStorage.getItem('themePreference') || '';
-    } else {
+    try {
+        if (typeof(Storage) !== undefined) {
+            return localStorage.getItem('themePreference') || '';
+        } else {
+            return '';
+        }
+    } catch {
+        // may not be available (e.g. under cookies blocked or incognito)
         return '';
     }
 };
@@ -18,8 +23,12 @@ var toggleCheckbox = function() {
 
 var updateThemePreference = function(alternateThemeSelected) {
     var themePreference = alternateThemeSelected ? ALTERNATE_THEME  : '';
-    if (typeof(Storage) !== undefined) {
-        localStorage.setItem('themePreference', themePreference);
+    try {
+        if (typeof(Storage) !== undefined) {
+            localStorage.setItem('themePreference', themePreference);
+        }
+    } catch {
+        // may not be available (e.g. under cookies blocked or incognito)
     }
 };
 
