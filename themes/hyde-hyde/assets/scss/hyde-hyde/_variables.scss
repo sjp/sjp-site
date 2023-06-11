@@ -40,6 +40,9 @@ $brown: #8f5536;
     --color-blue: #268bd2;
     --color-sjp-blue: #1565c0;
     --color-brown: #8f5536;
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme#adapting_to_color_schemes
+    color-scheme: light dark;
 }
 
 //https://www.client9.com/css-system-font-stack-sans-serif-v3
