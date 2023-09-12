@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 {left: "\\[", right: "\\]", display: true},
                 {left: "$", right: "$", display: false},
                 {left: "\\(", right: "\\)", display: false}
-            ]
+            ],
+            output: "mathml"
         }
     );
 });
