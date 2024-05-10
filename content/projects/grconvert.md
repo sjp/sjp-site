@@ -72,24 +72,22 @@ $ R CMD INSTALL grConvert*.tar.gz
 The grConvert package has been tested and works on OSX. It requires the same
 dependencies that the Linux installation uses, but by another name.
 
-Using either [MacPorts](https://www.macports.org/) or [Homebrew](https://brew.sh/)
-should suffice.
+Using either [Homebrew](https://brew.sh/) or [MacPorts](https://www.macports.org/) 
+should suffice. In more recent versions of OSX you may find that Homebrew works
+better. 
 
-If using MacPorts, the following command will install the necessary libraries.
-
-{{< highlight shell >}}
-$ port install cairo-devel poppler libspectre librsvg
-{{< /highlight >}}
-
-If using Homebrew, the required libraries can be installed with the following
+For Homebrew, the required libraries can be installed with the following
 command.
 
 {{< highlight shell >}}
-$ brew install poppler librsvg cairo
+$ brew install poppler librsvg cairo libspectre
 {{< /highlight >}}
 
-When last checked, `libspectre` was not available on Homebrew, therefore
-using PostScript images for input will not be available when Homebrew is used.
+If you're using MacPorts, the following command will install the necessary libraries.
+
+{{< highlight shell >}}
+$ port install poppler librsvg cairo-devel libspectre
+{{< /highlight >}}
 
 If you have the [`devtools`](https://github.com/hadley/devtools) package
 installed, you can run the following command in R to install grConvert from a
