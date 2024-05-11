@@ -32,7 +32,7 @@ command has been provided that installs the dependencies on Debian-based
 distributions (e.g. Ubuntu).
 
 {{< highlight shell >}}
-# apt-get install libcairo2-dev libspectre-dev librsvg2-dev \
+# apt install libcairo2-dev libspectre-dev librsvg2-dev \
 >     libpoppler-glib-dev r-base-dev
 {{< /highlight >}}
 
@@ -52,7 +52,7 @@ Firstly, we need to ensure that Subversion is installed on your system.
 Following that, we can begin to check out the grConvert package.
 
 {{< highlight shell >}}
-# apt-get install subversion
+# apt install subversion
 {{< /highlight >}}
 
 {{< highlight shell >}}
