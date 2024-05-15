@@ -107,10 +107,8 @@ kbd {
 }
 
 a {
-	//border-bottom: 1px dotted;
-	color: var(--link-color);
-	text-decoration: none;
-	word-wrap: break-word;
+	@include link-regular();
+
 	&.sidebar-nav-item {
 		&:hover {
 			@include link-no-decoration();

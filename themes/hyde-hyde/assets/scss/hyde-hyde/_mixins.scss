@@ -16,6 +16,15 @@
 	text-decoration: none;
 }
 
+@mixin link-regular() {
+	color: var(--link-color);
+	border-bottom: 1px dotted var(--link-color);
+	text-decoration: none;
+	background: transparent;
+	background-color: transparent;
+	word-wrap: break-word;
+}
+
 @mixin link-hover() {
 	color: var(--link-hover-color);
 	border-bottom: 1px dotted var(--link-hover-border-bottom-color);
