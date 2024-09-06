@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "grid.animate"
 +++
 
-{{< important >}}To animate complex units, use the `animUnit()` function in gridSVG. Documentation on `animUnit()` is available in a [draft article](https://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf.{{</ important >}}
+{{< important >}}To animate complex units, use the `animUnit()` function in gridSVG. Documentation on `animUnit()` is available in a [draft article](https://www.stat.auckland.ac.nz/~paul/gridSVG/gridsvg.pdf).{{</ important >}}
 
 The function `grid.animate()` provides a user the ability to perform animation
 on graphics objects. This is accomplished using SMIL animation and SVG's
