@@ -1,272 +1,337 @@
 <!DOCTYPE html>
 <html>
   <head>
-<style type="text/css">.knitr.inline {
-  background-color: #f7f7f7;
-  border:solid 1px #B0B0B0;
-}
-.error {
-	font-weight: bold;
-	color: #FF0000;
-}, 
-.warning {
-	font-weight: bold;
-} 
-.message {
-	font-style: italic;
-} 
-.source, .output, .warning, .error, .message {
-	padding: 0em 1em;
-  border:solid 1px #F7F7F7;
-}
-.source {
-  background-color: #f7f7f7;
-}
-.rimage.left {
-  text-align: left;
-}
-.rimage.right {
-  text-align: right;
-}
-.rimage.center {
-  text-align: center;
-}
+    <style type="text/css">
+      .knitr.inline {
+        background-color: #f7f7f7;
+        border: solid 1px #b0b0b0;
+      }
+      .error {
+        font-weight: bold;
+        color: #ff0000;
+      }
+      ,
+      .warning {
+        font-weight: bold;
+      }
+      .message {
+        font-style: italic;
+      }
+      .source,
+      .output,
+      .warning,
+      .error,
+      .message {
+        padding: 0em 1em;
+        border: solid 1px #f7f7f7;
+      }
+      .source {
+        background-color: #f7f7f7;
+      }
+      .rimage.left {
+        text-align: left;
+      }
+      .rimage.right {
+        text-align: right;
+      }
+      .rimage.center {
+        text-align: center;
+      }
 
-.source {
-  color: #333333;
-}
-.background {
-  color: #F7F7F7;
-}
+      .source {
+        color: #333333;
+      }
+      .background {
+        color: #f7f7f7;
+      }
 
-.number {
-  color: #000000;
-}
+      .number {
+        color: #000000;
+      }
 
-.functioncall {
-  color: #800054;
-  font-weight: bolder;
-}
+      .functioncall {
+        color: #800054;
+        font-weight: bolder;
+      }
 
-.string {
-  color: #9999FF;
-}
+      .string {
+        color: #9999ff;
+      }
 
-.keyword {
-  font-weight: bolder;
-  color: black;
-}
+      .keyword {
+        font-weight: bolder;
+        color: black;
+      }
 
-.argument {
-  color: #B04005;
-}
+      .argument {
+        color: #b04005;
+      }
 
-.comment {
-  color: #2E9957;
-}
+      .comment {
+        color: #2e9957;
+      }
 
-.roxygencomment {
-  color: #707AB3;
-}
+      .roxygencomment {
+        color: #707ab3;
+      }
 
-.formalargs {
-  color: #B04005;
-}
+      .formalargs {
+        color: #b04005;
+      }
 
-.eqformalargs {
-  color: #B04005;
-}
+      .eqformalargs {
+        color: #b04005;
+      }
 
-.assignement {
-  font-weight: bolder;
-  color: #000000;
-}
+      .assignement {
+        font-weight: bolder;
+        color: #000000;
+      }
 
-.package {
-  color: #96B525;
-}
+      .package {
+        color: #96b525;
+      }
 
-.slot {
-  font-style: italic;
-}
+      .slot {
+        font-style: italic;
+      }
 
-.symbol {
-  color: #000000;
-}
+      .symbol {
+        color: #000000;
+      }
 
-.prompt {
-  color: #333333;
-}
-</style>
-    <meta charset="utf-8">
+      .prompt {
+        color: #333333;
+      }
+    </style>
+    <meta charset="utf-8" />
     <title>Introducing the selectr Package</title>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen,print,projection">
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="screen,print,projection">
-
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/normalize.css"
+      media="screen,print,projection"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/main.css"
+      media="screen,print,projection"
+    />
   </head>
   <body>
     <header>
       <h1>Introducing the &lsquo;selectr&rsquo; Package</h1>
-      <p>Simon Potter <a href="mailto:simon.potter@auckland.ac.nz"><code>simon.potter@auckland.ac.nz</code></a></p>
+      <p>
+        Simon Potter
+        <a href="mailto:simon.potter@auckland.ac.nz"
+          ><code>simon.potter@auckland.ac.nz</code></a
+        >
+      </p>
       <p>Department of Statistics, University of Auckland</p>
       <p>November 22, 2012</p>
       <p class="abstract">
-        <strong>Abstract:</strong> The <em>selectr</em> package
-        translates a CSS selector into an equivalent XPath
-        expression. This allows the use of CSS selectors to query XML
-        documents using the <em>XML</em> package. Convenience
-        functions are also provided to mimic functionality present in
-        modern web browsers.
+        <strong>Abstract:</strong> The <em>selectr</em> package translates a CSS
+        selector into an equivalent XPath expression. This allows the use of CSS
+        selectors to query XML documents using the <em>XML</em> package.
+        Convenience functions are also provided to mimic functionality present
+        in modern web browsers.
       </p>
     </header>
     <h2>Introduction</h2>
-    <p>When working with XML documents a common task is to be able to
-    search for parts of a document that match a search query. For
-    example, if we have a document representing a collection of books,
-    we might want to search through for a book matching a certain
-    title or author. A language has been created that constructs
-    search queries on XML documents called
-    XPath <a href="#ref-1">[1]</a>. XPath is capable of constructing
-    complex search queries but this is often at the cost of
-    readability and terseness of the resulting expression.</p>
+    <p>
+      When working with XML documents a common task is to be able to search for
+      parts of a document that match a search query. For example, if we have a
+      document representing a collection of books, we might want to search
+      through for a book matching a certain title or author. A language has been
+      created that constructs search queries on XML documents called XPath
+      <a href="#ref-1">[1]</a>. XPath is capable of constructing complex search
+      queries but this is often at the cost of readability and terseness of the
+      resulting expression.
+    </p>
 
-    <p>An alternative way of searching for parts of a document is
-    using CSS selectors <a href="#ref-2">[2]</a>. These are most
-    commonly used in web browsers to apply styling information to
-    components of a web page. We can use the same language that
-    selects which nodes to style in a web page to select nodes in an
-    XML document. This often produces more concise and readable
-    queries than the equivalent XPath expression. It must be noted
-    however that XPath expressions are more flexible than CSS
-    selectors, so although all CSS selectors have an equivalent XPath
-    expression, the reverse is not true.</p>
+    <p>
+      An alternative way of searching for parts of a document is using CSS
+      selectors <a href="#ref-2">[2]</a>. These are most commonly used in web
+      browsers to apply styling information to components of a web page. We can
+      use the same language that selects which nodes to style in a web page to
+      select nodes in an XML document. This often produces more concise and
+      readable queries than the equivalent XPath expression. It must be noted
+      however that XPath expressions are more flexible than CSS selectors, so
+      although all CSS selectors have an equivalent XPath expression, the
+      reverse is not true.
+    </p>
 
-    <p>An advantage of using CSS selectors is that most people working
-    with web documents such as HTML and SVG also know CSS. XPath is
-    not employed anywhere beyond querying XML documents so is not a
-    commonly known query language. Another important reason why CSS
-    selectors are widely known is due to the common use of them in
-    popular JavaScript libraries. jQuery <a href="#ref-3">[3]</a> and
-    D3 <a href="#ref-4">[4]</a> are two examples where they select
-    elements of a page to perform operations on using CSS selectors,
-    rather than XPath. This is mostly due to the complexity of
-    performing an XPath query in the browser in addition to the more
-    verbose expressions. An example of how one would use CSS selectors
-    to retrieve content using popular JavaScript libraries is with the
-    following code:</p>
+    <p>
+      An advantage of using CSS selectors is that most people working with web
+      documents such as HTML and SVG also know CSS. XPath is not employed
+      anywhere beyond querying XML documents so is not a commonly known query
+      language. Another important reason why CSS selectors are widely known is
+      due to the common use of them in popular JavaScript libraries. jQuery
+      <a href="#ref-3">[3]</a> and D3 <a href="#ref-4">[4]</a> are two examples
+      where they select elements of a page to perform operations on using CSS
+      selectors, rather than XPath. This is mostly due to the complexity of
+      performing an XPath query in the browser in addition to the more verbose
+      expressions. An example of how one would use CSS selectors to retrieve
+      content using popular JavaScript libraries is with the following code:
+    </p>
 
-<figure>
-<pre class="js" style="text-align:left;">
+    <figure>
+      <pre class="js" style="text-align: left">
 JS&gt; // jQuery
 JS&gt; $("#listing code");
 JS&gt; // D3
 JS&gt; d3.selectAll("#listing code");
 JS&gt; // The equivalent XPath expression
 JS&gt; "descendant-or-self::*[@id = 'listing']/descendant-or-self::*/code"
-</pre>
-<figcaption>Selecting all <code>code</code> elements that are descendants of the element with the ID &ldquo;listing&rdquo;.</figcaption>
-</figure>
+</pre
+      >
+      <figcaption>
+        Selecting all <code>code</code> elements that are descendants of the
+        element with the ID &ldquo;listing&rdquo;.
+      </figcaption>
+    </figure>
 
-    <p>The <em>XML</em> package <a href="#ref-5">[5]</a> for
-    R <a href="#ref-6">[6]</a> is able to parse XML documents, which
-    can later be queried using XPath. No facility exists for using CSS
-    selectors on XML documents in the <em>XML</em> package. This
-    limitation is due to the <em>XML</em> package&rsquo;s dependence
-    on the <em>libxml2</em> <a href="#ref-1">[7]</a> library which can
-    only search using XPath. For reasons mentioned above, it would be
-    ideal if we had the option of using CSS selectors to query such
-    documents as well as XPath. If we can translate a CSS selector to
-    XPath, then the restriction to only using XPath no longer applies
-    and we can therefore use a CSS selector whenever an XPath
-    expression is required.</p>
+    <p>
+      The <em>XML</em> package <a href="#ref-5">[5]</a> for R
+      <a href="#ref-6">[6]</a> is able to parse XML documents, which can later
+      be queried using XPath. No facility exists for using CSS selectors on XML
+      documents in the <em>XML</em> package. This limitation is due to the
+      <em>XML</em> package&rsquo;s dependence on the <em>libxml2</em>
+      <a href="#ref-1">[7]</a> library which can only search using XPath. For
+      reasons mentioned above, it would be ideal if we had the option of using
+      CSS selectors to query such documents as well as XPath. If we can
+      translate a CSS selector to XPath, then the restriction to only using
+      XPath no longer applies and we can therefore use a CSS selector whenever
+      an XPath expression is required.
+    </p>
 
-    <p>A mature Python package exists that performs translation of CSS
-    selectors to XPath expressions. Unfortunately this
-    package, <em>cssselect</em> <a href="#ref-8">[8]</a>, cannot be
-    used in R because it would require Python to be present on a
-    user's system which cannot be guaranteed, particularly on
-    Windows. The <em>selectr</em> package <a href="#ref-9">[9]</a> is
-    a translation of <em>cssselect</em> to R so that we have the same
-    functionality within R as we would have using Python.</p>
+    <p>
+      A mature Python package exists that performs translation of CSS selectors
+      to XPath expressions. Unfortunately this package, <em>cssselect</em>
+      <a href="#ref-8">[8]</a>, cannot be used in R because it would require
+      Python to be present on a user's system which cannot be guaranteed,
+      particularly on Windows. The <em>selectr</em> package
+      <a href="#ref-9">[9]</a> is a translation of <em>cssselect</em> to R so
+      that we have the same functionality within R as we would have using
+      Python.
+    </p>
 
-    <p>The rest of this article describes the process
-    that <em>selectr</em> takes to translate CSS selectors to XPath
-    expressions along with example usage.</p>
+    <p>
+      The rest of this article describes the process that <em>selectr</em> takes
+      to translate CSS selectors to XPath expressions along with example usage.
+    </p>
 
     <h2>Parsing</h2>
 
-    <p>The first step in translating any language to another is to
-    first <strong>tokenise</strong> an expression into individual
-    words, numbers, whitespace and symbols that represent the core
-    structure of an expression. These pieces are called tokens. The
-    following code shows character representation of tokens that have
-    been created from tokenising a CSS selector expression:</p>
+    <p>
+      The first step in translating any language to another is to first
+      <strong>tokenise</strong> an expression into individual words, numbers,
+      whitespace and symbols that represent the core structure of an expression.
+      These pieces are called tokens. The following code shows character
+      representation of tokens that have been created from tokenising a CSS
+      selector expression:
+    </p>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">tokenize</span>(<span class="string">"body &gt; p"</span>)
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">tokenize</span>(<span class="string">"body &gt; p"</span>)
+</pre>
+        </div>
+      </div>
+    </div>
 
-
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">[1] "&lt;IDENT &apos;body&apos; at 1&gt;"
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+[1] "&lt;IDENT &apos;body&apos; at 1&gt;"
 [2] "&lt;S &apos; &apos; at 5&gt;"       
 [3] "&lt;DELIM &apos;&gt;&apos; at 6&gt;"
 [4] "&lt;S &apos; &apos; at 7&gt;"       
 [5] "&lt;IDENT &apos;p&apos; at 8&gt;"   
 [6] "&lt;EOF at 9&gt;"                   
-</pre></div></div></div>
+</pre
+          >
+        </div>
+      </div>
+    </div>
 
+    <p>
+      The selector <code>body &gt; p</code> is a query that looks for all
+      &ldquo;p&rdquo; elements within the document that are also direct
+      descendants of a &ldquo;body&rdquo; element. We can see that the selector
+      has been tokenised into 6 tokens. Each token has the following structure:
+      type, value, position. The type is the type of token it is, an identifier,
+      whitespace, a number or a delimiter. The value is the actual text that a
+      token represents, while the position is simply the position along the
+      string at which the character was found.
+    </p>
 
-    <p>The selector <code>body &gt; p</code> is a query that looks for
-    all &ldquo;p&rdquo; elements within the document that are also
-    direct descendants of a &ldquo;body&rdquo; element. We can see
-    that the selector has been tokenised into 6 tokens. Each token has
-    the following structure: type, value, position. The type is the
-    type of token it is, an identifier, whitespace, a number or a
-    delimiter. The value is the actual text that a token represents,
-    while the position is simply the position along the string at
-    which the character was found.</p>
+    <p>
+      Once we have the required tokens, it is necessary to
+      <strong>parse</strong> these tokens into a form that applies meaning to
+      the tokens. For example, in CSS a <code>#</code> preceding an identifier
+      means that we are looking for an element with an ID matching that
+      identifier. After parsing our tokens, we have an understanding of what the
+      CSS selector means and therefore have the correct internal representation
+      prior to translation to XPath. The following code shows what our example
+      selector is understood to mean:
+    </p>
 
-    <p>Once we have the required tokens, it is necessary
-    to <strong>parse</strong> these tokens into a form that applies
-    meaning to the tokens. For example, in CSS a <code>#</code>
-    preceding an identifier means that we are looking for an element
-    with an ID matching that identifier. After parsing our tokens, we
-    have an understanding of what the CSS selector means and therefore
-    have the correct internal representation prior to translation to
-    XPath. The following code shows what our example selector is
-    understood to mean:</p>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">parse</span>(<span class="string">"body &gt; p"</span>)
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">parse</span>(<span class="string">"body &gt; p"</span>)
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+[1] "CombinedSelector[Element[body] &gt; Element[p]]"
+</pre
+          >
+        </div>
+      </div>
+    </div>
 
-
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">[1] "CombinedSelector[Element[body] &gt; Element[p]]"
-</pre></div></div></div>
-
-
-    <p>This shows that the selector is understood to be a combined
-    selector that matches when a <code>p</code> element is a direct
-    descendant of a <code>body</code> element. Once the parsing step
-    is complete, it is necessary to translate this internal
-    representation of a selector into its equivalent XPath
-    expression.</p>
+    <p>
+      This shows that the selector is understood to be a combined selector that
+      matches when a <code>p</code> element is a direct descendant of a
+      <code>body</code> element. Once the parsing step is complete, it is
+      necessary to translate this internal representation of a selector into its
+      equivalent XPath expression.
+    </p>
 
     <h2>Translating</h2>
 
-    <p>XPath is a superset of the functionality of CSS selectors, so
-    we can ensure that there is a mapping from CSS to XPath. Given
-    that we already know the parsed structure of the selector, we work
-    from the outer-most selector inwards. This means with the parsed
-    selector <code>body &gt; p</code> we look at
-    the <code>CombinedSelector</code> first, then the
-    remaining <code>Element</code> components. In this case we know
-    that the <code>CombinedSelector</code> is going to map
-    to <code>Element[body]/Element[p]</code>, which in turn
-    produces <code>body/p</code>.</p>
+    <p>
+      XPath is a superset of the functionality of CSS selectors, so we can
+      ensure that there is a mapping from CSS to XPath. Given that we already
+      know the parsed structure of the selector, we work from the outer-most
+      selector inwards. This means with the parsed selector
+      <code>body &gt; p</code> we look at the
+      <code>CombinedSelector</code> first, then the remaining
+      <code>Element</code> components. In this case we know that the
+      <code>CombinedSelector</code> is going to map to
+      <code>Element[body]/Element[p]</code>, which in turn produces
+      <code>body/p</code>.
+    </p>
 
-    <p>Some of these mappings are straightforward as was the case in
-    the given example, but others are more complex. The table below
-    shows a sample of the translations that occur:</p>
+    <p>
+      Some of these mappings are straightforward as was the case in the given
+      example, but others are more complex. The table below shows a sample of
+      the translations that occur:
+    </p>
 
     <table>
       <thead>
@@ -274,7 +339,9 @@ JS&gt; "descendant-or-self::*[@id = 'listing']/descendant-or-self::*/code"
           <th>CSS Selector</th>
           <th>Parsed Structure</th>
           <th>XPath Expression</th>
+        </tr>
       </thead>
+
       <tbody>
         <tr>
           <td><code>#test</code></td>
@@ -284,11 +351,20 @@ JS&gt; "descendant-or-self::*[@id = 'listing']/descendant-or-self::*/code"
         <tr>
           <td><code>.test</code></td>
           <td><code>Class[Element[*].test]</code></td>
-          <td><code>*[@class and contains(concat(' ', normalize-space(@class), ' '), ' test ')]</code></td>
+          <td>
+            <code
+              >*[@class and contains(concat(' ', normalize-space(@class), ' '),
+              ' test ')]</code
+            >
+          </td>
         </tr>
         <tr>
           <td><code>body p</code></td>
-          <td><code>CombinedSelector[Element[body] &lt;followed&gt; Element[p]]</code></td>
+          <td>
+            <code
+              >CombinedSelector[Element[body] &lt;followed&gt; Element[p]]</code
+            >
+          </td>
           <td><code>body/descendant-or-self::*/p</code></td>
         </tr>
         <tr>
@@ -304,182 +380,350 @@ JS&gt; "descendant-or-self::*[@id = 'listing']/descendant-or-self::*/code"
         <tr>
           <td><code>li:nth-child(even)</code></td>
           <td><code>Function[Element[li]:nth-child(['even'])]</code></td>
-          <td><code>*/*[name() = 'li' and ((position() +0) mod 2 = 0 and position() >= 0)]</code></td>
+          <td>
+            <code
+              >*/*[name() = 'li' and ((position() +0) mod 2 = 0 and position()
+              >= 0)]</code
+            >
+          </td>
         </tr>
         <tr>
           <td><code>#outer-div :first-child</code></td>
-          <td><code>CombinedSelector[Hash[Element[*]#outer-div] &lt;followed&gt; Pseudo[Element[*]:first-child]]</code></td>
-          <td><code>*[@id = 'outer-div']/descendant-or-self::*/*[position() = 1]</code></td>
+          <td>
+            <code
+              >CombinedSelector[Hash[Element[*]#outer-div] &lt;followed&gt;
+              Pseudo[Element[*]:first-child]]</code
+            >
+          </td>
+          <td>
+            <code
+              >*[@id = 'outer-div']/descendant-or-self::*/*[position() =
+              1]</code
+            >
+          </td>
         </tr>
       </tbody>
     </table>
 
-    <p>These only touch on the possible translations, but it
-    demonstrates that a mapping from CSS to XPath exists.</p>
+    <p>
+      These only touch on the possible translations, but it demonstrates that a
+      mapping from CSS to XPath exists.
+    </p>
 
     <h2>Usage</h2>
 
-    <p>The <em>selectr</em> package becomes most useful when working
-    with the <em>XML</em> package. Most commonly <em>selectr</em> is
-    used to simplify the task of searching for a set of nodes. In the
-    browser, there are two JavaScript functions that perform this task
-    using CSS selectors, <code>querySelector()</code>
-    and <code>querySelectorAll()</code> <a href="#ref-10">[10]</a>. These
-    functions are methods on a document or element object. Typical
-    usage in the browser using JavaScript might be the following:</p>
+    <p>
+      The <em>selectr</em> package becomes most useful when working with the
+      <em>XML</em> package. Most commonly <em>selectr</em> is used to simplify
+      the task of searching for a set of nodes. In the browser, there are two
+      JavaScript functions that perform this task using CSS selectors,
+      <code>querySelector()</code> and <code>querySelectorAll()</code>
+      <a href="#ref-10">[10]</a>. These functions are methods on a document or
+      element object. Typical usage in the browser using JavaScript might be the
+      following:
+    </p>
 
-<figure>
-<pre class="js">
+    <figure>
+      <pre class="js">
 JS&gt; document.querySelector("ul li.active");
 JS&gt; document.querySelectorAll("p &gt; a.info");
-</pre>
-<figcaption>Retrieving content from a document using CSS selectors in JavaScript.</figcaption>
-</figure>
+</pre
+      >
+      <figcaption>
+        Retrieving content from a document using CSS selectors in JavaScript.
+      </figcaption>
+    </figure>
 
-    <p>Because these are so commonly used in popular JavaScript
-    libraries, the behaviour has been mimicked
-    in <em>selectr</em>. The <em>selectr</em> package also provides
-    these functions but instead of being methods on document or
-    element objects, they are functions. These functions typically
-    take two parameters, the XML object to be searched on, and the CSS
-    selector to query with, respectively.</p>
+    <p>
+      Because these are so commonly used in popular JavaScript libraries, the
+      behaviour has been mimicked in <em>selectr</em>. The
+      <em>selectr</em> package also provides these functions but instead of
+      being methods on document or element objects, they are functions. These
+      functions typically take two parameters, the XML object to be searched on,
+      and the CSS selector to query with, respectively.
+    </p>
 
-    <p>The difference between the two functions is
-    that <code>querySelector()</code> will attempt to return
-    the <strong>first</strong> matching node or <code>NULL</code> in
-    the case that no matches were
-    found. <code>querySelectorAll()</code> will always return a list
-    of matching nodes, this list will be empty when there are no
-    matches. To demonstrate the usage of these functions, the
-    following XML document will be used:</p>
+    <p>
+      The difference between the two functions is that
+      <code>querySelector()</code> will attempt to return the
+      <strong>first</strong> matching node or <code>NULL</code> in the case that
+      no matches were found. <code>querySelectorAll()</code> will always return
+      a list of matching nodes, this list will be empty when there are no
+      matches. To demonstrate the usage of these functions, the following XML
+      document will be used:
+    </p>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">library</span>(XML)
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">library</span>(XML)
 R&gt; exdoc &lt;- <span class="functioncall">xmlRoot</span>(<span class="functioncall">xmlParse</span>(<span class="string">'&lt;a&gt;&lt;b class=<span class="string">"aclass"</span>/&gt;&lt;c id=<span class="string">"anid"</span>/&gt;&lt;/a&gt;'</span>))
 R&gt; exdoc
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
-
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">&lt;a&gt;
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+&lt;a&gt;
   &lt;b class=&quot;aclass&quot;/&gt;
   &lt;c id=&quot;anid&quot;/&gt;
-&lt;/a&gt;</pre></div></div></div>
-
+&lt;/a&gt;</pre
+          >
+        </div>
+      </div>
+    </div>
 
     <p>We will first see how <code>querySelector()</code> is used.</p>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">library</span>(selectr)
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">library</span>(selectr)
 R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">"#anid"</span>)   # Returns the matching node
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">&lt;c id=&quot;anid&quot;/&gt;</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">&lt;c id=&quot;anid&quot;/&gt;</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">".aclass"</span>) # Returns the matching node
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">".aclass"</span>) # Returns the matching node
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">&lt;b class=&quot;aclass&quot;/&gt;</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">&lt;b class=&quot;aclass&quot;/&gt;</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">"b, c"</span>)    # First match from grouped selection
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">"b, c"</span>)    # First match from grouped selection
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">&lt;b class=&quot;aclass&quot;/&gt;</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">&lt;b class=&quot;aclass&quot;/&gt;</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">"d"</span>)       # No match
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelector</span>(exdoc, <span class="string">"d"</span>)       # No match
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">NULL
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+NULL
+</pre
+          >
+        </div>
+      </div>
+    </div>
 
+    <p>
+      Now compare this to the results returned by
+      <code>querySelectorAll()</code>:
+    </p>
 
-    <p>Now compare this to the
-    results returned by <code>querySelectorAll()</code>:</p>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"b, c"</span>) # Grouped selection
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"b, c"</span>) # Grouped selection
-</pre></div></div></div>
-
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">[[1]]
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+[[1]]
 &lt;b class=&quot;aclass&quot;/&gt; 
 
 [[2]]
 &lt;c id=&quot;anid&quot;/&gt; 
 
 attr(,&quot;class&quot;)
-[1] &quot;XMLNodeSet&quot;</pre></div></div></div>
+[1] &quot;XMLNodeSet&quot;</pre
+          >
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"b"</span>)    # A list of length one
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"b"</span>)    # A list of length one
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">[[1]]
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+[[1]]
 &lt;b class=&quot;aclass&quot;/&gt; 
 
 attr(,&quot;class&quot;)
-[1] &quot;XMLNodeSet&quot;</pre></div></div></div>
+[1] &quot;XMLNodeSet&quot;</pre
+          >
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"d"</span>)    # No match
-</pre></div></div></div>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">querySelectorAll</span>(exdoc, <span class="string">"d"</span>)    # No match
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r">list()
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre class="knitr r">
+list()
 attr(,&quot;class&quot;)
-[1] &quot;XMLNodeSet&quot;</pre></div></div></div>
+[1] &quot;XMLNodeSet&quot;</pre
+          >
+        </div>
+      </div>
+    </div>
 
+    <p>
+      The main point to get across is that <code>querySelector()</code> returns
+      a <strong>node</strong>, <code>querySelectorAll()</code> returns a
+      <strong>list</strong> of nodes.
+    </p>
 
-    <p>The main point to get across is
-    that <code>querySelector()</code>
-    returns a <strong>node</strong>, <code>querySelectorAll()</code>
-    returns a <strong>list</strong> of nodes.</p>
+    <p>
+      Both <code>querySelector()</code> and <code>querySelectorAll()</code> are
+      paired with namespaced equivalents, <code>querySelectorNS()</code> and
+      <code>querySelectorAllNS()</code> respectively. These functions will be
+      demonstrated in more detail later in this article.
+    </p>
 
-    <p>Both <code>querySelector()</code>
-    and <code>querySelectorAll()</code> are paired with namespaced
-    equivalents, <code>querySelectorNS()</code>
-    and <code>querySelectorAllNS()</code> respectively. These
-    functions will be demonstrated in more detail later in this
-    article.</p>
+    <p>
+      While the aforementioned functions are certainly useful, they do not cover
+      all possible use cases. For other uses of CSS selectors, the
+      <code>css_to_xpath()</code> function can be used where an XPath expression
+      would normally be expected. The <code>css_to_xpath()</code> function has
+      three parameters. The first parameter is simply the CSS selector, then a
+      prefix on the resulting XPath expression. This prefix is useful in the
+      circumstance when you already know some XPath and know where the selector
+      should be scoped to. The final parameter determines the translator to use
+      when translating selectors to XPath expressions. The generic translator is
+      sufficient in most cases except when (X)HTML is used; in those cases a
+      translator can be used is aware of (X)HTML pseudo-selectors. A case where
+      <code>css_to_xpath()</code> may be used is when using <em>XML</em>'s
+      <code>*apply</code> functions, as shown below.
+    </p>
 
-    <p>While the aforementioned functions are certainly useful, they
-    do not cover all possible use cases. For other uses of CSS
-    selectors, the <code>css_to_xpath()</code> function can be used
-    where an XPath expression would normally be
-    expected. The <code>css_to_xpath()</code> function has three
-    parameters. The first parameter is simply the CSS selector, then a
-    prefix on the resulting XPath expression. This prefix is useful in
-    the circumstance when you already know some XPath and know where
-    the selector should be scoped to. The final parameter determines
-    the translator to use when translating selectors to XPath
-    expressions. The generic translator is sufficient in most cases
-    except when (X)HTML is used; in those cases a translator can be
-    used is aware of (X)HTML pseudo-selectors. A case
-    where <code>css_to_xpath()</code> may be used is when
-    using <em>XML</em>'s <code>*apply</code> functions, as shown
-    below.</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="comment"># Let's see all tag names present <span class="keyword">in</span> the doc</span>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="comment"># Let's see all tag names present <span class="keyword">in</span> the doc</span>
 R&gt; <span class="functioncall">xpathSApply</span>(exdoc, <span class="functioncall">css_to_xpath</span>(<span class="string">"*"</span>), xmlName)
-</pre></div><div class="output"><pre class="knitr r">[1] "a" "b" "c"
-</pre></div><div class="source"><pre class="knitr r">R&gt; # What is the value of the class attribute on all <span class="string">"b"</span> elements?
+</pre>
+        </div>
+        <div class="output">
+          <pre class="knitr r">
+[1] "a" "b" "c"
+</pre
+          >
+        </div>
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; # What is the value of the class attribute on all <span class="string">"b"</span> elements?
 R&gt; <span class="functioncall">xpathSApply</span>(exdoc, <span class="functioncall">css_to_xpath</span>(<span class="string">"b"</span>),
 R+             <span class="functioncall"><span class="keyword">function</span></span>(x) <span class="functioncall">xmlGetAttr</span>(x, <span class="string">"class"</span>))
-</pre></div><div class="output"><pre class="knitr r">[1] "aclass"
-</pre></div></div></div>
+</pre>
+        </div>
+        <div class="output">
+          <pre class="knitr r">
+[1] "aclass"
+</pre
+          >
+        </div>
+      </div>
+    </div>
 
-
-    <p>Rather than returning nodes, we are processing each node using
-    a given function from the <em>XML</em> package, but specifying
-    paths using CSS selectors instead.</p>
+    <p>
+      Rather than returning nodes, we are processing each node using a given
+      function from the <em>XML</em> package, but specifying paths using CSS
+      selectors instead.
+    </p>
 
     <h2>Examples</h2>
 
-    <p>While the example usage of the <em>selectr</em> package has
-    been demonstrated earlier, the real-world usage may not be clear,
-    or indeed the benefits over just using the <em>XML</em>
-    package. To show how succinct it can be, we will try to create a
-    data frame in R that lists the titles and URLs of technical
-    reports hosted on
-    the <a href="http://stattech.wordpress.fos.auckland.ac.nz/">Department
-    of Statistics Technical Report Blog</a>, along with their
-    publishing dates. First, lets examine part of the HTML that
-    comprises the page to see how we're going to be selecting
-    content.</p>
+    <p>
+      While the example usage of the <em>selectr</em> package has been
+      demonstrated earlier, the real-world usage may not be clear, or indeed the
+      benefits over just using the <em>XML</em> package. To show how succinct it
+      can be, we will try to create a data frame in R that lists the titles and
+      URLs of technical reports hosted on the
+      <a href="http://stattech.wordpress.fos.auckland.ac.nz/"
+        >Department of Statistics Technical Report Blog</a
+      >, along with their publishing dates. First, lets examine part of the HTML
+      that comprises the page to see how we're going to be selecting content.
+    </p>
 
-<pre class="js">
+    <pre class="js">
 ...
 &lt;article&gt;
   &lt;header&gt;
@@ -499,44 +743,68 @@ R+             <span class="functioncall"><span class="keyword">function</span><
           &lt;/time&gt;
         &lt;/a&gt;
 ...
-</pre>
+</pre
+    >
 
-    <p>This fragment shows us that we have the information available
-    to us, we just need to know how to query it. For example, we can
-    see that the URL to each technical report is in
-    the <code>href</code> attribute within an <code>a</code>
-    element. In particular, this <code>a</code> element has
-    an <code>h1</code> parent with a class
-    of <code>entry-title</code>. The <code>a</code> element also
-    contains the title of the technical report. Similarly we can see
-    a <code>time</code> element that tells us via
-    the <code>datetime</code> attribute when the post was
-    published. We first start by loading the required packages and
-    retrieving the data so that we can work with it.</p>
+    <p>
+      This fragment shows us that we have the information available to us, we
+      just need to know how to query it. For example, we can see that the URL to
+      each technical report is in the <code>href</code> attribute within an
+      <code>a</code> element. In particular, this <code>a</code> element has an
+      <code>h1</code> parent with a class of <code>entry-title</code>. The
+      <code>a</code> element also contains the title of the technical report.
+      Similarly we can see a <code>time</code> element that tells us via the
+      <code>datetime</code> attribute when the post was published. We first
+      start by loading the required packages and retrieving the data so that we
+      can work with it.
+    </p>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">library</span>(XML)
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">library</span>(XML)
 R&gt; <span class="functioncall">library</span>(selectr)
 R&gt; page &lt;- <span class="functioncall">htmlParse</span>(<span class="string">"http://stattech.wordpress.fos.auckland.ac.nz/"</span>)
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
+    <p>
+      Now that the page has been parsed into a queryable form, we can write the
+      required CSS selectors to retrieve this information using
+      <code>querySelectorAll()</code>.
+    </p>
 
-    <p>Now that the page has been parsed into a queryable form, we can
-    write the required CSS selectors to retrieve this information
-    using <code>querySelectorAll()</code>.</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; # CSS selector to get titles and URLs: <span class="string">"h1.entry-title &gt; a"</span>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; # CSS selector to get titles and URLs: <span class="string">"h1.entry-title &gt; a"</span>
 R&gt; links &lt;- <span class="functioncall">querySelectorAll</span>(page, <span class="string">"h1.entry-title &gt; a"</span>)
 R&gt; <span class="comment"># Now lets get all of the publishing times</span>
 R&gt; timeEls &lt;- <span class="functioncall">querySelectorAll</span>(page, <span class="string">"time"</span>)
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
+    <p>
+      Now that we have gathered the correct elements, it is reasonably simple to
+      manipulate them using the <em>XML</em> package. We want to extract the
+      correct attributes and values from the selected nodes. The code below
+      shows how we would do this.
+    </p>
 
-    <p>Now that we have gathered the correct elements, it is
-    reasonably simple to manipulate them using the <em>XML</em>
-    package. We want to extract the correct attributes and values from
-    the selected nodes. The code below shows how we would do this.</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="comment"># Collect all URLs</span>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="comment"># Collect all URLs</span>
 R&gt; urls &lt;- <span class="functioncall">sapply</span>(links, <span class="functioncall"><span class="keyword">function</span></span>(x) <span class="functioncall">xmlGetAttr</span>(x, <span class="string">"href"</span>))
 R&gt; <span class="comment"># Collect all titles</span>
 R&gt; titles &lt;- <span class="functioncall">sapply</span>(links, xmlValue)
@@ -551,7 +819,11 @@ R+                                date = dates,
 R+                                stringsAsFactors = <span class="keyword">FALSE</span>)
 R&gt; <span class="comment"># and show one column at a time</span>
 R&gt; technicalReports$title
-</pre></div><div class="output"><pre class="knitr r">[1] "2012-9 Writing grid Extensions"                                                                          
+</pre>
+        </div>
+        <div class="output">
+          <pre class="knitr r">
+[1] "2012-9 Writing grid Extensions"                                                                          
 [2] "2012-8 Meta-analysis of a rare-variant association test"                                                 
 [3] "2012-7 A Structured Approach for Generating SVG"                                                         
 [4] "2012-6 Working with the gridSVG Coordinate System"                                                       
@@ -560,8 +832,18 @@ R&gt; technicalReports$title
 [7] "2012-3 An empirical-process central limit theorem for complex sampling under bounds on the design effect"
 [8] "2012-2: Two-phase subsampling designs for  genomic resequencing studies"                                 
 [9] "2012-1: Partial Likelihood Ratio Tests for the Cox model under Complex Sampling"                         
-</pre></div><div class="source"><pre class="knitr r">R&gt; technicalReports$url
-</pre></div><div class="output"><pre class="knitr r">[1] "http://stattech.wordpress.fos.auckland.ac.nz/2012-9-writing-grid-extensions/"                                                                   
+</pre
+          >
+        </div>
+        <div class="source">
+          <pre class="knitr r">
+R&gt; technicalReports$url
+</pre
+          >
+        </div>
+        <div class="output">
+          <pre class="knitr r">
+[1] "http://stattech.wordpress.fos.auckland.ac.nz/2012-9-writing-grid-extensions/"                                                                   
 [2] "http://stattech.wordpress.fos.auckland.ac.nz/2012-8-meta-analysis-of-a-rare-variant-association-test/"                                          
 [3] "http://stattech.wordpress.fos.auckland.ac.nz/2012-7-a-structured-approach-for-generating-svg/"                                                  
 [4] "http://stattech.wordpress.fos.auckland.ac.nz/2012-6-working-with-the-gridsvg-coordinate-system/"                                                
@@ -570,37 +852,68 @@ R&gt; technicalReports$title
 [7] "http://stattech.wordpress.fos.auckland.ac.nz/an-empirical-process-central-limit-theorem-for-complex-sampling-under-bounds-on-the-design-effect/"
 [8] "http://stattech.wordpress.fos.auckland.ac.nz/2012-2-two-phase-subsampling-designs-for-genomic-resequencing-studies/"                            
 [9] "http://stattech.wordpress.fos.auckland.ac.nz/2012-1-partial-likelihood-ratio-tests-for-the-cox-model-under-complex-sampling/"                   
-</pre></div><div class="source"><pre class="knitr r">R&gt; technicalReports$date
-</pre></div><div class="output"><pre class="knitr r">[1] "2012-11-06" "2012-11-04" "2012-10-15" "2012-10-10" "2012-09-19"
+</pre
+          >
+        </div>
+        <div class="source">
+          <pre class="knitr r">
+R&gt; technicalReports$date
+</pre
+          >
+        </div>
+        <div class="output">
+          <pre class="knitr r">
+[1] "2012-11-06" "2012-11-04" "2012-10-15" "2012-10-10" "2012-09-19"
 [6] "2012-06-20" "2012-06-20" "2012-05-24" "2012-05-24"
-</pre></div></div></div>
-
+</pre
+          >
+        </div>
+      </div>
+    </div>
 
     <h3>A complex example</h3>
 
-    <p><a href="https://www.stat.auckland.ac.nz/~paul/Reports/gridSVGviaXML/generating-svg.html">An
-    example</a> (see &ldquo;XPath&rdquo;) written for
-    the <em>gridSVG</em> package <a href="#ref-11">[11]</a> will be
-    revisited. The example first shows
-    a <em>ggplot2</em> <a href="#ref-12">[12]</a> plot that has been
-    exported to SVG using <em>gridSVG</em>. The aim is to then remove
-    the legend from the plot by removing the node containing all
-    legend information. Once the node has been removed, the resulting
-    document can be saved to produce an image with a legend
-    removed.</p>
+    <p>
+      <a
+        href="https://www.stat.auckland.ac.nz/~paul/Reports/gridSVGviaXML/generating-svg.html"
+        >An example</a
+      >
+      (see &ldquo;XPath&rdquo;) written for the <em>gridSVG</em> package
+      <a href="#ref-11">[11]</a> will be revisited. The example first shows a
+      <em>ggplot2</em> <a href="#ref-12">[12]</a> plot that has been exported to
+      SVG using <em>gridSVG</em>. The aim is to then remove the legend from the
+      plot by removing the node containing all legend information. Once the node
+      has been removed, the resulting document can be saved to produce an image
+      with a legend removed.
+    </p>
 
-    <p>What is of particular interest with this example is that it
-    uses SVG, which is a namespaced XML document. This provides some
-    challenges that require consideration, but the <em>selectr</em>
-    package can handle this case.</p>
+    <p>
+      What is of particular interest with this example is that it uses SVG,
+      which is a namespaced XML document. This provides some challenges that
+      require consideration, but the <em>selectr</em> package can handle this
+      case.
+    </p>
 
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">library</span>(ggplot2)
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">library</span>(ggplot2)
 R&gt; <span class="functioncall">library</span>(gridSVG)
 R&gt; <span class="functioncall">qplot</span>(mpg, wt, data=mtcars, colour=cyl)
 R&gt; svgdoc &lt;- <span class="functioncall">gridToSVG</span>(name=<span class="keyword">NULL</span>, <span class="string">"none"</span>, <span class="string">"none"</span>)$svg
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" version="1.1">
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre
+            class="knitr r"
+          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" version="1.1">
   <g transform="translate(0, 504) scale(1, -1)">
     <g id="gridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1px" font-size="12px" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
       <g id="layout.1">
@@ -944,17 +1257,23 @@ R&gt; svgdoc &lt;- <span class="functioncall">gridToSVG</span>(name=<span class=
       </g>
     </g>
   </g>
-</svg></pre></div></div></div>
+</svg></pre>
+        </div>
+      </div>
+    </div>
 
+    <p>
+      So far we have simply reproduced the original plot and stored the
+      resulting XML in a node tree called <code>svgdoc</code>. In order to
+      remove the legend from the plot we first need to select the legend node
+      from the SVG document. We will compare the <em>XML</em>-only approach with
+      one enhanced with <em>selectr</em>. The comparison is shown below:
+    </p>
 
-    <p>So far we have simply reproduced the original plot and stored
-    the resulting XML in a node tree called <code>svgdoc</code>. In
-    order to remove the legend from the plot we first need to select
-    the legend node from the SVG document. We will compare
-    the <em>XML</em>-only approach with one enhanced
-    with <em>selectr</em>. The comparison is shown below:</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="comment"># XPath</span>
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre class="knitr r">R&gt; <span class="comment"># XPath</span>
 R&gt; legendNode &lt;- <span class="functioncall">getNodeSet</span>(svgdoc,
 R+                          <span class="string">"//svg:g[@id=<span class="string">'layout::guide-box.3-5-3-5.1'</span>]"</span>,
 R+                          <span class="functioncall">c</span>(svg = <span class="string">"http://www.w3.org/2000/svg"</span>))[[1]]
@@ -963,42 +1282,71 @@ R&gt; legendNode &lt;- <span class="functioncall">querySelector</span>(svgdoc,
 R+                             <span class="string">"#layout\\:\\:guide-box\\.3-5-3-5\\.1"</span>,
 R+                             <span class="functioncall">c</span>(svg = <span class="string">"http://www.w3.org/2000/svg"</span>),
 R+                             prefix = <span class="string">"//svg:*/descendant-or-self::"</span>)
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
+    <p>
+      This particular example demonstrates a case where the XPath approach is
+      more concise. This is because the <code>id</code> attribute that we're
+      searching for needs to have its CSS selector escaped (due to
+      <code>:</code> and <code>.</code> being special characters in CSS), while
+      the XPath expression remains unchanged. Additionally, we also need to
+      specify a namespace-aware prefix for the XPath that is generated. To use
+      CSS selectors in this case required knowledge of XPath that would rather
+      be avoided.
+    </p>
 
-    <p>This particular example demonstrates a case where the XPath
-    approach is more concise. This is because the <code>id</code>
-    attribute that we're searching for needs to have its CSS selector
-    escaped (due to <code>:</code> and <code>.</code> being special
-    characters in CSS), while the XPath expression remains
-    unchanged. Additionally, we also need to specify a namespace-aware
-    prefix for the XPath that is generated. To use CSS selectors in
-    this case required knowledge of XPath that would rather be
-    avoided.</p>
+    <p>
+      To work around this issue, a namespace-aware function should be used
+      instead to abstract away the XPath dependent code. The following code
+      demonstrates the use of <em>selectr</em>&rsquo;s namespace-aware function
+      <code>querySelectorNS()</code>:
+    </p>
 
-    <p>To work around this issue, a namespace-aware function should be
-    used instead to abstract away the XPath dependent code. The
-    following code demonstrates the use of <em>selectr</em>&rsquo;s
-    namespace-aware function <code>querySelectorNS()</code>:</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; legendNode &lt;- <span class="functioncall">querySelectorNS</span>(svgdoc,
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; legendNode &lt;- <span class="functioncall">querySelectorNS</span>(svgdoc,
 R+                               <span class="string">"#layout\\:\\:guide-box\\.3-5-3-5\\.1"</span>,
 R+                               <span class="functioncall">c</span>(svg = <span class="string">"http://www.w3.org/2000/svg"</span>))
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
+    <p>
+      The resulting use of CSS selection is now as concise as the XPath version,
+      with the only special consideration being the requirement of escaping the
+      CSS selector.
+    </p>
 
-    <p>The resulting use of CSS selection is now as concise as the
-    XPath version, with the only special consideration being the
-    requirement of escaping the CSS selector.</p>
+    <p>
+      Now that the legend has been selected, we can remove it from the SVG
+      document to produce an image with a legend omitted.
+    </p>
 
-    <p>Now that the legend has been selected, we can remove it from
-    the SVG document to produce an image with a legend omitted.</p>
-
-<div class="chunk"><div class="rcode"><div class="source"><pre class="knitr r">R&gt; <span class="functioncall">removeChildren</span>(<span class="functioncall">xmlParent</span>(legendNode), legendNode)
+    <div class="chunk">
+      <div class="rcode">
+        <div class="source">
+          <pre
+            class="knitr r"
+          >R&gt; <span class="functioncall">removeChildren</span>(<span class="functioncall">xmlParent</span>(legendNode), legendNode)
 R&gt; <span class="functioncall">saveXML</span>(svgdoc, file = <span class="keyword">NULL</span>)
-</pre></div></div></div>
+</pre>
+        </div>
+      </div>
+    </div>
 
-<div class="chunk"><div class="rcode"><div class="output"><pre class="knitr r"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" version="1.1">
+    <div class="chunk">
+      <div class="rcode">
+        <div class="output">
+          <pre
+            class="knitr r"
+          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" version="1.1">
   <g transform="translate(0, 504) scale(1, -1)">
     <g id="gridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1px" font-size="12px" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
       <g id="layout.1">
@@ -1248,54 +1596,129 @@ R&gt; <span class="functioncall">saveXML</span>(svgdoc, file = <span class="keyw
       </g>
     </g>
   </g>
-</svg></pre></div></div></div>
-
+</svg></pre>
+        </div>
+      </div>
+    </div>
 
     <h2>Conclusion</h2>
 
-    <p>This article describes the new <em>selectr</em> package. Its
-    main purpose is to allow the use of CSS selectors in a domain
-    which previously only allowed XPath. In addition, convenience
-    functions have also been described; allowing easy use of CSS
-    selectors for the purpose of retrieving parts of an XML
-    document. It has been demonstrated that the <em>selectr</em>
-    package augments the <em>XML</em> package with the ability to use
-    a more concise language for selecting content from an XML
-    document.</p>
+    <p>
+      This article describes the new <em>selectr</em> package. Its main purpose
+      is to allow the use of CSS selectors in a domain which previously only
+      allowed XPath. In addition, convenience functions have also been
+      described; allowing easy use of CSS selectors for the purpose of
+      retrieving parts of an XML document. It has been demonstrated that the
+      <em>selectr</em> package augments the <em>XML</em> package with the
+      ability to use a more concise language for selecting content from an XML
+      document.
+    </p>
 
     <h2>Downloads</h2>
     <p>
       This document is licensed under a
       <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/nz/">
-        Creative Commons
-        Attribution 3.0 New Zealand License
-      </a>.
-      <img src="cc.png" width="88" height="31">
+        Creative Commons Attribution 3.0 New Zealand License </a
+      >.
+      <img src="cc.png" width="88" height="31" />
       The code is freely available under the
       <a href="gpl.txt">GPL</a>. The described functionality of
-      <em>selectr</em> is present in version 0.2-0. <em>selectr</em>
-      is available
-      on <a href="http://cran.r-project.org/web/packages/selectr/index.html"><abbr title="Comprehensive R Archive Network">CRAN</abbr></a> and development occurs on
-      GitHub
-      at <a href="https://github.com/sjp/selectr">https://github.com/sjp/selectr</a>.
+      <em>selectr</em> is present in version 0.2-0. <em>selectr</em> is
+      available on
+      <a href="http://cran.r-project.org/web/packages/selectr/index.html"
+        ><abbr title="Comprehensive R Archive Network">CRAN</abbr></a
+      >
+      and development occurs on GitHub at
+      <a href="https://github.com/sjp/selectr">https://github.com/sjp/selectr</a
+      >.
     </p>
     <ul>
-      <li><a href="selectr.Rhtml">Code used to generate article</a> (note, requires <a href="http://yihui.name/knitr/"><em>knitr</em></a>, available on CRAN)</li>
+      <li>
+        <a href="selectr.Rhtml">Code used to generate article</a> (note,
+        requires <a href="http://yihui.name/knitr/"><em>knitr</em></a
+        >, available on CRAN)
+      </li>
     </ul>
     <h2>References</h2>
     <ol>
-      <li id="ref-1">W3C (1999). <span class="pkg-desc">XML Path Language (XPath) Version 1.0 Specification</span>. <a href="http://www.w3.org/TR/xpath/">http://www.w3.org/TR/xpath/</a>.</li>
-      <li id="ref-2">W3C (2011). <span class="pkg-desc">Selectors Level 3 Specification</span>. <a href="http://www.w3.org/TR/css3-selectors/">http://www.w3.org/TR/css3-selectors/</a>.</li>
-      <li id="ref-3">The jQuery Foundation (2012). <span class="pkg-desc">jQuery: The write less, do more, JavaScript library</span>. <a href="http://jquery.com/">http://jquery.com/</a>. Version 1.8.3.</li>
-      <li id="ref-4">Mike Bostock (2012). <span class="pkg-desc">D3: Data-Driven Documents</span>. <a href="http://d3js.org/">http://d3js.org/</a>. Version 2.10.3.</li>
-      <li id="ref-5">Lang, D. T. (2012). <span class="pkg-desc">XML: Tools for parsing and generating XML within R and S-Plus.</span>. <a href="http://www.omegahat.org/RSXML/">http://www.omegahat.org/RSXML/</a>. R package version 3.95-0</li>
-      <li id="ref-6">R Development Core Team (2012). <span class="pkg-desc">R: A Language and Environment for Statistical Computing</span>. R Foundation for Statistical Computing, Vienna, Austria. ISBN 3-900051-07-0.</li>
-      <li id="ref-7"><span class="pkg-desc">libxml2: The XML C parser and toolkit of Gnome</span>. <a href="http://www.xmlsoft.org/">http://www.xmlsoft.org/</a>.</li>
-      <li id="ref-8">Sapin S. and Bicking, I. (2012). <span class="pkg-desc">cssselect: CSS Selectors for Python</span>. <a href="http://packages.python.org/cssselect/">https://packages.python.org/cssselect/</a>. Version 0.7.1.</li>
-      <li id="ref-9">Potter, S., Sapin, S., &amp; Bicking, I. (2012). <span class="pkg-desc">selectr: Translate  CSS Selectors to XPath Expressions</span>. R package version 0.2-0.</li>
-      <li id="ref-10"><span class="pkg-desc">document.querySelectorAll</span>. <a href="https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll">https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll</a>.</li>
-      <li id="ref-11">Murrell, P. and Potter, S. (2012). <span class="pkg-desc">gridSVG: Export grid graphics as SVG</span>. <a href="http://r-forge.r-project.org/projects/gridsvg/">https://r-forge.r-project.org/projects/gridsvg/</a>. R package version 1.0-0.</li>
-      <li id="ref-12">H. Wickham. <span class="pkg-desc">ggplot2: elegant graphics for data analysis</span>. Springer New York, 2009.</li>
+      <li id="ref-1">
+        W3C (1999).
+        <span class="pkg-desc"
+          >XML Path Language (XPath) Version 1.0 Specification</span
+        >.
+        <a href="http://www.w3.org/TR/xpath/">http://www.w3.org/TR/xpath/</a>.
+      </li>
+      <li id="ref-2">
+        W3C (2011).
+        <span class="pkg-desc">Selectors Level 3 Specification</span>.
+        <a href="http://www.w3.org/TR/css3-selectors/"
+          >http://www.w3.org/TR/css3-selectors/</a
+        >.
+      </li>
+      <li id="ref-3">
+        The jQuery Foundation (2012).
+        <span class="pkg-desc"
+          >jQuery: The write less, do more, JavaScript library</span
+        >. <a href="http://jquery.com/">http://jquery.com/</a>. Version 1.8.3.
+      </li>
+      <li id="ref-4">
+        Mike Bostock (2012).
+        <span class="pkg-desc">D3: Data-Driven Documents</span>.
+        <a href="http://d3js.org/">http://d3js.org/</a>. Version 2.10.3.
+      </li>
+      <li id="ref-5">
+        Lang, D. T. (2012).
+        <span class="pkg-desc"
+          >XML: Tools for parsing and generating XML within R and S-Plus.</span
+        >.
+        <a href="http://www.omegahat.org/RSXML/"
+          >http://www.omegahat.org/RSXML/</a
+        >. R package version 3.95-0
+      </li>
+      <li id="ref-6">
+        R Development Core Team (2012).
+        <span class="pkg-desc"
+          >R: A Language and Environment for Statistical Computing</span
+        >. R Foundation for Statistical Computing, Vienna, Austria. ISBN
+        3-900051-07-0.
+      </li>
+      <li id="ref-7">
+        <span class="pkg-desc"
+          >libxml2: The XML C parser and toolkit of Gnome</span
+        >. <a href="http://www.xmlsoft.org/">http://www.xmlsoft.org/</a>.
+      </li>
+      <li id="ref-8">
+        Sapin S. and Bicking, I. (2012).
+        <span class="pkg-desc">cssselect: CSS Selectors for Python</span>.
+        <a href="http://packages.python.org/cssselect/"
+          >https://packages.python.org/cssselect/</a
+        >. Version 0.7.1.
+      </li>
+      <li id="ref-9">
+        Potter, S., Sapin, S., &amp; Bicking, I. (2012).
+        <span class="pkg-desc"
+          >selectr: Translate CSS Selectors to XPath Expressions</span
+        >. R package version 0.2-0.
+      </li>
+      <li id="ref-10">
+        <span class="pkg-desc">document.querySelectorAll</span>.
+        <a
+          href="https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll"
+          >https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll</a
+        >.
+      </li>
+      <li id="ref-11">
+        Murrell, P. and Potter, S. (2012).
+        <span class="pkg-desc">gridSVG: Export grid graphics as SVG</span>.
+        <a href="http://r-forge.r-project.org/projects/gridsvg/"
+          >https://r-forge.r-project.org/projects/gridsvg/</a
+        >. R package version 1.0-0.
+      </li>
+      <li id="ref-12">
+        H. Wickham.
+        <span class="pkg-desc">ggplot2: elegant graphics for data analysis</span
+        >. Springer New York, 2009.
+      </li>
     </ol>
   </body>
 </html>

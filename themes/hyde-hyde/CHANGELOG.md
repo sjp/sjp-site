@@ -8,7 +8,7 @@ __2018-11__
 
   * ```toml
     [params.social]
-    	gravatar = "your.email@domain.com"
+        gravatar = "your.email@domain.com"
     ```
 
 * Fix Hugo demo (issue [#53](https://github.com/htr3n/hyde-hyde/issues/53))
@@ -50,7 +50,7 @@ __Version 2.0__
 * Restructure/modularise further the layouts (see [_layouts_](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts))
 * Add '[_Portfolio_](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/portfolio)' page inspired by Xiaoying Riley ([@3rdwave_themes](https://twitter.com/3rdwave_themes)) [Developer-Theme](https://github.com/xriley/developer-theme)
 * Change the main body font to use system fonts (see [_\_variables.scss_](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/static-src/scss/hyde-hyde/_variables.scss))
-	* In case you prefer Web fonts, just include the template "[web-fonts.html](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/partials/header/web-fonts.html)" to "[header.html](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/partials/header.html)"
+    * In case you prefer Web fonts, just include the template "[web-fonts.html](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/partials/header/web-fonts.html)" to "[header.html](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/partials/header.html)"
 * Switch to main fixed width font [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro)
 * Add OpenGraph and TwitterCard templates (for SEO)
 * Add '_Related Articles_' (see [_layouts/partials/post-related.html_](https://github.com/htr3n/hyde-hyde/tree/v2.0.0/layouts/partials/post-related.html))

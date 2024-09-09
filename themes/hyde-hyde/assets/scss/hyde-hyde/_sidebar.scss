@@ -61,16 +61,16 @@
 }
 
 .img--circle {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .img--headshot {
-	height: 115px;
-	width: 115px;
+  height: 115px;
+  width: 115px;
 }
 
 .img--caption {
-	font-style: italic;
+  font-style: italic;
 }
 
 %small-center-text {
@@ -81,9 +81,9 @@
 
 .copyright {
   padding-top: 1rem;
-	@extend %small-center-text;
+  @extend %small-center-text;
 }
 .builtwith {
-  padding-top: .2rem;
+  padding-top: 0.2rem;
   @extend %small-center-text;
 }

@@ -80,10 +80,10 @@ __`Hyde-hyde`__ essentially inherits most of Hyde's [options](https://github.com
 
   ```toml
   [params.social]
-  	twitter = "htr3n"
-  	keybase = "htr3n"
-  	github = "htr3n"
-  	...
+      twitter = "htr3n"
+      keybase = "htr3n"
+      github = "htr3n"
+      ...
   ```
   
 *  `include_toc = false`: Setting to `false` in FrontMatter will disable too short TOC data as your want. 
@@ -92,7 +92,7 @@ __`Hyde-hyde`__ essentially inherits most of Hyde's [options](https://github.com
 
     * ```toml
       [params.social]
-      	gravatar = "your.email@domain.com"
+          gravatar = "your.email@domain.com"
       ```
 
 ### Customisations
