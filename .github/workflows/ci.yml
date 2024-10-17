@@ -42,7 +42,6 @@ jobs:
         
       - name: Deploy
         uses: easingthemes/ssh-deploy@v5.1.1
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }} 
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
