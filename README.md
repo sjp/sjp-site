@@ -1,6 +1,6 @@
 # sjp.co.nz
 
-![CI](https://github.com/sjp/sjp-site/workflows/CI/badge.svg?branch=master)
+[![GitHub Actions](https://github.com/sjp/sjp-site/actions/workflows/ci.yml/badge.svg)](https://github.com/sjp/sjp-site/actions/workflows/ci.yml)
 
 This is the source code and content for the website powering [sjp.co.nz](https://sjp.co.nz/).
 
