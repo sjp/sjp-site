@@ -9,6 +9,14 @@
 			"extended": true,
 			"version": "latest"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"DavidAnson.vscode-markdownlint",
+				"tamasfe.even-better-toml"
+			]
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
