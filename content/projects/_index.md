@@ -15,5 +15,6 @@ Below are a list of projects that I have created or worked on at some point:
 * [NormalLaplace]({{< ref "projects/nl.md" >}}) -- An R package for working with the generalised Normal Laplace and related distributions. 
 * [Rainbow]({{< ref "projects/rainbow.md" >}}) -- A small, simple JavaScript library for syntax highlighting.
 * [selectr]({{< ref "projects/selectr.md" >}}) -- Easily query XML documents using CSS selectors.
+* [Tanstack Query SharedWorker Persister]({{< ref "projects/query-shared-worker-persister.md" >}}) -- Improve Tanstack Query performance by sharing a cache across tabs and windows.
 * [TimingManager]({{< ref "projects/timing-manager.md" >}}) -- Sequencing for animations in JavaScript.
 * [Visual Inference Tools]({{< ref "projects/visual-inference-tools.md" >}}) -- Generates animations for demonstrating high school and undergraduate statistical concepts.
