@@ -13,7 +13,7 @@ Below are a list of projects that I have created or worked on at some point:
 * [gridSVG]({{< ref "projects/gridsvg.md" >}}) -- Renders R's grid graphics to an SVG image, including animations, hyperlinks, JavaScript interaction.
 * [grImport2]({{< ref "projects/grimport2.md" >}}) -- Import vector images into R's grid graphics system.
 * [iNZight]({{< ref "projects/inzight.md" >}}) -- A simple exploratory data analysis tool.
-* [Is my ID Leaky?]({{< ref "projects/is-my-id-leaky.md" >}}) -- Detects and explains why a public identifier may unintentional reveal information.
+* [Is my ID Leaky?]({{< ref "projects/is-my-id-leaky.md" >}}) -- Detects and explains why a public identifier may unintentionally reveal information.
 * [Masters Thesis]({{< ref "projects/msc-thesis.md" >}}) -- Code, demonstrations, documentation and my published Masters Thesis.
 * [NormalLaplace]({{< ref "projects/nl.md" >}}) -- An R package for working with the generalised Normal Laplace and related distributions.
 * [Rainbow]({{< ref "projects/rainbow.md" >}}) -- A small, simple JavaScript library for syntax highlighting.
