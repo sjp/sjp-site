@@ -1,9 +1,9 @@
 +++
 date = "2025-03-17"
-title = "GetWiFi"
+title = "Get WiFi"
 +++
 
-GetWiFi is a small [Preact](https://preactjs.com) website that generates QR codes to connect to WiFi in the browser.
+[Get WiFi](https://getwifi.link) is a small [Preact](https://preactjs.com) website that generates QR codes to connect to WiFi in the browser.
 It is currently hosted at [getwifi.link](https://getwifi.link).
 
 Unlike some similar websites, the QR codes are entirely generated in the browser.

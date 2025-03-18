@@ -7,7 +7,7 @@ Below are a list of projects that I have created or worked on at some point:
 
 * [AvroTools]({{< ref "projects/avrotools.md" >}}) -- A collection of tools for working with Avro in .NET, including an IDL compiler and C# code generation.
 * [GeneralizedHyperbolic]({{< ref "projects/ghyp.md" >}}) -- An R package for working with the generalised hyperbolic and related distributions.
-* [GetWiFi]({{< ref "projects/getwifi.md" >}}) -- Quickly generate QR codes to connect to WiFi networks.
+* [Get WiFi]({{< ref "projects/get-wifi.md" >}}) -- Quickly generate QR codes to connect to WiFi networks.
 * [GOMstreamer]({{< ref "projects/gomstreamer.md" >}}) -- Provides Starcraft 2 streams for Windows, Mac and Linux.
 * [grConvert]({{< ref "projects/grconvert.md" >}}) -- Converts between PostScript, SVG and PDF image formats in R.
 * [gridSVG]({{< ref "projects/gridsvg.md" >}}) -- Renders R's grid graphics to an SVG image, including animations, hyperlinks, JavaScript interaction.
