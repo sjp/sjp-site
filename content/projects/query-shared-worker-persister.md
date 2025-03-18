@@ -9,6 +9,12 @@ By using the `@sjpnz/query-shared-worker-persister` package, it is possible to s
 
 The sharing of a cache is possible due to a [`SharedWorker`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker) that provides a single web worker that is shared across all tabs and windows from pages of the same origin.
 
+## Demo
+
+A demo app that utilises the caching mechanism is available here: <https://sjp.co.nz/projects/query-shared-worker-persister/demo>
+
+The source for the react application is available on [GitHub](https://github.com/sjp/rick-morty)
+
 ## Install
 
 This package is published on `npm`, and developed on [GitHub](https://github.com/sjp/query-shared-worker-persister).
@@ -77,3 +83,4 @@ export default function App() {
 ## Further Information
 
 For more information visit the repository on [GitHub](https://github.com/sjp/query-shared-worker-persister).
+'
