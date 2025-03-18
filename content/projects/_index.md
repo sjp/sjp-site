@@ -5,7 +5,7 @@ type = "projects"
 
 Below are a list of projects that I have created or worked on at some point:
 
-* [AvroTools]({{< ref "projects/avrotools.md" >}}) -- A collection of tools for working with Avro in dotnet, including an IDL compiler and C# code generation.
+* [AvroTools]({{< ref "projects/avrotools.md" >}}) -- A collection of tools for working with Avro in .NET, including an IDL compiler and C# code generation.
 * [GeneralizedHyperbolic]({{< ref "projects/ghyp.md" >}}) -- An R package for working with the generalised hyperbolic and related distributions.
 * [GOMstreamer]({{< ref "projects/gomstreamer.md" >}}) -- Provides Starcraft 2 streams for Windows, Mac and Linux. 
 * [grConvert]({{< ref "projects/grconvert.md" >}}) -- Converts between PostScript, SVG and PDF image formats in R.
