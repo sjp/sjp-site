@@ -83,4 +83,3 @@ export default function App() {
 ## Further Information
 
 For more information visit the repository on [GitHub](https://github.com/sjp/query-shared-worker-persister).
-'
