@@ -4,10 +4,11 @@ title = "About"
 
 This is the personal website of Simon Potter.
 
-I am currently a Software Developer at [Starshipit](https://starshipit.com/).
+I am currently a Software Developer at [Taxab](https://taxlab.online/).
 
 Previously I've worked at the following companies:
 
+* [Starshipit](https://starshipit.com/)
 * [Zip](https://zip.co/nz)
 * [Datacom](https://datacom.co.nz/)
 * [RLDatix](https://rldatix.com/) (formerly RL Solutions)
