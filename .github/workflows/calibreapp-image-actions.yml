@@ -1,4 +1,8 @@
 name: Compress images
+
+permissions:
+  contents: read
+
 on:
   pull_request:
     # Run image-actions when jpg, jpeg, png or webp files are added or changed
