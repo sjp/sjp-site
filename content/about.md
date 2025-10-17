@@ -4,7 +4,7 @@ title = "About"
 
 This is the personal website of Simon Potter.
 
-I am currently a Software Developer at [Taxab](https://taxlab.online/).
+I am currently a Software Developer at [TaxLab](https://taxlab.online/).
 
 Previously I've worked at the following companies:
 
