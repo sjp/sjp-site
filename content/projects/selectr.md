@@ -3,11 +3,12 @@ date = "2012-12-24"
 title = "selectr"
 +++
 
-The selectr package for [R](https://www.r-project.org/) parses [CSS3
-Selectors](https://www.w3.org/TR/css3-selectors/) and translates them
-to [XPath 1.0](https://www.w3.org/TR/xpath/) expressions. It is an R
-port of the [cssselect](https://pythonhosted.org/cssselect/) package
-for Python. Development occurs on GitHub in the [selectr](https://github.com/sjp/selectr)
+The selectr package for [R](https://www.r-project.org/) parses [CSS
+Selectors](https://www.w3.org/TR/selectors-4/) and translates them
+to [XPath 1.0](https://www.w3.org/TR/xpath/) expressions. It was
+originally an R port of the [cssselect](https://pythonhosted.org/cssselect/)
+package for Python but now supports additional selectors. Development
+occurs on GitHub in the [selectr](https://github.com/sjp/selectr)
 repository.
 
 The main purpose of this package is to make working with (X)HTML and
@@ -54,20 +55,20 @@ and
 > querySelector(mydoc, "a")
 <a>
   <!-- A comment -->
-  <b> 
+  <b>
     %extEnt;
   </b>
-</a> 
+</a>
 > querySelectorAll(mydoc, "code")
 [[1]]
 <code>
 xmlTreeParse("test.xml", replaceEntities = TRUE)
-</code> 
+</code>
 
 [[2]]
 <code>
 xmlTreeParse("test.xml")
-</code> 
+</code>
 
 attr(,"class")
 [1] "XMLNodeSet"
