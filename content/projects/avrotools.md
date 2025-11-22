@@ -9,8 +9,8 @@ AvroTools is a collection of tools, written in C# to work effectively with the [
 
 AvroTools supports the following features that are improvements upon the largely Java-based implementation provided by Apache.
 
-* Compile [Avro IDL](https://avro.apache.org/docs/current/idl.html) to an [Avro Protocol](https://avro.apache.org/docs/current/spec.html#Protocol+Declaration).
-* Compile [Avro IDL](https://avro.apache.org/docs/current/idl.html) to [Avro Schema](https://avro.apache.org/docs/current/spec.html#schemas).
+* Compile [Avro IDL](https://avro.apache.org/docs/current/idl.html) to an [Avro Protocol](https://avro.apache.org/docs/1.12.0/specification/#protocol-declaration).
+* Compile [Avro IDL](https://avro.apache.org/docs/current/idl.html) to [Avro Schema](https://avro.apache.org/docs/1.12.0/specification/#schema-declaration).
 * Generate C# classes for protocols and schemas. The generated code is an improvement upon the canonical implementation.
 * Supports additional logical types compared to reference compiler. Note that these may not be usable in practice but can be compiled to compatible Avro Protocol/Schema. The following additional logical types are supported in IDL:
   * `uuid`
@@ -20,39 +20,32 @@ AvroTools supports the following features that are improvements upon the largely
   * `local-timestamp-micros`
   * `duration`
 
-## Install
+## Installation
 
-This is not yet available on nuget, so the code is only available on [GitHub](https://github.com/sjp/AvroTools).
+Install as a [.NET tool](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-install):
+
+```sh
+dotnet tool install --global SJP.AvroTool
+```
 
 ## Usage
-
-The intention is for this to be installable as a [`dotnet tool`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-install), but for the moment usage is possible via `dotnet run`.
 
 Most of the documentation is provided by the tool itself (outside of the language specifications).
 
 ```plain
-$ dotnet run --project src/AvroTool
-    ___                 ______            __
-   /   |_   ___________/_  __/___  ____  / /
-  / /| | | / / ___/ __ \/ / / __ \/ __ \/ /
- / ___ | |/ / /  / /_/ / / / /_/ / /_/ / /
-/_/  |_|___/_/   \____/_/  \____/\____/_/
+$ avrotool --help
 
-The helpful Avro compiler tool.
+USAGE:
+    avrotool [OPTIONS] <COMMAND>
 
-avrotool
+OPTIONS:
+    -h, --help       Prints help information
+    -v, --version    Prints version information
 
-Usage:
-  avrotool [options] [command]
-
-Options:
-  -?, -h, --help  Show help and usage information
-  --version       Show version information
-
-Commands:
-  idl <idlfile>                Generates a JSON protocol file from an Avro IDL file.
-  idl2schemata <idlfile>       Extract JSON schemata of the types from an Avro IDL file.
-  codegen <input> <namespace>  Generates C# code for a given Avro IDL, protocol or schema.
+COMMANDS:
+    idl <IDL_FILE>                      Generates a JSON protocol file from an Avro IDL file
+    idl2schemata <IDL_FILE>             Extract JSON schemata of the types from an Avro IDL file
+    codegen <INPUT_FILE> <NAMESPACE>    Generates C# code for a given Avro IDL, protocol or schema
 ```
 
 ### Examples
@@ -69,7 +62,7 @@ protocol TestProtocol {
 
   void Ping();
 }
-$ dotnet run --project src/AvroTool idl sample.avdl
+$ avrotool idl sample.avdl
 Generated /home/sjp/repos/AvroTools/TestProtocol.avpr
 $ cat TestProtocol.avpr
 {
@@ -117,7 +110,7 @@ protocol TestProtocol {
 
   void Ping();
 }
-$ dotnet run --project src/AvroTool idl2schemata sample.avdl
+$ avrotool idl2schemata sample.avdl
 Generated /home/sjp/repos/AvroTools/TestRecord.avsc
 Generated /home/sjp/repos/AvroTools/TestEnum.avsc
 
@@ -163,7 +156,7 @@ protocol TestProtocol {
   void Ping();
 }
 
-$ dotnet run --project src/AvroTool codegen sample.avdl Test.Code.Namespace
+$ avrotool codegen sample.avdl Test.Code.Namespace
 Generated /home/sjp/repos/AvroTools/TestProtocol.cs
 Generated /home/sjp/repos/AvroTools/TestRecord.cs
 
