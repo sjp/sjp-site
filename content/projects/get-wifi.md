@@ -18,10 +18,6 @@ Primarily the website was intended as a learning experience. Not only for buildi
 * Download to SVG or PNG
 * One-click printing for the QR code
 
-## Screenshot
-
-![GetWiFi Screenshot](getwifi-screenshot.png)
-
 ## Development
 
 Currently the feature set is stable and there is no intention to add any features.
