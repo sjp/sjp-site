@@ -46,7 +46,8 @@
     <a href="https://orcid.org/{{.}}" rel="me"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i></a>
     {{end}}
     {{ with .Site.Params.social.email }}
-    {{ (printf "<a href=\"mailto:%s\" rel=\"me\" title=\"Email\"><i class=\"icon icon-at\" aria-hidden=\"true\"></i></a>" .) | safeHTML }}
+    {{ $encoded := partial "obfuscate.html" . }}
+    {{ (printf "<a href=\"mailto:%s\" rel=\"me\" title=\"Email\"><i class=\"icon icon-at\" aria-hidden=\"true\"></i></a>" $encoded) | safeHTML }}
     {{ end }}
     <label for="theme-toggle" title="Toggle Dark Mode"><i class="icon icon-lightbulb" aria-hidden="true"></i></label>
 </section>
