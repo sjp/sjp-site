@@ -18,7 +18,7 @@ theme = "hyde-hyde"
 
 [params.social]
     github = "sjp"
-    email = "simon@sjp.co.nz"
+    email = "%73%69%6d%6f%6e%40%73%6a%70%2e%63%6f%2e%6e%7a"
 
 ## Main Menu
 [[menu.main]]
