@@ -8,7 +8,7 @@ build:: build-site setperms
 
 setperms:
 	@find public -type f -print0 | xargs -0 chmod 644
-	@find public -type d -print0 | xargs -0 chmod 777
+	@find public -type d -print0 | xargs -0 chmod 755
 
 clean:
 	-rm -rf public/*
