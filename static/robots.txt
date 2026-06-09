@@ -1,7 +1,5 @@
 User-agent: *
 Crawl-delay: 10
 Disallow: /404.html
-Disallow: /github.com
-Disallow: /offline.html
 
 Sitemap: https://sjp.co.nz/sitemap.xml
