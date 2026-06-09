@@ -1,6 +1,6 @@
 baseURL = "https://sjp.co.nz/"
 
-languageCode = "en-nz"
+locale = "en-nz"
 title = "Simon Potter"
 theme = "hyde-hyde"
 
