@@ -6,7 +6,6 @@ theme = "hyde-hyde"
 
 [params]
     author = "Simon Potter"
-    title = "Title"
     dateformat = "Jan 2, 2006"
 
     # sidebar, copyright & license
