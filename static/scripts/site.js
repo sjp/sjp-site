@@ -6,7 +6,7 @@ var themeToggle = document.getElementById('theme-toggle');
 
 var getThemePreference = function() {
     try {
-        if (typeof(Storage) !== undefined) {
+        if (typeof Storage !== "undefined") {
             return localStorage.getItem('themePreference') || '';
         } else {
             return '';
@@ -24,7 +24,7 @@ var toggleCheckbox = function() {
 var updateThemePreference = function(alternateThemeSelected) {
     var themePreference = alternateThemeSelected ? ALTERNATE_THEME  : '';
     try {
-        if (typeof(Storage) !== undefined) {
+        if (typeof Storage !== "undefined") {
             localStorage.setItem('themePreference', themePreference);
         }
     } catch {
