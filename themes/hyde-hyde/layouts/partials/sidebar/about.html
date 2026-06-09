@@ -9,7 +9,7 @@
     <img src="{{$authorImage}}" alt="Author Image" class="img--circle img--headshot element--center">
   </div>
   {{ end }}
-  <p class="site__description">
-    {{ with .Site.Params.description }} {{.}} {{end}}
-  </p>
+  {{ with .Site.Params.description }}
+  <p class="site__description">{{ . }}</p>
+  {{ end }}
 </div>

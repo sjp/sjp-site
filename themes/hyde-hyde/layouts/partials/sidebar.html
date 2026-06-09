@@ -19,9 +19,9 @@
           <img src="https://www.gravatar.com/avatar/{{md5 .}}?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
         </div>
       {{ end }}
-      <p class="site__description">
-        {{ with .Site.Params.description }} {{.}} {{end}}
-      </p>
+      {{ with .Site.Params.description }}
+      <p class="site__description">{{ . }}</p>
+      {{ end }}
     </div>
     <div class="collapsible-menu">
       <input type="checkbox" id="menu-toggle">
