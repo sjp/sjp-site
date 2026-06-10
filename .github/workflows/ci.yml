@@ -3,6 +3,11 @@ name: CI
 permissions:
   contents: read
 
+env:
+  # Required by Hugo's css.Sass "dartsass" transpiler; keep in sync with
+  # .devcontainer/post-create.sh
+  DART_SASS_VERSION: "1.100.0"
+
 on:
   push:
     branches: [ master ]
@@ -21,6 +26,11 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Install Dart Sass
+        run: |
+          curl -fsSL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" | sudo tar -xz -C /usr/local/lib
+          echo "/usr/local/lib/dart-sass" >> "$GITHUB_PATH"
+
       - name: Build
         run: hugo --minify
 
@@ -36,6 +46,11 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
+
+      - name: Install Dart Sass
+        run: |
+          curl -fsSL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" | sudo tar -xz -C /usr/local/lib
+          echo "/usr/local/lib/dart-sass" >> "$GITHUB_PATH"
 
       - name: Build
         run: hugo --minify
