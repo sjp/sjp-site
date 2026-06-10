@@ -1,9 +1,9 @@
-@import 'hugo-toc';
+@use 'hugo-toc';
 
 .toc {
-  font-size: $toc-font-size;
+  font-size: hugo-toc.$toc-font-size;
   overflow-y: auto;
-  background: $toc-background-color;
+  background: hugo-toc.$toc-background-color;
   padding-left: 0rem;
   padding-top: 1em;
   > .toc-list {

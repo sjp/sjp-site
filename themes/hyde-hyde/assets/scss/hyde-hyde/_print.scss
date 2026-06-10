@@ -1,8 +1,10 @@
+@use "variables";
+
 @page {
   margin: 1cm !important;
 }
 body {
-  font-size: $small-device-font-size;
+  font-size: variables.$small-device-font-size;
   line-height: 1.3;
   background: #fff;
   color: #000;

@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 * {
   box-sizing: border-box;
 }
@@ -5,10 +8,10 @@
 html {
   -webkit-text-size-adjust: 100%; // for iOS
   box-direction: normal;
-  font-family: $root-font-family;
-  font-size: $small-device-font-size;
-  line-height: $root-line-height;
-  font-weight: $root-font-weight;
+  font-family: variables.$root-font-family;
+  font-size: variables.$small-device-font-size;
+  line-height: variables.$root-line-height;
+  font-weight: variables.$root-font-weight;
 }
 
 html,
@@ -27,30 +30,30 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: $heading-font-weight;
+  font-weight: variables.$heading-font-weight;
 }
 
 h1 {
-  font-size: $h1-font-size;
-  line-height: $h1-line-height;
+  font-size: variables.$h1-font-size;
+  line-height: variables.$h1-line-height;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: $h2-font-size;
+  font-size: variables.$h2-font-size;
   margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: $h3-font-size;
+  font-size: variables.$h3-font-size;
 }
 
 h4 {
-  font-size: $h4-font-size;
+  font-size: variables.$h4-font-size;
 }
 
 h5 {
-  font-size: $h5-font-size;
+  font-size: variables.$h5-font-size;
 }
 
 figure {
@@ -93,7 +96,7 @@ blockquote {
 }
 
 kbd {
-  font-family: $root-font-family;
+  font-family: variables.$root-font-family;
   padding: 2px 7px;
   border: 1px solid var(--kbd-border-color);
   font-size: 0.8em;
@@ -108,34 +111,34 @@ kbd {
 }
 
 a {
-  @include link-regular();
+  @include mixins.link-regular();
 
   &.sidebar-nav-item {
     &:hover {
-      @include link-no-decoration();
+      @include mixins.link-no-decoration();
     }
     &:focus {
-      @include link-no-decoration();
+      @include mixins.link-no-decoration();
     }
   }
   &:focus {
-    @include link-hover();
+    @include mixins.link-hover();
     &.tag {
-      @include link-no-decoration();
+      @include mixins.link-no-decoration();
     }
   }
   &:hover {
-    @include link-hover();
+    @include mixins.link-hover();
     &.tag {
-      @include link-no-decoration();
+      @include mixins.link-no-decoration();
     }
   }
   &.tag {
-    @include link-no-decoration();
+    @include mixins.link-no-decoration();
   }
   &.read-more-symbol {
     text-decoration: none;
-    @include link-no-decoration();
+    @include mixins.link-no-decoration();
   }
 }
 

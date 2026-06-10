@@ -1,10 +1,12 @@
+@use "variables";
+
 // mobile ~320..480px
 // 320px ~ 16rem/16px ~ 18.8235/17px ~ 17.7778/18px
 // 480px ~ 30rem/16px ~ 28.2353rem/17px ~ 26.6667rem/18px
 @media (min-width: 320px) and (max-width: 767px) {
   html,
   body {
-    font-size: $small-device-font-size;
+    font-size: variables.$small-device-font-size;
   }
   .sidebar {
     li {
@@ -78,7 +80,7 @@
 @media (min-width: 768px) {
   html,
   body {
-    font-size: $small-device-font-size;
+    font-size: variables.$small-device-font-size;
   }
   .sidebar {
     bottom: 0;
@@ -86,7 +88,7 @@
     position: fixed;
     text-align: left;
     top: 0;
-    width: $sidebar-width;
+    width: variables.$sidebar-width;
   }
   .sidebar-sticky {
     left: 1rem;
@@ -95,9 +97,9 @@
     top: 1rem;
   }
   .content {
-    margin-left: $content-margin-left;
-    margin-right: $content-margin-right;
-    max-width: $content-max-width;
+    margin-left: variables.$content-margin-left;
+    margin-right: variables.$content-margin-right;
+    max-width: variables.$content-max-width;
   }
   .layout-reverse {
     .sidebar {
@@ -105,8 +107,8 @@
       right: 0;
     }
     .content {
-      margin-left: $content-margin-right;
-      margin-right: $content-margin-left;
+      margin-left: variables.$content-margin-right;
+      margin-right: variables.$content-margin-left;
     }
   }
   .col-sm-8 {
@@ -136,7 +138,7 @@
 @media (min-width: 992px) {
   html,
   body {
-    font-size: $large-device-font-size;
+    font-size: variables.$large-device-font-size;
   }
   .layout-reverse .content {
     margin-left: 4rem;

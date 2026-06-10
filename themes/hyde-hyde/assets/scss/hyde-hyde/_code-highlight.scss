@@ -1,7 +1,9 @@
+@use "variables";
+
 .chroma {
     padding: 0 10px;
     overflow-x: auto;
-    line-height: $code-line-height;
+    line-height: variables.$code-line-height;
 
     code {
         background-color: inherit;
