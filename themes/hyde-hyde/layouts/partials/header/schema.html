@@ -1,0 +1,114 @@
+{{- /*
+  Emits schema.org JSON-LD structured data appropriate to each page type.
+  Built as Hugo maps and serialised with `jsonify` so the output is always
+  valid, correctly-escaped JSON.
+*/ -}}
+{{- $site := .Site -}}
+{{- $lang := "en-NZ" -}}
+
+{{- /* Shared Person node for the site author. */ -}}
+{{- $person := dict
+    "@type" "Person"
+    "name" $site.Params.author
+    "url" $site.BaseURL
+    "sameAs" (slice (printf "https://github.com/%s" $site.Params.social.github))
+-}}
+
+{{- /* Best-effort description: explicit description, else a trimmed summary. */ -}}
+{{- $desc := "" -}}
+{{- with .Description -}}
+    {{- $desc = . -}}
+{{- else -}}
+    {{- with .Summary -}}{{- $desc = (. | plainify | htmlUnescape | chomp | truncate 300) -}}{{- end -}}
+{{- end -}}
+
+{{- $data := dict -}}
+
+{{- if .IsHome -}}
+    {{- $website := dict
+        "@type" "WebSite"
+        "@id" (printf "%s#website" $site.BaseURL)
+        "url" $site.BaseURL
+        "name" $site.Title
+        "inLanguage" $lang
+        "author" $person
+        "publisher" $person
+    -}}
+    {{- with $desc }}{{ $website = merge $website (dict "description" .) }}{{ end -}}
+    {{- $data = dict "@context" "https://schema.org" "@graph" (slice $website $person) -}}
+
+{{- else if eq .Kind "page" -}}
+    {{- if eq .Section "posts" -}}
+        {{- $post := dict
+            "@type" "BlogPosting"
+            "headline" .Title
+            "url" .Permalink
+            "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+            "inLanguage" $lang
+            "author" $person
+            "publisher" $person
+            "datePublished" (.Date.Format "2006-01-02")
+            "dateModified" (.Lastmod.Format "2006-01-02")
+        -}}
+        {{- with $desc }}{{ $post = merge $post (dict "description" .) }}{{ end -}}
+        {{- with .Params.tags }}{{ $post = merge $post (dict "keywords" .) }}{{ end -}}
+        {{- $data = merge (dict "@context" "https://schema.org") $post -}}
+    {{- else if eq .Section "projects" -}}
+        {{- $project := dict
+            "@type" "CreativeWork"
+            "name" .Title
+            "url" .Permalink
+            "inLanguage" $lang
+            "author" $person
+        -}}
+        {{- with .Date }}{{ if not .IsZero }}{{ $project = merge $project (dict "datePublished" (.Format "2006-01-02")) }}{{ end }}{{ end -}}
+        {{- with $desc }}{{ $project = merge $project (dict "description" .) }}{{ end -}}
+        {{- $data = merge (dict "@context" "https://schema.org") $project -}}
+    {{- else if in (slice "/about/" "/about") .RelPermalink -}}
+        {{- $profile := dict
+            "@type" "ProfilePage"
+            "url" .Permalink
+            "name" .Title
+            "inLanguage" $lang
+            "mainEntity" $person
+        -}}
+        {{- with $desc }}{{ $profile = merge $profile (dict "description" .) }}{{ end -}}
+        {{- $data = merge (dict "@context" "https://schema.org") $profile -}}
+    {{- else -}}
+        {{- $page := dict
+            "@type" "WebPage"
+            "url" .Permalink
+            "name" .Title
+            "inLanguage" $lang
+            "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $site.BaseURL) "name" $site.Title)
+        -}}
+        {{- with $desc }}{{ $page = merge $page (dict "description" .) }}{{ end -}}
+        {{- $data = merge (dict "@context" "https://schema.org") $page -}}
+    {{- end -}}
+
+{{- else -}}
+    {{- /* Section/list pages: a CollectionPage with an ordered ItemList. */ -}}
+    {{- $items := slice -}}
+    {{- range $i, $p := .Pages -}}
+        {{- $items = $items | append (dict
+            "@type" "ListItem"
+            "position" (add $i 1)
+            "url" $p.Permalink
+            "name" $p.Title)
+        -}}
+    {{- end -}}
+    {{- $collection := dict
+        "@type" "CollectionPage"
+        "url" .Permalink
+        "name" .Title
+        "inLanguage" $lang
+        "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $site.BaseURL) "name" $site.Title)
+        "mainEntity" (dict "@type" "ItemList" "itemListElement" $items)
+    -}}
+    {{- with $desc }}{{ $collection = merge $collection (dict "description" .) }}{{ end -}}
+    {{- $data = merge (dict "@context" "https://schema.org") $collection -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{{- $data | jsonify (dict "indent" "  ") | safeJS }}
+</script>
