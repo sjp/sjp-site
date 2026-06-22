@@ -1,7 +1,8 @@
 {{- /*
   Emits schema.org JSON-LD structured data appropriate to each page type.
   Built as Hugo maps and serialised with `jsonify` so the output is always
-  valid, correctly-escaped JSON.
+  valid, correctly-escaped JSON. All nodes are emitted in a single @graph,
+  including a BreadcrumbList on every page below the home page.
 */ -}}
 {{- $site := .Site -}}
 {{- $lang := "en-NZ" -}}
@@ -22,7 +23,7 @@
     {{- with .Summary -}}{{- $desc = (. | plainify | htmlUnescape | chomp | truncate 300) -}}{{- end -}}
 {{- end -}}
 
-{{- $data := dict -}}
+{{- $nodes := slice -}}
 
 {{- if .IsHome -}}
     {{- $website := dict
@@ -35,7 +36,7 @@
         "publisher" $person
     -}}
     {{- with $desc }}{{ $website = merge $website (dict "description" .) }}{{ end -}}
-    {{- $data = dict "@context" "https://schema.org" "@graph" (slice $website $person) -}}
+    {{- $nodes = slice $website $person -}}
 
 {{- else if eq .Kind "page" -}}
     {{- if eq .Section "posts" -}}
@@ -52,7 +53,7 @@
         -}}
         {{- with $desc }}{{ $post = merge $post (dict "description" .) }}{{ end -}}
         {{- with .Params.tags }}{{ $post = merge $post (dict "keywords" .) }}{{ end -}}
-        {{- $data = merge (dict "@context" "https://schema.org") $post -}}
+        {{- $nodes = $nodes | append $post -}}
     {{- else if eq .Section "projects" -}}
         {{- $project := dict
             "@type" "CreativeWork"
@@ -63,7 +64,7 @@
         -}}
         {{- with .Date }}{{ if not .IsZero }}{{ $project = merge $project (dict "datePublished" (.Format "2006-01-02")) }}{{ end }}{{ end -}}
         {{- with $desc }}{{ $project = merge $project (dict "description" .) }}{{ end -}}
-        {{- $data = merge (dict "@context" "https://schema.org") $project -}}
+        {{- $nodes = $nodes | append $project -}}
     {{- else if in (slice "/about/" "/about") .RelPermalink -}}
         {{- $profile := dict
             "@type" "ProfilePage"
@@ -73,7 +74,7 @@
             "mainEntity" $person
         -}}
         {{- with $desc }}{{ $profile = merge $profile (dict "description" .) }}{{ end -}}
-        {{- $data = merge (dict "@context" "https://schema.org") $profile -}}
+        {{- $nodes = $nodes | append $profile -}}
     {{- else -}}
         {{- $page := dict
             "@type" "WebPage"
@@ -83,7 +84,7 @@
             "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $site.BaseURL) "name" $site.Title)
         -}}
         {{- with $desc }}{{ $page = merge $page (dict "description" .) }}{{ end -}}
-        {{- $data = merge (dict "@context" "https://schema.org") $page -}}
+        {{- $nodes = $nodes | append $page -}}
     {{- end -}}
 
 {{- else -}}
@@ -106,9 +107,23 @@
         "mainEntity" (dict "@type" "ItemList" "itemListElement" $items)
     -}}
     {{- with $desc }}{{ $collection = merge $collection (dict "description" .) }}{{ end -}}
-    {{- $data = merge (dict "@context" "https://schema.org") $collection -}}
+    {{- $nodes = $nodes | append $collection -}}
 {{- end -}}
 
+{{- /* Breadcrumb trail: home down to the current page (skipped on home). */ -}}
+{{- if not .IsHome -}}
+    {{- $crumbs := slice -}}
+    {{- $pos := 1 -}}
+    {{- range .Ancestors.Reverse -}}
+        {{- $name := cond .IsHome "Home" .LinkTitle -}}
+        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $name "item" .Permalink) -}}
+        {{- $pos = add $pos 1 -}}
+    {{- end -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .LinkTitle "item" .Permalink) -}}
+    {{- $nodes = $nodes | append (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) -}}
+{{- end -}}
+
+{{- $data := dict "@context" "https://schema.org" "@graph" $nodes -}}
 <script type="application/ld+json">
 {{- $data | jsonify (dict "indent" "  ") | safeJS }}
 </script>
