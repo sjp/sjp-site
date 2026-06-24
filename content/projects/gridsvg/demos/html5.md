@@ -42,34 +42,7 @@ Select companies to be shown:
 <label for="amzncheck"><input type="checkbox" value="on" checked="checked" id="amzncheck"> AMZN (Amazon.com Inc.)</label>
 <label for="googcheck"><input type="checkbox" value="on" checked="checked" id="googcheck"> GOOG (Google Inc.)</label>
 <label for="msftcheck"><input type="checkbox" value="on" checked="checked" id="msftcheck"> MSFT (Microsoft Corporation)</label>
-<script type="text/javascript">
-    // Grabbing all of the checkbox elements so that
-    // we can inspect whether they are checked or not
-    var aaplshow = document.getElementById("aaplcheck");
-    var amznshow = document.getElementById("amzncheck");
-    var googshow = document.getElementById("googcheck");
-    var msftshow = document.getElementById("msftcheck");
-
-    // Defining a function that checkes whether a checkbox is checked
-    // in order to toggle the visibility of a line in our SVG image
-    function togglefn(svgId) {
-        return function () {
-            var svgEl = document.getElementById(svgId);
-            if (this.checked) {
-                svgEl.style.visibility = "visible";
-            } else {
-                svgEl.style.visibility = "hidden";
-            }
-        };
-    }
-
-    // Going to be binding to the 'change' instead of the click event
-    // because we can ignore IE as it can't load the SVG image anyway
-    aaplshow.addEventListener('change', togglefn('GRID.polyline.1.1.1'), false);
-    amznshow.addEventListener('change', togglefn('GRID.polyline.1.1.2'), false);
-    googshow.addEventListener('change', togglefn('GRID.polyline.1.1.3'), false);
-    msftshow.addEventListener('change', togglefn('GRID.polyline.1.1.4'), false);
-</script>
+<script src="html5-demo.js"></script>
 {{</ html >}}
 
 We can see that we are able to toggle the display of animated SVG lines by

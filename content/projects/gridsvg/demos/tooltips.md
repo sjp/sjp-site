@@ -17,7 +17,7 @@ JavaScript code and using the `onmousemove` event attribute instead of
 `onmouseover`.
 
 {{< html >}}
-<object data="tooltips.svg" type="image/svg+xml"></object>
+<iframe src="tooltips.svg" width="673" height="674" style="border:0" title="Interactive plot with tooltips (hover over elements)"></iframe>
 {{</ html >}}
 
 One of the demos from the lattice package has been drawn, upon drawing we apply

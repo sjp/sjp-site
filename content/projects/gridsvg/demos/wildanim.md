@@ -8,7 +8,7 @@ A series of [bootstrapping animations](https://www.stat.auckland.ac.nz/~wild/Boo
 Although frame-by-frame animations were available, an attempt has been made by [Paul Murrell](https://www.stat.auckland.ac.nz/~paul/) to replicate the "One-sample, continuous variable" example using gridSVG.
 
 {{< html >}}
-<object data="wildanim.svg" type="image/svg+xml"></object>
+<iframe src="wildanim.svg" width="673" height="674" style="border:0" title="Animated bootstrap sampling example"></iframe>
 {{</ html >}}
 
 We can see that much of the animation has been replicated, however, because we are using native SVG animation the gridSVG example appears a lot smoother than the original.

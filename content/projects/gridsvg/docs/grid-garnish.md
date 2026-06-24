@@ -60,7 +60,7 @@ image produced from the above example is shown below (try clicking on the
 square):
 
 {{< html >}}
-<object data="../grid-garnish-example.svg" type="image/svg+xml"></object>
+<iframe src="../grid-garnish-example.svg" width="673" height="674" style="border:0" title="gridSVG grid.garnish interactivity example"></iframe>
 {{</ html >}}
 
 While knowledge of JavaScript is required to perform interactivity, it is not

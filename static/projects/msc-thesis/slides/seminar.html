@@ -64,31 +64,7 @@
       <img id="vit-frame-img" src="images/vit-frame-22.png" width="640" height="480" alt="VIT Frame" style="display:block;margin-left:auto;margin-right:auto;">
     </article>
   </slide>
-  <script>
-    var VIT_FRAME_MIN = 22;
-    var VIT_FRAME_MAX = 69;
-    var vitFrameCounter = 22;
-    var decrVitFrame = function() {
-        if (vitFrameCounter > VIT_FRAME_MIN)
-            vitFrameCounter -= 1;
-        var newURL = "images/vit-frame-" + vitFrameCounter +
-                     ".png";
-        d3.select("#vit-frame-img")
-            .attr("src", newURL);
-    };
-    var incrVitFrame = function() {
-        if (vitFrameCounter < VIT_FRAME_MAX)
-            vitFrameCounter += 1;
-        var newURL = "images/vit-frame-" + vitFrameCounter +
-                     ".png";
-        d3.select("#vit-frame-img")
-            .attr("src", newURL);
-    };
-    d3.select("#vit-frame-prev")
-        .on("click", decrVitFrame);
-    d3.select("#vit-frame-next")
-        .on("click", incrVitFrame);
-  </script>
+  <script src="seminar.inline1.js"></script>
 
   <slide>
     <hgroup>
@@ -986,17 +962,7 @@ timing(exampleTrack)
 
 </slides>
 
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-12917558-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
+<script src="seminar.inline2.js"></script>
 
 </body>
 </html>

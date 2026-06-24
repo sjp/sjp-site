@@ -45,5 +45,5 @@ load the address `https://sjp.co.nz/`.
 The image produced by the example code is shown below:
 
 {{< html >}}
-<object data="../grid-hyperlink-example.svg" type="image/svg+xml"></object>
+<iframe src="../grid-hyperlink-example.svg" width="673" height="674" style="border:0" title="gridSVG grid.hyperlink example"></iframe>
 {{</ html >}}
