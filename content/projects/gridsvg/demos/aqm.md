@@ -17,7 +17,7 @@ Murrell](https://www.stat.auckland.ac.nz/~paul/) to replicate this type of plot
 (including interactivity) using gridSVG.
 
 {{< html >}}
-<iframe src="aqm.svg" width="673" height="674" style="border:0" title="Interactive AQM PCA plot (hover to highlight points)"></iframe>
+<iframe class="gridsvg-embed gridsvg-embed--square" src="aqm.svg" loading="lazy" title="Interactive AQM PCA plot (hover to highlight points)"></iframe>
 {{</ html >}}
 
 By hovering over each of the points, we are able to highlight the point by

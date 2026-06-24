@@ -40,3 +40,22 @@
   max-width: 100%;
   height: auto;
 }
+
+// Responsive embeds for the interactive / animated gridSVG demos, which are
+// shown via <iframe> so the page CSP can keep object-src 'none'. The SVG files
+// are viewBox-only and scale to fill the iframe; aspect-ratio keeps the iframe
+// height proportional as it shrinks to the content width. Modifiers carry the
+// per-plot intrinsic size / aspect ratio.
+.gridsvg-embed {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+.gridsvg-embed--square {
+  max-width: 672px;
+  aspect-ratio: 671 / 671.59;
+}
+.gridsvg-embed--wide {
+  max-width: 961px;
+  aspect-ratio: 961 / 672.12;
+}
