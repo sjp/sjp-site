@@ -47,7 +47,7 @@
     background-position: 1.5rem;
     display: block;
     cursor: pointer;
-    color: #e5e5e5;
+    color: var(--sidebar-a-color);
     padding: 10px 0 10px 0px; }
 
   input#menu-toggle {
@@ -60,7 +60,7 @@
   input#menu-toggle:checked + label[for="menu-toggle"] {
     background-image: url(/img/menu-close.svg);
     background-position: 1.5rem;
-    color: #e5e5e5;
+    color: var(--sidebar-a-color);
   }
 
   input#menu-toggle:checked ~ .menu-content {

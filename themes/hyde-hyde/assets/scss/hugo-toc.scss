@@ -1,11 +1,10 @@
 // Hugo {{ .TableOfContents }}
-$toc-background-color: #eee;
 $toc-font-size: .9rem;
 
 .toc-wrapper {
   font-size: $toc-font-size;
   padding: 0.5em 0.5em 0.5em 0em;
-  background: $toc-background-color;
+  background: var(--code-background-color);
   label {
     background: url(/img/menu-close-dark.svg) no-repeat right center;
     display: block;
