@@ -169,51 +169,10 @@ input#theme-toggle {
 
 label[for="theme-toggle"] {
   padding: 0 4px;
-}
+  font-weight: bold;
+  color: var(--theme-toggle-color);
 
-@mixin dark-theme-toggle-label {
-  label[for="theme-toggle"] {
-    font-weight: bold;
-    color: var(--theme-toggle-color);
-  
-    &:hover {
-      color: var(--theme-toggle-hover-color);
-    }
-  }
-}
-
-@mixin light-theme-toggle-label {
-  label[for="theme-toggle"] {
-    font-weight: bold;
-    color: var(--theme-toggle-color);
-  
-    &:hover {
-      color: var(--theme-toggle-hover-color);
-    }
-  }
-}
-
-// default to light theme
-:root {
-  @include light-theme-toggle-label;
-}
-
-#theme-toggle:checked ~ #page {
-  @include dark-theme-toggle-label;
-}
-
-@media (prefers-color-scheme: dark) {
-  @include dark-theme-toggle-label;
-
-  #theme-toggle:checked ~ #page {
-      @include light-theme-toggle-label;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  @include light-theme-toggle-label;
-
-  #theme-toggle:checked ~ #page {
-      @include dark-theme-toggle-label;
+  &:hover {
+    color: var(--theme-toggle-hover-color);
   }
 }
