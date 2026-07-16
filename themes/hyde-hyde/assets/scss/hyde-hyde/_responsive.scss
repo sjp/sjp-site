@@ -4,10 +4,6 @@
 // 320px ~ 16rem/16px ~ 18.8235/17px ~ 17.7778/18px
 // 480px ~ 30rem/16px ~ 28.2353rem/17px ~ 26.6667rem/18px
 @media (min-width: 320px) and (max-width: 767px) {
-  html,
-  body {
-    font-size: variables.$small-device-font-size;
-  }
   .sidebar {
     li {
       padding: .1rem 0;
@@ -78,10 +74,6 @@
 // tablet/medium device ~768px+
 // 768px ~ 48em/16px ~ 45.1765em/17px ~ 42.6667/18px
 @media (min-width: 768px) {
-  html,
-  body {
-    font-size: variables.$small-device-font-size;
-  }
   .sidebar {
     bottom: 0;
     left: 0;
@@ -155,12 +147,6 @@
   .portfolio-container {
     width: 68rem;
   }
-}
-
-// Large device ~1024px
-// 1024px ~  64rem/16px ~ 60.2353rem/17px 56.8889rem/18px
-@media (min-width: 1024px) {
-  // styles
 }
 
 input#theme-toggle {
