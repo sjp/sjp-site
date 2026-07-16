@@ -34,5 +34,6 @@ object {
   max-width: 80%;
   @include media-box-shadow;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
+  border-radius: 5px;
 }
