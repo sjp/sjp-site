@@ -1,0 +1,34 @@
+@use "variables";
+@use "code-highlight";
+
+// Single source for the prefers-color-scheme / checkbox-toggle scaffold.
+// Variable definitions stay in _variables.scss; syntax highlight definitions in _code-highlight.scss.
+:root {
+    @include variables.light-theme-variables;
+    @include code-highlight.light-theme-code-variables;
+
+    #theme-toggle:checked ~ #page {
+        @include variables.dark-theme-variables;
+        @include code-highlight.dark-theme-code-variables;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        @include variables.dark-theme-variables;
+        @include code-highlight.dark-theme-code-variables;
+
+        #theme-toggle:checked ~ #page {
+            @include variables.light-theme-variables;
+            @include code-highlight.light-theme-code-variables;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include variables.light-theme-variables;
+        @include code-highlight.light-theme-code-variables;
+
+        #theme-toggle:checked ~ #page {
+            @include variables.dark-theme-variables;
+            @include code-highlight.dark-theme-code-variables;
+        }
+    }
+}
