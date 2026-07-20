@@ -24,9 +24,9 @@ command: `library(sjpMScThesis) ; thesisExample("arima")`
 
 {{< html >}}
 <video controls>
-  <source src="arima.mp4" type="video/mp4; codecs=avc1.64001E">
-  <source src="arima.webm" type="video/webm; codecs=vp8">
-  <source src="arima-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
+  <source src="/projects/msc-thesis/examples/arima/arima.mp4" type="video/mp4; codecs=avc1.64001E">
+  <source src="/projects/msc-thesis/examples/arima/arima.webm" type="video/webm; codecs=vp8">
+  <source src="/projects/msc-thesis/examples/arima/arima-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
 {{</ html >}}
 
@@ -34,5 +34,5 @@ command: `library(sjpMScThesis) ; thesisExample("arima")`
 
 This video example is available in both MP4 (x264) and WebM formats:
 
-* [MP4](arima.mp4)
-* [WebM](arima.webm)
+* [MP4](/projects/msc-thesis/examples/arima/arima.mp4)
+* [WebM](/projects/msc-thesis/examples/arima/arima.webm)

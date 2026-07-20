@@ -15,7 +15,7 @@ We can see how the lines appear to "draw" themselves over time. Although this
 is a basic demonstration, it might appear more engaging to a casual observer
 than a static plot.
 
-* [Download the code](stock-ticker.zip)
+* [Download the code](/projects/gridsvg/demos/stock-ticker/stock-ticker.zip)
 
 ## How It Works
 

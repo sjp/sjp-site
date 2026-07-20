@@ -17,7 +17,7 @@ JavaScript code and using the `onmousemove` event attribute instead of
 `onmouseover`.
 
 {{< html >}}
-<iframe class="gridsvg-embed gridsvg-embed--square" src="tooltips.svg" loading="lazy" title="Interactive plot with tooltips (hover over elements)"></iframe>
+<iframe class="gridsvg-embed gridsvg-embed--square" src="/projects/gridsvg/demos/tooltips/tooltips.svg" loading="lazy" title="Interactive plot with tooltips (hover over elements)"></iframe>
 {{</ html >}}
 
 One of the demos from the lattice package has been drawn, upon drawing we apply
@@ -25,7 +25,7 @@ the `addTooltips()` function to add tooltips to the plot. The effect of this is
 that when hovering the mouse over a graphical element in the plot, we can see
 the name of the grid graphics object that produced it.
 
-* [Download the code](tooltips-code.zip)
+* [Download the code](/projects/gridsvg/demos/tooltips/tooltips-code.zip)
 
 ## How It Works
 

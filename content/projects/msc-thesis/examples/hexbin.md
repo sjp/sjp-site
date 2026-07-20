@@ -19,9 +19,9 @@ command: `library(sjpMScThesis) ; thesisExample("hexbin")`
 
 {{< html >}}
 <video controls>
-  <source src="hexagonal-binning.mp4" type="video/mp4; codecs=avc1.64001E">
-  <source src="hexagonal-binning.webm" type="video/webm; codecs=vp8">
-  <source src="hexagonal-binning-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
+  <source src="/projects/msc-thesis/examples/hexbin/hexagonal-binning.mp4" type="video/mp4; codecs=avc1.64001E">
+  <source src="/projects/msc-thesis/examples/hexbin/hexagonal-binning.webm" type="video/webm; codecs=vp8">
+  <source src="/projects/msc-thesis/examples/hexbin/hexagonal-binning-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
 {{</ html >}}
 
@@ -29,5 +29,5 @@ command: `library(sjpMScThesis) ; thesisExample("hexbin")`
 
 This video example is available in both MP4 (x264) and WebM formats:
 
-* [MP4](hexagonal-binning.mp4)
-* [WebM](hexagonal-binning.webm)
+* [MP4](/projects/msc-thesis/examples/hexbin/hexagonal-binning.mp4)
+* [WebM](/projects/msc-thesis/examples/hexbin/hexagonal-binning.webm)

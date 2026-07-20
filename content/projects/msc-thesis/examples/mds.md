@@ -27,9 +27,9 @@ command: `library(sjpMScThesis) ; thesisExample("mds")`
 
 {{< html >}}
 <video controls>
-  <source src="multidimensional-scaling.mp4" type="video/mp4; codecs=avc1.64001E">
-  <source src="multidimensional-scaling.webm" type="video/webm; codecs=vp8">
-  <source src="multidimensional-scaling-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
+  <source src="/projects/msc-thesis/examples/mds/multidimensional-scaling.mp4" type="video/mp4; codecs=avc1.64001E">
+  <source src="/projects/msc-thesis/examples/mds/multidimensional-scaling.webm" type="video/webm; codecs=vp8">
+  <source src="/projects/msc-thesis/examples/mds/multidimensional-scaling-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
 {{</ html >}}
 
@@ -37,5 +37,5 @@ command: `library(sjpMScThesis) ; thesisExample("mds")`
 
 This video example is available in both MP4 (x264) and WebM formats:
 
-* [MP4](multidimensional-scaling.mp4)
-* [WebM](multidimensional-scaling.webm)
+* [MP4](/projects/msc-thesis/examples/mds/multidimensional-scaling.mp4)
+* [WebM](/projects/msc-thesis/examples/mds/multidimensional-scaling.webm)

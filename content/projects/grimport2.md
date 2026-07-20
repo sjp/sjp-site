@@ -128,5 +128,5 @@ Further information demonstrating its usage is available in the following locati
 
 * [Enhanced Vector Image Import: The
 grConvert and grImport2 packages](https://www.stat.auckland.ac.nz/~paul/R/grImport2/grImport2.pdf). A draft article submitted to the R Journal.
-* [Improved Importing of Vector Graphics in R](grImport2.html). A technical report published on the [University of Auckland's Department of Statistics Technical Report Blog](https://stattech.wordpress.fos.auckland.ac.nz/2013-9-improved-importing-of-vector-graphics-in-r/).
-* [Plotting SVG State Flags in R](plotting-svg-state-flags-in-r). A demonstration of the ability to import various vector images using USA state flags as a test case. It shows the capabilities (and limitations) of grConvert, grImport and grImport2 as it imports vector images into R.
+* [Improved Importing of Vector Graphics in R](/projects/grimport2/grImport2.html). A technical report published on the [University of Auckland's Department of Statistics Technical Report Blog](https://stattech.wordpress.fos.auckland.ac.nz/2013-9-improved-importing-of-vector-graphics-in-r/).
+* [Plotting SVG State Flags in R](/projects/grimport2/plotting-svg-state-flags-in-r). A demonstration of the ability to import various vector images using USA state flags as a test case. It shows the capabilities (and limitations) of grConvert, grImport and grImport2 as it imports vector images into R.

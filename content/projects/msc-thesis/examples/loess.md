@@ -24,9 +24,9 @@ command: `library(sjpMScThesis) ; thesisExample("loess")`
 
 {{< html >}}
 <video controls>
-  <source src="loess.mp4" type="video/mp4; codecs=avc1.64001E">
-  <source src="loess.webm" type="video/mp4; codecs=vp8">
-  <source src="loess-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
+  <source src="/projects/msc-thesis/examples/loess/loess.mp4" type="video/mp4; codecs=avc1.64001E">
+  <source src="/projects/msc-thesis/examples/loess/loess.webm" type="video/mp4; codecs=vp8">
+  <source src="/projects/msc-thesis/examples/loess/loess-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
 {{</ html >}}
 
@@ -34,5 +34,5 @@ command: `library(sjpMScThesis) ; thesisExample("loess")`
 
 This video example is available in both MP4 (x264) and WebM formats:
 
-* [MP4](loess.mp4)
-* [WebM](loess.webm)
+* [MP4](/projects/msc-thesis/examples/loess/loess.mp4)
+* [WebM](/projects/msc-thesis/examples/loess/loess.webm)

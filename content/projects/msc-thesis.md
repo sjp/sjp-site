@@ -12,7 +12,7 @@ statistical graphics and computing engine provided by
 [ResearchSpace](https://researchspace.auckland.ac.nz/items/7d64d7ea-a15e-4671-a363-e6408488b541) or on this website
 by clicking the thumbnail below:
 
-[![Masters Thesis](/projects/msc-thesis/msc-thesis.svg)](msc-thesis.pdf)
+[![Masters Thesis](/projects/msc-thesis/msc-thesis.svg)](/projects/msc-thesis/msc-thesis.pdf)
 
 The basic idea is that while R is great for statistics, its graphics
 engine does not support dynamic and interactive graphics such as those
@@ -41,7 +41,7 @@ On the {{< html >}}<time datetime="2013-06-27">27th of June 2013</time>{{< /html
 I gave a seminar presentation at the University of Auckland in the Department
 of Statistics. The slides can be viewed by clicking the thumbnail below:
 
-[![Seminar](/projects/msc-thesis/seminar.png)](slides/seminar.html)
+[![Seminar](/projects/msc-thesis/seminar.png)](/projects/msc-thesis/slides/seminar.html)
 
 Some of the examples in the seminar were R web applications that were
 running from my laptop. To view these examples, you will need to use

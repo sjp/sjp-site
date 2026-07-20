@@ -23,14 +23,14 @@ Development occurs on GitHub in the [TimingManager](https://github.com/sjp/Timin
 ## Download
 
 * [Development version](https://raw.github.com/sjp/TimingManager/master/timing.js) (*6.1kB*, uncompressed and commented)
-* [Production version](timing.min.js) (*750B*, minified and gzipped)
+* [Production version](/projects/timing-manager/timing.min.js) (*750B*, minified and gzipped)
 
 ## Documentation
 
 The documentation for using TimingManager in JavaScript is available
 in two forms. The first of which is [API
-documentation](docs). The second is a
-[technical report](timing-manager.html) which
+documentation](/projects/timing-manager/docs). The second is a
+[technical report](/projects/timing-manager/timing-manager.html) which
 demonstrates the steps necessary to use TimingManager correctly.
 
 In addition, the use of animaker is required for using TimingManager
@@ -41,6 +41,6 @@ is available.
 ## Example
 
 A complete example is available in a [technical
-report](timing-manager.html) on
+report](/projects/timing-manager/timing-manager.html) on
 TimingManager. It also describes how to use animaker for usage in
 conjunction with TimingManager.

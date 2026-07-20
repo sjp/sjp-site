@@ -17,14 +17,14 @@ Murrell](https://www.stat.auckland.ac.nz/~paul/) to replicate this type of plot
 (including interactivity) using gridSVG.
 
 {{< html >}}
-<iframe class="gridsvg-embed gridsvg-embed--square" src="aqm.svg" loading="lazy" title="Interactive AQM PCA plot (hover to highlight points)"></iframe>
+<iframe class="gridsvg-embed gridsvg-embed--square" src="/projects/gridsvg/demos/aqm/aqm.svg" loading="lazy" title="Interactive AQM PCA plot (hover to highlight points)"></iframe>
 {{</ html >}}
 
 By hovering over each of the points, we are able to highlight the point by
 enlarging it. Not only is the point enlarged, but the name of the point is
 shown on the bottom-left of the plot.
 
-* [Download the code](aqm-code.zip)
+* [Download the code](/projects/gridsvg/demos/aqm/aqm-code.zip)
 
 ## How It Works
 

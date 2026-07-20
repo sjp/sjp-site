@@ -28,9 +28,9 @@ command: `library(sjpMScThesis) ; thesisExample("sampvar")`
 
 {{< html >}}
 <video controls>
-  <source src="sampling-variation.mp4" type="video/mp4; codecs=avc1.64001E">
-  <source src="sampling-variation.webm" type="video/webm; codecs=vp8">
-  <source src="sampling-variation-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
+  <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation.mp4" type="video/mp4; codecs=avc1.64001E">
+  <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation.webm" type="video/webm; codecs=vp8">
+  <source src="/projects/msc-thesis/examples/sampling-variation/sampling-variation-iphone.mp4" type="video/mp4; codecs=avc1.42E01E">
 </video>
 {{</ html >}}
 
@@ -38,5 +38,5 @@ command: `library(sjpMScThesis) ; thesisExample("sampvar")`
 
 This video example is available in both MP4 (x264) and WebM formats:
 
-* [MP4](sampling-variation.mp4)
-* [WebM](sampling-variation.webm)
+* [MP4](/projects/msc-thesis/examples/sampling-variation/sampling-variation.mp4)
+* [WebM](/projects/msc-thesis/examples/sampling-variation/sampling-variation.webm)
