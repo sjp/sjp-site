@@ -9,7 +9,7 @@ product of my thesis is a cohesive link between the powerful
 interactive and graphical capabilities of a web browser, and the
 statistical graphics and computing engine provided by
 [R](https://www.r-project.org/). My thesis is available on
-[ResearchSpace](https://hdl.handle.net/2292/20660) or on this website
+[ResearchSpace](https://researchspace.auckland.ac.nz/items/7d64d7ea-a15e-4671-a363-e6408488b541) or on this website
 by clicking the thumbnail below:
 
 [![Masters Thesis](msc-thesis.svg)](msc-thesis.pdf)
@@ -37,7 +37,7 @@ To cite this thesis, use the following BibTeX entry:
 
 ## Seminar
 
-On the {{< html >}}<time datetime="2013-06-13">27th of June 2013</time>{{< /html >}}
+On the {{< html >}}<time datetime="2013-06-27">27th of June 2013</time>{{< /html >}}
 I gave a seminar presentation at the University of Auckland in the Department
 of Statistics. The slides can be viewed by clicking the thumbnail below:
 
