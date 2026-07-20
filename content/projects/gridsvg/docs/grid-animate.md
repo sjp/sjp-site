@@ -90,4 +90,4 @@ Now that this animation information has been added to `GRID.rect.1`,
 gridSVG can write to SVG, applying the animation information associated with
 `GRID.rect.1`. The resulting image is shown below.
 
-![grid.animate Example Figure](../grid-animate-example.svg)
+![grid.animate Example Figure](grid-animate-example.svg)
