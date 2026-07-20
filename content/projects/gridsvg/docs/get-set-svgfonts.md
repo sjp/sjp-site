@@ -45,4 +45,4 @@ The general process going on here is the following:
 
 By using `getSVGFonts()` and `setSVGFonts()` we are able to provide a means of using a wide variety of fonts if they are available to the browser. The result of the example shown earlier is the SVG image that appears below:
 
-![Custom Fonts Example Figure](get-set-svgfonts-example.svg)
+![Custom Fonts Example Figure](/projects/gridsvg/docs/get-set-svgfonts-example.svg)

@@ -12,7 +12,7 @@ project, and a [Masters thesis](/projects/msc-thesis) developing gridSVG. A
 basic illustration of how gridSVG differs from the built-in SVG device is shown
 below.
 
-![Instead of using grDevices to create an SVG image for a grid plot, gridSVG creates the image directly.](images/gridsvg-diagram.png)
+![Instead of using grDevices to create an SVG image for a grid plot, gridSVG creates the image directly.](/projects/gridsvg/images/gridsvg-diagram.png)
 
 The key advantage of using gridSVG is that new animated, interactive graphics
 can be produced more easily and transparently than by using the Cairo-based SVG

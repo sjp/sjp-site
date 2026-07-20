@@ -40,4 +40,4 @@ I have created some extra code to go with this package that allows visualisation
 
 Here is an example of the visualisation:
 
-![Generalised hyperbolic distribution visualisation](images/ss-ghyp-slider.png)
+![Generalised hyperbolic distribution visualisation](/projects/ghyp/images/ss-ghyp-slider.png)

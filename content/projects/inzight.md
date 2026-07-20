@@ -11,4 +11,4 @@ Current development occurs on GitHub in the [iNZightVIT](https://github.com/iNZi
 
 A basic screenshot showing a small subset of its features is shown below:
 
-![iNZight Main Window](images/inzight.png)
+![iNZight Main Window](/projects/inzight/images/inzight.png)

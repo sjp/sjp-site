@@ -9,8 +9,8 @@ I was formerly the maintainer of this R package. Development occurs on GitHub in
 
 Some example animations (taken from the [VIT website](https://www.stat.auckland.ac.nz/~wild/VIT/)) are visible below:
 
-![Sampling Variation with Continuous Variable](images/vit-1.gif)
+![Sampling Variation with Continuous Variable](/projects/visual-inference-tools/images/vit-1.gif)
 
-![Bootstrapping Proportions with Categorical Variables](images/vit-2.gif)
+![Bootstrapping Proportions with Categorical Variables](/projects/visual-inference-tools/images/vit-2.gif)
 
-![Bootstrapping Simple Linear Regression Slopes](images/vit-3.gif)
+![Bootstrapping Simple Linear Regression Slopes](/projects/visual-inference-tools/images/vit-3.gif)

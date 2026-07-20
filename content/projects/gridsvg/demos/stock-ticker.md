@@ -9,7 +9,7 @@ for well-known tech companies from [Google Finance](https://www.google.com/finan
 The idea behind this demonstration is to show how animation can be applied to
 time series data, in particular with line graphs.
 
-![Stock Prices Example Figure](stock-prices.svg)
+![Stock Prices Example Figure](/projects/gridsvg/demos/stock-ticker/stock-prices.svg)
 
 We can see how the lines appear to "draw" themselves over time. Although this
 is a basic demonstration, it might appear more engaging to a casual observer

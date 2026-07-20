@@ -28,7 +28,7 @@ An example of what can be achieved is shown below, where I import the
 +              ext = "clipbbox")
 {{< /highlight >}}
 
-![grImport2 example plot](flag-export-symbols.svg)
+![grImport2 example plot](/projects/grimport2/flag-export-symbols.svg)
 
 ## Installation
 
@@ -90,7 +90,7 @@ which will plot multiple copies of an image. First, let us see the effect of
 > grid.picture(flag, ext = "clipbbox")
 {{< /highlight >}}
 
-![grImport2 example plot](flag-export-picture.svg)
+![grImport2 example plot](/projects/grimport2/flag-export-picture.svg)
 
 We can see that the image has been reproduced reasonably faithfully, but there
 are some parts of the image that are not correct. To correct this requires the
@@ -110,7 +110,7 @@ having to call `grid.picture()` multiple times, we can (if desired), call
 +              ext = "clipbbox")
 {{< /highlight >}}
 
-![grImport2 example plot](flag-export-symbols.svg)
+![grImport2 example plot](/projects/grimport2/flag-export-symbols.svg)
 
 This shows how we can import a vector image and use it as a custom plotting
 character for use in grid plots.

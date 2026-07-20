@@ -27,7 +27,7 @@ Note: `GOMstreamer.exe` must reside in the same directory as `wget.exe` in order
 
 Example usage of GOMstreamer.NET is shown below:
 
-![Example of GOMstreamer.NET with a GSL stream.](images/ss-gomstreamer-net.png)
+![Example of GOMstreamer.NET with a GSL stream.](/projects/gomstreamer/images/ss-gomstreamer-net.png)
 
 ## OSX
 
@@ -55,5 +55,5 @@ Streams can be scheduled to play at a specific time. This is accomplished via th
 
 Here is an example of GOMstreamer in action:
 
-![Example of GOMstreamer with a GSL stream.](images/ss-gomstreamer-1.png)
-![Example of GOMstreamer with a GSL stream.](images/ss-gomstreamer-2.png)
+![Example of GOMstreamer with a GSL stream.](/projects/gomstreamer/images/ss-gomstreamer-1.png)
+![Example of GOMstreamer with a GSL stream.](/projects/gomstreamer/images/ss-gomstreamer-2.png)
