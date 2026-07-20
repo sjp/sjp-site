@@ -43,8 +43,8 @@
         {{- $post := dict
             "@type" "BlogPosting"
             "headline" .Title
-            "url" .Permalink
-            "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+            "url" (partial "func/trim-slash.html" .Permalink)
+            "mainEntityOfPage" (dict "@type" "WebPage" "@id" (partial "func/trim-slash.html" .Permalink))
             "inLanguage" $lang
             "author" $person
             "publisher" $person
@@ -58,7 +58,7 @@
         {{- $project := dict
             "@type" "CreativeWork"
             "name" .Title
-            "url" .Permalink
+            "url" (partial "func/trim-slash.html" .Permalink)
             "inLanguage" $lang
             "author" $person
         -}}
@@ -68,7 +68,7 @@
     {{- else if in (slice "/about/" "/about") .RelPermalink -}}
         {{- $profile := dict
             "@type" "ProfilePage"
-            "url" .Permalink
+            "url" (partial "func/trim-slash.html" .Permalink)
             "name" .Title
             "inLanguage" $lang
             "mainEntity" $person
@@ -78,7 +78,7 @@
     {{- else -}}
         {{- $page := dict
             "@type" "WebPage"
-            "url" .Permalink
+            "url" (partial "func/trim-slash.html" .Permalink)
             "name" .Title
             "inLanguage" $lang
             "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $site.BaseURL) "name" $site.Title)
@@ -94,13 +94,13 @@
         {{- $items = $items | append (dict
             "@type" "ListItem"
             "position" (add $i 1)
-            "url" $p.Permalink
+            "url" (partial "func/trim-slash.html" $p.Permalink)
             "name" $p.Title)
         -}}
     {{- end -}}
     {{- $collection := dict
         "@type" "CollectionPage"
-        "url" .Permalink
+        "url" (partial "func/trim-slash.html" .Permalink)
         "name" .Title
         "inLanguage" $lang
         "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $site.BaseURL) "name" $site.Title)
@@ -116,10 +116,10 @@
     {{- $pos := 1 -}}
     {{- range .Ancestors.Reverse -}}
         {{- $name := cond .IsHome "Home" .LinkTitle -}}
-        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $name "item" .Permalink) -}}
+        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $name "item" (partial "func/trim-slash.html" .Permalink)) -}}
         {{- $pos = add $pos 1 -}}
     {{- end -}}
-    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .LinkTitle "item" .Permalink) -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .LinkTitle "item" (partial "func/trim-slash.html" .Permalink)) -}}
     {{- $nodes = $nodes | append (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) -}}
 {{- end -}}
 

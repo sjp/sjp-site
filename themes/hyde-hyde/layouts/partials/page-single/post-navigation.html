@@ -2,13 +2,13 @@
 {{ if $enabledPostNavigation }}
 <div class="navigation navigation-single">
     {{ with .PrevInSection }}
-    <a href="{{ .RelPermalink }}" class="navigation-prev">
+    <a href="{{ partial "func/trim-slash.html" .RelPermalink }}" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
       <span class="navigation-tittle">{{ .Title }}</span>
     </a>
     {{ end }}
     {{ with .NextInSection }}
-    <a href="{{ .RelPermalink }}" class="navigation-next">
+    <a href="{{ partial "func/trim-slash.html" .RelPermalink }}" class="navigation-next">
       <span class="navigation-tittle">{{ .Title }}</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

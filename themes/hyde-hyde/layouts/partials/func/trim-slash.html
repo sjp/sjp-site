@@ -1,0 +1,5 @@
+{{- $u := . -}}
+{{- if and (ne $u "/") (ne $u site.BaseURL) -}}
+    {{- $u = strings.TrimSuffix "/" $u -}}
+{{- end -}}
+{{- return $u -}}

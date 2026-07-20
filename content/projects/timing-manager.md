@@ -29,7 +29,7 @@ Development occurs on GitHub in the [TimingManager](https://github.com/sjp/Timin
 
 The documentation for using TimingManager in JavaScript is available
 in two forms. The first of which is [API
-documentation](docs/). The second is a
+documentation](docs). The second is a
 [technical report](timing-manager.html) which
 demonstrates the steps necessary to use TimingManager correctly.
 
