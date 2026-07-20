@@ -1,0 +1,5 @@
+{{- $ref := ref .Page (.Get 0) -}}
+{{- if and (ne $ref "/") (ne $ref site.BaseURL) -}}
+    {{- $ref = strings.TrimSuffix "/" $ref -}}
+{{- end -}}
+{{- $ref -}}

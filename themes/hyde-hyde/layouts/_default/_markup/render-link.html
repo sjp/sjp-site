@@ -1,0 +1,6 @@
+{{- $dest := .Destination -}}
+{{- $external := and (or (strings.Contains $dest "://") (strings.HasPrefix $dest "mailto:") (strings.HasPrefix $dest "tel:")) (not (strings.HasPrefix $dest site.BaseURL)) -}}
+{{- if not $external -}}
+    {{- $dest = partial "func/trim-slash.html" $dest -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
