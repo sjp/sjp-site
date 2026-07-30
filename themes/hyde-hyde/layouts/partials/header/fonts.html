@@ -1,0 +1,4 @@
+{{ $fonts := resources.Get "fonts/fonts.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ $fonts.RelPermalink }}" integrity="{{ $fonts.Data.Integrity }}">
+{{ $fa := resources.Get "fonts/fa.css" | resources.ExecuteAsTemplate "fonts/fa.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}">
