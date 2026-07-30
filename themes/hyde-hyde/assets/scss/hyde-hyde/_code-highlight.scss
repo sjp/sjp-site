@@ -1,12 +1,13 @@
 @use "variables";
 
 .chroma {
-    padding: 0 10px;
+    padding: 4px 10px;
     overflow-x: auto;
     line-height: variables.$code-line-height;
 
     code {
         background-color: inherit;
+        padding: 0;
     }
 
     border: 1px solid #ccc;
