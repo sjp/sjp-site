@@ -3,8 +3,10 @@
     {{ block "header" . }}{{ end }}
     <body class="{{ .Site.Params.themeColor }} {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
     <input type="checkbox" id="theme-toggle">
-    <script src="/scripts/theme-init.js"></script>
-    <script async src="/scripts/site.js"></script>
+    {{ $themeInit := resources.Get "js/theme-init.js" | js.Build (dict "minify" true) | fingerprint }}
+    <script src="{{ $themeInit.RelPermalink }}" integrity="{{ $themeInit.Data.Integrity }}"></script>
+    {{ $siteJS := resources.Get "js/site.js" | js.Build (dict "minify" true) | fingerprint }}
+    <script async src="{{ $siteJS.RelPermalink }}" integrity="{{ $siteJS.Data.Integrity }}"></script>
     <div id="page">
     {{ partial "sidebar.html" . }}
         <div class="content container">
