@@ -20,7 +20,7 @@ To convert between image formats, grConvert leverages the following libraries:
 
 * [libspectre](https://www.freedesktop.org/wiki/Software/libspectre/) for parsing PostScript images.
 * [Poppler](https://poppler.freedesktop.org/) for parsing PDF images.
-* [libRSVG](https://wiki.gnome.org/Projects/LibRsvg) for parsing SVG images.
+* [librsvg](https://wiki.gnome.org/Projects/LibRsvg) for parsing SVG images.
 * [Cairo](https://cairographics.org) for rendering parsed images in the target image format.
 
 ## Installation
@@ -36,7 +36,7 @@ distributions (e.g. Ubuntu).
 >     libpoppler-glib-dev r-base-dev
 {{< /highlight >}}
 
-If you have the [`devtools`](https://github.com/hadley/devtools) package
+If you have the [`devtools`](https://github.com/r-lib/devtools) package
 installed, you can run the following command in R to install grConvert from a
 GitHub repository.
 
@@ -89,7 +89,7 @@ If you're using MacPorts, the following command will install the necessary libra
 $ port install poppler librsvg cairo-devel libspectre
 {{< /highlight >}}
 
-If you have the [`devtools`](https://github.com/hadley/devtools) package
+If you have the [`devtools`](https://github.com/r-lib/devtools) package
 installed, you can run the following command in R to install grConvert from a
 GitHub repository.
 

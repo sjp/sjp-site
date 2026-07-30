@@ -13,7 +13,7 @@ repository.
 
 The main purpose of this package is to make working with (X)HTML and
 XML documents easier within R. The [XML](http://www.omegahat.org/RSXML/)
-and [xml2](https://github.com/hadley/xml2) packages are typically used
+and [xml2](https://github.com/r-lib/xml2) packages are typically used
 when working with these documents, but they can only select content based
 on XPath expressions. By translating CSS selectors to XPath, we can use
 the more familiar CSS selectors instead of XPath.

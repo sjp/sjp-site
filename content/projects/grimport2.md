@@ -39,7 +39,7 @@ following command:
 > install.packages(c("XML", "png", "jpeg", "base64enc"))
 {{< /highlight >}}
 
-If you have the [`devtools`](https://github.com/hadley/devtools) package
+If you have the [`devtools`](https://github.com/r-lib/devtools) package
 installed, you can easily install grImport2 using the `install_github()` function.
 
 {{< highlight r >}}
