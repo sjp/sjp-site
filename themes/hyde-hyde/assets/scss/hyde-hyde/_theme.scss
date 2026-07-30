@@ -3,32 +3,25 @@
 
 // Single source for the prefers-color-scheme / checkbox-toggle scaffold.
 // Variable definitions stay in _variables.scss; syntax highlight definitions in _code-highlight.scss.
+
+// Base + no-JS fallback: follow the OS preference.
 :root {
     @include variables.light-theme-variables;
     @include code-highlight.light-theme-code-variables;
 
-    #theme-toggle:checked ~ #page {
-        @include variables.dark-theme-variables;
-        @include code-highlight.dark-theme-code-variables;
-    }
-
     @media (prefers-color-scheme: dark) {
         @include variables.dark-theme-variables;
         @include code-highlight.dark-theme-code-variables;
-
-        #theme-toggle:checked ~ #page {
-            @include variables.light-theme-variables;
-            @include code-highlight.light-theme-code-variables;
-        }
     }
+}
 
-    @media (prefers-color-scheme: light) {
-        @include variables.light-theme-variables;
-        @include code-highlight.light-theme-code-variables;
-
-        #theme-toggle:checked ~ #page {
-            @include variables.dark-theme-variables;
-            @include code-highlight.dark-theme-code-variables;
-        }
-    }
+// JS sets data-theme on <html> (theme-init.js before paint, site.js on change).
+// Higher specificity (0,2,0) wins over the :root/@media fallback above (0,1,0).
+:root[data-theme="light"] {
+    @include variables.light-theme-variables;
+    @include code-highlight.light-theme-code-variables;
+}
+:root[data-theme="dark"] {
+    @include variables.dark-theme-variables;
+    @include code-highlight.dark-theme-code-variables;
 }

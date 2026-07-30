@@ -32,10 +32,18 @@ var updateThemePreference = function(alternateThemeSelected) {
     }
 };
 
+var applyTheme = function() {
+    var osDark = window.matchMedia &&
+        window.matchMedia(DARK_MODE_MEDIA_QUERY).matches;
+    var dark = themeToggle.checked ? !osDark : osDark;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+};
+
 var onColorSchemeChange = function(updateCheckbox) {
     if (updateCheckbox)
         toggleCheckbox();
     updateThemePreference(themeToggle.checked);
+    applyTheme();
 };
 
 if (window.matchMedia) {
@@ -49,3 +57,4 @@ var newCheckedState = getThemePreference() === ALTERNATE_THEME;
 if (themeToggle.checked !== newCheckedState) {
     toggleCheckbox();
 }
+applyTheme();
