@@ -1,5 +1,5 @@
-CHROMA_LIGHT_STYLE ?= pastie
-CHROMA_DARK_STYLE  ?= onedark
+CHROMA_LIGHT_STYLE ?= catppuccin-latte
+CHROMA_DARK_STYLE  ?= catppuccin-macchiato
 CHROMA_SCSS         = themes/hyde-hyde/assets/scss/hyde-hyde/_code-highlight.scss
 
 build-site:
