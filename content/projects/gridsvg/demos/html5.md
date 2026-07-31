@@ -42,7 +42,7 @@ Select companies to be shown:
 <label for="amzncheck"><input type="checkbox" value="on" checked="checked" id="amzncheck"> AMZN (Amazon.com Inc.)</label>
 <label for="googcheck"><input type="checkbox" value="on" checked="checked" id="googcheck"> GOOG (Google Inc.)</label>
 <label for="msftcheck"><input type="checkbox" value="on" checked="checked" id="msftcheck"> MSFT (Microsoft Corporation)</label>
-<script src="html5-demo.js"></script>
+<script src="/projects/gridsvg/demos/html5/html5-demo.js"></script>
 {{</ html >}}
 
 We can see that we are able to toggle the display of animated SVG lines by
