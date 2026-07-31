@@ -46,6 +46,6 @@ sd.diff &lt;- abs(2 - sqrt(v))</textarea>
 <pre style="max-width: 100%"><code id="rainbow-output" data-language="r" style="width: 100%"></code></pre>
 </div>
 
-<script async src="js/rainbow-demo.js"></script>
+<script async src="/projects/rainbow/js/rainbow-demo.js"></script>
 {{< /html >}}
 
