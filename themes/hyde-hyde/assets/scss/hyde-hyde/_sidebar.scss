@@ -22,7 +22,7 @@
   }
   .author-image {
     display: block;
-    margin-top: 4px;
+    margin-top: .25rem;
   }
 }
 
@@ -58,7 +58,7 @@
 .social {
   text-align: center;
   a {
-    padding: 0 4px;
+    padding: 0 .25rem;
     @include mixins.link-no-decoration();
   }
 }

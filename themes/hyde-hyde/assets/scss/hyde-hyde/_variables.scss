@@ -28,14 +28,14 @@ $root-font-family: "PT Sans", system-ui, -apple-system, BlinkMacSystemFont,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // poole's variables
-$root-font-size: 16px; // default 17px
+$root-font-size: 80%; // respects browser default (was 16px)
 $root-font-weight: 400;
 // golden ratio https://grtcalculator.com
 // 18px @ 33 px, 20px @ 33 px ~ 1.667em
 $root-line-height: 1.6em;
 
 $large-breakpoint: 38em;
-$large-font-size: 18px; // default 18px
+$large-font-size: 100%; // 18/16 of browser default (was 18px)
 $font-scale-dot7: 0.7rem;
 $font-scale-dot8: 0.8rem;
 //

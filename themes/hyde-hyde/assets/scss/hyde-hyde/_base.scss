@@ -67,8 +67,8 @@ figure {
 %quotebox {
   padding: 0.8889rem;
   margin-top: 1rem;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
   border-left: 6px solid;
   border-right: 6px solid transparent;
   border-right-width: 6px;
@@ -99,7 +99,7 @@ blockquote {
 
 kbd {
   font-family: variables.$root-font-family;
-  padding: 2px 7px;
+  padding: .125rem .4375rem;
   border: 1px solid var(--kbd-border-color);
   font-size: 0.8em;
   line-height: 1.4;
