@@ -3,7 +3,7 @@
 .toc {
   font-size: hugo-toc.$toc-font-size;
   overflow-y: auto;
-  background: hugo-toc.$toc-background-color;
+  background: var(--code-background-color);
   padding-left: 0rem;
   padding-top: 1em;
   > .toc-list {

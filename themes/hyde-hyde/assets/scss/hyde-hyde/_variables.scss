@@ -20,6 +20,10 @@
   --color-sjp-blue: #1565c0;
   --color-brown: #8f5536;
 
+  // badge colors
+  --color-badge-category: #0088cc;
+  --color-badge-tag: #7766cc;
+
 }
 
 //https://www.client9.com/css-system-font-stack-sans-serif-v3
@@ -114,7 +118,7 @@ $content-margin-right: 2rem;
   --post-date-color: #9a9a9a;
   --related-border-color: #eee;
   --related-list-small-color: #999;
-  --related-list-a-hover-color: #268bd2;
+  --related-list-a-hover-color: var(--color-blue);
   --message-color: #717171;
   --message-bg-color: #f9f9f9;
   --code-background-color: #eee;
@@ -160,7 +164,7 @@ $content-margin-right: 2rem;
   --post-date-color: #9a9a9a;
   --related-border-color: #444;
   --related-list-small-color: #999;
-  --related-list-a-hover-color: #268bd2;
+  --related-list-a-hover-color: var(--color-blue);
   --message-color: var(--color-gray-5);
   --message-bg-color: #252525;
   --code-background-color: #333;
