@@ -43,6 +43,9 @@ theme = "hyde-hyde"
 
 
 [markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
     [markup.highlight]
         codeFences = true
         guessSyntax = false
