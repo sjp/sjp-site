@@ -14,3 +14,8 @@ esac
 curl -fsSL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-${SASS_ARCH}.tar.gz" \
     | sudo tar -xz -C /usr/local/lib
 sudo ln -sf /usr/local/lib/dart-sass/sass /usr/local/bin/sass
+
+# configure claude code to avoid onboarding prompts
+mkdir -p ~/.claude
+sudo chown -R $(id -u):$(id -g) ~/.claude
+echo '{\"hasCompletedOnboarding\":true,\"numStartups\":1,\"installMethod\":\"npm\"}' > ~/.claude.json
