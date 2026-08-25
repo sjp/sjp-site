@@ -16,6 +16,6 @@ curl -fsSL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERS
 sudo ln -sf /usr/local/lib/dart-sass/sass /usr/local/bin/sass
 
 # configure claude code to avoid onboarding prompts
-mkdir -p ~/.claude
-sudo chown -R $(id -u):$(id -g) ~/.claude
-echo '{\"hasCompletedOnboarding\":true,\"numStartups\":1,\"installMethod\":\"npm\"}' > ~/.claude.json
+touch ~/.claude.json
+sudo chown -R $(id -u):$(id -g) ~/.claude.json
+echo '{"hasCompletedOnboarding":true,"numStartups":1,"installMethod":"npm"}' > ~/.claude.json
