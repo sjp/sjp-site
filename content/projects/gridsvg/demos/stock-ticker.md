@@ -19,7 +19,7 @@ than a static plot.
 
 ## How It Works
 
-{{< highlight r >}}
+```r
 library(gridSVG)
 library(grid)
 library(scales)
@@ -38,18 +38,18 @@ msft <- read.csv("msft.csv")
 msft$Date <- as.Date(msft$Date, format = "%d-%b-%y")
 
 stockprices.df <- rbind(aapl, amzn, goog, msft)
-{{< /highlight >}}
+```
 
 All that we're really doing so far is just loading required libraries and data
 for later use. The data that we're going to be using to construct this plot is
 stored in `stockprices.df`.
 
-{{< highlight r >}}
+```r
 qplot(Date, Close, data = stockprices.df, group = Code, geom = "line",
       colour = Code) +
     scale_y_log10(breaks = trans_breaks('log10', function(x) 10^x),
                   labels = trans_format('log10', math_format(10^.x)))
-{{< /highlight >}}
+```
 
 Here we're just drawing a basic line graph using `ggplot2`'s `qplot()`
 function. The stock's closing price is plotted against its date, and to draw
@@ -59,7 +59,7 @@ closing stock prices using the `scale_y_log10()` function. Upon executing this
 `qplot()` function, we should have a nice static plot visible in a plotting
 window.
 
-{{< highlight r >}}
+```r
 # Find out what the name of the polyline is
 grid.force()
 grid.ls()
@@ -71,7 +71,7 @@ gy <- split(g$y, g$id)
 nTimeIntervals <- length(gx[[1]])
 nPointsOverTime <- nTimeIntervals^2
 nGroups <- length(unique(g$id))
-{{< /highlight >}}
+```
 
 Now that a plot has been drawn, we want to modify it to that the lines are
 drawn over time. We are required to inspect the display list to work out what
@@ -87,7 +87,7 @@ fixed for all lines). The way we do that in gridSVG is by using the
 `animUnit()` function. We want to describe how the `x` and the `y` units
 animate over time for each of the lines.
 
-{{< highlight r >}}
+```r
 # Preallocating vectors
 animid <- rep(1:4, each = nPointsOverTime)
 animx <- numeric(nPointsOverTime * nGroups)
@@ -111,7 +111,7 @@ for (i in seq_len(nGroups)) {
   animx[indexRange] <- newxs
   animy[indexRange] <- newys
 }
-{{< /highlight >}}
+```
 
 The key idea of what is happening here is that we want to build up to a
 complete definition of an `x` or `y` coordinate for a line. However, for time
@@ -120,21 +120,21 @@ rest of the vector. For time period 2, this means that we have the first two
 values defined, then the rest are just repeating the second value (and so on). To
 illustrate, see the matrix below. 
 
-{{< highlight r >}}
+```r
    x1 x2 x3 x4 x5
 t1  1  1  1  1  1
 t2  1  2  2  2  2
 t3  1  2  3  3  3
 t4  1  2  3  4  4
 t5  1  2  3  4  5
-{{< /highlight >}}
+```
 
 See how at time period 3 the third value is repeated? We want to repeat this
 process for each `x` and each `y` over all time periods. Moreover, we want to
 do this for each of the four lines. This is the purpose of the `for` loop
 earlier.
 
-{{< highlight r >}}
+```r
 unitxs <- animUnit(unit(animx, "native"),
                    timeid = rep(seq_len(nTimeIntervals),
                                 nTimeIntervals * nGroups),
@@ -145,7 +145,7 @@ unitys <- animUnit(unit(animy, "native"),
                                 nTimeIntervals * nGroups),
                    id = rep(seq_len(nGroups),
                             each = nPointsOverTime))
-{{< /highlight >}}
+```
 
 The entire purpose of the for loop earlier was so that we could describe our
 animation in terms of `animUnit`s. An `animUnit` allows us to animate a unit
@@ -156,11 +156,11 @@ polyline defines.
 Given that `animUnit`s describe the positions of units in our animation, we can
 now apply it to the polyline that we want to animate.
 
-{{< highlight r >}}
+```r
 grid.animate("GRID.polyline.1", x = unitxs, y = unitys,
              duration = 30, rep = TRUE)
 grid.export("stock-ticker.svg")
-{{< /highlight >}}
+```
 
 We now annotate the polyline graphics object with the `animUnit`s using
 [`grid.animate()`]({{< ref "projects/gridsvg/docs/grid-animate.md" >}}). The

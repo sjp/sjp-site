@@ -11,7 +11,7 @@ The result of my work has been posted up on [GeneralizedHyperbolic](https://gith
 
 Once the package has been installed, using it is as simple as running R, then loading the package using `library(GeneralizedHyperbolic)`. Example usage is as follows:
 
-{{< highlight r >}}
+```r
 > library(GeneralizedHyperbolic)
 > dghyp(2)
 [1] 0.08878272
@@ -34,7 +34,7 @@ Likelihood:         -1852.273
 Method:             Nelder-Mead
 Convergence code:   0
 Iterations:         169
-{{< /highlight >}}
+```
 
 I have created some extra code to go with this package that allows visualisation of the generalised hyperbolic distribution. Note, the slider tool was sourced from the [fBasics](https://cran.r-project.org/package=fBasics) package. With this tool, you can modify each parameter by moving a slider and noting the effects that this has. You can grab the code to do this at my [GHyp Slider gist](https://gist.github.com/311889).
 

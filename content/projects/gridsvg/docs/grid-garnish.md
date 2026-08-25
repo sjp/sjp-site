@@ -17,9 +17,9 @@ event is triggered. These functions can be defined and included with the use of
 The usage of the function is defined as follows (further parameters are
 available to be viewed via `?grid.garnish`):
 
-{{< highlight r >}}
+```r
 grid.garnish(path, ..., group=TRUE)
-{{< /highlight >}}
+```
 
 The key argument here is in fact `...`, which allows us to provide any named
 argument and have it applied to the `path`. By providing an argument with any
@@ -29,7 +29,7 @@ will be generated.
 The application of this function is going to be demonstrated with the use of
 the `onclick` event attribute on a graphics object.
 
-{{< highlight r >}}
+```r
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -48,7 +48,7 @@ GRID.rect.1
 > 
 > # Drawing to SVG
 > grid.export("example.svg")
-{{< /highlight >}}
+```
 
 When gridSVG processes `GRID.rect.1`, it will now attach an additional
 attribute to it, `onclick`, holding the value of `alert(...);`. The resulting

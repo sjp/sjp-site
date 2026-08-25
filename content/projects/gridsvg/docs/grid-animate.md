@@ -14,11 +14,11 @@ object, we can smoothly animate that object's property over time.
 The usage of the `grid.animate()` function is defined as follows (see
 `?grid.animate` for more complete documentation):
 
-{{< highlight r >}}
+```r
 grid.animate(path, ..., 
              duration = 1, rep = FALSE, revert = FALSE,
              begin = 0, interpolate = "linear", group = FALSE)
-{{< /highlight >}}
+```
 
 The key named arguments to this function are `path`, `duration`, `rep`,
 `revert`, `begin` and `interpolate`. `path` is the grid path of the graphics object you wish to animate,
@@ -41,7 +41,7 @@ A simple example to use in place of `...` might be something like `x = animUnit(
 This will smoothly animate a given graphics object along the `x` axis through `npc`
 units of 0.1, 0.2, ..., 0.5. A more complete example is shown below:
 
-{{< highlight r >}}
+```r
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -68,7 +68,7 @@ GRID.rect.1
 > 
 > # Drawing to SVG
 > grid.export("example.svg")
-{{< /highlight >}}
+```
 
 We are demonstrating how to animate on two graphical elements that are created
 from a single graphics object. In this case, we wish to animate the rectangle

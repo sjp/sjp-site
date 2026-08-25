@@ -24,9 +24,9 @@ To use selectr, all that is necessary is to run the following command
 as selectr is available on
 [CRAN](https://cran.r-project.org/package=selectr):
 
-{{< highlight r >}}
+```r
 install.packages("selectr")
-{{< /highlight >}}
+```
 
 ## Usage
 
@@ -34,13 +34,13 @@ The most basic and flexible function provided by selectr is
 `css_to_xpath()`. It simply translates a vector of CSS Selectors to
 their equivalent XPath expressions.
 
-{{< highlight r >}}
+```r
 > library(selectr)
 > css_to_xpath("div > a")
 [1] "descendant-or-self::div/a"
 > css_to_xpath("div:nth-child(2) > a")
 [1] "descendant-or-self::div[count(preceding-sibling::*) = 1]/a"
-{{< /highlight >}}
+```
 
 A common task is to search for matching nodes within a
 document. selectr makes this task easier by mimicking the behaviour of
@@ -49,7 +49,7 @@ DOM methods present in JavaScript
 and
 [`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll)).
 
-{{< highlight r >}}
+```r
 > fileName <- system.file("exampleData", "test.xml", package="XML")
 > mydoc <- xmlParse(fileName)
 > querySelector(mydoc, "a")
@@ -72,7 +72,7 @@ xmlTreeParse("test.xml")
 
 attr(,"class")
 [1] "XMLNodeSet"
-{{< /highlight >}}
+```
 
 ## Further Information
 

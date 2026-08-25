@@ -12,11 +12,11 @@ define the behaviour of the SVG document with regards to interactivity.
 
 The usage of the function is defined as follows:
 
-{{< highlight r >}}
+```r
 grid.script(script = NULL, filename = NULL,
             type = "application/ecmascript",
             inline = FALSE, name = NULL)
-{{< /highlight >}}
+```
 
 Typical usage would be to include a JavaScript file (via the `filename`
 parameter), or perhaps include a character vector containing JavaScript code
@@ -25,7 +25,7 @@ enable JavaScript to be embedded within an SVG image, rather than linked to an
 external resource (this is implied when using the `script` argument).  A
 demonstration of `grid.script()` is shown below:
 
-{{< highlight r >}}
+```r
 > # Loading gridSVG
 > library(gridSVG)
 > 
@@ -34,7 +34,7 @@ demonstration of `grid.script()` is shown below:
 > 
 > # Including JavaScript from a file called tooltips.js
 > grid.script(filename = "tooltips.js")
-{{< /highlight >}}
+```
 
 Knowledge of JavaScript is required to perform interactivity, but it is not an
 uncommon language and there is plenty of documentation available to learn it. A

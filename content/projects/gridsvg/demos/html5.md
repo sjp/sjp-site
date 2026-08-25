@@ -60,7 +60,7 @@ small amount of code. After directly inserting the SVG content into this HTML
 page I added a little bit of HTML to display checkboxes that will be used to
 toggle visibility.
 
-{{< highlight html >}}
+```html
 <p>Select companies to be shown:</p>
 <label for="aaplcheck">
     <input type="checkbox" value="on" checked="checked" id="aaplcheck"> AAPL (Apple Inc.)
@@ -74,14 +74,14 @@ toggle visibility.
 <label for="msftcheck">
     <input type="checkbox" value="on" checked="checked" id="msftcheck"> MSFT (Microsoft Corporation)
 </label>
-{{< /highlight >}}
+```
 
 The next step was to bind the values of the checkboxes (i.e. checked or
 unchecked) to the visibility of the appropriate SVG lines. I first inserted a
 `<script>` element to declare that I will be doing this via JavaScript. Within
 this `<script>` element I wrote the following code.
 
-{{< highlight js >}}
+```js
 // Grabbing all of the checkbox elements so that
 // we can inspect whether they are checked or not
 var aaplshow = document.getElementById("aaplcheck");
@@ -107,7 +107,7 @@ aaplshow.addEventListener('change', togglefn('GRID.polyline.1.1.1'), false);
 amznshow.addEventListener('change', togglefn('GRID.polyline.1.1.2'), false);
 googshow.addEventListener('change', togglefn('GRID.polyline.1.1.3'), false);
 msftshow.addEventListener('change', togglefn('GRID.polyline.1.1.4'), false);
-{{< /highlight >}}
+```
 
 The general steps I took were to first grab the checkbox elements so that I can
 see whether they are checked or not. I then added event listeners to then to

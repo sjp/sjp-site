@@ -26,14 +26,14 @@ a web browser.
 
 To cite this thesis, use the following BibTeX entry:
 
-{{< highlight bibtex >}}
+```bibtex
 @MastersThesis{SJP2013,
     author = {Simon Potter},
     title  = {Dynamic, Interactive and Reactive Statistical Graphics for the Web},
     school = {The University of Auckland},
     year   = 2013
 }
-{{< /highlight >}}
+```
 
 ## Seminar
 
@@ -67,10 +67,10 @@ within the package depend on a few packages being available on an R
 installation. The following R command will install some of these
 packages:
 
-{{< highlight r >}}
+```r
 install.packages(c("gridSVG", "ggplot2", "selectr",
                    "hexbin", "shiny", "Rook"))
-{{< /highlight >}}
+```
 
 There are further packages that require installation that are not
 (yet) available on CRAN. These packages are `animaker` and the
@@ -118,23 +118,23 @@ and `Rook` port selection).
 To run the "LOESS Smoother Example", all that is required is the
 following code:
 
-{{< highlight r >}}
+```r
 library(sjpMScThesis)
 thesisExample("loess")
-{{< /highlight >}}
+```
 
 To stop an example, simply call `stopThesisExample()`.
 
 For a list of the available examples, see `listThesisExamples()`.
 
-{{< highlight r >}}
+```r
 > listThesisExamples()
  arima: Interactive ARIMA Model Diagnostics
  hexbin: Hexagonal Binning Comparisons
  hexbinClean: 'hexbin' with no explanatory paragraphs
  loess: Interactive LOESS Smoothing
  ...
-{{< /highlight >}}
+```
 
 Examples can be configured using the `getExampleOptions()` and
 `setExampleOptions()` functions. Consult the `sjpMScThesis` package

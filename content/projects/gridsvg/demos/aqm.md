@@ -28,7 +28,7 @@ shown on the bottom-left of the plot.
 
 ## How It Works
 
-{{< highlight r >}}
+```r
 library(grid)
 library(lattice)
 library(gridSVG)
@@ -38,12 +38,12 @@ PC2 <- runif(10, -20, 20)
 group <- factor(sample(c("Estrogen Receptor Negative",
                          "Estrogen Receptor Positive"),
                        10, replace=TRUE))
-{{< /highlight >}}
+```
 
 The way in which this example works is we first get our data and store it in
 the variables `PC1`, `PC2` and `group`.
 
-{{< highlight r >}}
+```r
 customPanel <- function(x, y, groups, ...) {
     grps <- levels(groups)
     for (i in 1:length(grps)) {
@@ -59,7 +59,7 @@ customPanel <- function(x, y, groups, ...) {
         }
     }
 }
-{{< /highlight >}}
+```
 
 We then define a function, `customPanel()`, which will drawing all of the
 points in the plot. We will be using a a `circleGrob` to draw the points
@@ -67,25 +67,25 @@ because we know that it will be translated to an SVG `<circle />`. These
 circles have a naming scheme applied to them so that we can reference them
 later, which is simply `point.[index]`.
 
-{{< highlight r >}}
+```r
 xyplot(PC2 ~ PC1, group = group,
        panel = customPanel,
        key = list(rect = list(col = trellis.par.get("superpose.symbol")$col[1:2]),
                   text = list(label = levels(group))))
-{{< /highlight >}}
+```
 
 The lattice package's `xyplot()` function is used to draw the plot. Note that we
 are using the `customPanel` function as defined earlier to draw the contents of
 the main panel.
 
-{{< highlight r >}}
+```r
 for (i in 1:10) {
     grid.text(paste("ARRAY", i), x = 0.1, y = 0.01,
               just = c("left", "bottom"),
               name = paste("label", i, sep = "."),
               gp = gpar(fontface = "bold.italic"))
 }
-{{< /highlight >}}
+```
 
 We then draw 10 of grid's `textGrob`s to show the name of each of the
 associated points. Each of the text labels are drawn at the bottom-left of the
@@ -94,7 +94,7 @@ applied are of the form `label.[index].1.1` (where index is 1---10). The plot
 currently appears messy as several text labels are drawn on top of each other,
 this will be remedied later.
 
-{{< highlight r >}}
+```r
 for (i in 1:10) {
     grid.garnish(paste("point", i, sep = "."), 
                  onmouseover = paste('highlight("', i, '.1.1")', sep = ""),
@@ -102,7 +102,7 @@ for (i in 1:10) {
     grid.garnish(paste("label", i, sep = "."),
                  visibility = "hidden")
 }
-{{< /highlight >}}
+```
 
 Given that we know the names of each of the points (`point.[index]`) and each
 of the labels (`label.[index]`) we can use [`grid.garnish()`]({{< ref "projects/gridsvg/docs/grid-garnish.md" >}})
@@ -125,11 +125,11 @@ issue. To resolve this, we garnish each of the labels so that when viewing the
 SVG file, the labels will be hidden. The `highlight()` and `dim()` functions
 will be used to toggle visibility of the text label.
 
-{{< highlight r >}}
+```r
 grid.script(filename = "aqm.js", inline = TRUE)
 
 grid.export("aqm.svg")
-{{< /highlight >}}
+```
 
 We then simply include a text file, in this case `aqm.js`, that contains
 JavaScript. By setting the `inline` argument to `TRUE`, we are ensuring that

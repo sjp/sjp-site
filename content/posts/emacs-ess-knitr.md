@@ -15,11 +15,11 @@ After a quick look at the ESS source code, I was able to write a quick script th
 * Store it in a useful location, I stored it in the following path: `~/.emacs.d/ess-knitr/ess-knitr.el`
 * Import the script in your `.emacs` file. My configuration is the following:
 
-{{< highlight cl >}}
+```cl
 ;; Add support for knit and purl
 (add-to-list 'load-path "~/.emacs.d/ess-knitr/")
 (require 'ess-knitr)
-{{< /highlight >}}
+```
 
 **Note:** This snippet should be included *after* the code that loads ESS.
 

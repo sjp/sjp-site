@@ -12,9 +12,9 @@ associated data sets and resources.
 
 The usage of the function is defined as follows:
 
-{{< highlight r >}}
+```r
 grid.hyperlink(path, href, show = NULL, group = TRUE)
-{{< /highlight >}}
+```
 
 The necessary parameters to `grid.hyperlink()` are simply the grid path of the
 graphics object (usually just the name of the object is sufficient) and the URL
@@ -26,7 +26,7 @@ or optionally a different hyperlink when `FALSE`.
 
 An example of how this function is used is shown below:
 
-{{< highlight r >}}
+```r
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)
@@ -37,7 +37,7 @@ An example of how this function is used is shown below:
 > 
 > # Drawing to SVG
 > grid.export("example.svg")
-{{< /highlight >}}
+```
 
 Here we are drawing a text label. Upon clicking this label our browser will
 load the address `https://sjp.co.nz/`.

@@ -31,18 +31,18 @@ In order to install grConvert on Linux, some dependencies are required. A
 command has been provided that installs the dependencies on Debian-based
 distributions (e.g. Ubuntu).
 
-{{< highlight shell >}}
+```shell
 # apt install libcairo2-dev libspectre-dev librsvg2-dev \
 >     libpoppler-glib-dev r-base-dev
-{{< /highlight >}}
+```
 
 If you have the [`devtools`](https://github.com/r-lib/devtools) package
 installed, you can run the following command in R to install grConvert from a
 GitHub repository.
 
-{{< highlight r >}}
+```r
 > devtools::install_github("sjp/grConvert")
-{{< /highlight >}}
+```
 
 If you do not have `devtools`, or want to install grConvert from the [canonical
 source](https://r-forge.r-project.org/projects/grimport/) you will need to
@@ -51,21 +51,21 @@ use [Subversion](https://subversion.apache.org/).
 Firstly, we need to ensure that Subversion is installed on your system.
 Following that, we can begin to check out the grConvert package.
 
-{{< highlight shell >}}
+```shell
 # apt install subversion
-{{< /highlight >}}
+```
 
-{{< highlight shell >}}
+```shell
 $ svn checkout svn://r-forge.r-project.org/svnroot/grimport/pkg/grConvert
-{{< /highlight >}}
+```
 
 Finally we can build and install the grConvert package.
 
-{{< highlight shell >}}
+```shell
 $ cd grConvert
 $ R CMD build .
 $ R CMD INSTALL grConvert*.tar.gz
-{{< /highlight >}}
+```
 
 ### OSX
 
@@ -79,23 +79,23 @@ better.
 For Homebrew, the required libraries can be installed with the following
 command.
 
-{{< highlight shell >}}
+```shell
 $ brew install poppler librsvg cairo libspectre
-{{< /highlight >}}
+```
 
 If you're using MacPorts, the following command will install the necessary libraries.
 
-{{< highlight shell >}}
+```shell
 $ port install poppler librsvg cairo-devel libspectre
-{{< /highlight >}}
+```
 
 If you have the [`devtools`](https://github.com/r-lib/devtools) package
 installed, you can run the following command in R to install grConvert from a
 GitHub repository.
 
-{{< highlight r >}}
+```r
 > devtools::install_github("sjp/grConvert")
-{{< /highlight >}}
+```
 
 If you do not have `devtools`, or want to install grConvert from the [canonical
 source](https://r-forge.r-project.org/projects/grimport/) you will need to
@@ -103,17 +103,17 @@ use [Subversion](https://subversion.apache.org/). It can be obtained via
 Xcode's "Command Line Tools" downloadable component. Once Subversion has been
 installed, open up an instance of Terminal and run the following command:
 
-{{< highlight shell >}}
+```shell
 $ svn checkout svn://r-forge.r-project.org/svnroot/grimport/pkg/grConvert
-{{< /highlight >}}
+```
 
 Then run the following command to build and install the package in R.
 
-{{< highlight shell >}}
+```shell
 $ cd grConvert
 $ R CMD build .
 $ R CMD INSTALL grConvert*.tar.gz
-{{< /highlight >}}
+```
 
 Because I do not typically use OSX, these instructions may not be correct.
 Please contact me if this is the case.
@@ -134,18 +134,18 @@ displays which input formats are supported by grConvert. In other words it
 will inform the user which dependencies were available at install-time.
 
 
-{{< highlight r >}}
+```r
 > library(grConvert)
 > grConvert.capabilities()
 Supported input formats: PostScript PDF SVG
-{{< /highlight >}}
+```
 
 The second function is the most important function, and performs the key task
 of converting an input image (in a format listed by `grConvert.capabilities()`)
 to an output image format of either PostScript or SVG (for grImport and 
 grImport2 respectively).
 
-{{< highlight r >}}
+```r
 > library(grConvert)
 
 > # Convert a PS, PDF, SVG image to SVG
@@ -159,7 +159,7 @@ grImport2 respectively).
 > # (ignoring PS because grImport can already handle all PS inputs)
 > convertPicture("nzflag.pdf", "nzflag-pdf.ps")
 > convertPicture("nzflag.svg", "nzflag-svg.ps")
-{{< /highlight >}}
+```
 
 ## Documentation
 

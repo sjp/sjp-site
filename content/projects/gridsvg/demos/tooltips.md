@@ -29,13 +29,13 @@ the name of the grid graphics object that produced it.
 
 ## How It Works
 
-{{< highlight r >}}
+```r
 library(gridSVG)
-{{< /highlight >}}
+```
 
 Here we are simply loading gridSVG.
 
-{{< highlight r >}}
+```r
 # Add tooltip attributes to a grob on the DL
 garnishAllGrobs <- function(elt) {
     if (inherits(elt, "grob")) {
@@ -48,7 +48,7 @@ garnishAllGrobs <- function(elt) {
         elt
     }
 }
-{{< /highlight >}}
+```
 
 A function has been defined that, upon encountering a graphics object, adds
 event attributes to it using `garnishGrob()` (see
@@ -61,13 +61,13 @@ JavaScript code `hideTooltip()` is executed. These functions are yet to be
 defined, so are currently assumed to exist when gridSVG attempts to write an
 SVG file.
 
-{{< highlight r >}}
+```r
 addTooltips <- function(filename = "Rplots.svg") {
     grid.DLapply(garnishAllGrobs)
     grid.script(filename = "tooltip.js")
     grid.export(filename)
 }
-{{< /highlight >}}
+```
 
 This is where the previously defined functions are glued together to add
 tooltips to a grid plot. Firstly we apply the `garnishAllGrobs()` function to
@@ -78,11 +78,11 @@ attributes exists in `tooltip.js`, so we include it using
 [`grid.script()`]({{< ref "projects/gridsvg/docs/grid-script.md" >}}). Once the
 JavaScript has been included, we can write the grid plot an SVG image using `grid.export()`.
 
-{{< highlight r >}}
+```r
 library(lattice)
 demo(lattice) # We're going to use demo #3
 addTooltips("tooltips.svg")
-{{< /highlight >}}
+```
 
 Here we're simply going to use the `lattice` package and use one of its demo
 plots to illustrate tooltip usage. In particular we're going to draw the third
