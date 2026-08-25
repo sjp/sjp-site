@@ -10,7 +10,7 @@ of the grid graphics object that produced the element.
 
 This tooltip demonstration was largely borrowed from [Paul
 Murrell's](https://www.stat.auckland.ac.nz/~paul/)
-[gridDebug](https://r-forge.r-project.org/projects/griddebug/) package,
+[gridDebug](https://cran.r-project.org/package=gridDebug) package,
 specifically with regards to the `addTooltips()` function. A few modifications
 were made to the implementation of `addTooltips()`, mostly with regards to the
 JavaScript code and using the `onmousemove` event attribute instead of

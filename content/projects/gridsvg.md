@@ -3,7 +3,7 @@ date = "2011-07-06"
 title = "gridSVG"
 +++
 
-[gridSVG](https://r-forge.r-project.org/projects/gridsvg/) is a package for
+[gridSVG](https://cran.r-project.org/package=gridSVG) is a package for
 [R](https://www.r-project.org/) that turns a
 [grid](https://www.stat.auckland.ac.nz/~paul/grid/grid.html) plot into an SVG
 image. Under the supervision of [Dr. Paul
@@ -16,13 +16,13 @@ below.
 
 The key advantage of using gridSVG is that new animated, interactive graphics
 can be produced more easily and transparently than by using the Cairo-based SVG
-device (see [SVGAnnotation](http://www.omegahat.org/SVGAnnotation/) for an
+device (see [SVGAnnotation](https://github.com/duncantl/SVGAnnotation) for an
 alternative approach that uses the SVG device). Because the
-[lattice](https://r-forge.r-project.org/projects/lattice/) and
+[lattice](https://cran.r-project.org/package=gridSVG) and
 [ggplot2](http://ggplot2.tidyverse.org) packages use grid, gridSVG can add these
 features to plots produced by these packages. gridSVG only works with grid
 plots, to create animated and interactive plots from R's base graphics engine
-see [SVGAnnotation](http://www.omegahat.org/SVGAnnotation/).
+see [SVGAnnotation](https://github.com/duncantl/SVGAnnotation).
 
 ## Features
 

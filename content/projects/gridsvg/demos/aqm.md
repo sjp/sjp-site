@@ -9,7 +9,7 @@ package, authored by Audrey Kauffmann and Wolfgang Huber, can produce a report
 on microarray quality metrics. Within these reports is a scatterplot of
 principal components. The plot features interactivity by way of increasing the
 size of a point once it is hovered over. arrayQualityMetrics produces this plot
-through the use of the [SVGAnnotation](http://www.omegahat.org/SVGAnnotation/)
+through the use of the [SVGAnnotation](https://github.com/duncantl/SVGAnnotation)
 package.
 
 An attempt has been made by [Paul

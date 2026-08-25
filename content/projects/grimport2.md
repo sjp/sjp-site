@@ -32,33 +32,10 @@ An example of what can be achieved is shown below, where I import the
 
 ## Installation
 
-grImport2 requires a few packages in order to run. To install them, run the
-following command:
+grImport2 is available on CRAN and can be installed in R using the following command:
 
 {{< highlight r >}}
-> install.packages(c("XML", "png", "jpeg", "base64enc"))
-{{< /highlight >}}
-
-If you have the [`devtools`](https://github.com/r-lib/devtools) package
-installed, you can easily install grImport2 using the `install_github()` function.
-
-{{< highlight r >}}
-> devtools::install_github("sjp/grImport2")
-{{< /highlight >}}
-
-If you do not have `devtools` installed, you will have to install using
-[Subversion](https://subversion.apache.org) from the [canonical source](https://r-forge.r-project.org/projects/grimport/).
-
-{{< highlight shell >}}
-$ svn checkout svn://r-forge.r-project.org/svnroot/grimport/pkg/grImport2
-{{< /highlight >}}
-
-Now we can build and install grImport2.
-
-{{< highlight shell >}}
-$ cd grImport2
-$ R CMD build .
-$ R CMD INSTALL grImport2*.tar.gz
+> install.packages("grImport2")
 {{< /highlight >}}
 
 ## Usage
