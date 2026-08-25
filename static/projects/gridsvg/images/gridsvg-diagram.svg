@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325.125 263"
+     width="325.125" height="263" class="diagram diagram--gridsvg-diagram"
+     role="img" aria-labelledby="gridsvg-diagram-title gridsvg-diagram-desc">
+  <title id="gridsvg-diagram-title">How gridSVG differs from the built-in SVG device</title>
+  <desc id="gridsvg-diagram-desc">The graphics and grid packages both draw through grDevices, which writes the svg and pdf output. grid can instead draw through gridSVG, which creates the SVG image directly rather than going via grDevices.</desc>
+  <style>
+    /* Standalone only: `:root` matches when this file is the document
+       (opened directly, or used as an image source) and never when it has
+       been inlined into a page -- an inlined copy inherits the page colour. */
+    .diagram--gridsvg-diagram:root { color: #313131; background: #fff; }
+    @media (prefers-color-scheme: dark) {
+      .diagram--gridsvg-diagram:root { color: #ccc; background: #1b1b1b; }
+    }
+
+    .diagram--gridsvg-diagram text {
+      fill: currentColor;
+      font-family: "PT Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+                   "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      text-anchor: middle;
+    }
+
+    .diagram--gridsvg-diagram .node rect { fill: none; stroke: currentColor; stroke-width: 1.25px; }
+    .diagram--gridsvg-diagram .flowchart-link { fill: none; stroke: currentColor; stroke-width: 1.25px; }
+    .diagram--gridsvg-diagram .marker { fill: currentColor; stroke: none; }
+  </style>
+  <g>
+  <marker id="gridsvg-diagram_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/>
+  </marker>
+  <g class="root">
+  <g class="edgePaths">
+  <path d="M131.973,57L131.973,61.167C131.973,65.333,131.973,73.667,132.837,81.353C133.701,89.038,135.429,96.077,136.293,99.596L137.157,103.115" class="edge-thickness-normal edge-pattern-solid flowchart-link" marker-end="url(#gridsvg-diagram_flowchart-v2-pointEnd)"/>
+  <path d="M243.575,57L239.132,61.167C234.688,65.333,225.801,73.667,215.782,81.625C205.763,89.584,194.611,97.167,189.035,100.959L183.46,104.751" class="edge-thickness-normal edge-pattern-solid flowchart-link" marker-end="url(#gridsvg-diagram_flowchart-v2-pointEnd)"/>
+  <path d="M274.653,57L275.494,61.167C276.336,65.333,278.02,73.667,278.861,86.083C279.703,98.5,279.703,115,279.703,131.5C279.703,148,279.703,164.5,278.993,176.263C278.284,188.026,276.864,195.053,276.154,198.566L275.445,202.079" class="edge-thickness-normal edge-pattern-solid flowchart-link" marker-end="url(#gridsvg-diagram_flowchart-v2-pointEnd)"/>
+  <path d="M91.096,156L82.077,160.167C73.059,164.333,55.022,172.667,46.003,180.333C36.984,188,36.984,195,36.984,198.5L36.984,202" class="edge-thickness-normal edge-pattern-solid flowchart-link" marker-end="url(#gridsvg-diagram_flowchart-v2-pointEnd)"/>
+  <path d="M144.125,156L144.125,160.167C144.125,164.333,144.125,172.667,144.125,180.333C144.125,188,144.125,195,144.125,198.5L144.125,202" class="edge-thickness-normal edge-pattern-solid flowchart-link" marker-end="url(#gridsvg-diagram_flowchart-v2-pointEnd)"/>
+  </g>
+  <g class="nodes">
+  <g class="node default" transform="translate(131.97, 32.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-49.21" y="-24.5" width="98.42" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">graphics</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  <g class="node default" transform="translate(144.125, 131.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-54.9" y="-24.5" width="109.8" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">grDevices</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  <g class="node default" transform="translate(269.7, 32.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-30.67" y="-24.5" width="61.34" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">grid</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  <g class="node default" transform="translate(269.7, 230.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-47.42" y="-24.5" width="94.84" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">gridSVG</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  <g class="node default" transform="translate(36.98, 230.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-28.98" y="-24.5" width="57.97" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">svg</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  <g class="node default" transform="translate(144.125, 230.5)">
+  <rect class="basic label-container" rx="5" ry="5" x="-28.16" y="-24.5" width="56.31" height="49"/>
+  <g class="label" transform="translate(0, -9.5)">
+  <g>
+  <text y="-10.1">
+  <tspan class="text-outer-tspan row" x="0" y="-0.1em" dy="1.1em">
+  <tspan class="text-inner-tspan">pdf</tspan>
+  </tspan>
+  </text>
+  </g>
+  </g>
+  </g>
+  </g>
+  </g>
+  </g>
+</svg>
