@@ -16,7 +16,7 @@ Normally in R a user can apply a specifc font using something like `grid.text("h
 
 The way in which this is accomplished in SVG is through the use of CSS font stacks. A font stack defines a preference ordering for fonts. An example is shown below:
 
-```r
+```xml
 font-family="Helvetica, Arial, ..., sans-serif"
 ```
 
