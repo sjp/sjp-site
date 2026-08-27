@@ -32,7 +32,6 @@ fi
 # anything the claude-code feature already wrote survives.
 claude_config=$(jq -n --arg dir "$PWD" '{
     hasCompletedOnboarding: true,
-    installMethod: "npm",
     projects: { ($dir): { hasTrustDialogAccepted: true } }
 }')
 if [ -f "$claude_json" ]; then
