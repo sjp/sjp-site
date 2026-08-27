@@ -22,5 +22,9 @@
 	"mounts": [
 		"source=claude-code-config,target=/home/vscode/.claude,type=volume"
 	],
+	"remoteUser": "vscode",
+	"containerEnv": {
+		"CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+	},
 	"postCreateCommand": "bash .devcontainer/post-create.sh"
 }

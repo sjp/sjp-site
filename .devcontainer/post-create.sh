@@ -16,11 +16,16 @@ curl -fsSL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERS
 sudo ln -sf /usr/local/lib/dart-sass/sass /usr/local/bin/sass
 
 # Configure Claude Code so a fresh container starts without prompts.
-# ~/.claude is a named volume (see devcontainer.json) and is root-owned on first
-# creation; ~/.claude.json lives in the container FS and is recreated on rebuild.
-mkdir -p ~/.claude
-if [ "$(stat -c %u ~/.claude)" != "$(id -u)" ]; then
-    sudo chown -R "$(id -u):$(id -g)" ~/.claude
+# Claude Code stores its config in $CLAUDE_CONFIG_DIR (see devcontainer.json),
+# falling back to $HOME: the directory itself plus a .claude.json inside it.
+# Pointing CLAUDE_CONFIG_DIR at the named volume keeps both across rebuilds.
+claude_dir=${CLAUDE_CONFIG_DIR:-$HOME/.claude}
+claude_json=${CLAUDE_CONFIG_DIR:-$HOME}/.claude.json
+
+# The volume is root-owned on first creation.
+mkdir -p "$claude_dir"
+if [ "$(stat -c %u "$claude_dir")" != "$(id -u)" ]; then
+    sudo chown -R "$(id -u):$(id -g)" "$claude_dir"
 fi
 
 # Skip onboarding and the per-folder trust dialog. Merge rather than overwrite so
@@ -30,12 +35,12 @@ claude_config=$(jq -n --arg dir "$PWD" '{
     installMethod: "npm",
     projects: { ($dir): { hasTrustDialogAccepted: true } }
 }')
-if [ -f ~/.claude.json ]; then
-    jq --argjson add "$claude_config" '. * $add' ~/.claude.json > ~/.claude.json.tmp
+if [ -f "$claude_json" ]; then
+    jq --argjson add "$claude_config" '. * $add' "$claude_json" > "$claude_json.tmp"
 else
-    printf '%s\n' "$claude_config" > ~/.claude.json.tmp
+    printf '%s\n' "$claude_config" > "$claude_json.tmp"
 fi
-mv ~/.claude.json.tmp ~/.claude.json
+mv "$claude_json.tmp" "$claude_json"
 
 # The claude-code feature installs as root, leaving the package root-owned, so
 # in-place auto-updates fail with "no_permissions". Hand it to the container user.
