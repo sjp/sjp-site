@@ -1,6 +1,8 @@
 +++
 date = "2011-07-06"
 title = "gridSVG"
+layout = "single"
+outputs = ["html"]  # section pages default to HTML+RSS; these are project pages
 +++
 
 [gridSVG](https://cran.r-project.org/package=gridSVG) is a package for

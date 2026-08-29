@@ -52,3 +52,11 @@ theme = "hyde-hyde"
         tabWidth = 4
         style = "pastie"
         noClasses = false
+
+# The project asset trees contain standalone HTML documents (knitr reports,
+# yuidoc output, the state-flag gallery).  Hugo treats .html under content/ as a
+# renderable page by default, which trips `security.allowContent` and would stop
+# the files being served verbatim.  Restricting content types to Markdown demotes
+# them to ordinary page resources, copied through untouched.
+[contentTypes]
+    [contentTypes.'text/markdown']

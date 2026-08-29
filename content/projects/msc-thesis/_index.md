@@ -1,6 +1,8 @@
 +++
 date = "2013-06-18"
 title = "Masters Thesis"
+layout = "single"
+outputs = ["html"]  # section pages default to HTML+RSS; these are project pages
 +++
 
 During my Masters year I worked on a thesis entitled "Dynamic,
