@@ -41,6 +41,9 @@ theme = "hyde-hyde"
     weight = 400
     url = "/about"
 
+# No tags or categories are used, so keep Hugo from building empty term
+# listings at /tags/ and /categories/.
+[taxonomies]
 
 [markup]
     [markup.goldmark]

@@ -1,5 +1,3 @@
 User-agent: *
-Crawl-delay: 10
-Disallow: /404.html
 
 Sitemap: https://sjp.co.nz/sitemap.xml
