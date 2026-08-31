@@ -32,8 +32,13 @@ img,
 video,
 object {
   max-width: 80%;
+  height: auto;
   @include media-box-shadow;
   display: block;
   margin: 0 auto 1rem auto;
   border-radius: 5px;
+}
+
+picture {
+  display: contents;
 }

@@ -3,7 +3,9 @@
     {{ partial "header/meta.html" . }}
     {{ partial "header/styles.html" . }}
     {{ partial "header/preload.html" . }}
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    {{ with resources.Get "favicon-256.png" }}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ (.Resize "180x180 png").RelPermalink }}">
+    {{- end }}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
     {{ partial "header/fonts.html" . }}
