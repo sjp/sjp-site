@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-    <ShortName>Search Simon Potter (sjp.co.nz)</ShortName>
-    <Description>Use Google to search Simon Potter (sjp.co.nz)</Description>
+    <ShortName>Search Simon Potter</ShortName>
+    <Description>Use Google to search Simon Potter</Description>
     <InputEncoding>UTF-8</InputEncoding>
     <OutputEncoding>UTF-8</OutputEncoding>
     <Language>en-us</Language>

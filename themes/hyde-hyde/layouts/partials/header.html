@@ -9,7 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
     {{ partial "header/fonts.html" . }}
-    <link rel="search" type="application/opensearchdescription+xml" title="Search sjp.co.nz" href="https://sjp.co.nz/opensearch.xml">
+    <link rel="search" type="application/opensearchdescription+xml" title="Search {{ .Site.Title }}" href="{{ "opensearch.xml" | absURL }}">
     {{ partial "header/feeds.html" . }}
     {{ partial "header/schema.html" . }}
     {{ partial "header/custom.html" }}
