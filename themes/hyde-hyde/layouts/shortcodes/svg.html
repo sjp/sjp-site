@@ -1,0 +1,13 @@
+{{- /* Inline an SVG file's markup into the page.  See partials/inline-svg.html
+       for when this is worth doing and what it makes the author responsible
+       for.  Use {{< fig >}} instead when the graphic wants a caption.
+
+         {{< svg src="images/diagram.svg" >}}
+         {{< svg src="images/icon.svg" class="icon" label="Build status" >}}
+*/ -}}
+{{- partial "inline-svg.html" (dict
+      "page"  .Page
+      "src"   (.Get "src")
+      "class" (.Get "class")
+      "label" (.Get "label")
+) -}}

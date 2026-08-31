@@ -42,3 +42,10 @@ object {
 picture {
   display: contents;
 }
+
+svg.svg--inline {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 1rem auto;
+}

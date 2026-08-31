@@ -1,0 +1,113 @@
+{{- /*
+  Embeds an SVG file's markup directly into the page instead of pointing an
+  <img> at it.
+
+  Inlining is worth it only when something outside the file needs to reach in:
+  `currentColor` and the page's own custom properties resolve against the page,
+  so a diagram follows the light/dark theme without shipping two copies; and its
+  <title>/<desc> become part of the document for assistive technology.  An <img>
+  gets none of that -- it renders in its own isolated document -- but it is
+  cacheable on its own, lazy-loadable, and kept out of the HTML.  Prefer <img>
+  (partials/image.html) for anything photographic or large; inline only the
+  hand-authored diagrams that are written for it.
+
+  Two consequences of sharing the document, both the author's to manage:
+
+    * ids are page-global.  Two inlined files that both define `clip1` will
+      collide, and the second one's url(#clip1) references silently resolve to
+      the first one's definition.  Rewriting ids here would mean patching
+      url(), href, aria-labelledby and any `#id` selectors inside <style>,
+      which fails quietly when it gets one wrong -- so this partial only warns,
+      and the fix is to namespace the ids in the source file.
+
+    * <style> inside inline SVG is page-global too, not scoped to the graphic.
+      Prefix every rule with the file's own class (see the `diagram--*` rules in
+      gridsvg-diagram.svg) or it will style the rest of the page.
+
+  No minification here: CI builds with `hugo --minify`, whose HTML minifier
+  descends into inline <svg> and collapses the markup, its numbers and its
+  <style> block.  Minifying the resource as well would only cost build time and
+  make `hugo server` output harder to read.
+
+  Context:
+    page   page the graphic appears on, used to resolve the resource
+    src    path to the SVG, as written in the source document
+    class  optional extra classes, merged into any the root <svg> already has
+    label  optional accessible name, used only if the file supplies none
+*/ -}}
+
+{{- $page := .page -}}
+{{- $src := .src | default "" -}}
+
+{{- /* Resolve against the page bundle first, as partials/image.html does:
+       content links to bundled files by site-absolute path, so strip the
+       page's own prefix before looking up.  Fall back to assets/. */ -}}
+{{- $res := false -}}
+{{- if and $page $src -}}
+  {{- $key := $src -}}
+  {{- if hasPrefix $key "/" -}}
+    {{- $key = strings.TrimPrefix $page.RelPermalink $key -}}
+  {{- end -}}
+  {{- $key = strings.TrimPrefix "/" $key -}}
+  {{- with $page.Resources.Get $key -}}
+    {{- $res = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $res -}}
+  {{- with resources.Get $src -}}
+    {{- $res = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $res -}}
+  {{- errorf "inline-svg: no resource found for %q on %s" $src $page.Path -}}
+{{- end -}}
+
+{{- $svg := $res.Content -}}
+{{- if not (findRE `<svg\b` $svg 1) -}}
+  {{- errorf "inline-svg: %q contains no <svg> element" $src -}}
+{{- end -}}
+
+{{- /* An XML prolog, a DOCTYPE or a leading comment is legal in a standalone
+       document but not inside HTML, so start the output at the root tag. */ -}}
+{{- $svg = $svg | replaceRE `(?s)\A.*?<svg\b` "<svg" | strings.TrimSpace -}}
+
+{{- /* Split off the root open tag so attributes can be merged into it.  A
+       literal `>` cannot appear unescaped in an attribute value, so [^>]* is
+       enough to find its end. */ -}}
+{{- $open := index (findRE `\A<svg[^>]*>` $svg 1) 0 -}}
+{{- $body := strings.TrimPrefix $open $svg -}}
+
+{{- /* Merge rather than append: a second class attribute would be ignored by
+       the parser and the file's own class -- which its <style> block selects
+       on -- would stop matching.  Attribute values are matched literally to
+       keep user-supplied classes out of regexp replacement expansion. */ -}}
+{{- $classes := "svg--inline" -}}
+{{- with .class -}}{{- $classes = printf "svg--inline %s" . -}}{{- end -}}
+{{- if strings.Contains $open " class=\"" -}}
+  {{- $open = replace $open " class=\"" (printf " class=\"%s " $classes) 1 -}}
+{{- else -}}
+  {{- $open = printf "<svg class=\"%s\"%s" $classes (strings.TrimPrefix "<svg" $open) -}}
+{{- end -}}
+
+{{- /* Only name the graphic if the file does not name itself: a <title> wired
+       up with aria-labelledby is the better source, and aria-label would
+       override it. */ -}}
+{{- with .label -}}
+  {{- if not (strings.Contains $open "aria-label") -}}
+    {{- $open = printf "<svg role=\"img\" aria-label=\"%s\"%s" (. | plainify | htmlEscape) (strings.TrimPrefix "<svg" $open) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Warn on ids this page has already inlined; see the note above. */ -}}
+{{- $seen := or ($page.Store.Get "inlineSVGIds") slice -}}
+{{- range findRE `\sid="[^"]*"` $svg -}}
+  {{- $id := strings.TrimSpace . -}}
+  {{- if in $seen $id -}}
+    {{- warnf "inline-svg: %q on %s repeats %s, which another inlined SVG on this page already defines; ids are page-global once inlined, so namespace them in the source file" $src $page.Path $id -}}
+  {{- else -}}
+    {{- $seen = $seen | append $id -}}
+  {{- end -}}
+{{- end -}}
+{{- $page.Store.Set "inlineSVGIds" $seen -}}
+
+{{- print $open $body | safeHTML -}}
