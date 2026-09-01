@@ -1,4 +1,3 @@
-{{ $include_toc := .Params.include_toc}}
 <article>
   <header>
     <h1>{{ .Title }}</h1>
@@ -11,20 +10,6 @@
     {{ partial "page-single/post-meta.html" . }}
     {{ end }}
   </header>
-  {{ $tableOfContents := .TableOfContents }}
-  {{ with .Site.Params.toc }}
-  {{ if ne $include_toc false }}
-    <div class="toc-wrapper">
-      <input type="checkbox" id="tocToggle">
-      <label for="tocToggle">Table of Content</label>
-      {{ if eq . "hugo" }}
-          {{ $tableOfContents }}
-      {{ else if eq . "tocbot"}}
-        <div class="toc" id="TableOfContents"></div>
-      {{ end }}
-    </div>
-  {{ end }}
-  {{ end }}
   <div class="post">
     {{ .Content }}
   </div>
