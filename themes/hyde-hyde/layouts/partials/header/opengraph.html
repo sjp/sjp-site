@@ -1,0 +1,25 @@
+{{- /*
+  Replaces Hugo's embedded opengraph template, which cannot be overridden and
+  hardcodes the trailing-slash `.Permalink` for og:url.
+*/ -}}
+<meta property="og:url" content="{{ partial "func/permalink.html" . }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+{{- with or .Description .Summary }}
+<meta property="og:description" content="{{ . | plainify | htmlUnescape | strings.TrimSpace }}">
+{{- end }}
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+{{- if eq .Kind "page" }}
+<meta property="og:type" content="article">
+{{- with .Section }}
+<meta property="article:section" content="{{ . }}">
+{{- end }}
+{{- if not .PublishDate.IsZero }}
+<meta property="article:published_time" {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | printf "content=%q" | safeHTMLAttr }}>
+{{- end }}
+{{- if not .Lastmod.IsZero }}
+<meta property="article:modified_time" {{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | printf "content=%q" | safeHTMLAttr }}>
+{{- end }}
+{{- else }}
+<meta property="og:type" content="website">
+{{- end }}
