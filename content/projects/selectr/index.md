@@ -6,7 +6,7 @@ title = "selectr"
 The selectr package for [R](https://www.r-project.org/) parses [CSS
 Selectors](https://www.w3.org/TR/selectors-4/) and translates them
 to [XPath 1.0](https://www.w3.org/TR/xpath/) expressions. It was
-originally an R port of the [cssselect](https://pythonhosted.org/cssselect/)
+originally an R port of the [cssselect](https://cssselect.readthedocs.io)
 package for Python but now supports additional selectors. Development
 occurs on GitHub in the [selectr](https://github.com/sjp/selectr)
 repository.
@@ -39,15 +39,15 @@ their equivalent XPath expressions.
 > css_to_xpath("div > a")
 [1] "descendant-or-self::div/a"
 > css_to_xpath("div:nth-child(2) > a")
-[1] "descendant-or-self::div[count(preceding-sibling::*) = 1]/a"
+[1] "descendant-or-self::div[preceding-sibling::*[1] and not(preceding-sibling::*[2])]/a"
 ```
 
 A common task is to search for matching nodes within a
 document. selectr makes this task easier by mimicking the behaviour of
 DOM methods present in JavaScript
-([`querySelector()`](https://developer.mozilla.org/en-US/docs/DOM/Document.querySelector)
+([`querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 and
-[`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/DOM/Document.querySelectorAll)).
+[`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)).
 
 ```r
 > fileName <- system.file("exampleData", "test.xml", package="XML")
