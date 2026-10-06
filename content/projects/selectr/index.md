@@ -50,6 +50,7 @@ and
 [`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)).
 
 ```r
+> library(XML)
 > fileName <- system.file("exampleData", "test.xml", package="XML")
 > mydoc <- xmlParse(fileName)
 > querySelector(mydoc, "a")
