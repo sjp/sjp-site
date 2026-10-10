@@ -11,7 +11,7 @@ The result of my work has been posted up on [GeneralizedHyperbolic](https://gith
 
 Once the package has been installed, using it is as simple as running R, then loading the package using `library(GeneralizedHyperbolic)`. Example usage is as follows:
 
-```r
+```rconsole
 > library(GeneralizedHyperbolic)
 > dghyp(2)
 [1] 0.08878272

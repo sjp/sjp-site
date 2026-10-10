@@ -32,7 +32,7 @@ dotnet tool install --global SJP.AvroTool
 
 Most of the documentation is provided by the tool itself (outside of the language specifications).
 
-```plain
+```console
 $ avrotool --help
 
 USAGE:
@@ -52,7 +52,7 @@ COMMANDS:
 
 #### Compile IDL to an Avro Protocol
 
-```plain
+```console
 $ cat sample.avdl
 protocol TestProtocol {
   record TestRecord {
@@ -94,7 +94,7 @@ $ cat TestProtocol.avpr
 
 #### Compile IDL to Avro Schema
 
-```plain
+```console
 $ cat sample.avdl
 protocol TestProtocol {
   record TestRecord {
@@ -145,7 +145,7 @@ $ cat TestEnum.avsc
 #### Generate C# code for Avro Protocol and Schema
 
 
-```sh
+```console
 $ cat sample.avdl
 protocol TestProtocol {
   record TestRecord {

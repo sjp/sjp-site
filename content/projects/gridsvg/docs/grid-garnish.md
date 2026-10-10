@@ -29,7 +29,7 @@ will be generated.
 The application of this function is going to be demonstrated with the use of
 the `onclick` event attribute on a graphics object.
 
-```r
+```rconsole
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)

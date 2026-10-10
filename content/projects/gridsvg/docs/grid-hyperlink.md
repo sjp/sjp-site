@@ -26,7 +26,7 @@ or optionally a different hyperlink when `FALSE`.
 
 An example of how this function is used is shown below:
 
-```r
+```rconsole
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)

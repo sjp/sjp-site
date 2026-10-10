@@ -1,0 +1,8 @@
+{{- /*
+  R console transcripts: highlight as R, then retag the leading "> " and "+ "
+  prompts as GenericPrompt so they pick up the non-selectable .gp style.
+  Chroma has no R console lexer, so without this the prompts are just
+  operators and get copied along with the code.
+*/ -}}
+{{- $html := transform.Highlight .Inner "r" .Options -}}
+{{- replaceRE `<span class="cl"><span class="o">(&gt;|\+)</span>( ?)` `<span class="cl"><span class="gp">$1$2</span>` $html | safeHTML -}}

@@ -41,7 +41,7 @@ A simple example to use in place of `...` might be something like `x = animUnit(
 This will smoothly animate a given graphics object along the `x` axis through `npc`
 units of 0.1, 0.2, ..., 0.5. A more complete example is shown below:
 
-```r
+```rconsole
 > # Loading grid and gridSVG
 > library(grid)
 > library(gridSVG)

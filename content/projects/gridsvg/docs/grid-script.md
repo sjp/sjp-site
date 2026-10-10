@@ -25,7 +25,7 @@ enable JavaScript to be embedded within an SVG image, rather than linked to an
 external resource (this is implied when using the `script` argument).  A
 demonstration of `grid.script()` is shown below:
 
-```r
+```rconsole
 > # Loading gridSVG
 > library(gridSVG)
 > 

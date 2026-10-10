@@ -1,0 +1,8 @@
+{{- /*
+  Chroma's console lexer tags the prompt ("$", "#", ">") as GenericPrompt but
+  leaves the following space outside it.  Pull that space into the prompt
+  span so the non-selectable .gp style doesn't leave copied commands with a
+  leading space.
+*/ -}}
+{{- $html := transform.Highlight .Inner "console" .Options -}}
+{{- replaceRE `<span class="gp">([^<]*)</span> ` `<span class="gp">$1 </span>` $html | safeHTML -}}

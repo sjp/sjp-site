@@ -298,6 +298,13 @@
 
 /* END generated chroma styles */
 
+// Keep shell and R console prompts out of selections, so copying a
+// transcript yields only the commands and output.
+.chroma .gp {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 #rainbow-output {
     background-color: inherit;
 }

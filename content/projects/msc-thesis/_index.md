@@ -129,7 +129,7 @@ To stop an example, simply call `stopThesisExample()`.
 
 For a list of the available examples, see `listThesisExamples()`.
 
-```r
+```rconsole
 > listThesisExamples()
  arima: Interactive ARIMA Model Diagnostics
  hexbin: Hexagonal Binning Comparisons

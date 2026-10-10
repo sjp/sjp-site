@@ -34,7 +34,7 @@ The most basic and flexible function provided by selectr is
 `css_to_xpath()`. It simply translates a vector of CSS Selectors to
 their equivalent XPath expressions.
 
-```r
+```rconsole
 > library(selectr)
 > css_to_xpath("div > a")
 [1] "descendant-or-self::div/a"
@@ -49,7 +49,7 @@ DOM methods present in JavaScript
 and
 [`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)).
 
-```r
+```rconsole
 > library(XML)
 > fileName <- system.file("exampleData", "test.xml", package="XML")
 > mydoc <- xmlParse(fileName)
