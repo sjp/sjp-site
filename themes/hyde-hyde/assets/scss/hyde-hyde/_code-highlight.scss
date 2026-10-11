@@ -1,5 +1,16 @@
 @use "variables";
 
+.highlight {
+    margin: 1em 0;
+    border: 1px solid var(--code-block-border-color);
+    border-radius: variables.$code-block-border-radius;
+    overflow: hidden;
+
+    pre {
+        margin: 0;
+    }
+}
+
 .chroma {
     padding: 0.2em 0.5em;
     overflow-x: auto;
@@ -9,8 +20,6 @@
         background-color: inherit;
         padding: 0;
     }
-
-    border: 1px solid #ccc;
 }
 
 /* BEGIN generated chroma styles — run `make chroma-styles`; do not edit by hand */

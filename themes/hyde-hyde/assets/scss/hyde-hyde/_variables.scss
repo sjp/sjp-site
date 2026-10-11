@@ -50,6 +50,7 @@ $code-font-family: "Inconsolata", "SFMono-Regular", "SF-Mono", Menlo, Monaco,
 $code-font-size: 1em;
 $code-fence-font-size: 0.8rem;
 $code-line-height: 1.4;
+$code-block-border-radius: 4px;
 
 // section
 $section__title-font-size: 2.15rem;
@@ -117,6 +118,7 @@ $content-margin-right: 2rem;
   --message-color: #717171;
   --message-bg-color: #f9f9f9;
   --code-background-color: #eee;
+  --code-block-border-color: var(--color-gray-4);
   --quotebox-border-right-color: rgba(0, 0, 0, 0) transparent;
   --quotebox-color: var(--color-gray-9);
   --blockquote-bg-color: #fafafa;
@@ -163,6 +165,7 @@ $content-margin-right: 2rem;
   --message-color: var(--color-gray-5);
   --message-bg-color: #252525;
   --code-background-color: #333;
+  --code-block-border-color: var(--color-gray-4);
   --quotebox-border-right-color: rgba(0, 0, 0, 0) transparent;
   --quotebox-color: var(--color-gray-4);
   --blockquote-bg-color: #222;
