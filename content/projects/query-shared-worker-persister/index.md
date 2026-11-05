@@ -11,7 +11,7 @@ The sharing of a cache is possible due to a [`SharedWorker`](https://developer.m
 
 ## Demo
 
-A demo app that utilises the caching mechanism is available here: <https://sjp.co.nz/projects/query-shared-worker-persister/demo>
+A demo app that utilises the caching mechanism is available here: <https://sjp.github.io/query-shared-worker-demo>
 
 The source for the react application is available on [GitHub](https://github.com/sjp/query-shared-worker-demo)
 
