@@ -3,8 +3,7 @@ date = "2025-03-17"
 title = "Get WiFi"
 +++
 
-[Get WiFi](https://getwifi.link) is a small [Preact](https://preactjs.com) website that generates QR codes to connect to WiFi in the browser.
-It is currently hosted at [getwifi.link](https://getwifi.link).
+[Get WiFi](https://sjp.github.io/getwifi) is a small [Preact](https://preactjs.com) website that generates QR codes to connect to WiFi in the browser.
 
 Unlike some similar websites, the QR codes are entirely generated in the browser.
 
@@ -22,7 +21,7 @@ Primarily the website was intended as a learning experience. Not only for buildi
 
 Currently the feature set is stable and there is no intention to add any features.
 
-The site is maintained and developed on [GitHub](https://github.com/sjp/getwifi-web)
+The site is maintained and developed on [GitHub](https://github.com/sjp/getwifi)
 
 ## Tools and Libraries
 

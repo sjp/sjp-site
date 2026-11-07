@@ -3,8 +3,7 @@ date = "2025-03-17"
 title = "Is My ID Leaky?"
 +++
 
-[Is my ID Leaky?](https://ismyidleaky.com) is a simple [Preact](https://preactjs.com) website that detects whether an identifier could reveal more information than intended.
-The site is currently hosted at [ismyidleaky.com](https://ismyidleaky.com).
+[Is my ID Leaky?](https://sjp.github.io/leaky-ids) is a simple [Preact](https://preactjs.com) website that detects whether an identifier could reveal more information than intended.
 
 It is currently capable of detecting the following:
 
